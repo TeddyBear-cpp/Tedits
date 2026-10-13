@@ -215,6 +215,32 @@
 
             <div class="video-grid">
 
+                <!-- Card 0.5 -->
+                <div data-card role="button" tabindex="0" aria-label="Play Gaming Meme" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
+                    <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
+                        <!-- Blurred background fill -->
+                        <video src="videos/20min-edit.mp4#t=0.1" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none scale-110" preload="metadata" loop playsinline muted></video>
+                        <!-- Main uncropped video -->
+                        <video src="videos/20min-edit.mp4#t=0.1" class="relative z-10 w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" preload="metadata" loop playsinline></video>
+
+                        <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-80 group-hover:opacity-40 transition-opacity"></div>
+
+                        <span class="absolute z-20 top-4 left-4 text-[10px] font-mono tracking-wider px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-brand-text pointer-events-none">
+                            [Mo-Graph]
+                        </span>
+
+                        <div class="play-btn absolute inset-0 z-20 flex items-center justify-center pointer-events-none transition-opacity duration-300">
+                            <div class="w-14 h-14 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-brand-text group-hover:scale-110 group-hover:bg-brand-accent group-hover:text-black transition-all duration-300">
+                                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="absolute z-20 bottom-4 left-4 right-4 space-y-1 pointer-events-none">
+                            <h3 class="font-display text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors">Dynamin Typography / Fluid / Fast Paced</h3>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Card 1 -->
                 <div data-card role="button" tabindex="0" aria-label="Play Gaming Meme" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
                     <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
