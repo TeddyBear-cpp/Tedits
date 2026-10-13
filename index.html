@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tedits — Cinematic Video Editing by Teddy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0A0A0A',
+                            surface: '#121212',
+                            border: '#222222',
+                            text: '#F5F5F5',
+                            muted: '#888888',
+                            accent: '#22C55E',
+                            accentMuted: 'rgba(34, 197, 94, 0.15)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0A0A0A;
+            color: #F5F5F5;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hero headline: sized so "INTO FOLLOWERS." fits on one line on desktop,
+           and each word stacks on its own line on phones and tablets.
+           To make it bigger or smaller, change the 4.25rem / 3.5rem caps. */
+        .hero-title {
+            font-size: clamp(1.5rem, 7.5vw, 3.5rem);
+        }
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: clamp(3rem, 5.4vw, 4.25rem);
+            }
+        }
+
+        /* Fixed film-grain overlay */
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Animated green underline for nav + footer links */
+        .hover-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #22C55E;
+            transform-origin: bottom right;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .aspect-9-16 {
+            aspect-ratio: 9 / 16;
+        }
+
+        /* Video grid: each 9:16 card is never taller than the visible screen
+           (screen height minus the header and a little breathing room).
+           To make cards bigger or smaller, change the 8rem below
+           (smaller number = taller cards). */
+        .video-grid {
+            --card-w: calc((100vh - 8rem) * 9 / 16);
+            display: grid;
+            gap: 2rem;
+            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), var(--card-w)));
+        }
+
+        /* Soft green glow on video cards */
+        .glow-hover {
+            transition: all 0.4s ease;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 25px -5px rgba(34, 197, 94, 0.15);
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #222222; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #333333; }
+    </style>
+</head>
+<body class="selection:bg-brand-accent selection:text-black antialiased">
+
+    <!-- Film Grain Overlay -->
+    <div class="film-grain"></div>
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-brand-bg/80 backdrop-blur-md border-b border-brand-border/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="w-10 h-10 rounded-full border border-brand-border bg-brand-surface group-hover:border-brand-accent transition-colors duration-300 flex items-center justify-center p-1.5 overflow-hidden">
+                    <img src="tedits-bear-green.png" alt="Tedits bear logo" class="w-full h-full object-contain">
+                </div>
+                <span class="font-display font-extrabold tracking-wider text-xl text-brand-text group-hover:text-brand-accent transition-colors duration-300">
+                    TEDITS
+                </span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide">
+                <a href="#work" class="text-brand-muted hover:text-brand-text hover-underline transition-colors duration-300">Work</a>
+                <a href="#services" class="text-brand-muted hover:text-brand-text hover-underline transition-colors duration-300">Services</a>
+                <a href="#contact" class="text-brand-muted hover:text-brand-text hover-underline transition-colors duration-300">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-brand-text p-2 hover:text-brand-accent transition-colors focus:outline-none" aria-label="Toggle menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-brand-border bg-brand-bg px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col gap-5 text-base font-medium">
+                <a href="#work" class="text-brand-muted hover:text-brand-accent transition-colors">Work</a>
+                <a href="#services" class="text-brand-muted hover:text-brand-accent transition-colors">Services</a>
+                <a href="#contact" class="text-brand-muted hover:text-brand-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative pt-20">
+
+        <!-- HERO -->
+        <section class="min-h-[85vh] flex items-center justify-center px-6 lg:px-12 py-20 max-w-7xl mx-auto">
+            <div class="w-full text-center max-w-6xl mx-auto space-y-8">
+
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-brand-border bg-brand-surface/80 backdrop-blur-sm text-xs font-mono tracking-wide text-brand-muted">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                    <span>Available for select Q4 projects</span>
+                </div>
+
+                <h1 class="hero-title font-display font-extrabold tracking-tight text-brand-text uppercase leading-[1.05]">
+                    Turn <br class="lg:hidden">Viewers.<br><span class="text-brand-muted">Into <br class="lg:hidden">Followers.</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto font-normal leading-relaxed">
+                    Short-form edits, advertisements, motion graphics and music videos.
+                </p>
+
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a href="#work" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-text text-brand-bg font-medium text-sm hover:bg-brand-accent hover:text-brand-bg transition-all duration-300 text-center">
+                        View my work
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full border border-brand-border text-brand-text font-medium text-sm hover:border-brand-accent hover:text-brand-accent transition-all duration-300 text-center">
+                        Get in touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="border-t border-brand-border/60"></div></div>
+
+        <!-- SELECTED WORK -->
+        <section id="work" class="py-28 px-6 lg:px-12 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+                <div>
+                    <span class="block w-10 h-0.5 bg-brand-accent mb-5"></span>
+                    <h2 class="font-display font-bold text-3xl sm:text-5xl text-brand-text uppercase">Selected Work</h2>
+                </div>
+                <p class="text-brand-muted text-sm max-w-xs">High-impact vertical edits optimized for retention and engagement.</p>
+            </div>
+
+            <div class="video-grid">
+
+                <!-- Card 1 -->
+                <div data-card role="button" tabindex="0" aria-label="Play Gaming Meme" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
+                    <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
+                        <!-- Blurred background fill -->
+                        <video src="videos/Delta-force-edit.mp4#t=0.1" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none scale-110" preload="metadata" loop playsinline muted></video>
+                        <!-- Main uncropped video -->
+                        <video src="videos/Delta-force-edit.mp4#t=0.1" class="relative z-10 w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" preload="metadata" loop playsinline></video>
+
+                        <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-80 group-hover:opacity-40 transition-opacity"></div>
+
+                        <span class="absolute z-20 top-4 left-4 text-[10px] font-mono tracking-wider px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-brand-text pointer-events-none">
+                            [Short-Form]
+                        </span>
+
+                        <div class="play-btn absolute inset-0 z-20 flex items-center justify-center pointer-events-none transition-opacity duration-300">
+                            <div class="w-14 h-14 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-brand-text group-hover:scale-110 group-hover:bg-brand-accent group-hover:text-black transition-all duration-300">
+                                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="absolute z-20 bottom-4 left-4 right-4 space-y-1 pointer-events-none">
+                            <h3 class="font-display text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors">Gaming Meme</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div data-card role="button" tabindex="0" aria-label="Play Kinetic / Smooth / Sync" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
+                    <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
+                        <video src="videos/1013.mp4#t=0.1" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none scale-110" preload="metadata" loop playsinline muted></video>
+                        <video src="videos/1013.mp4#t=0.1" class="relative z-10 w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" preload="metadata" loop playsinline></video>
+
+                        <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-80 group-hover:opacity-40 transition-opacity"></div>
+
+                        <span class="absolute z-20 top-4 left-4 text-[10px] font-mono tracking-wider px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-brand-text pointer-events-none">
+                            [Anime Edit]
+                        </span>
+
+                        <div class="play-btn absolute inset-0 z-20 flex items-center justify-center pointer-events-none transition-opacity duration-300">
+                            <div class="w-14 h-14 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-brand-text group-hover:scale-110 group-hover:bg-brand-accent group-hover:text-black transition-all duration-300">
+                                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="absolute z-20 bottom-4 left-4 right-4 space-y-1 pointer-events-none">
+                            <h3 class="font-display text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors">Kinetic / Smooth / Sync</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div data-card role="button" tabindex="0" aria-label="Play Light Leaks / Glitch Cuts / Montage" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
+                    <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
+                        <video src="videos/The_lead-prodbyTeddBear-Trimed.mp4#t=0.1" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none scale-110" preload="metadata" loop playsinline muted></video>
+                        <video src="videos/The_lead-prodbyTeddBear-Trimed.mp4#t=0.1" class="relative z-10 w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" preload="metadata" loop playsinline></video>
+
+                        <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-80 group-hover:opacity-40 transition-opacity"></div>
+
+                        <span class="absolute z-20 top-4 left-4 text-[10px] font-mono tracking-wider px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-brand-text pointer-events-none">
+                            [Music Video]
+                        </span>
+
+                        <div class="play-btn absolute inset-0 z-20 flex items-center justify-center pointer-events-none transition-opacity duration-300">
+                            <div class="w-14 h-14 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-brand-text group-hover:scale-110 group-hover:bg-brand-accent group-hover:text-black transition-all duration-300">
+                                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="absolute z-20 bottom-4 left-4 right-4 space-y-1 pointer-events-none">
+                            <h3 class="font-display text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors">Light Leaks / Glitch Cuts / Montage</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div data-card role="button" tabindex="0" aria-label="Play Light Leaks / Glitch Cuts / Montage" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
+                    <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
+                        <video src="videos/Spiderman-Superman.mp4#t=0.1" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none scale-110" preload="metadata" loop playsinline muted></video>
+                        <video src="videos/Spiderman-Superman.mp4#t=0.1" class="relative z-10 w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" preload="metadata" loop playsinline></video>
+
+                        <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-80 group-hover:opacity-40 transition-opacity"></div>
+
+                        <span class="absolute z-20 top-4 left-4 text-[10px] font-mono tracking-wider px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-brand-text pointer-events-none">
+                            [Cinamatic Edit]
+                        </span>
+
+                        <div class="play-btn absolute inset-0 z-20 flex items-center justify-center pointer-events-none transition-opacity duration-300">
+                            <div class="w-14 h-14 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-brand-text group-hover:scale-110 group-hover:bg-brand-accent group-hover:text-black transition-all duration-300">
+                                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="absolute z-20 bottom-4 left-4 right-4 space-y-1 pointer-events-none">
+                            <h3 class="font-display text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors">Smooth Transitions/ Emotional / Cinematic</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="border-t border-brand-border/60"></div></div>
+
+        <!-- SERVICES -->
+        <section id="services" class="py-28 px-6 lg:px-12 max-w-7xl mx-auto">
+            <div class="mb-16">
+                <span class="block w-10 h-0.5 bg-brand-accent mb-5"></span>
+                <h2 class="font-display font-bold text-3xl sm:text-5xl text-brand-text uppercase">Services</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-border/60 rounded-xl overflow-hidden border border-brand-border">
+
+                <div class="p-8 sm:p-12 bg-brand-bg hover:bg-brand-surface/50 transition-colors duration-300 space-y-4">
+                    <span class="font-mono text-xs text-brand-accent">01</span>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold text-brand-text">Short-Form Content</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">Reels, TikToks, and Shorts designed for high retention and hooks.</p>
+                </div>
+
+                <div class="p-8 sm:p-12 bg-brand-bg hover:bg-brand-surface/50 transition-colors duration-300 space-y-4">
+                    <span class="font-mono text-xs text-brand-accent">02</span>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold text-brand-text">Ads &amp; Commercials</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">High-converting promotional edits and brand showcases.</p>
+                </div>
+
+                <div class="p-8 sm:p-12 bg-brand-bg hover:bg-brand-surface/50 transition-colors duration-300 space-y-4">
+                    <span class="font-mono text-xs text-brand-accent">03</span>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold text-brand-text">Motion Graphics</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">Kinetic typography, visual FX polish, and seamless transitions.</p>
+                </div>
+
+                <div class="p-8 sm:p-12 bg-brand-bg hover:bg-brand-surface/50 transition-colors duration-300 space-y-4">
+                    <span class="font-mono text-xs text-brand-accent">04</span>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold text-brand-text">Music Videos</h3>
+                    <p class="text-brand-muted text-sm leading-relaxed">Stylized rhythm edits, creative pacing, and color grading.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="border-t border-brand-border/60"></div></div>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-28 px-6 lg:px-12 max-w-4xl mx-auto">
+            <div class="text-center mb-16 space-y-4">
+                <span class="block w-10 h-0.5 bg-brand-accent mx-auto"></span>
+                <h2 class="font-display font-bold text-3xl sm:text-5xl text-brand-text uppercase">Get in touch</h2>
+            </div>
+
+            
+            <form id="contact-form" action="https://formspree.io/f/myekdopv" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label for="name" class="text-xs font-mono text-brand-muted uppercase tracking-wider">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Alex Morgan" class="w-full bg-brand-surface border border-brand-border rounded-lg px-4 py-3.5 text-sm text-brand-text placeholder-brand-muted/50 focus:outline-none focus:border-brand-accent transition-colors">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="email" class="text-xs font-mono text-brand-muted uppercase tracking-wider">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="alex@brand.com" class="w-full bg-brand-surface border border-brand-border rounded-lg px-4 py-3.5 text-sm text-brand-text placeholder-brand-muted/50 focus:outline-none focus:border-brand-accent transition-colors">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label for="details" class="text-xs font-mono text-brand-muted uppercase tracking-wider">Project Details</label>
+                    <textarea id="details" name="message" rows="5" required placeholder="Tell me about your video project, goals, and timeline..." class="w-full bg-brand-surface border border-brand-border rounded-lg px-4 py-3.5 text-sm text-brand-text placeholder-brand-muted/50 focus:outline-none focus:border-brand-accent transition-colors resize-none"></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full py-4 rounded-lg bg-brand-accent text-black font-semibold text-sm hover:bg-emerald-400 transition-colors duration-300 flex items-center justify-center gap-2">
+                    <span>Send Message</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+                <p id="form-status" class="hidden text-center text-xs font-mono pt-2"></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-brand-border py-12 px-6 lg:px-12 bg-brand-bg">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <span class="font-display font-extrabold tracking-wider text-sm text-brand-text">TEDITS</span>
+                <span class="text-brand-muted text-xs">© <span id="year">2026</span> TeddyBear. All rights reserved.</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-xs text-brand-muted">
+                <a href="https://instagram.com/teddy_chxngx" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent hover-underline transition-colors">Instagram (@teddy_chxngx)</a>
+                <a href="https://tiktok.com/@teddy_chxngx" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent hover-underline transition-colors">TikTok (@teddy_chxngx)</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Video cards: click to play with sound, click again to pause
+        const cards = document.querySelectorAll('[data-card]');
+
+        function stopCard(card) {
+            card.querySelectorAll('video').forEach(v => v.pause());
+            card.querySelector('.play-btn').classList.remove('opacity-0');
+        }
+
+        function startCard(card) {
+            const [bg, main] = card.querySelectorAll('video');
+            const btn = card.querySelector('.play-btn');
+            cards.forEach(c => { if (c !== card) stopCard(c); }); // one video at a time
+            bg.currentTime = main.currentTime;
+            main.muted = false;
+            main.play().then(() => {
+                bg.play().catch(() => {});
+                btn.classList.add('opacity-0');
+            }).catch(() => {});
+        }
+
+        cards.forEach(card => {
+            const toggle = () => {
+                const main = card.querySelectorAll('video')[1];
+                if (main.paused) startCard(card); else stopCard(card);
+            };
+            card.addEventListener('click', toggle);
+            card.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+            });
+        });
+
+        // Contact form (Formspree)
+        const SEND_LABEL = '<span>Send Message</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>';
+
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = document.getElementById('submit-btn');
+            const statusMsg = document.getElementById('form-status');
+            const action = form.getAttribute('action');
+
+            function showStatus(text, ok) {
+                statusMsg.textContent = text;
+                statusMsg.classList.remove('hidden', 'text-brand-accent', 'text-red-400');
+                statusMsg.classList.add(ok ? 'text-brand-accent' : 'text-red-400');
+            }
+
+            if (action.includes('YOUR_FORM_ID')) {
+                showStatus("The form isn't connected yet. Add your Formspree form ID to the form's action.", false);
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending message...';
+
+            try {
+                const res = await fetch(action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (!res.ok) throw new Error('Request failed');
+                submitBtn.textContent = 'Sent Successfully!';
+                showStatus('Thank you! Teddy will review your message shortly.', true);
+                form.reset();
+            } catch (err) {
+                submitBtn.textContent = 'Something went wrong';
+                showStatus('Message not sent. Please try again in a moment.', false);
+            }
+
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = SEND_LABEL;
+                statusMsg.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+
+</body>
+</html>
