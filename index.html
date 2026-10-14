@@ -218,8 +218,8 @@
                 <!-- Card 0.5 -->
                 <div data-card role="button" tabindex="0" aria-label="Play Gaming Meme" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
                     <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
-                        <!-- Blurred background fill -->
-                        <video src="videos/20min-edit.mp4#t=0.1" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none scale-110" preload="metadata" loop playsinline muted></video>
+                        <!-- Blurred background: a tiny canvas that copies the main video's frames (no second download) -->
+                        <canvas class="bg-canvas absolute inset-0 w-full h-full blur-xl opacity-30 pointer-events-none scale-110" width="54" height="96" aria-hidden="true"></canvas>
                         <!-- Main uncropped video -->
                         <video src="videos/20min-edit.mp4#t=0.1" class="relative z-10 w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" preload="metadata" loop playsinline></video>
 
@@ -244,8 +244,8 @@
                 <!-- Card 1 -->
                 <div data-card role="button" tabindex="0" aria-label="Play Gaming Meme" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
                     <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
-                        <!-- Blurred background fill -->
-                        <video src="videos/Delta-Force-Edit.mp4#t=0.1" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none scale-110" preload="metadata" loop playsinline muted></video>
+                        <!-- Blurred background: a tiny canvas that copies the main video's frames (no second download) -->
+                        <canvas class="bg-canvas absolute inset-0 w-full h-full blur-xl opacity-30 pointer-events-none scale-110" width="54" height="96" aria-hidden="true"></canvas>
                         <!-- Main uncropped video -->
                         <video src="videos/Delta-Force-Edit.mp4#t=0.1" class="relative z-10 w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" preload="metadata" loop playsinline></video>
 
@@ -270,7 +270,7 @@
                 <!-- Card 2 -->
                 <div data-card role="button" tabindex="0" aria-label="Play Kinetic / Smooth / Sync" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
                     <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
-                        <video src="videos/1013.mp4#t=0.1" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none scale-110" preload="metadata" loop playsinline muted></video>
+                        <canvas class="bg-canvas absolute inset-0 w-full h-full blur-xl opacity-30 pointer-events-none scale-110" width="54" height="96" aria-hidden="true"></canvas>
                         <video src="videos/1013.mp4#t=0.1" class="relative z-10 w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" preload="metadata" loop playsinline></video>
 
                         <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-80 group-hover:opacity-40 transition-opacity"></div>
@@ -294,7 +294,7 @@
                 <!-- Card 3 -->
                 <div data-card role="button" tabindex="0" aria-label="Play Light Leaks / Glitch Cuts / Montage" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
                     <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
-                        <video src="videos/The_lead-prodbyTeddBear-Trimed.mp4#t=0.1" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none scale-110" preload="metadata" loop playsinline muted></video>
+                        <canvas class="bg-canvas absolute inset-0 w-full h-full blur-xl opacity-30 pointer-events-none scale-110" width="54" height="96" aria-hidden="true"></canvas>
                         <video src="videos/The_lead-prodbyTeddBear-Trimed.mp4#t=0.1" class="relative z-10 w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" preload="metadata" loop playsinline></video>
 
                         <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-80 group-hover:opacity-40 transition-opacity"></div>
@@ -318,7 +318,7 @@
                 <!-- Card 4 -->
                 <div data-card role="button" tabindex="0" aria-label="Play Light Leaks / Glitch Cuts / Montage" class="group relative rounded-xl border border-brand-border bg-brand-surface overflow-hidden glow-hover cursor-pointer">
                     <div class="aspect-9-16 relative overflow-hidden bg-zinc-900">
-                        <video src="videos/Spiderman-Superman.mp4#t=0.1" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 pointer-events-none scale-110" preload="metadata" loop playsinline muted></video>
+                        <canvas class="bg-canvas absolute inset-0 w-full h-full blur-xl opacity-30 pointer-events-none scale-110" width="54" height="96" aria-hidden="true"></canvas>
                         <video src="videos/Spiderman-Superman.mp4#t=0.1" class="relative z-10 w-full h-full object-contain opacity-90 transition-transform duration-500 group-hover:scale-105" preload="metadata" loop playsinline></video>
 
                         <div class="absolute inset-0 z-20 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-80 group-hover:opacity-40 transition-opacity"></div>
@@ -443,61 +443,60 @@
         });
 
         // Video cards: click to play with sound, click again to pause.
-        // Each card has TWO copies of the same video: the sharp one in front and a blurred one behind.
-        // Two separate players never stay perfectly in step on their own (the blurred one starts late
-        // while it buffers, and they drift apart on every loop), so a small sync loop keeps the
-        // blurred copy locked to the sharp one while it plays.
+        // The blurred background is a tiny canvas that copies whatever frame the sharp video is
+        // showing. There is only ONE video per card (so only one download), and when the video
+        // stalls to buffer, no new frames arrive and the background simply holds still with it.
         const cards = document.querySelectorAll('[data-card]');
-        const DRIFT_LIMIT = 0.12; // seconds the blurred copy may be off before it is pulled back
 
-        function syncLoop(card) {
-            const [bg, main] = card.querySelectorAll('video');
-            cancelAnimationFrame(card._sync);
-            const tick = () => {
-                if (main.paused) return;
-                // Only correct when the blurred copy has data ready, otherwise we'd keep re-seeking while it buffers
-                if (bg.readyState >= 3 && !bg.seeking && Math.abs(bg.currentTime - main.currentTime) > DRIFT_LIMIT) {
-                    bg.currentTime = main.currentTime;
-                }
-                if (bg.paused && bg.readyState >= 3) bg.play().catch(() => {});
-                card._sync = requestAnimationFrame(tick);
+        function paintBackground(card) {
+            const main = card.querySelector('video');
+            const canvas = card.querySelector('.bg-canvas');
+            if (!main.videoWidth || main.readyState < 2) return; // no picture yet
+            const ctx = canvas.getContext('2d');
+            // Crop to fill the canvas, like object-cover
+            const vw = main.videoWidth, vh = main.videoHeight;
+            const scale = Math.max(canvas.width / vw, canvas.height / vh);
+            const sw = canvas.width / scale, sh = canvas.height / scale;
+            ctx.drawImage(main, (vw - sw) / 2, (vh - sh) / 2, sw, sh, 0, 0, canvas.width, canvas.height);
+        }
+
+        function startPainting(card) {
+            const main = card.querySelector('video');
+            const id = card._paintId = (card._paintId || 0) + 1; // a newer loop cancels an older one
+            const next = (cb) => main.requestVideoFrameCallback ? main.requestVideoFrameCallback(cb) : requestAnimationFrame(cb);
+            const step = () => {
+                if (card._paintId !== id || main.paused) return;
+                paintBackground(card);
+                next(step);
             };
-            card._sync = requestAnimationFrame(tick);
+            next(step);
         }
 
         function stopCard(card) {
-            cancelAnimationFrame(card._sync);
-            const [bg, main] = card.querySelectorAll('video');
+            const main = card.querySelector('video');
+            card._paintId = (card._paintId || 0) + 1; // stop painting
             main.pause();
-            bg.pause();
-            bg.currentTime = main.currentTime; // so the next play starts together
+            paintBackground(card);
             card.querySelector('.play-btn').classList.remove('opacity-0');
         }
 
         function startCard(card) {
-            const [bg, main] = card.querySelectorAll('video');
+            const main = card.querySelector('video');
             const btn = card.querySelector('.play-btn');
             cards.forEach(c => { if (c !== card) stopCard(c); }); // one video at a time
-            bg.currentTime = main.currentTime;
             main.muted = false;
-            // Start both inside the click so the browser allows sound, then lock them together
-            bg.play().catch(() => {});
             main.play().then(() => {
-                bg.currentTime = main.currentTime;
                 btn.classList.add('opacity-0');
-                syncLoop(card);
-            }).catch(() => { bg.pause(); });
+                startPainting(card);
+            }).catch(() => {});
         }
 
         cards.forEach(card => {
-            const [bg, main] = card.querySelectorAll('video');
-            // If the sharp video stalls to buffer, hold the blurred one too, then resume together
-            main.addEventListener('waiting', () => bg.pause());
-            main.addEventListener('playing', () => {
-                bg.currentTime = main.currentTime;
-                bg.play().catch(() => {});
-            });
-            main.addEventListener('seeked', () => { bg.currentTime = main.currentTime; });
+            const main = card.querySelector('video');
+            // Paint the first frame as soon as it exists, and after any jump in the video
+            main.addEventListener('loadeddata', () => paintBackground(card));
+            main.addEventListener('seeked', () => paintBackground(card));
+            if (main.readyState >= 2) paintBackground(card);
 
             const toggle = () => {
                 if (main.paused) startCard(card); else stopCard(card);
