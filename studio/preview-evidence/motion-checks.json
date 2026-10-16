@@ -1,0 +1,52 @@
+{
+  "heroAnimations": 5,
+  "paletteAnimated": true,
+  "paletteWorks": true,
+  "cancellation": true,
+  "reduced": {
+    "animations": 0,
+    "gradient": "none",
+    "visible": true,
+    "paletteAnimations": 0,
+    "keyboardWorks": true
+  },
+  "views": [
+    {
+      "width": 320,
+      "overflow": false,
+      "visible": true,
+      "anchors": true
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "visible": true,
+      "anchors": true
+    },
+    {
+      "width": 600,
+      "overflow": false,
+      "visible": true,
+      "anchors": true
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "visible": true,
+      "anchors": true
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "visible": true,
+      "anchors": true
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "visible": true,
+      "anchors": true
+    }
+  ],
+  "errors": []
+}

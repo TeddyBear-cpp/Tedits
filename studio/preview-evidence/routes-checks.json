@@ -1,0 +1,61 @@
+{
+  "routes": [
+    {
+      "route": "index.html",
+      "width": 320,
+      "status": 200,
+      "returnLink": true,
+      "overflow": false
+    },
+    {
+      "route": "projects/catering/index.html",
+      "width": 320,
+      "status": 200,
+      "returnLink": true,
+      "overflow": false
+    },
+    {
+      "route": "projects/rivet-beam/index.html",
+      "width": 320,
+      "status": 200,
+      "returnLink": true,
+      "overflow": false
+    },
+    {
+      "route": "projects/afterhours/index.html",
+      "width": 320,
+      "status": 200,
+      "returnLink": true,
+      "overflow": false
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "status": 200,
+      "returnLink": true,
+      "overflow": false
+    },
+    {
+      "route": "projects/catering/index.html",
+      "width": 1440,
+      "status": 200,
+      "returnLink": true,
+      "overflow": false
+    },
+    {
+      "route": "projects/rivet-beam/index.html",
+      "width": 1440,
+      "status": 200,
+      "returnLink": true,
+      "overflow": false
+    },
+    {
+      "route": "projects/afterhours/index.html",
+      "width": 1440,
+      "status": 200,
+      "returnLink": true,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

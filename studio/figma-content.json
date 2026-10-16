@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "meta": [
+      "INDEPENDENT WEB DESIGN & DEVELOPMENT",
+      "ZAMBIA BASED / AVAILABLE WORLDWIDE"
+    ],
+    "heading": "Thoughtful websites.\nDistinctly your business.",
+    "intro": "I design and build considered websites for businesses—pairing a clear purpose with a visual identity that feels like you."
+  },
+  "work": {
+    "label": "01 / SELECTED WEB PROJECTS",
+    "heading": "Different businesses.\nDistinct perspectives.",
+    "intro": "A collection of independent concepts.\nA glimpse of what your website could be."
+  },
+  "projects": [
+    {
+      "number": "01 / CATERING & EVENTS",
+      "title": "Olive & Ember",
+      "description": "A warm, editorial catering website that brings occasions, sample menus, and an enquiry journey together.",
+      "scope": "Web design · Responsive development",
+      "bar": "OLIVE & EMBER / CONCEPT PREVIEW"
+    },
+    {
+      "number": "02 / STEEL & FABRICATION",
+      "title": "Rivet & Beam",
+      "description": "An industrial website concept with a clear material catalogue and a flexible enquiry flow for standard supplies or custom fabrication.",
+      "scope": "Web design · Responsive development",
+      "bar": "RIVET & BEAM / CONCEPT PREVIEW"
+    },
+    {
+      "number": "03 / MUSIC & CREATIVE STUDIOS",
+      "title": "AFTERHOURS",
+      "description": "A record-sleeve-inspired studio concept, pairing bold editorial type with a vinyl record that responds to hover, scroll, and tap.",
+      "scope": "Web design · Interactive motion",
+      "bar": "AFTERHOURS / STUDIO CONCEPT"
+    }
+  ],
+  "approach": {
+    "label": "02 / DESIGNED AROUND YOUR BRAND",
+    "heading": "Your brand.\nYour visual language.",
+    "intro": "Carefully selected colour palettes, considered typography, and layouts tailored to your business. Each choice starts with who you are and who you want to reach.",
+    "caption": "A quiet balance of charcoal, cool gray, soft ivory, and slate blue. Your website’s palette will be chosen for your brand’s own character."
+  },
+  "services": {
+    "label": "03 / HOW I CAN HELP",
+    "heading": "From first idea\nto a considered website.",
+    "intro": "Design and front-end development,\nwith attention to the details.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Website design",
+        "description": "A visual direction, colour palette, typography, and page layouts built around your business and its audience."
+      },
+      {
+        "number": "02",
+        "title": "Responsive development",
+        "description": "Thoughtful layouts brought to life for phones, tablets, and desktops, with clear navigation and usable interactions."
+      },
+      {
+        "number": "03",
+        "title": "Website refreshes",
+        "description": "A more considered presentation for an existing website—refining its structure, visual identity, and everyday experience."
+      }
+    ]
+  },
+  "about": {
+    "label": "04 / ABOUT ME",
+    "heading": "One creative.\nA few ways to\nbring ideas to life.",
+    "location": "BASED IN ZAMBIA\nOPEN TO REMOTE PROJECTS WORLDWIDE",
+    "paragraphs": [
+      "I’m the creative behind Tedits Studio, an independent web-design practice based in Zambia.",
+      "I enjoy bringing structure and personality together—choosing colours, typography, and layouts that help a business express itself clearly online.",
+      "Beyond web design, I make music, edit videos, and create motion graphics. Working across sound and visuals shapes how I think about rhythm, attention, and the feeling a design leaves behind.",
+      "I’m available for local projects and remote work with overseas clients. If you’re starting something new or rethinking an existing website, I’d love to hear what you have in mind."
+    ]
+  },
+  "contact": {
+    "label": "05 / LET’S MAKE SOMETHING CONSIDERED",
+    "heading": "Your next chapter\nstarts with a hello.",
+    "intro": "Tell me about your business,\nyour idea, and what comes next."
+  }
+}

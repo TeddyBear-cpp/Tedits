@@ -1,0 +1,20 @@
+/* Motion extends the approved Ink wash layout without shifting document flow. */
+.hero-rule{transform-origin:left center}
+.text-link>span,.email-link>span,.site-footer>a:last-child>span{transition:transform 220ms cubic-bezier(.2,.7,.2,1)}
+.text-link:hover>span,.text-link:focus-visible>span,.email-link:hover>span,.email-link:focus-visible>span{transform:translate(3px,-3px)}
+.hero-bottom .text-link:hover>span,.hero-bottom .text-link:focus-visible>span{transform:translate(3px,3px)}
+.site-header nav a{position:relative;transition:color 180ms}
+.site-header nav a:not(.nav-contact)::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform 240ms cubic-bezier(.2,.7,.2,1)}
+.site-header nav a:hover::after,.site-header nav a:focus-visible::after{transform:scaleX(1)}
+.project-visual{transition:transform 400ms cubic-bezier(.2,.7,.2,1),background-color 400ms}
+.project-visual>img{transition:transform 650ms cubic-bezier(.2,.7,.2,1);transform-origin:50% 15%}
+.case-study summary>span{transition:transform 200ms}
+@media(hover:hover) and (pointer:fine){
+  .project-visual:hover{transform:translateY(-5px)}
+  .project-visual:hover>img{transform:scale(1.015)}
+}
+.project-visual:focus-visible{transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){
+  .project-visual,.project-visual>img,.text-link>span,.email-link>span,.site-header nav a::after,.case-study summary>span{transition:none;transform:none}
+  .project-visual:hover,.project-visual:focus-visible,.project-visual:hover>img,.text-link:hover>span,.text-link:focus-visible>span,.email-link:hover>span,.email-link:focus-visible>span,.hero-bottom .text-link:hover>span,.hero-bottom .text-link:focus-visible>span{transform:none}
+}

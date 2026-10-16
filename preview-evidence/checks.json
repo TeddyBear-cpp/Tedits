@@ -1,0 +1,189 @@
+{
+  "results": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "images": true,
+      "anchors": true,
+      "video": [
+        {
+          "src": "videos/Violet-light-edit.mp4#t=0.1",
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "videos/Delta-Force-Edit.mp4#t=0.1",
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "videos/20Min-Edit.mp4#t=0.1",
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "videos/The_lead-prodbyTeddBear-Trimed.mp4#t=0.1",
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "videos/Spiderman-Superman.mp4#t=0.1",
+          "ready": 4,
+          "error": null
+        }
+      ],
+      "headingFont": "Syne, \"DM Sans\", sans-serif",
+      "playback": {
+        "featured": "videos/Violet-light-edit.mp4#t=0.1",
+        "frameChecks": [
+          {
+            "oneVideo": true,
+            "frameMatches": true
+          },
+          {
+            "oneVideo": true,
+            "frameMatches": true
+          },
+          {
+            "oneVideo": true,
+            "frameMatches": true
+          },
+          {
+            "oneVideo": true,
+            "frameMatches": true
+          },
+          {
+            "oneVideo": true,
+            "frameMatches": true
+          }
+        ],
+        "otherPaused": true
+      },
+      "ui": {
+        "playPause": true,
+        "keyboardSeek": true,
+        "muteWorked": true,
+        "fullscreen": true
+      },
+      "controlOverflow": false,
+      "entranceMotion": true,
+      "studioPage": {
+        "title": "Tedits Studio — Web design",
+        "overflow": false,
+        "backLink": true
+      }
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "images": true,
+      "anchors": true,
+      "video": [
+        {
+          "src": "videos/Violet-light-edit.mp4#t=0.1",
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "videos/Delta-Force-Edit.mp4#t=0.1",
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "videos/20Min-Edit.mp4#t=0.1",
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "videos/The_lead-prodbyTeddBear-Trimed.mp4#t=0.1",
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "videos/Spiderman-Superman.mp4#t=0.1",
+          "ready": 4,
+          "error": null
+        }
+      ],
+      "headingFont": "Syne, \"DM Sans\", sans-serif",
+      "playback": {
+        "featured": "videos/Violet-light-edit.mp4#t=0.1",
+        "frameChecks": [
+          {
+            "oneVideo": true,
+            "frameMatches": true
+          },
+          {
+            "oneVideo": true,
+            "frameMatches": true
+          },
+          {
+            "oneVideo": true,
+            "frameMatches": true
+          },
+          {
+            "oneVideo": true,
+            "frameMatches": true
+          },
+          {
+            "oneVideo": true,
+            "frameMatches": true
+          }
+        ],
+        "otherPaused": true
+      },
+      "ui": {
+        "playPause": true,
+        "keyboardSeek": true,
+        "muteWorked": true,
+        "fullscreen": true
+      },
+      "controlOverflow": false,
+      "entranceMotion": true,
+      "studioPage": {
+        "title": "Tedits Studio — Web design",
+        "overflow": false,
+        "backLink": true
+      }
+    }
+  ],
+  "errors": [],
+  "reducedMotion": "auto",
+  "reducedAnimations": 0,
+  "contactResults": [
+    {
+      "mockStatus": 200,
+      "message": "Thank you — your message has been sent.",
+      "detailsRetained": "",
+      "buttonEnabled": true
+    },
+    {
+      "mockStatus": 500,
+      "message": "Your message could not be sent. Your details are still here; please try again, or contact me on Instagram.",
+      "detailsRetained": "Simulated form test. Nothing is sent.",
+      "buttonEnabled": true
+    }
+  ],
+  "additionalLayouts": [
+    {
+      "width": 320,
+      "overflow": false,
+      "controlOverflow": false
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "controlOverflow": false
+    },
+    {
+      "width": 1280,
+      "overflow": false,
+      "controlOverflow": false
+    }
+  ],
+  "realMessagesSent": 0
+}

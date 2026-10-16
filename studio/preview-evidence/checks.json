@@ -1,0 +1,101 @@
+{
+  "views": [
+    {
+      "name": "small-mobile",
+      "width": 320,
+      "height": 780,
+      "overflow": false,
+      "anchors": true,
+      "projects": 3,
+      "email": true,
+      "music": true,
+      "gradient": "ink-wash"
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "anchors": true,
+      "projects": 3,
+      "email": true,
+      "music": true,
+      "gradient": "ink-wash"
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "anchors": true,
+      "projects": 3,
+      "email": true,
+      "music": true,
+      "gradient": "ink-wash"
+    },
+    {
+      "name": "laptop",
+      "width": 1280,
+      "height": 720,
+      "overflow": false,
+      "anchors": true,
+      "projects": 3,
+      "email": true,
+      "music": true,
+      "gradient": "ink-wash"
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "anchors": true,
+      "projects": 3,
+      "email": true,
+      "music": true,
+      "gradient": "ink-wash"
+    }
+  ],
+  "errors": [],
+  "failedAssets": [],
+  "paletteNames": [
+    "INK WASH",
+    "OLIVE & EMBER",
+    "RIVET & BEAM",
+    "AFTERHOURS",
+    "TEDITS / VIDEO & MOTION"
+  ],
+  "paletteWrapped": true,
+  "previousWorks": true,
+  "keyboardWorks": true,
+  "keyboardNext": true,
+  "caseStudyOpens": true,
+  "destinations": [
+    {
+      "target": "projects/catering/index.html",
+      "status": 200
+    },
+    {
+      "target": "projects/rivet-beam/index.html",
+      "status": 200
+    },
+    {
+      "target": "projects/afterhours/index.html",
+      "status": 200
+    },
+    {
+      "target": "../index.html",
+      "status": 200
+    }
+  ],
+  "afterhours": {
+    "layout": "studio",
+    "noTweaks": true,
+    "split": true,
+    "recordStarts": true,
+    "recordStops": true,
+    "preferenceChangeSafe": true,
+    "mobileOverflow": false
+  },
+  "reducedGradient": "none"
+}
