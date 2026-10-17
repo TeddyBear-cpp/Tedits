@@ -1,0 +1,24 @@
+{
+  "name": "teditstudio-cms",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev --host localhost",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "login": "sanity login",
+    "generate-seed": "node generate-seed.cjs",
+    "seed": "sanity datasets import -d production seed.ndjson --missing"
+  },
+  "dependencies": {
+    "sanity": "6.19.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "styled-components": "^6.1.19"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "@types/react": "^19.2.0"
+  }
+}

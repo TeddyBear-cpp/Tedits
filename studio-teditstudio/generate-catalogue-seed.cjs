@@ -1,0 +1,14 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const root = path.join(__dirname,'..');
+const read = file => fs.readFileSync(path.join(root,'studio/projects',file),'utf8');
+const decode = text => text.replaceAll('&amp;','&');
+const menuSource = read('catering/script.js').split(" : {")[1].split('};')[0];
+const menus = vm.runInNewContext(`({${menuSource}})`);
+const labels = ['Celebration feast','Brunch table','Everyday meals'];
+const menu = {_id:'menuCatalogue',_type:'menuCatalogue',items:Object.values(menus).map((m,i)=>({_key:`menu${i}`,_type:'menu',title:labels[i],eyebrow:m.eyebrow,heading:m.title,accent:m.accent,occasion:m.occasion,localImage:m.image,alt:m.alt,dishes:m.dishes.map(([title,description],j)=>({_key:`dish${j}`,_type:'dish',title,description}))}))};
+const material = {_id:'materialCatalogue',_type:'materialCatalogue',items:[...read('rivet-beam/index.html').matchAll(/<article class="product">([\s\S]*?)<\/article>/g)].map(([_,card],i)=>({_key:`material${i}`,_type:'material',title:decode(card.match(/<h3>(.*?)<\/h3>/)[1]),description:decode(card.match(/<\/div><p>(.*?)<\/p>/)[1]),enquiry:card.match(/data-material="(.*?)"/)[1],localImage:card.match(/<img src="(.*?)"/)[1],alt:decode(card.match(/alt="(.*?)"/)[1])}))};
+const track = {_id:'trackCatalogue',_type:'trackCatalogue',items:[...read('afterhours/index.html').matchAll(/<article class="track"[\s\S]*?<\/article>/g)].map(([card],i)=>({_key:`track${i}`,_type:'track',title:decode(card.match(/class="track-title"[^>]*>(.*?)<\/p>/)[1]),artist:'TeddyBear',genre:decode(card.match(/<small>.*? · (.*?)<\/small>/)[1]),tag:card.match(/class="tag">(.*?)<\/span>/)[1],localAudio:card.match(/<source src="(.*?)"/)[1],...(card.includes('class="sample-note"')?{note:decode(card.match(/class="sample-note">(.*?)<\/p>/)[1])}:{}),...(card.includes('spotify-link')?{spotify:card.match(/class="spotify-link" href="(.*?)"/)[1]}:{})}))};
+fs.writeFileSync(path.join(__dirname,'catalogues.ndjson'),[menu,material,track].map(JSON.stringify).join('\n')+'\n');
+console.log('Generated three catalogue documents from existing concept content.');

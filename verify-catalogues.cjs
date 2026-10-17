@@ -1,0 +1,25 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const {renderMenus,renderMaterials,renderTracks,applyCatalogues} = require('./catalogue-renderer.cjs');
+const docs = fs.readFileSync('studio-teditstudio/catalogues.ndjson','utf8').trim().split('\n').map(JSON.parse);
+const files = ['catering','rivet-beam','afterhours'];
+const renderers = [renderMenus,renderMaterials,renderTracks];
+docs.forEach((doc,i) => {
+  const html = fs.readFileSync(`studio/projects/${files[i]}/index.html`,'utf8');
+  const rendered = renderers[i](html,doc);
+  assert.ok(!rendered.includes('undefined'));
+  const edited = structuredClone(doc);
+  edited.items.reverse(); edited.items[0].title = '<img src=x onerror=alert(1)>';
+  const changed = renderers[i](html,edited);
+  assert.ok(!changed.includes('<img src=x'));
+  assert.ok(changed.includes('&lt;img src=x') || changed.includes('\\u003cimg src=x'));
+  const invalid = structuredClone(doc); invalid.items = [];
+  assert.throws(()=>renderers[i](html,invalid), /item count/);
+});
+const menus = renderMenus(fs.readFileSync('studio/projects/catering/index.html','utf8'),docs[0]);
+assert.equal((menus.match(/role="tab"/g)||[]).length,3);
+assert.ok(menus.includes('tab-menu0'));
+const bad = structuredClone(docs[2]); bad.items[0].audioUrl='https://example.com/test.mp3';
+assert.throws(()=>renderTracks(fs.readFileSync('studio/projects/afterhours/index.html','utf8'),bad),/asset URL/);
+if(process.argv.includes('--preview')) applyCatalogues('_site-video',docs);
+console.log('Catalogue rendering, reordering, escaping and validation checks passed.');

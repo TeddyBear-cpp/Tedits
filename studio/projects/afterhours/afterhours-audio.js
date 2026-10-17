@@ -7,6 +7,7 @@
   tracks.forEach(track=>{
     const audio=track.querySelector('audio'),play=track.querySelector('[data-play]'),seek=track.querySelector('[data-seek]'),mute=track.querySelector('[data-mute]'),error=track.querySelector('.track-error');
     const title=track.querySelector('.track-title').textContent;
+    const artist=track.dataset.artist || 'TeddyBear';
     const duration=()=>Number.isFinite(audio.duration)&&audio.duration>0?audio.duration:0;
     function updateTime(){
       const total=duration(),current=audio.currentTime||0;
@@ -19,7 +20,7 @@
     }
     function updatePlay(){
       const active=!audio.paused&&!audio.ended;
-      play.setAttribute('aria-pressed',String(active));play.setAttribute('aria-label',(active?'Pause ':'Play ')+title+' by TeddyBear');
+      play.setAttribute('aria-pressed',String(active));play.setAttribute('aria-label',(active?'Pause ':'Play ')+title+' by '+artist);
       play.firstElementChild.textContent=active?'Ⅱ':'▶';track.classList.toggle('is-playing',active);
     }
     function showError(message){error.hidden=false;error.textContent=message;}
@@ -32,7 +33,7 @@
       catch(exception){if(exception.name!=='AbortError')showError('This track could not play. Please try again.');}
       finally{play.removeAttribute('aria-busy');updatePlay();}
     });
-    audio.addEventListener('play',()=>{audios.forEach(other=>{if(other!==audio)other.pause();});updatePlay();status.textContent=title+' by TeddyBear is playing.';});
+    audio.addEventListener('play',()=>{audios.forEach(other=>{if(other!==audio)other.pause();});updatePlay();status.textContent=title+' by '+artist+' is playing.';});
     audio.addEventListener('pause',updatePlay);
     audio.addEventListener('ended',()=>{updatePlay();updateTime();status.textContent=title+' has finished.';});
     ['loadedmetadata','durationchange','timeupdate','seeked'].forEach(event=>audio.addEventListener(event,updateTime));

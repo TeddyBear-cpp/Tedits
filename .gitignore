@@ -1,1 +1,5 @@
 /_site-video/
+/studio-teditstudio/node_modules/
+/studio-teditstudio/dist/
+/studio-teditstudio/.sanity/
+/studio-teditstudio/.env*
