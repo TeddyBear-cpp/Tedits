@@ -1,9 +1,9 @@
-import {defineField, defineType} from 'sanity'
+import {defineField, defineType, type FieldDefinition} from 'sanity'
 
 const text = (name: string, title: string, required = true) => defineField({name, title, type: 'string', validation: r => required ? r.required().max(300) : r.max(300)})
 const image = defineField({name: 'image', title: 'Image', type: 'image', options: {hotspot: true}, fields: [text('alt', 'Image description')]})
 const choice = (name: string, title: string, values: string[]) => defineField({name, title, type: 'string', options: {list: values}, validation: r => r.required()})
-function catalogue(name: string, title: string, item: string, fields: any[], max: number) {
+function catalogue(name: string, title: string, item: string, fields: FieldDefinition[], max: number) {
   return defineType({name, title, type: 'document', fields: [defineField({name: 'items', title: 'Catalogue items', type: 'array', description: 'Drag to change display order. Publish, then rebuild the website to show changes.', validation: r => r.required().min(1).max(max), of: [{type: 'object', name: item, fields, preview: {select: {title: 'title', media: 'image'}}}]})], preview: {prepare: () => ({title})}})
 }
 export const catalogues = [
