@@ -1,4 +1,5 @@
 /* Motion extends the approved Ink wash layout without shifting document flow. */
+.studio-reveal-pending{opacity:0}
 .hero-rule{transform-origin:left center}
 .text-link>span,.email-link>span,.site-footer>a:last-child>span{transition:transform 220ms cubic-bezier(.2,.7,.2,1)}
 .text-link:hover>span,.text-link:focus-visible>span,.email-link:hover>span,.email-link:focus-visible>span{transform:translate(3px,-3px)}
@@ -15,6 +16,7 @@
 }
 .project-visual:focus-visible{transform:translateY(-3px)}
 @media(prefers-reduced-motion:reduce){
+  .studio-reveal-pending{opacity:1}
   .project-visual,.project-visual>img,.text-link>span,.email-link>span,.site-header nav a::after,.case-study summary>span{transition:none;transform:none}
   .project-visual:hover,.project-visual:focus-visible,.project-visual:hover>img,.text-link:hover>span,.text-link:focus-visible>span,.email-link:hover>span,.email-link:focus-visible>span,.hero-bottom .text-link:hover>span,.hero-bottom .text-link:focus-visible>span{transform:none}
 }

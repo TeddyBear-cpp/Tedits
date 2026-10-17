@@ -53,18 +53,43 @@ function entrance(element,delay=0) {
 }
 document.querySelectorAll('.hero-meta,h1,.hero-bottom').forEach((element,index)=>entrance(element,index*100));
 playStudioMotion(document.querySelector('.hero-rule'),[{transform:'scaleX(0)',opacity:0},{transform:'scaleX(1)',opacity:1}],{duration:900,delay:200});
-if('IntersectionObserver' in window) {
-  const observer=new IntersectionObserver(entries=>{
+let studioEntranceObserver;
+if('IntersectionObserver' in window&&!studioMotionPreference.matches) {
+  const reveals=new Map();
+  const observer=studioEntranceObserver=new IntersectionObserver(entries=>{
+    const ready=[];
     entries.forEach(entry=>{
       if(!entry.isIntersecting)return;
       observer.unobserve(entry.target);
-      const children=entry.target.matches('.project,.about-grid,.contact-bottom')?[...entry.target.children]:[entry.target];
-      children.forEach((element,index)=>entrance(element,index*90));
+      const children=reveals.get(entry.target)||[];
+      reveals.delete(entry.target);
+      children.forEach(({element,delay})=>{
+        // Stacked groups can enter while their lower children are still offscreen.
+        if(element!==entry.target&&element.getBoundingClientRect().top>=(entry.rootBounds?.bottom??innerHeight)) {
+          reveals.set(element,[{element,delay}]);
+          observer.observe(element);
+        } else ready.push({element,delay});
+      });
+    });
+    // Finish geometry reads before starting effects. Remove the pending state only
+    // after the animation owns opacity, so visible content never flashes back to zero.
+    ready.forEach(({element,delay})=>{
+      entrance(element,delay);
+      element.classList.remove('studio-reveal-pending');
     });
   },{threshold:.12});
-  document.querySelectorAll('.section-heading,.project,.approach-grid>div,.service-list article,.about-grid,.contact h2,.contact-bottom').forEach(element=>observer.observe(element));
+  document.querySelectorAll('.section-heading,.project,.approach-grid>div,.service-list article,.about-grid,.contact h2,.contact-bottom').forEach(target=>{
+    const children=target.matches('.project,.about-grid,.contact-bottom')?[...target.children]:[target];
+    reveals.set(target,children.map((element,index)=>({element,delay:index*90})));
+    children.forEach(element=>element.classList.add('studio-reveal-pending'));
+    observer.observe(target);
+  });
 }
 studioMotionPreference.addEventListener('change',event=>{
-  if(event.matches)studioAnimations.forEach(animation=>animation.cancel());
+  if(event.matches) {
+    studioEntranceObserver?.disconnect();
+    document.querySelectorAll('.studio-reveal-pending').forEach(element=>element.classList.remove('studio-reveal-pending'));
+    studioAnimations.forEach(animation=>animation.cancel());
+  }
 });
 
