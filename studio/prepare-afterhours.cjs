@@ -12,11 +12,15 @@ html=html.replace('motionInput.checked=true;','');
 html=html.replace('playing=!playing','playing=!playing;hover=false');
 html=html.replace(/motionInput\.addEventListener\('change',[^\n]*\n/,'');
 html=html.replace(/const tweaks=document\.getElementById\('tweaks'\)[^\n]*/,"document.addEventListener('keydown',e=>{if(e.key==='Escape'){playing=false;hover=false;update()}});update();");
-html=html.replace('<body data-layout="studio">','<body data-layout="studio"><div class="concept-banner"><span>FICTIONAL STUDIO · INDEPENDENT CONCEPT</span><a href="../../index.html#work">Tedits Studio portfolio ↗</a></div>');
+html=html.replace('<body data-layout="studio">','<body data-layout="studio"><div class="concept-banner"><span>FICTIONAL STUDIO · MUSIC BY TEDDYBEAR</span><a href="../../index.html#work">Tedits Studio portfolio ↗</a></div>');
 html=html.replace('<span>®</span>','');
 html=html.replace('<title>AFTERHOURS — Sound for the small hours</title>','<title>AFTERHOURS — Fictional studio concept | Tedits Studio</title><meta name="robots" content="noindex">');
 html=html.replace('DESIGN STUDY / V0','FICTIONAL STUDIO CONCEPT');
-html=html.replace('Visual draft: sample titles only. Beat audio, filters, and playback come in the next build.','Illustrative track titles only. This concept contains no playable audio or tracks for sale.');
+html=html.replace(/<section id="beats">[\s\S]*?<\/section>/,fs.readFileSync('afterhours-tracks.html','utf8').trim());
+html=html.replace('<small>ORIGINAL SOUNDS</small>','<small>TEDDYBEAR</small>');
+html=html.replace('THE SMALL HOURS COLLECTION<br>STEREO · DESIGN EDITION','TWO INSTRUMENTALS<br>LOCAL LISTENING EDITION');
+html=html.replace('</head>','<link rel="stylesheet" href="afterhours-audio.css">\n</head>');
+html=html.replace('</body>','<script src="afterhours-audio.js"></script>\n</body>');
 html=html.replace('License comparison · content pending','Illustrative licence structure');
 html=html.replace('[File formats, usage limits, and release permissions]','A place to explain file formats, permitted uses, and release limits.');
 html=html.replace('[Stems, expanded rights, and distribution details]','A place to explain stems, broader uses, and distribution terms.');
@@ -34,6 +38,9 @@ html=html.replace('.record-area{min-height:350px;padding-bottom:28px}',
 // to the vinyl rather than to the viewport. The cue stays inside the stage.
 html=html.replace('.record-stage{width:100%;max-width:555px;',
   '.record-stage{container-type:inline-size;width:100%;max-width:555px;');
+// Clip the rotating square box to the disc's circular frame, preventing
+// horizontal overflow at intermediate rotation angles on narrow screens.
+html=html.replace('.record-button{width:94%;','.record-button{overflow:hidden;width:94%;');
 html=html.replace('.orbit-note{position:absolute;top:1%;right:0;color:var(--accent);font-size:11px;',
   '.orbit-note{position:absolute;top:-12px;right:0;z-index:1;color:var(--accent);font-size:clamp(9px,2.4cqi,11px);');
 html=html.replace(/\.cue\{[^}]*\}/,

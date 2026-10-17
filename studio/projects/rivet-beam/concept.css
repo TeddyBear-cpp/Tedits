@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&display=swap');
+@font-face{font-family:'Syne';src:url('../../assets/Syne-Medium.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:'Syne';src:url('../../assets/Syne-Semibold.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'Syne';src:url('../../assets/Syne-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('concept-assets/DM-Sans-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('concept-assets/DM-Sans-Semibold.ttf') format('truetype');font-weight:600;font-display:swap}
 :root{--ink:#14212a;--paper:#f4f1ea;--amber:#d49b45;--muted:#637078;--line:#d5d4cc;--dark-line:#39444a;--light-muted:#b6bdbe;--display:'Syne','DM Sans',sans-serif;--body:'DM Sans',sans-serif}

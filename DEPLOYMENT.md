@@ -1,12 +1,14 @@
-# Video website deployment
+# Tedits websites deployment
 
 Public URL: https://teddybear-cpp.github.io/Tedits/
 
-GitHub Pages uses the `Deploy video website` Actions workflow. Pushes to main that change video-site files trigger a deployment; it can also be run manually in Actions.
+Studio portfolio: https://teddybear-cpp.github.io/Tedits/studio/
 
-`node build-video.cjs` creates `_site-video` from an explicit list of required files. Use a fresh checkout or an empty output directory. The output includes the five videos, player, form, logos and font assets. Studio, concepts, backups, source notes and test evidence are excluded.
+GitHub Pages uses the `Deploy Tedits websites` Actions workflow. Pushes to main that change website files trigger a deployment; it can also be run manually in Actions. Video and Studio retain independent homepages and styles, with reciprocal links.
 
-The production HTML removes the local preview's noindex directive and adds a canonical URL, robots.txt and sitemap.xml. The local website remains unchanged. Until the separate Studio portfolio is deployed, the web-design link opens a web-design enquiry to teditstudiozm@gmail.com. Replace this production substitution with the portfolio's public URL when available.
+Run `node build-video.cjs` followed by `node build-studio.cjs`. The first creates `_site-video` from an explicit list of video files; the second adds Studio and its three concept pages. Use a fresh checkout or an empty output directory. Only selected pages, styles, scripts and media are packaged. Backups, source notes, test evidence, Figma utilities and the original AFTERHOURS source checkout are excluded. Local HTML and CSS links are checked for missing files and exact filename case.
+
+Production homepages remove preview noindex directives and receive canonical URLs; robots.txt and sitemap.xml include both homepages. Concepts retain fictional labels and noindex so they do not appear as real businesses in search. Studio's Figma capture helper is excluded. Its favicon reuses the T and playhead paths from the supplied logo in the Ink wash palette. The video-to-Studio link is restored by the second build step.
 
 The contact form retains its existing Formspree endpoint. Automated verification simulates submissions; it does not send real enquiries or confirm mailbox delivery.
 

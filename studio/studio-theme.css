@@ -1,0 +1,82 @@
+/* Theme roles stay separate from the source colours shown in the palette gallery. */
+:root {
+  color-scheme: light;
+  --theme-surface: #ffffe3;
+  --theme-ink: #4a4a4a;
+  --theme-accent: #6d8196;
+  --hero-surface: #f2f1dd;
+  --hero-veil: #ffffe3;
+  --hero-edge: rgba(74, 74, 74, .1);
+  --hero-ink: #4a4a4a;
+}
+
+.site-header nav { margin-left: auto; }
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--theme-ink);
+  cursor: pointer;
+  transition: color 180ms, background-color 180ms, border-color 180ms;
+}
+.theme-toggle svg { width: 19px; height: 19px; }
+.theme-toggle .theme-icon-sun { display: none; }
+.theme-toggle:hover { background: color-mix(in srgb, var(--theme-ink) 7%, transparent); }
+.theme-toggle:focus-visible { outline: 2px solid var(--theme-accent); outline-offset: 4px; }
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --theme-surface: #24282c;
+  --theme-ink: #ffffe3;
+  --theme-accent: #b0c2d2;
+  --line: rgba(203, 203, 203, .24);
+  --hero-surface: #2e353d;
+  --hero-veil: #24282c;
+  --hero-edge: rgba(203, 203, 203, .14);
+  --hero-ink: #ffffe3;
+}
+:root[data-theme="dark"] body { background: var(--theme-surface); color: var(--theme-ink); }
+:root[data-theme="dark"] .studio-logo img { content: url('assets/tedits-studio-on-slate.svg'); }
+:root[data-theme="dark"] .studio-logo > span { color: var(--theme-ink); }
+:root[data-theme="dark"] .theme-toggle .theme-icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .theme-icon-sun { display: block; }
+:root[data-theme="dark"] .site-header nav a:hover,
+:root[data-theme="dark"] h1 > span,
+:root[data-theme="dark"] .hero-rule span:last-child,
+:root[data-theme="dark"] .service-list article > span { color: var(--theme-accent); }
+:root[data-theme="dark"] .nav-contact,
+:root[data-theme="dark"] .text-link { border-color: currentColor; }
+:root[data-theme="dark"] .text-link:hover { color: var(--theme-accent); border-color: var(--theme-accent); }
+:root[data-theme="dark"] a:focus-visible,
+:root[data-theme="dark"] summary:focus-visible,
+:root[data-theme="dark"] .palette-study:focus-visible,
+:root[data-theme="dark"] .palette-toolbar button:focus-visible { outline-color: var(--theme-accent); }
+:root[data-theme="dark"] .project-visual { background: #363e45; }
+:root[data-theme="dark"] .steel-visual { background: #526477; }
+:root[data-theme="dark"] .afterhours-visual { background: #363936; }
+:root[data-theme="dark"] .browser-bar { background: #30363c; color: var(--theme-ink); }
+:root[data-theme="dark"] .browser-dots { color: #a4adb5; }
+:root[data-theme="dark"] .concept-tag { color: var(--gray); }
+:root[data-theme="dark"] .palette-toolbar button { color: var(--theme-ink); }
+:root[data-theme="dark"] .palette-toolbar button:hover { background: var(--ivory); color: var(--charcoal); }
+:root[data-theme="dark"] .about { background: #30353b; }
+:root[data-theme="dark"] .contact { background: #343d46; }
+:root[data-theme="dark"] .skip { background: var(--ivory); color: var(--charcoal); }
+
+@media (max-width: 760px) {
+  .site-header { column-gap: 16px; }
+  .site-header > .studio-logo { order: 1; }
+  .site-header > .theme-toggle { order: 2; margin-left: auto; }
+  .site-header nav { order: 3; flex-basis: 100%; margin-left: 0; }
+}
+@media (max-width: 360px) {
+  .site-header .studio-logo { gap: 12px; }
+  .site-header .studio-logo > span { padding-left: 12px; letter-spacing: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { .theme-toggle { transition: none; } }

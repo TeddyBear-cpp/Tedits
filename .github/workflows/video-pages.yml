@@ -1,4 +1,4 @@
-name: Deploy video website
+name: Deploy Tedits websites
 on:
   push:
     branches: [main]
@@ -11,6 +11,12 @@ on:
       - Assets/**
       - videos/**
       - build-video.cjs
+      - build-studio.cjs
+      - studio/index.html
+      - studio/studio*.css
+      - studio/studio*.js
+      - studio/assets/**
+      - studio/projects/**
       - .github/workflows/video-pages.yml
   workflow_dispatch:
 permissions:
@@ -29,8 +35,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: actions/configure-pages@v5
-      - name: Package video site only
-        run: node build-video.cjs
+      - name: Package video site and Studio collection
+        run: |
+          node build-video.cjs
+          node build-studio.cjs
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site-video
