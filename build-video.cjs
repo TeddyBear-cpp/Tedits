@@ -15,7 +15,7 @@ const files = [
   'Assets/tedits-brand/DM-Sans-OFL.txt',
   'Assets/tedits-brand/Syne-Medium.ttf', 'Assets/tedits-brand/Syne-Semibold.ttf',
   'Assets/tedits-brand/Syne-Bold.ttf', 'Assets/tedits-brand/Syne-OFL.txt',
-  'videos/Violet-light-edit.mp4', 'videos/Delta-Force-Edit.mp4', 'videos/20Min-Edit.mp4',
+  'videos/Violet-light-edit.mp4', 'videos/Delta-Force-Edit.mp4', 'videos/20min-edit.mp4',
   'videos/The_lead-prodbyTeddBear-Trimed.mp4', 'videos/Spiderman-Superman.mp4'
 ];
 for (const file of files) {
