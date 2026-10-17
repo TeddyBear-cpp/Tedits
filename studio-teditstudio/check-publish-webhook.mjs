@@ -1,7 +1,7 @@
 import {getCliClient} from 'sanity/cli'
 import {randomUUID} from 'node:crypto'
 
-// A temporary non-routed document exercises publish notifications without editing live content.
+// Run with the Sanity CLI to exercise publish notifications without editing live content.
 const client = getCliClient({apiVersion: '2026-10-01'})
 const id = `webhook-check-${randomUUID()}`
 async function main() {

@@ -99,7 +99,7 @@ The browser check expects the initial sample menu labels and order; update it wh
 
 `node verify-live-catalogues.cjs` from the repository root compares all three live
 catalogues with published Sanity content. For an end-to-end publish check, run
-`pnpm exec sanity exec check-publish-webhook.ts --with-user-token` here after CLI
+`pnpm exec sanity exec check-publish-webhook.mjs --with-user-token` here after CLI
 login. It creates and removes a temporary, non-routed catalogue document; both events
 trigger deployments while page content stays unchanged. Confirm successful runs in
 GitHub Actions. Do not interrupt this check between creation and cleanup.
