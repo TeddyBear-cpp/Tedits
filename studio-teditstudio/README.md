@@ -63,9 +63,15 @@ browser CORS access is required for this server-side fetch from a public dataset
 For a local build without network access, use `node build-sanity.cjs --offline`.
 Network/API failures stop a normal build instead of silently deploying stale content.
 
-Publishing in Sanity does not automatically deploy GitHub Pages. Once this integration
-has been committed and deployed, run the existing **Deploy Tedits websites** GitHub
-Actions workflow after publishing content. An automated webhook is not configured.
+Publishing in Sanity automatically starts the **Deploy Tedits websites** GitHub Actions
+workflow through the enabled **Deploy Tedits published content** webhook. It listens
+to create/update/delete events for the five website document types in `production`;
+drafts and content versions are excluded. Its payload dispatches the workflow on `main`.
+The webhook stores a fine-grained GitHub token with Actions read/write access to
+`TeddyBear-cpp/Tedits` only (plus required read-only metadata). It cannot write code.
+The current token expires **November 16, 2026**; renew it in GitHub and update the
+webhook Authorization header before then. Never copy the token into this repository.
+The workflow can also be run manually in GitHub Actions.
 The separately hosted AFTERHOURS concept on chatgpt.site is not connected by this change.
 
 ## Verify / host the editor
@@ -90,5 +96,12 @@ from this directory. It does not overwrite existing documents. Do not use replac
 From the repository root, run `node verify-catalogues.cjs` for rendering and validation checks.
 After packaging and fetching published content, `node check-catalogue-browser.cjs` checks desktop/mobile menus, enquiry links and audio playback using the installed local Playwright runtime.
 The browser check expects the initial sample menu labels and order; update it when intentionally changing that sample content.
+
+`node verify-live-catalogues.cjs` from the repository root compares all three live
+catalogues with published Sanity content. For an end-to-end publish check, run
+`pnpm exec sanity exec check-publish-webhook.ts --with-user-token` here after CLI
+login. It creates and removes a temporary, non-routed catalogue document; both events
+trigger deployments while page content stays unchanged. Confirm successful runs in
+GitHub Actions. Do not interrupt this check between creation and cleanup.
 
 The integration preserves the existing page styles, keyboard tab navigation, enquiry form categories and audio transport controls. No new media downloads or dependency installs are required.
