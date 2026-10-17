@@ -8,6 +8,7 @@ on:
       - video-player.css
       - video-preview.js
       - contact.js
+      - section-navigation.js
       - Assets/**
       - videos/**
       - build-video.cjs

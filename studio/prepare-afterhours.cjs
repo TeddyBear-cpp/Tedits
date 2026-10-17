@@ -20,7 +20,7 @@ html=html.replace(/<section id="beats">[\s\S]*?<\/section>/,fs.readFileSync('aft
 html=html.replace('<small>ORIGINAL SOUNDS</small>','<small>TEDDYBEAR</small>');
 html=html.replace('THE SMALL HOURS COLLECTION<br>STEREO · DESIGN EDITION','TWO INSTRUMENTALS<br>LOCAL LISTENING EDITION');
 html=html.replace('</head>','<link rel="stylesheet" href="afterhours-audio.css">\n</head>');
-html=html.replace('</body>','<script src="afterhours-audio.js"></script>\n</body>');
+html=html.replace('</body>','<script src="afterhours-audio.js"></script><script src="../../../section-navigation.js"></script>\n</body>');
 html=html.replace('License comparison · content pending','Illustrative licence structure');
 html=html.replace('[File formats, usage limits, and release permissions]','A place to explain file formats, permitted uses, and release limits.');
 html=html.replace('[Stems, expanded rights, and distribution details]','A place to explain stems, broader uses, and distribution terms.');

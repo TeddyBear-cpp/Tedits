@@ -12,4 +12,6 @@ Production homepages remove preview noindex directives and receive canonical URL
 
 The contact form retains its existing Formspree endpoint. Automated verification simulates submissions; it does not send real enquiries or confirm mailbox delivery.
 
+All five pages use `section-navigation.js` for in-page links. Short focal blocks are centred; tall content starts near the top of the viewport. Normal fragment URLs, keyboard focus, initial deep links and reduced-motion preferences remain supported. `navigation-check.cjs` checks the visible fragment links on mobile and desktop and measures key focal blocks.
+
 To roll back, re-run a successful previous video deployment workflow, or revert the relevant deployment/source commit and push. Do not change Pages back to publishing the repository root: it contains other projects and local review artifacts.
