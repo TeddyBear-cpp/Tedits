@@ -11,6 +11,66 @@
 .hero-copy .text-link {
   margin-left: 24px;
 }
+
+/* Simple tap-through photo crossfade for weekly prep and sample menus. */
+.photo-stack { overflow: hidden; background: transparent; }
+.photo-stack-button {
+  position: relative; display: block; width: 100%; height: 100%; padding: 0;
+  border: 0; background: transparent; color: inherit; text-align: inherit; cursor: pointer;
+  isolation: isolate; -webkit-tap-highlight-color: transparent;
+}
+.photo-stack-button:focus-visible { outline: 2px solid var(--gold); outline-offset: 7px; }
+.photo-stack-images { position: absolute; inset: 0; display: block; }
+.photo-frame .photo-stack-image {
+  position: absolute; inset: 0; display: block; width: 100%; height: 100%;
+  object-fit: cover; filter: saturate(.84) blur(7px); opacity: 0;
+  transition: filter .55s ease, opacity .55s ease;
+  pointer-events: none; user-select: none;
+}
+.photo-stack-image.is-current { z-index: 2; opacity: 1; filter: saturate(.84) blur(0); }
+.photo-stack-image.is-next { z-index: 3; opacity: 0; filter: saturate(.84) blur(7px); }
+.photo-stack.is-advancing .photo-stack-image.is-current { opacity: 0; filter: saturate(.84) blur(7px); }
+.photo-stack.is-advancing .photo-stack-image.is-next { opacity: 1; filter: saturate(.84) blur(0); }
+.photo-stack-hint {
+  position: absolute; z-index: 4; right: 14px; bottom: 14px; display: inline-flex;
+  align-items: center; gap: 14px; padding: 9px 12px; color: var(--green);
+  background: var(--cream); font: 11px/1.2 var(--sans); opacity: .94;
+  transition: opacity .25s, transform .25s;
+}
+.photo-stack-hint span { font-size: 17px; }
+.photo-stack-button:hover .photo-stack-hint { opacity: 1; transform: translateY(-2px); }
+.photo-stack-day {
+  position: absolute; z-index: 4; top: 14px; left: 14px; padding: 8px 12px;
+  background: var(--cream); color: var(--green); font: 10px/1 var(--sans);
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.meal-photo .photo-stack-image { border: 0; }
+.photo-stack-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.menu-photo-button {
+  position: relative; display: block; width: 100%; height: 100%; padding: 0;
+  border: 0; background: transparent; color: inherit; text-align: left;
+}
+.menu-photo-button:focus-visible { outline: 2px solid var(--gold); outline-offset: 7px; }
+.menu-photo-button img { transition: opacity .35s ease, filter .35s ease; }
+.menu-photo.is-changing .menu-photo-button img { opacity: .12; filter: blur(5px) saturate(.84); }
+.menu-copy .eyebrow, .menu-copy h3, .menu-copy li, .menu-copy .service-action {
+  transition: opacity .26s ease, transform .26s ease;
+  transition-delay: var(--copy-delay, 0ms);
+}
+.menu-copy.is-leaving .eyebrow, .menu-copy.is-leaving h3,
+.menu-copy.is-leaving li, .menu-copy.is-leaving .service-action {
+  opacity: 0; transform: translateX(24px);
+}
+.menu-copy.is-entering .eyebrow, .menu-copy.is-entering h3,
+.menu-copy.is-entering li, .menu-copy.is-entering .service-action {
+  opacity: 0; transform: translateX(-24px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-stack-image, .photo-stack-hint, .menu-photo-button img,
+  .menu-copy .eyebrow, .menu-copy h3, .menu-copy li, .menu-copy .service-action { transition: none !important; }
+  .photo-stack-image.is-current, .photo-stack.is-advancing .photo-stack-image.is-next { filter: saturate(.84); }
+  .menu-photo.is-changing .menu-photo-button img { opacity: 1; filter: saturate(.84); }
+}
 @media (max-width: 1050px) {
   .hero-copy .text-link { margin-left: 24px; }
 }
