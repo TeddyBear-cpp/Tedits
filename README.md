@@ -6,7 +6,7 @@ The repository contains a video portfolio, a web design portfolio, and three bus
 
 ## CMS code walkthrough
 
-- `studio-teditstudio/schemaTypes/`: homepage, portfolio projects and three catalogue schemas. Catalogue arrays determine item order; menus contain nested dishes.
+- `studio-teditstudio/schemaTypes/`: homepage, portfolio projects and three catalogue schemas. Catalogue arrays determine item order; menus contain nested dishes, with optional weekday meal photos.
 - `studio-teditstudio/sanity.config.ts`: editor navigation and fixed catalogue document IDs.
 - `build-sanity.cjs`: fetches published content and applies it to the packaged website.
 - `catalogue-renderer.cjs`: validates catalogue content, escapes text, restricts media URLs and renders each concept's existing components.

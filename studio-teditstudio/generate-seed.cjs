@@ -25,7 +25,7 @@ const projects = articles.map((match, index) => {
   const concept = slugs[index];
   if (!html.includes(`projects/${concept}/index.html`)) throw new Error(`Project order changed at ${concept}`);
   return {
-    _id: `project-${concept}`, _type: 'project', concept, order: index + 1,
+    _id: `project-${concept}`, _type: 'project', concept, order: index + 1, visible: true, featured: false,
     title: extract(html, /<h3>([\s\S]*?)<\/h3>/, `${concept} title`),
     category: extract(html, /<p class="project-number">\d+ \/ ([\s\S]*?)<\/p>/, `${concept} category`),
     description: extract(html, /<span class="concept-tag">[\s\S]*?<\/span><p>([\s\S]*?)<\/p>/, `${concept} description`),

@@ -4,7 +4,7 @@ const path = require('node:path');
 const projectId = 'yjcpyptx';
 const dataset = 'production';
 const {applyCatalogues} = require('./catalogue-renderer.cjs');
-const query = '{"homepage": *[_type == "homepage" && _id == "homepage"][0], "projects": *[_type == "project"] | order(order asc, _id asc){..., "imageUrl": image.asset->url}, "catalogues": *[_id in ["menuCatalogue", "materialCatalogue", "trackCatalogue"]]{..., items[]{..., "imageUrl": image.asset->url, "audioUrl": audio.asset->url}}}';
+const query = '{"homepage": *[_type == "homepage" && _id == "homepage"][0], "projects": *[_type == "project"] | order(order asc, _id asc){..., "imageUrl": image.asset->url}, "catalogues": *[_id in ["menuCatalogue", "materialCatalogue", "trackCatalogue"]]{..., "mealDays": mealDays[]{..., "imageUrl": image.asset->url}, items[]{..., "imageUrl": image.asset->url, "audioUrl": audio.asset->url, dishes[]{...}}}}';
 const concepts = {
   catering: {style: 'catering', image: 'olive-and-ember', alt: 'Olive & Ember catering website concept'},
   'rivet-beam': {style: 'steel', image: 'rivet-and-beam', alt: 'Rivet & Beam steel website concept'},
@@ -32,7 +32,7 @@ function renderProject(project, index) {
     image = url.href;
   }
   const href = `projects/${project.concept}/index.html`;
-  return `<article class="project${index % 2 ? ' project-reverse' : ''}"><a class="project-visual ${concept.style}-visual" href="${href}" aria-label="${escape(`Open ${project.title} concept`)}"><div class="browser-bar" aria-hidden="true"><span class="browser-dots">● ● ●</span><span>${escape(project.title.toUpperCase())} / CONCEPT PREVIEW</span><span>↗</span></div><img src="${escape(image)}" alt="${escape(project.image?.alt || concept.alt)}" width="1280" height="900"${index ? ' loading="lazy"' : ''}></a><div class="project-copy"><p class="project-number">${String(index + 1).padStart(2, '0')} / ${escape(project.category.toUpperCase())}</p><h3>${escape(project.title)}</h3><span class="concept-tag">INDEPENDENT CONCEPT</span><p>${escape(project.description)}</p><p class="project-scope">${escape(project.scope)}</p><a class="text-link" href="${href}">Explore the concept <span aria-hidden="true">↗</span></a><details class="case-study"><summary>Behind the design <span aria-hidden="true">+</span></summary><div><h4>The idea</h4><p>${escape(project.idea)}</p><h4>How it took shape</h4><p>${escape(project.execution)}</p><p class="case-note">${escape(project.disclaimer)}</p></div></details></div></article>`;
+  return `<article class="project${index % 2 ? ' project-reverse' : ''}"><a class="project-visual ${concept.style}-visual" href="${href}" aria-label="${escape(`Open ${project.title} concept`)}"><div class="browser-bar" aria-hidden="true"><span class="browser-dots">● ● ●</span><span>${escape(project.title.toUpperCase())} / CONCEPT PREVIEW</span><span>↗</span></div><img src="${escape(image)}" alt="${escape(project.image?.alt || concept.alt)}" width="1280" height="900"${index ? ' loading="lazy"' : ''}></a><div class="project-copy"><p class="project-number">${String(index + 1).padStart(2, '0')} / ${escape(project.category.toUpperCase())}</p><h3>${escape(project.title)}</h3><span class="concept-tag">${project.featured === true ? 'FEATURED PROJECT' : 'INDEPENDENT CONCEPT'}</span><p>${escape(project.description)}</p><p class="project-scope">${escape(project.scope)}</p><a class="text-link" href="${href}">Explore the concept <span aria-hidden="true">↗</span></a><details class="case-study"><summary>Behind the design <span aria-hidden="true">+</span></summary><div><h4>The idea</h4><p>${escape(project.idea)}</p><h4>How it took shape</h4><p>${escape(project.execution)}</p><p class="case-note">${escape(project.disclaimer)}</p></div></details></div></article>`;
 }
 function applyContent(html, content) {
   if (content.homepage) {
@@ -49,7 +49,7 @@ function applyContent(html, content) {
       if (used.has(project.concept)) throw new Error(`Duplicate CMS concept: ${project.concept}`);
       used.add(project.concept);
     }
-    const cards = content.projects.map(renderProject).join('\n      ');
+    const cards = content.projects.filter(project => project.visible !== false).map(renderProject).join('\n      ');
     const pattern = /(<section id="work"[\s\S]*?<\/h2><\/div><p>[\s\S]*?<\/p><\/div>)\s*[\s\S]*?(\s*<\/section>)/;
     if (!pattern.test(html)) throw new Error('Portfolio work section markup changed; update the CMS renderer.');
     html = html.replace(pattern, (_match, heading, end) => `${heading}\n      ${cards}${end}`);

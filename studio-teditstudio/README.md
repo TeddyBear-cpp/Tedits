@@ -34,11 +34,10 @@ only content intended for public reading; keep credentials and private notes out
 ## Editing
 
 - **Homepage:** hero headline, introduction, and search metadata. A single fixed document.
-- **Portfolio projects:** order, business category, title, summary, services,
-  optional preview image with required alternative text, case study, and disclosure.
-- **Olive & Ember menus:** reorderable menu tabs, headings, photos and nested dishes with dietary labels.
-- **Rivet & Beam materials and promos:** reorderable cards, descriptions/specifications, photos, promo labels and enquiry categories.
-- **AFTERHOURS tracks:** reorderable tracks, artist, genre, labels, credit notes, optional Spotify links and MP3 uploads. Existing local audio can be reused without uploading.
+- **Portfolio projects:** order, visibility, featured label, business category, title, summary, services, optional preview image with required alternative text, case study, and disclosure.
+- **Olive & Ember menus:** reorderable menu tabs, headings, photos and nested dishes with dietary labels. Optional Monday–Saturday photo set controls the weekly meal-prep stack; if omitted, the page keeps its local photos.
+- **Rivet & Beam materials and promos:** reorderable cards, descriptions/specifications, photos, availability, optional promo labels and start/end dates, and enquiry categories. Promo date windows are evaluated when the site is built; a later content publish triggers another build.
+- **AFTERHOURS tracks:** reorderable tracks, artist, genre, labels, release status/date, featured label, credit notes, optional Spotify links and MP3 uploads. Existing local audio can be reused without uploading.
 - Catalogue documents use fixed IDs. Removing an item from the array removes it from the next published build; each catalogue needs at least one item.
 - Each project selects one of the three existing concept pages. Creating a new
   type of concept requires building its page and updating the allowed options and renderer.
