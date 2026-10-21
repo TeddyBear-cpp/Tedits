@@ -24,7 +24,7 @@ const base = process.argv[2] || 'http://127.0.0.1:8084/_site-video/';
         studioLink:document.querySelector('.web-design-note a').getAttribute('href')
       }));
       assert.equal(state.overflow,false); assert.ok(state.images); assert.ok(state.anchors);
-      assert.equal(state.videos,5); assert.equal(state.noindex,false);
+      assert.equal(state.videos,6); assert.equal(state.noindex,false);
       assert.equal(state.studioLink,'studio/index.html');
       await page.locator('.transport-play').first().click();
       await page.waitForFunction(() => document.querySelector('video').currentTime > 0.3);
