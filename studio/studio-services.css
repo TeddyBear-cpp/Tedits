@@ -19,7 +19,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .enquiry-intro::after{content:'';position:absolute;right:-14%;top:-35%;width:55%;aspect-ratio:1;border-radius:50%;border:1px solid var(--service-line);box-shadow:0 0 0 90px color-mix(in srgb,var(--service-ink) 2%,transparent),0 0 0 180px color-mix(in srgb,var(--service-ink) 1%,transparent);z-index:-1;pointer-events:none}
 .service-hero-meta{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .service-hero h1,.enquiry-intro h1{font:500 clamp(48px,6.4vw,100px)/.99 var(--display);letter-spacing:-.065em;margin:72px 0 80px;max-width:1120px;text-wrap:balance}
-.business-rotation{color:var(--service-accent);display:inline-block;min-width:6ch;transition:opacity 180ms ease,transform 180ms ease}
+.business-rotation{color:var(--service-accent);display:inline-grid;grid-template-columns:minmax(0,1fr);width:100%;min-width:0;vertical-align:bottom;transition:opacity 180ms ease,transform 180ms ease}
+.business-current,.business-size{grid-area:1/1;align-self:start}
+.business-size{visibility:hidden;pointer-events:none;user-select:none}
 .business-rotation.is-changing{opacity:0;transform:translateY(10px)}
 .service-hero-bottom,.enquiry-intro-bottom{display:flex;justify-content:space-between;align-items:end;gap:40px}
 .service-hero-bottom>p,.enquiry-intro-bottom>p{max-width:420px;font-size:clamp(16px,1.4vw,19px);line-height:1.6}
