@@ -18,7 +18,7 @@ Content stays in Sanity; code stays in GitHub. Draft edits are excluded from the
 
 The Studio portfolio lives at `studio/index.html`; the new pages are `studio/why-teditstudio.html` and `studio/enquire.html`. The enquiry form posts to the dedicated Formspree endpoint configured in its HTML. WhatsApp links use the supplied Zambia number. Avoid changing either destination without the owner's instruction.
 
-`studio/studio-waves.js` runs the service hero’s shared wave surface. Random ambient disturbances and pointer taps use the same damped height field, with an absorbing border. It stops offscreen, when hidden or paused, and for reduced motion. The canvas sits behind the content; links and scrolling retain their normal behaviour.
+`studio/studio-waves.js` runs the service hero’s wave surface. Ambient fronts enter from a centre beyond the top-right edge at varied speeds and widths, averaging one arrival about every four seconds with occasional early pairs. Their heights combine with a damped 2D tap simulation before lighting, so overlapping crests reinforce and troughs cancel. Tap energy is absorbed at the border. Motion stops offscreen, when hidden or paused, and for reduced motion. The canvas sits behind the content; links and scrolling retain their normal behaviour.
 
 Start the CMS with `pnpm install --frozen-lockfile` and `pnpm dev` inside `studio-teditstudio`. The project and dataset IDs are public configuration; editing requires an authorized Sanity login. To adapt this for your own project, change those IDs in the Studio configuration and build scripts.
 
