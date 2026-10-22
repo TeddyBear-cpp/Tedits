@@ -2,7 +2,7 @@
 
 [Live portfolio](https://teddybear-cpp.github.io/Tedits/studio/) · [CMS setup and content model](studio-teditstudio/README.md) · [Deployment](DEPLOYMENT.md)
 
-The repository contains a video portfolio, a web design portfolio, and three business website concepts. The concepts have editable menus, materials/promotions and music catalogues backed by Sanity.
+The repository contains a video portfolio, a web design portfolio, and four business website concepts. The concepts have editable menus, materials/promotions and music catalogues backed by Sanity.
 
 ## CMS code walkthrough
 
@@ -30,7 +30,7 @@ node preview-server.cjs
 
 Open http://127.0.0.1:8084/index.html. The server listens only on this computer and supports byte-range video requests for scrubbing. If it is already running, open the URL without starting another copy. Stop it with Ctrl+C in its terminal.
 
-The web-design cross-link opens the Studio portfolio at studio/index.html, with catering, fabrication and music concept pages.
+The web-design cross-link opens the Studio portfolio at studio/index.html, with catering, fabrication, music and soft-play hire concepts. Little Joy includes a dedicated case study and a five-page public demo.
 
 ## Preserved original
 backups/index-before-redesign.html is the exact original source; all original assets and videos remain. The local preview server blocks the backups directory. To inspect the original visually, use a private temporary copy in the project root so its relative asset paths resolve; do not publish the backup.

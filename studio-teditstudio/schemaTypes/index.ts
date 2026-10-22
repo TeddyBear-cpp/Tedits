@@ -32,6 +32,7 @@ const project = defineType({
         {title: 'Olive & Ember', value: 'catering'},
         {title: 'Rivet & Beam', value: 'rivet-beam'},
         {title: 'AFTERHOURS', value: 'afterhours'},
+        {title: 'Little Joy Play Co.', value: 'little-joy'},
       ], layout: 'radio'}, validation: (rule) => rule.required()}),
     defineField({name: 'order', title: 'Display order', type: 'number', group: 'card', initialValue: 1,
       validation: (rule) => rule.required().integer().min(1).max(99)}),

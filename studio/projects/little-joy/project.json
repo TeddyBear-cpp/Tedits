@@ -1,0 +1,15 @@
+{
+  "_id": "project-little-joy",
+  "_type": "project",
+  "concept": "little-joy",
+  "order": 4,
+  "visible": true,
+  "featured": true,
+  "title": "Little Joy Play Co.",
+  "category": "Family celebrations",
+  "description": "A playful, premium soft-play hire concept with photo-led packages, a focused five-page journey and a thoughtful booking enquiry preview.",
+  "scope": "Visual design · Responsive development · Interaction design",
+  "idea": "Parents planning a celebration need to picture the play, compare packages and understand what will fit their venue. Little Joy makes those practical decisions feel welcoming, with soft colours, generous photographs and clear details.",
+  "execution": "Soft-play arches shape the imagery, while cream, butter, peach and sage give each part of the journey its own character. A long first version became five focused pages. Package choices carry into the enquiry form; the gallery, keyboard controls and reduced-motion support make the details useful as well as playful.",
+  "disclaimer": "Self-initiated design and development concept for a fictional business. Prices, equipment and policies are illustrative. Licensed stock photographs provide inspiration, not records of client work. No commission, customer feedback or business results are claimed; the demo form sends nothing."
+}

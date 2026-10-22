@@ -19,7 +19,7 @@ in the project's API settings (credentials enabled). Do not allow wildcard origi
 
 ## Populate existing content
 
-`seed.ndjson` contains only the existing public homepage copy and three concept entries.
+`seed.ndjson` contains only the existing public homepage copy and four concept entries.
 To import it, authenticate the local CLI and run:
 
 ```sh
@@ -39,7 +39,7 @@ only content intended for public reading; keep credentials and private notes out
 - **Rivet & Beam materials and promos:** reorderable cards, descriptions/specifications, photos, availability, optional promo labels and start/end dates, and enquiry categories. Promo date windows are evaluated when the site is built; a later content publish triggers another build.
 - **AFTERHOURS tracks:** reorderable tracks, artist, genre, labels, release status/date, featured label, credit notes, optional Spotify links and MP3 uploads. Existing local audio can be reused without uploading.
 - Catalogue documents use fixed IDs. Removing an item from the array removes it from the next published build; each catalogue needs at least one item.
-- Each project selects one of the three existing concept pages. Creating a new
+- Each project selects one of the four existing concepts. Creating a new
   type of concept requires building its page and updating the allowed options and renderer.
 - Keep one published entry per concept. Duplicate selections fail the website build.
 - Changes are drafts until **Publish**. The website build requests only published content.

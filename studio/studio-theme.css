@@ -1,4 +1,6 @@
 /* Theme roles stay separate from the source colours shown in the palette gallery. */
+.little-joy-visual { background: #c8d8c0; }
+:root[data-theme="dark"] .little-joy-visual { background: #657b65; }
 :root {
   color-scheme: light;
   --theme-surface: #ffffe3;

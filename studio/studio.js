@@ -3,6 +3,7 @@ const studioPalettes = [
   {name:'OLIVE & EMBER',category:'CATERING & EVENTS / CONCEPT',colors:['#233D31','#F7F4EC','#A58E51','#657064'],caption:'Forest green, cream, and muted gold create a warm, editorial setting for food and celebrations.'},
   {name:'RIVET & BEAM',category:'STEEL & FABRICATION / CONCEPT',colors:['#14212A','#F4F1EA','#D49B45','#637078'],caption:'Deep navy and warm amber bring a practical industrial character to the material catalogue and enquiry flow.'},
   {name:'AFTERHOURS',category:'MUSIC STUDIO / CONCEPT',colors:['#191A18','#EAE6DB','#E5A34C','#AAA99F'],caption:'Warm ink, aged ivory, and amber echo a record sleeve and the atmosphere of a late-night listening session.'},
+  {name:'LITTLE JOY PLAY CO.',category:'FAMILY CELEBRATIONS / CONCEPT',colors:['#FFF9F0','#40352F','#F8E6A0','#C8D8C0'],caption:'Cream, cocoa, butter and sage make a gentle setting for little celebrations, with clear packages and a thoughtful booking journey.'},
   {name:'TEDITS / VIDEO & MOTION',category:'INDEPENDENT VIDEO-EDITING WEBSITE',colors:['#101210','#191D19','#F3F1E9','#86AD91'],caption:'Charcoal, soft ivory, and muted green give the separate video-editing site a quiet, cinematic feel.'}
 ];
 let palettePosition = 0;

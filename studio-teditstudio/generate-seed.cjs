@@ -17,7 +17,7 @@ const home = {
   seoTitle: extract(source, /<title>([\s\S]*?)<\/title>/, 'page title'),
   seoDescription: extract(source, /<meta name="description" content="([^"]*)">/, 'page description'),
 };
-const slugs = ['catering', 'rivet-beam', 'afterhours'];
+const slugs = ['catering', 'rivet-beam', 'afterhours', 'little-joy'];
 const articles = [...source.matchAll(/<article class="project(?: project-reverse)?">([\s\S]*?)<\/article>/g)];
 if (articles.length !== slugs.length) throw new Error('Portfolio project count changed; review seed generation.');
 const projects = articles.map((match, index) => {
@@ -25,7 +25,7 @@ const projects = articles.map((match, index) => {
   const concept = slugs[index];
   if (!html.includes(`projects/${concept}/index.html`)) throw new Error(`Project order changed at ${concept}`);
   return {
-    _id: `project-${concept}`, _type: 'project', concept, order: index + 1, visible: true, featured: false,
+    _id: `project-${concept}`, _type: 'project', concept, order: index + 1, visible: true, featured: concept === 'little-joy',
     title: extract(html, /<h3>([\s\S]*?)<\/h3>/, `${concept} title`),
     category: extract(html, /<p class="project-number">\d+ \/ ([\s\S]*?)<\/p>/, `${concept} category`),
     description: extract(html, /<span class="concept-tag">[\s\S]*?<\/span><p>([\s\S]*?)<\/p>/, `${concept} description`),

@@ -20,6 +20,15 @@ function collectAssets(folder) {
   }
 }
 for (const folder of ['studio/assets','studio/projects/catering/assets','studio/projects/rivet-beam/concept-assets','studio/projects/afterhours/assets']) collectAssets(folder);
+// The Little Joy case study includes a separate, complete static demo.
+function collectLittleJoy(folder) {
+  for (const entry of fs.readdirSync(path.join(root, folder), {withFileTypes:true})) {
+    const relative = `${folder}/${entry.name}`;
+    if (entry.isDirectory()) collectLittleJoy(relative);
+    else if (/\.(html|css|js|svg|png|jpe?g|webp|ttf|otf|ico)$|(?:OFL|LICENSE)\.txt$/i.test(entry.name)) files.push(relative);
+  }
+}
+collectLittleJoy('studio/projects/little-joy');
 for (const file of files) {
   const destination = path.join(out,file);
   fs.mkdirSync(path.dirname(destination), {recursive:true});
@@ -38,6 +47,12 @@ for (const concept of ['catering','rivet-beam','afterhours']) {
   let page = fs.readFileSync(filename,'utf8');
   if (!page.includes('name="robots"')) page = page.replace('</head>','<meta name="robots" content="noindex">\n</head>');
   fs.writeFileSync(filename,page);
+}
+for (const relative of files.filter(file => file.startsWith('studio/projects/little-joy/') && file.endsWith('.html'))) {
+  const filename = path.join(out, relative);
+  let page = fs.readFileSync(filename, 'utf8');
+  if (!page.includes('name="robots"')) page = page.replace('</head>', '<meta name="robots" content="noindex">\n</head>');
+  fs.writeFileSync(filename, page);
 }
 const videoIndex = path.join(out,'index.html');
 const video = fs.readFileSync(videoIndex,'utf8').replace('href="mailto:teditstudiozm@gmail.com?subject=Web%20design%20enquiry">Ask about web design','href="studio/index.html">Explore Tedits Studio');
