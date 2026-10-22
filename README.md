@@ -18,6 +18,8 @@ Content stays in Sanity; code stays in GitHub. Draft edits are excluded from the
 
 The Studio portfolio lives at `studio/index.html`; the new pages are `studio/why-teditstudio.html` and `studio/enquire.html`. The enquiry form posts to the dedicated Formspree endpoint configured in its HTML. WhatsApp links use the supplied Zambia number. Avoid changing either destination without the owner's instruction.
 
+`studio/studio-waves.js` runs the service hero’s shared wave surface. Random ambient disturbances and pointer taps use the same damped height field, with an absorbing border. It stops offscreen, when hidden or paused, and for reduced motion. The canvas sits behind the content; links and scrolling retain their normal behaviour.
+
 Start the CMS with `pnpm install --frozen-lockfile` and `pnpm dev` inside `studio-teditstudio`. The project and dataset IDs are public configuration; editing requires an authorized Sanity login. To adapt this for your own project, change those IDs in the Studio configuration and build scripts.
 
 Run `node verify-sanity.cjs` and `node verify-catalogues.cjs` from the repository root. Run `pnpm exec tsc --noEmit` and `pnpm build` inside `studio-teditstudio`. Browser checks additionally require Playwright and Edge; their runtime path currently targets the development machine.

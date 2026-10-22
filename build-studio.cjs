@@ -6,7 +6,7 @@ const out = path.join(root, '_site-video');
 if (!fs.existsSync(path.join(out, 'index.html'))) throw new Error('Run build-video.cjs first');
 const files = [
   'studio/index.html', 'studio/why-teditstudio.html', 'studio/enquire.html',
-  'studio/studio-services.css', 'studio/studio-services.js', 'studio/enquiry.js',
+  'studio/studio-services.css', 'studio/studio-services.js', 'studio/studio-waves.js', 'studio/enquiry.js',
   'studio/studio.css', 'studio/studio.js', 'studio/studio-motion.css',
   'studio/studio-theme.css', 'studio/studio-theme.js', 'studio/studio-hero.css', 'studio/studio-hero.js',
   'studio/projects/catering/index.html', 'studio/projects/catering/style.css',
