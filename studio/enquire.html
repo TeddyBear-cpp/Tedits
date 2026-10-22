@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Enquire — Tell Tedits Studio about your website</title>
+  <meta name="description" content="Tell Tedits Studio what your business needs. Get a tailored website quote or start a conversation on WhatsApp.">
+  <meta name="theme-color" content="#FFFFE3">
+  <script src="studio-theme.js"></script>
+  <link rel="icon" href="assets/studio-favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="studio.css">
+  <link rel="stylesheet" href="studio-motion.css">
+  <link rel="stylesheet" href="studio-theme.css">
+  <link rel="stylesheet" href="studio-services.css">
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap site-header">
+    <a class="studio-logo" href="index.html" aria-label="Tedits Studio home"><img src="assets/tedits-studio-on-ivory.svg" alt="Tedits" width="180" height="34"><span>STUDIO</span></a>
+    <nav aria-label="Main navigation"><a href="index.html#work">Work</a><a href="why-teditstudio.html">Why Teditstudio</a><a href="enquire.html" aria-current="page">Enquire</a><a href="https://wa.me/260766147114" class="nav-contact" target="_blank" rel="noopener noreferrer">Let’s talk <span aria-hidden="true">↗</span></a></nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Switch to dark mode"><svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.7 13.1A8.8 8.8 0 0 1 10.9 3.3a8.8 8.8 0 1 0 9.8 9.8Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l-1.4 1.4m11.4-11.4 1.4-1.4"/></svg></button>
+  </header>
+  <main id="main">
+    <section class="wrap enquiry-intro" aria-labelledby="enquiry-title"><p class="eyebrow">01 / START A PROJECT</p><h1 id="enquiry-title">Tell me what<br><span>you’re building.</span></h1><div class="enquiry-intro-bottom"><p>A few details are enough to start. I’ll read your enquiry myself and come back with a useful next step and a quote shaped around your project.</p><a class="glass-action" href="https://wa.me/260766147114" target="_blank" rel="noopener noreferrer">Prefer WhatsApp? Let’s talk <span aria-hidden="true">↗</span></a></div></section>
+    <section class="wrap enquiry-layout section" aria-label="Website enquiry">
+      <div class="enquiry-aside"><p class="eyebrow">GOOD TO KNOW</p><h2>A site for the way<br>you work.</h2><p>Basic one- or two-page business websites start at <span data-cms-price>£100</span>. Larger sites are quoted to fit the work involved.</p><dl><div><dt>Typical timing</dt><dd>I aim for <span data-cms-timeline>3–5 days</span> for a standard site once I have the content and details I need. Complex projects take longer.</dd></div><div><dt>Revisions</dt><dd><span data-cms-revisions>3</span> rounds are included before launch. Later updates are paid.</dd></div><div><dt>Hosting &amp; support</dt><dd>Hosting depends on the site. Ongoing support is available for a separate monthly charge.</dd></div></dl><p class="enquiry-email">Or email me at <a href="mailto:teditstudiozm@gmail.com">teditstudiozm@gmail.com</a></p></div>
+      <div class="enquiry-form-wrap"><p class="eyebrow">YOUR PROJECT / YOUR DETAILS</p>
+        <form id="quote-form" action="https://formspree.io/f/mbggrwra" method="POST">
+          <input type="hidden" name="_subject" value="New Tedits Studio website enquiry">
+          <div class="form-trap" aria-hidden="true"><label for="quote-gotcha">Leave this field empty</label><input id="quote-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+          <div class="enquiry-form-grid">
+            <div class="form-field"><label for="quote-name">Your name <span aria-hidden="true">*</span></label><input id="quote-name" name="name" autocomplete="name" required></div>
+            <div class="form-field"><label for="quote-email">Email address <span aria-hidden="true">*</span></label><input id="quote-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="form-field"><label for="quote-business">Business or organisation</label><input id="quote-business" name="business" autocomplete="organization"></div>
+            <div class="form-field"><label for="quote-location">Where are you based?</label><input id="quote-location" name="location" autocomplete="country-name" placeholder="Town / country"></div>
+            <div class="form-field"><label for="quote-whatsapp">WhatsApp number (optional)</label><input id="quote-whatsapp" name="whatsapp" type="tel" autocomplete="tel" placeholder="Include country code"></div>
+            <div class="form-field"><label for="quote-business-type">What kind of business?</label><select id="quote-business-type" name="business_type"><option value="">Choose one</option><option>Steel fabrication / construction</option><option>Engineering</option><option>Events / venue</option><option>Catering / food</option><option>Cosmetics / beauty</option><option>School / education</option><option>Organisation / nonprofit</option><option>Other</option></select></div>
+          </div>
+          <fieldset class="enquiry-options"><legend>What do you need? <span aria-hidden="true">*</span></legend><div class="option-grid"><label><input type="checkbox" name="needs" value="New website"><span>New website</span></label><label><input type="checkbox" name="needs" value="Website refresh"><span>Website refresh</span></label><label><input type="checkbox" name="needs" value="SEO setup"><span>SEO setup</span></label><label><input type="checkbox" name="needs" value="Google Business Profile"><span>Google Business setup</span></label><label><input type="checkbox" name="needs" value="Hosting and support"><span>Hosting / support</span></label><label><input type="checkbox" name="needs" value="Something else"><span>Something else</span></label></div><p id="needs-error" class="field-error" hidden>Please choose at least one.</p></fieldset>
+          <div class="enquiry-form-grid">
+            <div class="form-field"><label for="quote-size">Approximate size</label><select id="quote-size" name="site_size"><option value="">Not sure yet</option><option>1–2 pages</option><option>3–5 pages</option><option>6+ pages</option><option>Store / booking / transactions</option></select></div>
+            <div class="form-field"><label for="quote-timeline">When would you like to start?</label><select id="quote-timeline" name="timeline"><option value="">Flexible / not sure</option><option>As soon as possible</option><option>Within a month</option><option>In 1–3 months</option><option>Later</option></select></div>
+          </div>
+          <div class="form-field"><label for="quote-details">Tell me about the project <span aria-hidden="true">*</span></label><textarea id="quote-details" name="message" rows="7" required placeholder="What does your business do? What should the site help people find or do? Anything you already have—photos, branding, an existing website?"></textarea></div>
+          <div class="enquiry-submit"><button class="glass-action glass-action-primary" id="quote-submit" type="submit">Send enquiry <span aria-hidden="true">↗</span></button><p>I’ll use these details only to respond to your enquiry. No payment information is needed.</p></div>
+          <p id="quote-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+    <section class="service-close section" aria-labelledby="enquiry-close-title"><div class="wrap"><p class="eyebrow">MORE ABOUT THE STUDIO</p><h2 id="enquiry-close-title">Want to see how<br>I work first?</h2><a class="glass-action glass-action-primary" href="why-teditstudio.html">Why Teditstudio <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="wrap site-footer"><a class="studio-logo" href="index.html" aria-label="Tedits Studio home"><img src="assets/tedits-studio-on-ivory.svg" alt="Tedits" width="144" height="28"><span>STUDIO</span></a><p>© 2026 Tedits Studio · Zambia / Worldwide</p><a href="index.html#work">Selected work <span aria-hidden="true">↗</span></a></footer>
+  <script src="studio-services.js"></script>
+  <script src="enquiry.js"></script>
+</body>
+</html>

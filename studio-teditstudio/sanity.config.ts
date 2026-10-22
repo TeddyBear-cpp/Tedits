@@ -12,6 +12,12 @@ export default defineConfig({
       S.listItem().title('Homepage').child(
         S.document().schemaType('homepage').documentId('homepage')
       ),
+      S.listItem().title('Why Teditstudio').child(
+        S.document().schemaType('whyPage').documentId('whyPage')
+      ),
+      S.listItem().title('Enquiry page').child(
+        S.document().schemaType('enquiryPage').documentId('enquiryPage')
+      ),
       S.listItem().title('Portfolio projects').child(
         S.documentTypeList('project').title('Portfolio projects').defaultOrdering([
           {field: 'order', direction: 'asc'},
@@ -24,8 +30,8 @@ export default defineConfig({
   })],
   schema: {types: schemaTypes},
   document: {
-    newDocumentOptions: (options) => options.filter((option) => !['homepage', 'menuCatalogue', 'materialCatalogue', 'trackCatalogue'].includes(option.templateId)),
-    actions: (actions, context) => ['homepage', 'menuCatalogue', 'materialCatalogue', 'trackCatalogue'].includes(context.schemaType)
+    newDocumentOptions: (options) => options.filter((option) => !['homepage', 'whyPage', 'enquiryPage', 'menuCatalogue', 'materialCatalogue', 'trackCatalogue'].includes(option.templateId)),
+    actions: (actions, context) => ['homepage', 'whyPage', 'enquiryPage', 'menuCatalogue', 'materialCatalogue', 'trackCatalogue'].includes(context.schemaType)
       ? actions.filter((action) => !['delete', 'duplicate', 'unpublish'].includes(action.action || ''))
       : actions,
   },

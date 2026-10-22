@@ -34,6 +34,8 @@ only content intended for public reading; keep credentials and private notes out
 ## Editing
 
 - **Homepage:** hero headline, introduction, and search metadata. A single fixed document.
+- **Why Teditstudio:** rotating business examples, hero introduction, problem and benefit lists, process steps, starting price, revision count, timeline and search metadata. A single fixed document.
+- **Enquiry page:** introduction and search metadata. The quote form fields and Formspree destination live in `../studio/enquire.html` so the published CMS cannot change where enquiries are sent.
 - **Portfolio projects:** order, visibility, featured label, business category, title, summary, services, optional preview image with required alternative text, case study, and disclosure.
 - **Olive & Ember menus:** reorderable menu tabs, headings, photos and nested dishes with dietary labels. Optional Monday–Saturday photo set controls the weekly meal-prep stack; if omitted, the page keeps its local photos.
 - **Rivet & Beam materials and promos:** reorderable cards, descriptions/specifications, photos, availability, optional promo labels and start/end dates, and enquiry categories. Promo date windows are evaluated when the site is built; a later content publish triggers another build.

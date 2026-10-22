@@ -9,7 +9,9 @@
     "deploy": "sanity deploy",
     "login": "sanity login",
     "generate-seed": "node generate-seed.cjs",
-    "seed": "sanity datasets import -d production seed.ndjson --missing"
+    "seed": "sanity datasets import -d production seed.ndjson --missing",
+    "generate-services-seed": "node generate-services-seed.cjs",
+    "seed-services": "node generate-services-seed.cjs && sanity datasets import -d production service-pages.ndjson --missing"
   },
   "dependencies": {
     "sanity": "6.19.0",

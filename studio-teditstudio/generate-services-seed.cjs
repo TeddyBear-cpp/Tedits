@@ -1,0 +1,7 @@
+const fs = require('node:fs')
+const path = require('node:path')
+const file = path.join(__dirname, 'service-pages.json')
+const documents = JSON.parse(fs.readFileSync(file, 'utf8'))
+const output = path.join(__dirname, 'service-pages.ndjson')
+fs.writeFileSync(output, documents.map(document => JSON.stringify(document)).join('\n') + '\n')
+console.log(`Wrote ${documents.length} service page documents to ${output}`)

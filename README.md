@@ -2,18 +2,21 @@
 
 [Live portfolio](https://teddybear-cpp.github.io/Tedits/studio/) · [CMS setup and content model](studio-teditstudio/README.md) · [Deployment](DEPLOYMENT.md)
 
-The repository contains a video portfolio, a web design portfolio, and four business website concepts. The concepts have editable menus, materials/promotions and music catalogues backed by Sanity.
+The repository contains a video portfolio, a web design portfolio, a Why Teditstudio page, an enquiry page, and four business website concepts. The concepts have editable menus, materials/promotions and music catalogues backed by Sanity.
 
 ## CMS code walkthrough
 
 - `studio-teditstudio/schemaTypes/`: homepage, portfolio projects and three catalogue schemas. Catalogue arrays determine item order; menus contain nested dishes, with optional weekday meal photos.
 - `studio-teditstudio/sanity.config.ts`: editor navigation and fixed catalogue document IDs.
 - `build-sanity.cjs`: fetches published content and applies it to the packaged website.
+- `service-page-renderer.cjs`: applies published service-page copy, examples and offer details to the two new pages.
 - `catalogue-renderer.cjs`: validates catalogue content, escapes text, restricts media URLs and renders each concept's existing components.
 - `studio/projects/`: source templates, styles and interactive controls.
 - `.github/workflows/video-pages.yml`: builds and deploys to GitHub Pages.
 
 Content stays in Sanity; code stays in GitHub. Draft edits are excluded from the public build. An absent catalogue uses the source template; invalid published data or an API failure stops deployment.
+
+The Studio portfolio lives at `studio/index.html`; the new pages are `studio/why-teditstudio.html` and `studio/enquire.html`. The enquiry form posts to the dedicated Formspree endpoint configured in its HTML. WhatsApp links use the supplied Zambia number. Avoid changing either destination without the owner's instruction.
 
 Start the CMS with `pnpm install --frozen-lockfile` and `pnpm dev` inside `studio-teditstudio`. The project and dataset IDs are public configuration; editing requires an authorized Sanity login. To adapt this for your own project, change those IDs in the Studio configuration and build scripts.
 

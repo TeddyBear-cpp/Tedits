@@ -1,5 +1,6 @@
 import {defineField, defineType} from 'sanity'
 import {catalogues} from './catalogues'
+import {servicePages} from './servicePages'
 
 const requiredText = (name: string, title: string, max: number) => defineField({
   name, title, type: 'string', validation: (rule) => rule.required().max(max),
@@ -61,4 +62,4 @@ const project = defineType({
   preview: {select: {title: 'title', subtitle: 'category', media: 'image'}},
 })
 
-export const schemaTypes = [homepage, project, ...catalogues]
+export const schemaTypes = [homepage, project, ...catalogues, ...servicePages]

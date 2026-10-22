@@ -3,12 +3,14 @@
 Public URL: https://teddybear-cpp.github.io/Tedits/
 
 Studio portfolio: https://teddybear-cpp.github.io/Tedits/studio/
+Why Teditstudio: https://teddybear-cpp.github.io/Tedits/studio/why-teditstudio.html
+Enquiry: https://teddybear-cpp.github.io/Tedits/studio/enquire.html
 
 GitHub Pages uses the `Deploy Tedits websites` Actions workflow. Pushes to main that change website files trigger a deployment; it can also be run manually in Actions. Video and Studio retain independent homepages and styles, with reciprocal links.
 
 Run `node build-video.cjs` followed by `node build-studio.cjs`. The first creates `_site-video` from an explicit list of video files; the second adds Studio and its four concepts, including the Little Joy case study and five-page demo. Use a fresh checkout or an empty output directory. Only selected pages, styles, scripts and media are packaged. Backups, source notes, test evidence, Figma utilities and the original AFTERHOURS source checkout are excluded. Local HTML and CSS links are checked for missing files and exact filename case.
 
-Then run `node build-sanity.cjs` to apply published Sanity homepage, portfolio and catalogue content to the packaged pages. An empty dataset preserves the checked-in defaults. API/network errors fail the build; use `--offline` only for deliberate local fallback builds. The Sanity publish webhook automatically dispatches the deployment workflow on `main`; drafts do not trigger it. See `studio-teditstudio/README.md` for setup, verification and deployment-token renewal (current expiration: November 16, 2026).
+Then run `node build-sanity.cjs` to apply published Sanity homepage, portfolio, service-page and catalogue content to the packaged pages. An empty dataset preserves the checked-in defaults. API/network errors fail the build; use `--offline` only for deliberate local fallback builds. The Sanity publish webhook automatically dispatches the deployment workflow on `main`; drafts do not trigger it. See `studio-teditstudio/README.md` for setup, verification and deployment-token renewal (current expiration: November 16, 2026).
 
 Production homepages remove preview noindex directives and receive canonical URLs; robots.txt and sitemap.xml include both homepages. Concepts retain fictional labels and noindex so they do not appear as real businesses in search. Studio's Figma capture helper is excluded. Its favicon reuses the T and playhead paths from the supplied logo in the Ink wash palette. The video-to-Studio link is restored by the second build step.
 

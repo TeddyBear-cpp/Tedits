@@ -4,7 +4,8 @@ const path = require('node:path');
 const projectId = 'yjcpyptx';
 const dataset = 'production';
 const {applyCatalogues} = require('./catalogue-renderer.cjs');
-const query = '{"homepage": *[_type == "homepage" && _id == "homepage"][0], "projects": *[_type == "project"] | order(order asc, _id asc){..., "imageUrl": image.asset->url}, "catalogues": *[_id in ["menuCatalogue", "materialCatalogue", "trackCatalogue"]]{..., "mealDays": mealDays[]{..., "imageUrl": image.asset->url}, items[]{..., "imageUrl": image.asset->url, "audioUrl": audio.asset->url, dishes[]{...}}}}';
+const {applyServicePages} = require('./service-page-renderer.cjs');
+const query = '{"homepage": *[_type == "homepage" && _id == "homepage"][0], "whyPage": *[_type == "whyPage" && _id == "whyPage"][0], "enquiryPage": *[_type == "enquiryPage" && _id == "enquiryPage"][0], "projects": *[_type == "project"] | order(order asc, _id asc){..., "imageUrl": image.asset->url}, "catalogues": *[_id in ["menuCatalogue", "materialCatalogue", "trackCatalogue"]]{..., "mealDays": mealDays[]{..., "imageUrl": image.asset->url}, items[]{..., "imageUrl": image.asset->url, "audioUrl": audio.asset->url, dishes[]{...}}}}';
 const concepts = {
   catering: {style: 'catering', image: 'olive-and-ember', alt: 'Olive & Ember catering website concept'},
   'rivet-beam': {style: 'steel', image: 'rivet-and-beam', alt: 'Rivet & Beam steel website concept'},
@@ -74,6 +75,7 @@ async function main() {
   const html = fs.readFileSync(filename, 'utf8');
   fs.writeFileSync(filename, applyContent(html, result));
   applyCatalogues(path.join(__dirname, '_site-video'), result.catalogues);
+  applyServicePages(path.join(__dirname, '_site-video'), result);
   console.log(`Sanity: ${(result.catalogues || []).length} published catalogues.`);
   console.log(`Sanity: ${result.homepage ? 'homepage' : 'default homepage'}, ${result.projects.length} published projects${result.projects.length ? '' : ' (using checked-in project cards)'}.`);
 }

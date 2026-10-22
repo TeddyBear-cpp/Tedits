@@ -15,9 +15,13 @@ on:
       - build-studio.cjs
       - build-sanity.cjs
       - catalogue-renderer.cjs
+      - service-page-renderer.cjs
       - studio/index.html
+      - studio/why-teditstudio.html
+      - studio/enquire.html
       - studio/studio*.css
       - studio/studio*.js
+      - studio/enquiry.js
       - studio/assets/**
       - studio/projects/**
       - .github/workflows/video-pages.yml
