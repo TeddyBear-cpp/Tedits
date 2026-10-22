@@ -180,7 +180,8 @@ initGallery();
 // A little depth inside the photograph frames; the page itself scrolls normally.
 function initPhotoMotion() {
   const images = [...document.querySelectorAll('.hero-photo img, .offer-photo img, .home-about img, .gallery-item > img')];
-  if (!images.length) return;
+  const decorations = [...document.querySelectorAll('.joy-decor')].map(layer => ({layer, frame: layer.parentElement, shapes: [...layer.querySelectorAll('.joy-shape')]}));
+  if (!images.length && !decorations.length) return;
   const photos = images.map(image => {
     if (image.parentElement.matches('.gallery-item')) {
       const frame = document.createElement('div');
@@ -203,18 +204,34 @@ function initPhotoMotion() {
       const distance = Math.min(18, bounds.height * .025);
       return {image: photo.image, y: bounds.height ? progress * distance : 0};
     });
+    const shapePositions = decorations.filter(group => visible.has(group.frame)).flatMap(group => {
+      const bounds = group.frame.getBoundingClientRect();
+      const progress = Math.max(-1, Math.min(1, (innerHeight / 2 - bounds.top - bounds.height / 2) / ((innerHeight + bounds.height) / 2)));
+      const distance = innerWidth <= 600 ? 8 : 16;
+      return group.shapes.map(shape => ({shape, y: progress * distance * Number(shape.dataset.depth)}));
+    });
     positions.forEach(({image, y}) => image.style.setProperty('--photo-y', `${y.toFixed(2)}px`));
+    shapePositions.forEach(({shape, y}) => { shape.style.translate = `0 ${y.toFixed(2)}px`; });
   }
   function schedule() {
     if (!motionPreference.matches && !pending) pending = requestAnimationFrame(update);
   }
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target));
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          visible.add(entry.target);
+          decorations.find(group => group.frame === entry.target)?.layer.classList.add('has-entered');
+        } else visible.delete(entry.target);
+      });
       schedule();
     }, {rootMargin: '40px'});
     photos.forEach(photo => observer.observe(photo.frame));
-  } else photos.forEach(photo => visible.add(photo.frame));
+    decorations.forEach(group => observer.observe(group.frame));
+  } else {
+    photos.forEach(photo => visible.add(photo.frame));
+    decorations.forEach(group => { visible.add(group.frame); group.layer.classList.add('has-entered'); });
+  }
   addEventListener('scroll', schedule, {passive: true});
   addEventListener('resize', schedule, {passive: true});
   addEventListener('pageshow', schedule);
@@ -224,6 +241,7 @@ function initPhotoMotion() {
     if (pending) cancelAnimationFrame(pending);
     pending = 0;
     photos.forEach(({image}) => image.style.removeProperty('--photo-y'));
+    decorations.forEach(group => group.shapes.forEach(shape => { shape.style.translate = ''; }));
     schedule();
   });
   schedule();

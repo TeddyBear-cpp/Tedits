@@ -43,3 +43,34 @@ body[data-page="packages"] .packages,body[data-page="gallery"] .gallery{padding-
  .gallery-item>span>span{transition:translate 220ms var(--ease)}
  .gallery-item:hover>span>span{translate:0 -3px}
 }
+
+/* Pastel play shapes are an isolated, non-interactive background layer. */
+.hero,.home-offers,.packages{position:relative;isolation:isolate}
+.home-offers,.packages{overflow:clip}
+.joy-decor{position:absolute;inset:0;z-index:-1;pointer-events:none;user-select:none;overflow:clip}
+.joy-shape{position:absolute;display:block;width:32px;height:32px;color:var(--peach);pointer-events:none}
+.joy-shape svg{display:block;width:100%;height:100%;fill:currentColor;overflow:visible}
+.joy-decor--hero .shape-circle{left:1.2%;top:13%;width:36px;height:36px;color:var(--peach)}
+.joy-decor--hero .shape-blob{left:43%;top:1%;width:76px;height:70px;color:var(--lavender);--shape-turn:-7deg}
+.joy-decor--hero .shape-ring{left:45%;bottom:12%;width:28px;height:28px;color:var(--sage)}
+.joy-decor--offers .shape-circle{left:1.2%;top:17%;width:25px;height:25px;color:var(--cream)}
+.joy-decor--offers .shape-spark{right:.8%;top:35%;width:34px;height:34px;color:var(--cream);--shape-turn:-9deg}
+.joy-decor--offers .shape-blob{left:47%;bottom:1.8%;width:46px;height:32px;color:var(--butter)}
+.joy-decor--packages .shape-circle{left:1.2%;top:22%;width:29px;height:29px;color:var(--cream)}
+.joy-decor--packages .shape-spark{right:.9%;top:35%;width:31px;height:31px;color:var(--cream);--shape-turn:-9deg}
+.joy-decor--packages .shape-blob{right:12%;bottom:22px;width:45px;height:31px;color:var(--butter)}
+@media(prefers-reduced-motion:no-preference){
+ .joy-decor.has-entered .joy-shape svg{animation:joy-shape-drift 4600ms cubic-bezier(.45,0,.55,1) 1 both}
+ @keyframes joy-shape-drift{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(3px,-8px) rotate(var(--shape-turn,7deg))}}
+}
+@media(max-width:600px){
+ .joy-decor--hero .shape-circle{left:auto;right:24px;top:8px;width:22px;height:22px}
+ .joy-decor--hero .shape-blob{left:auto;right:25px;top:auto;bottom:0;width:45px;height:28px}
+ .joy-decor--hero .shape-ring{left:20px;bottom:22px;width:24px;height:24px}
+ .joy-decor--offers .shape-circle{left:auto;right:28px;top:17px;width:24px;height:24px}
+ .joy-decor--offers .shape-spark{right:auto;left:24px;top:auto;bottom:17px;width:26px;height:26px}
+ .joy-decor--offers .shape-blob,.joy-decor--packages .shape-blob{display:none}
+ .joy-decor--packages .shape-circle{left:auto;right:22px;top:14px;width:24px;height:24px}
+ .joy-decor--packages .shape-spark{right:auto;left:14px;top:auto;bottom:25px;width:26px;height:26px}
+}
+@media(prefers-reduced-motion:reduce){.joy-shape{translate:none!important}.joy-shape svg{animation:none!important;transform:none!important}}
