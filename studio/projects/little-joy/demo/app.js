@@ -177,6 +177,59 @@ lightbox.addEventListener('close', () => {
 }
 initGallery();
 
+// A little depth inside the photograph frames; the page itself scrolls normally.
+function initPhotoMotion() {
+  const images = [...document.querySelectorAll('.hero-photo img, .offer-photo img, .home-about img, .gallery-item > img')];
+  if (!images.length) return;
+  const photos = images.map(image => {
+    if (image.parentElement.matches('.gallery-item')) {
+      const frame = document.createElement('div');
+      frame.className = 'gallery-photo';
+      image.before(frame);
+      frame.append(image);
+    }
+    image.classList.add('motion-image');
+    return {image, frame: image.parentElement};
+  });
+  const visible = new Set();
+  let pending = 0;
+  function update() {
+    pending = 0;
+    if (motionPreference.matches) return;
+    // Read every frame before writing styles, to keep scrolling responsive.
+    const positions = photos.filter(photo => visible.has(photo.frame)).map(photo => {
+      const bounds = photo.frame.getBoundingClientRect();
+      const progress = Math.max(-1, Math.min(1, (innerHeight / 2 - bounds.top - bounds.height / 2) / ((innerHeight + bounds.height) / 2)));
+      const distance = Math.min(18, bounds.height * .025);
+      return {image: photo.image, y: bounds.height ? progress * distance : 0};
+    });
+    positions.forEach(({image, y}) => image.style.setProperty('--photo-y', `${y.toFixed(2)}px`));
+  }
+  function schedule() {
+    if (!motionPreference.matches && !pending) pending = requestAnimationFrame(update);
+  }
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target));
+      schedule();
+    }, {rootMargin: '40px'});
+    photos.forEach(photo => observer.observe(photo.frame));
+  } else photos.forEach(photo => visible.add(photo.frame));
+  addEventListener('scroll', schedule, {passive: true});
+  addEventListener('resize', schedule, {passive: true});
+  addEventListener('pageshow', schedule);
+  images.forEach(image => image.addEventListener('load', schedule, {once: true}));
+  document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', schedule));
+  motionPreference.addEventListener('change', () => {
+    if (pending) cancelAnimationFrame(pending);
+    pending = 0;
+    photos.forEach(({image}) => image.style.removeProperty('--photo-y'));
+    schedule();
+  });
+  schedule();
+}
+initPhotoMotion();
+
 // Reveals progressively enhance visible content, without hiding the no-script page.
 if (!motionPreference.matches && 'IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {
