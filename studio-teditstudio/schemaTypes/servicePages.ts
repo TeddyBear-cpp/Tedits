@@ -28,8 +28,8 @@ const whyPage = defineType({
   ],
   fields: [
     defineField({name: 'businessExamples', title: 'Rotating business examples', type: 'array', of: [{type: 'string'}], group: 'hero',
-      description: 'Include the article in each example, such as “a caterer” or “an engineering firm”.',
-      validation: rule => rule.required().min(2).max(15)}),
+      description: 'Use a phrase that follows “looking for”, such as “a caterer”, “an engineering firm”, or “accommodation”.',
+      validation: rule => rule.required().min(2).max(24)}),
     defineField({name: 'heroDescription', title: 'Hero introduction', type: 'text', rows: 3, group: 'hero',
       validation: rule => rule.required().max(500)}),
     defineField({name: 'problemIntro', title: 'Problem introduction', type: 'text', rows: 2, group: 'story',
