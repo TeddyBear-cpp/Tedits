@@ -1,4 +1,4 @@
-// Add the independent Studio homepage and its three concept pages to Pages.
+// Add the independent Studio homepage and its concept pages to Pages.
 const fs = require('node:fs');
 const path = require('node:path');
 const root = __dirname;
@@ -23,7 +23,7 @@ function collectAssets(folder) {
   }
 }
 for (const folder of ['studio/assets','studio/projects/catering/assets','studio/projects/rivet-beam/concept-assets','studio/projects/afterhours/assets']) collectAssets(folder);
-// The Little Joy case study includes a separate, complete static demo.
+// Complete static concepts include their own page, styles, scripts and assets.
 function collectLittleJoy(folder) {
   for (const entry of fs.readdirSync(path.join(root, folder), {withFileTypes:true})) {
     const relative = `${folder}/${entry.name}`;
@@ -32,6 +32,7 @@ function collectLittleJoy(folder) {
   }
 }
 collectLittleJoy('studio/projects/little-joy');
+collectLittleJoy('studio/projects/tedeats');
 for (const file of files) {
   const destination = path.join(out,file);
   fs.mkdirSync(path.dirname(destination), {recursive:true});
@@ -52,7 +53,7 @@ for (const page of ['why-teditstudio.html', 'enquire.html']) {
   fs.writeFileSync(filename, content);
 }
 // Concepts stay accessible from the portfolio without posing as real businesses in search.
-for (const concept of ['catering','rivet-beam','afterhours']) {
+for (const concept of ['catering','rivet-beam','afterhours','tedeats']) {
   const filename = path.join(out,`studio/projects/${concept}/index.html`);
   let page = fs.readFileSync(filename,'utf8');
   if (!page.includes('name="robots"')) page = page.replace('</head>','<meta name="robots" content="noindex">\n</head>');

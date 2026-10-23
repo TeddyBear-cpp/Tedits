@@ -17,7 +17,7 @@ const home = {
   seoTitle: extract(source, /<title>([\s\S]*?)<\/title>/, 'page title'),
   seoDescription: extract(source, /<meta name="description" content="([^"]*)">/, 'page description'),
 };
-const slugs = ['catering', 'rivet-beam', 'afterhours', 'little-joy'];
+const slugs = ['catering', 'rivet-beam', 'afterhours', 'little-joy', 'tedeats'];
 const articles = [...source.matchAll(/<article class="project(?: project-reverse)?">([\s\S]*?)<\/article>/g)];
 if (articles.length !== slugs.length) throw new Error('Portfolio project count changed; review seed generation.');
 const projects = articles.map((match, index) => {

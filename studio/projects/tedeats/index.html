@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#B92236">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Tedeats Events: an invitation to gather. A fictional event planning and hosting concept by Tedits Studio.">
+  <title>Tedeats Events — Consider this your invitation</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/display.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/body.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="motion.css">
+  <script src="app.js" defer></script>
+  <script src="motion.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header frame">
+    <a class="wordmark" href="#top" aria-label="Tedeats Events home">Tedeats Events</a>
+    <button class="menu-toggle" type="button" aria-controls="navigation" aria-expanded="false">Menu</button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="#occasions">Occasions</a>
+      <a href="#planning">Planning</a>
+      <a href="#about">About</a>
+      <a class="button button-light" href="#enquire">Plan your event</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero frame" id="top" aria-labelledby="hero-title">
+      <div class="invitation-cover">
+        <div class="invitation-copy">
+          <h1 id="hero-title">Consider this<br>your invitation.</h1>
+          <p>Event planning and hosting for celebrations, launches and gatherings.</p>
+          <a class="button" href="#enquire">Plan your event<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+        </div>
+        <figure class="hero-photograph"><img src="assets/hero-dinner.webp" width="1536" height="1024" fetchpriority="high" alt="Friends raising their glasses around a candlelit table with cherry red flowers"></figure>
+      </div>
+      <div class="hero-note"><p>A reason to celebrate.<br>A place to come together.</p><a href="#occasions">Open the invitation<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15m-6-6 6 6 6-6"/></svg></a></div>
+    </section>
+
+    <section id="occasions" class="envelope-scene scene" data-scene="invitation" data-options='{"hold":2}' aria-labelledby="occasions-title">
+      <div class="scene-stage">
+        <div class="envelope-layout frame">
+          <div class="envelope-copy">
+            <h2 id="occasions-title">Every gathering<br>has a story.</h2>
+            <p>A table for your favourite people. An evening to mark something new. A celebration you wish could last a little longer.</p>
+            <p>We plan the details and host the day, so you can be part of it.</p>
+          </div>
+          <div class="envelope-stage" aria-label="An invitation opens to reveal three kinds of gathering">
+            <div class="envelope-back" aria-hidden="true"></div>
+            <div class="envelope-flap" aria-hidden="true"></div>
+            <figure class="invitation-photo" data-photo="0"><img src="assets/hero-dinner.webp" width="1536" height="1024" loading="lazy" alt="A long dinner table set for an intimate celebration"><figcaption>Dinners with your favourite people</figcaption></figure>
+            <figure class="invitation-photo" data-photo="1"><img src="assets/garden-celebration.webp" width="1536" height="1024" loading="lazy" alt="Guests gathering in a garden beneath strings of lights"><figcaption>Celebrations worth coming together for</figcaption></figure>
+            <figure class="invitation-photo" data-photo="2"><img src="assets/brand-launch.webp" width="1536" height="1024" loading="lazy" alt="A contemporary brand launch with guests, red flowers and drinks"><figcaption>New beginnings, beautifully introduced</figcaption></figure>
+            <div class="envelope-pocket" aria-hidden="true"></div>
+            <span class="envelope-seal" aria-hidden="true">T</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gatherings" class="gatherings frame section-space" aria-labelledby="gatherings-title">
+      <div class="section-heading"><h2 id="gatherings-title" data-reveal>Find your kind<br>of gathering.</h2><p data-reveal>Start with the occasion. We’ll bring the planning, styling and hosting together around it.</p></div>
+      <div class="occasion-composer">
+        <figure class="occasion-image" data-reveal><img id="occasion-image" src="assets/garden-celebration.webp" width="1536" height="1024" loading="lazy" alt="An outdoor celebration with friends and family"><figcaption id="occasion-caption">A celebration with your people at its heart.</figcaption></figure>
+        <div class="occasion-selection" data-reveal>
+          <fieldset class="occasion-options"><legend>What are you planning?</legend>
+            <label><input type="radio" name="occasion-preview" value="celebration" checked><span>Celebrations</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></label>
+            <label><input type="radio" name="occasion-preview" value="wedding"><span>Weddings</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></label>
+            <label><input type="radio" name="occasion-preview" value="launch"><span>Brand launches</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></label>
+            <label><input type="radio" name="occasion-preview" value="corporate"><span>Company gatherings</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></label>
+          </fieldset>
+          <div class="occasion-detail" aria-live="polite" aria-atomic="true"><h3 id="occasion-name">Just your people.</h3><p id="occasion-description">Birthdays, milestones and just-because evenings. A setting that feels like you, a considered guest experience and a day you can enjoy.</p><p id="occasion-includes">Planning, styling, supplier coordination and event-day hosting.</p></div>
+          <a class="text-link" id="occasion-cta" href="#enquire">Plan a celebration<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="planning" class="journey section-space" aria-labelledby="planning-title">
+      <div class="journey-heading frame"><h2 id="planning-title" data-reveal>From hello<br>to the last dance.</h2><p data-reveal>A clear plan. Room for the unexpected.</p></div>
+      <div class="journey-map frame">
+        <svg class="journey-route" viewBox="0 0 1000 1500" preserveAspectRatio="none" aria-hidden="true"><path id="planning-path" d="M 500 40 C 800 180 800 300 500 410 S 180 660 500 780 S 820 1050 500 1160 S 240 1350 500 1460"/><path class="journey-progress" d="M 500 40 C 800 180 800 300 500 410 S 180 660 500 780 S 820 1050 500 1160 S 240 1350 500 1460"/></svg>
+        <div class="bouquet-traveller" aria-hidden="true"><img src="assets/bouquet.png" width="600" height="720" loading="lazy" alt=""></div>
+        <article class="journey-stop" data-stop="0"><h3>Tell us<br>your idea</h3><p>The occasion, your people, the feeling. We start by listening to what matters to you.</p></article>
+        <article class="journey-stop" data-stop="1"><h3>Shape<br>the occasion</h3><p>A setting, a plan and the right details. We shape the look, guest experience and budget together.</p></article>
+        <article class="journey-stop" data-stop="2"><h3>Bring it<br>together</h3><p>Suppliers, styling and the running order. We take care of the moving parts and keep you in the loop.</p></article>
+        <article class="journey-stop" data-stop="3"><h3>Enjoy<br>your event</h3><p>We host. You make the memories. A warm welcome and thoughtful timing, right through to the goodbyes.</p></article>
+        <figure class="journey-photo journey-photo-left" aria-hidden="true"><img src="assets/planning-hands.webp" width="1536" height="1024" loading="lazy" alt=""></figure>
+        <figure class="journey-photo journey-photo-right" aria-hidden="true"><img src="assets/hero-dinner.webp" width="1536" height="1024" loading="lazy" alt=""></figure>
+        <figure class="journey-photo journey-photo-bottom" aria-hidden="true"><img src="assets/garden-celebration.webp" width="1536" height="1024" loading="lazy" alt=""></figure>
+      </div>
+      <div class="journey-end frame"><a class="button" href="#enquire">Plan your event<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div>
+    </section>
+
+    <section id="about" class="about frame section-space" aria-labelledby="about-title">
+      <figure class="about-image" data-reveal><img src="assets/planning-hands.webp" width="1536" height="1024" loading="lazy" alt="An event stylist arranging red and ivory flowers for a gathering"></figure>
+      <div class="about-copy"><h2 id="about-title" data-reveal>Good hosts<br>think ahead.</h2><p class="statement" data-reveal>How the room feels. Who needs a seat. When the music changes. The little things are a big part of what we do.</p><p data-reveal>Tedeats brings planning and hosting into one conversation. From choosing a setting to welcoming your last guest, every decision begins with the occasion you have in mind.</p><p data-reveal>Come with a complete vision or a half-formed idea. We’ll help you find its shape.</p></div>
+    </section>
+
+    <section id="enquire" class="enquiry-section section-space" aria-labelledby="enquiry-title">
+      <div class="enquiry-layout frame"><div class="enquiry-copy"><h2 id="enquiry-title" data-reveal>An occasion<br>worth planning.</h2><p data-reveal>Tell us what you have in mind. The date can be a possibility. The idea can still be taking shape.</p><p class="demo-note">Explore the enquiry experience. This fictional portfolio concept keeps your brief in this browser and sends nothing.</p></div>
+        <form id="event-form"><fieldset id="event-fields" aria-label="Your event brief" disabled>
+          <div class="form-row"><label>Your name<input name="name" autocomplete="name" maxlength="80" required></label><label>Your email<input name="email" type="email" autocomplete="email" maxlength="180" required></label></div>
+          <label>The occasion<select name="occasion" id="brief-occasion" required><option value="">Choose your occasion</option><option value="celebration">A celebration</option><option value="wedding">A wedding</option><option value="launch">A brand launch</option><option value="corporate">A company gathering</option><option value="other">Something else</option></select></label>
+          <div class="form-row"><label>When<input name="date" type="date"></label><label>Guests<input name="guests" type="number" min="1" max="100000" inputmode="numeric" placeholder="An estimate is fine"></label></div>
+          <div class="form-row"><label>Where<input name="location" maxlength="140" placeholder="Your town or preferred setting"></label><label>Budget range<select name="budget"><option value="Not decided yet">Not decided yet</option><option>Under £2,500</option><option>£2,500–£5,000</option><option>£5,000–£10,000</option><option>£10,000–£25,000</option><option>£25,000+</option></select></label></div>
+          <label>Your idea<textarea name="idea" rows="3" maxlength="1600" placeholder="The feeling, the reason, the little details…"></textarea></label>
+          <button class="button button-light" type="submit">Preview your brief<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+        </fieldset></form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer frame"><div class="footer-top"><p>A reason to gather.<br>Consider this your invitation.</p><nav aria-label="Footer navigation"><a href="#occasions">Occasions</a><a href="#planning">Planning</a><a href="#enquire">Plan your event</a></nav></div><a class="footer-wordmark" href="#top" aria-label="Tedeats Events back to top">Tedeats Events</a><div class="footer-bottom"><p>A fictional brand, imagined by <a href="../../index.html">Tedits Studio</a>.</p><a href="credits.html">Concept &amp; image credits</a></div></footer>
+  <dialog id="brief-dialog" aria-labelledby="brief-title"><button class="dialog-close" type="button" aria-label="Close your event brief"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button><h2 id="brief-title">Your occasion,<br>taking shape.</h2><p class="dialog-intro">Your draft brief is ready to review. Nothing has been sent or booked.</p><dl id="brief-details"></dl><p id="brief-idea"></p><div class="dialog-actions"><button class="button" id="download-brief" type="button">Save your brief</button><button class="text-link" id="edit-brief" type="button">Keep editing</button></div></dialog>
+  <noscript><p class="noscript-note frame">The photographs and planning journey are available below. JavaScript enables the envelope animation, occasion preview and draft brief.</p></noscript>
+</body>
+</html>

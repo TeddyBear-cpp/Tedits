@@ -11,6 +11,7 @@ const concepts = {
   'rivet-beam': {style: 'steel', image: 'rivet-and-beam', alt: 'Rivet & Beam steel website concept'},
   afterhours: {style: 'afterhours', image: 'afterhours', alt: 'AFTERHOURS music studio website concept'},
   'little-joy': {style: 'little-joy', image: 'little-joy', alt: 'Little Joy Play Co. soft-play hire website concept', caseStudy: true},
+  tedeats: {style: 'tedeats', image: 'tedeats', alt: 'Tedeats Events invitation-inspired event planning and hosting website concept'},
 };
 const escape = (value) => String(value).replace(/[&<>"']/g, (char) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[char]));
 function required(document, fields) {
