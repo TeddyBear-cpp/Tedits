@@ -3,7 +3,7 @@
 .envelope-copy { max-width: 34rem; }
 .envelope-copy p { max-width: 29rem; }
 .envelope-stage { display: grid; gap: 2rem; }
-.envelope-back, .envelope-flap, .envelope-pocket, .envelope-seal { display: none; }
+.envelope-back, .envelope-lining, .envelope-flap, .envelope-pocket, .envelope-seal { display: none; }
 .invitation-photo { margin: 0; background: var(--paper, #faf9f6); }
 .invitation-photo img { display: block; width: 100%; aspect-ratio: 1.5; object-fit: cover; }
 .invitation-photo figcaption { padding: .8rem .25rem; color: var(--ink, #252323); }
@@ -12,18 +12,26 @@
 .journey-progress { fill: none; stroke: var(--cherry, #b92236); stroke-width: 3; }
 .bouquet-traveller { display: none; }
 
-html.motion-ready .envelope-scene { height: 260svh; padding-block: 0; }
-html.motion-ready .envelope-scene > .scene-stage { position: sticky; top: 0; min-height: 100svh; height: 100svh; display: grid; align-items: center; }
+html.motion-ready .envelope-scene { height: 420svh; padding-block: 0; }
+html.motion-ready .envelope-scene > .scene-stage { position: sticky; top: 0; min-height: 100svh; height: 100svh; display: grid; align-items: center; transform: translate3d(0, var(--exit-y, 0px), 0); box-shadow: 0 24px 48px rgb(33 27 27 / .14); }
 html.motion-ready .envelope-layout { display: grid; grid-template-columns: .83fr 1.17fr; align-items: center; gap: clamp(2rem, 6vw, 7rem); }
 html.motion-ready .envelope-stage { position: relative; isolation: isolate; display: block; width: 100%; height: min(62svh, 540px); perspective: 1300px; }
+html.motion-ready .envelope-stage::before { content: ''; position: absolute; inset: 48% 1% 1%; border-radius: 50%; background: rgb(0 0 0 / .42); filter: blur(24px); transform: translateY(14px); z-index: 0; }
 html.motion-ready .envelope-back,
+html.motion-ready .envelope-lining,
 html.motion-ready .envelope-flap,
 html.motion-ready .envelope-pocket { display: block; position: absolute; left: 3%; width: 94%; }
-html.motion-ready .envelope-back { top: 44%; height: 52%; background: #8f1428; z-index: 1; }
-html.motion-ready .envelope-flap { top: 44%; height: 43%; background: #a41b30; clip-path: polygon(0 0, 100% 0, 50% 79%); transform-origin: center top; z-index: 12; backface-visibility: visible; }
-html.motion-ready .envelope-pocket { top: 44%; height: 52%; background: var(--cherry, #b92236); clip-path: polygon(0 0, 50% 51%, 100% 0, 100% 100%, 0 100%); z-index: 10; }
-html.motion-ready .envelope-pocket::after { content: ''; position: absolute; inset: 0; background: #c6374b; clip-path: polygon(0 100%, 50% 43%, 100% 100%); }
-html.motion-ready .envelope-seal { display: grid; place-items: center; position: absolute; left: 50%; top: 72%; width: 3rem; height: 3rem; transform: translate(-50%, -50%); background: var(--paper, #faf9f6); color: var(--cherry, #b92236); border-radius: 50%; font-family: var(--font-display, serif); font-size: 1.4rem; z-index: 13; }
+html.motion-ready .envelope-back,
+html.motion-ready .envelope-flap,
+html.motion-ready .envelope-pocket { background-image: url('assets/envelope-paper.jpg'); background-size: 100% 190%; border: 1px solid rgb(255 222 186 / .13); }
+html.motion-ready .envelope-back { top: 44%; height: 52%; border-radius: 4px 4px 8px 8px; background-position: center 65%; box-shadow: inset 0 7px 16px rgb(20 0 5 / .28), 0 13px 24px rgb(0 0 0 / .25); z-index: 1; }
+html.motion-ready .envelope-lining { top: 43.5%; height: 9%; width: 90%; left: 5%; border-radius: 0 0 48% 48%; background: linear-gradient(#b58c8b, #e7c9ba 64%, #b68284); box-shadow: inset 0 4px 8px rgb(62 21 29 / .36); z-index: 2; }
+html.motion-ready .envelope-flap { top: 44%; height: 35%; border-radius: 0 0 50% 50% / 0 0 100% 100%; background-position: center top; box-shadow: 0 2px 6px rgb(32 5 11 / .45), inset 0 -5px 9px rgb(45 4 14 / .25); transform-origin: center top; z-index: 12; backface-visibility: visible; }
+html.motion-ready .envelope-flap::after { content: ''; position: absolute; inset: 0; border-radius: inherit; border-bottom: 2px solid rgb(213 163 97 / .72); box-shadow: inset 0 -4px 9px rgb(37 5 12 / .26); }
+html.motion-ready .envelope-pocket { top: 44%; height: 52%; border-radius: 0 0 8px 8px; background-position: center bottom; box-shadow: inset 0 2px 6px rgb(35 4 11 / .22); z-index: 10; }
+html.motion-ready .envelope-pocket::before { content: ''; position: absolute; inset: 0; background: linear-gradient(147deg, rgb(65 9 22 / .3) 0 27%, transparent 27.3%), linear-gradient(213deg, rgb(65 9 22 / .27) 0 27%, transparent 27.3%); }
+html.motion-ready .envelope-pocket::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(77 10 26 / .18), rgb(255 215 188 / .08)); clip-path: polygon(0 100%, 50% 47%, 100% 100%); border-bottom: 1px solid rgb(255 221 175 / .28); }
+html.motion-ready .envelope-seal { display: block; position: absolute; left: 50%; top: 75%; width: clamp(62px, 7vw, 86px); aspect-ratio: 1; transform: translate(-50%, -50%); background: url('assets/envelope-wax-seal-small.png') center / contain no-repeat; filter: drop-shadow(0 4px 5px rgb(38 5 11 / .47)); z-index: 13; }
 html.motion-ready .invitation-photo { position: absolute; left: 8%; top: 9%; width: 84%; height: 69%; padding: .65rem .65rem 0; display: flex; flex-direction: column; opacity: 0; transform: translate3d(0, 38%, 0) scale(.68); transform-origin: center center; z-index: 2; }
 html.motion-ready .invitation-photo img { flex: 1 1 auto; min-height: 0; height: calc(100% - 2.8rem); width: 100%; aspect-ratio: auto; object-fit: cover; }
 html.motion-ready .invitation-photo figcaption { flex: 0 0 auto; min-height: 2.8rem; display: flex; align-items: center; padding: .55rem .25rem; font-size: clamp(.9rem, 1.2vw, 1rem); line-height: 1.2; }
@@ -31,7 +39,8 @@ html.motion-ready .invitation-photo[data-photo='0'] { transform: translate3d(-1%
 html.motion-ready .invitation-photo[data-photo='1'] { transform: translate3d(1%, 38%, 0) scale(.68) rotate(2deg); z-index: 3; }
 html.motion-ready .invitation-photo[data-photo='2'] { transform: translate3d(0, 38%, 0) scale(.68) rotate(-1deg); z-index: 2; }
 html.motion-ready .envelope-scene.is-moving .invitation-photo,
-html.motion-ready .envelope-scene.is-moving .envelope-flap { will-change: transform; }
+html.motion-ready .envelope-scene.is-moving .envelope-flap,
+html.motion-ready .envelope-scene.is-moving > .scene-stage { will-change: transform; }
 html.motion-ready .bouquet-traveller { display: block; position: absolute; top: 0; left: 0; width: clamp(100px, 13vw, 170px); z-index: 5; pointer-events: none; transform: translate(-50%, -50%); }
 .bouquet-traveller img { display: block; width: 100%; height: auto; }
 html.motion-ready .journey-stop { transition: opacity 220ms cubic-bezier(.22, 1, .36, 1); }
@@ -41,7 +50,7 @@ html.motion-ready [data-reveal].reveal-ready { opacity: .01; transform: translat
 html.motion-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 
 @media (max-width: 760px) {
-  html.motion-ready .envelope-scene { height: 220svh; }
+  html.motion-ready .envelope-scene { height: 360svh; }
   html.motion-ready .envelope-layout { grid-template-columns: 1fr; gap: 1rem; align-content: center; }
   html.motion-ready .envelope-copy { max-width: 34rem; }
   html.motion-ready .envelope-copy h2 { margin-bottom: .75rem; }
@@ -63,7 +72,8 @@ html.motion-ready [data-reveal].is-visible { opacity: 1; transform: none; }
   html.motion-ready .envelope-scene > .scene-stage { position: static; min-height: 0; height: auto; }
   html.motion-ready .envelope-layout { display: block; }
   html.motion-ready .envelope-stage { display: grid; gap: 2rem; height: auto; width: 100%; margin-top: 2rem; }
-  html.motion-ready .envelope-back, html.motion-ready .envelope-flap, html.motion-ready .envelope-pocket, html.motion-ready .envelope-seal { display: none; }
+  html.motion-ready .envelope-stage::before { display: none; }
+  html.motion-ready .envelope-back, html.motion-ready .envelope-lining, html.motion-ready .envelope-flap, html.motion-ready .envelope-pocket, html.motion-ready .envelope-seal { display: none; }
   html.motion-ready .invitation-photo { position: static; width: 100%; height: auto; padding: 0; transform: none !important; opacity: 1 !important; }
   html.motion-ready .invitation-photo img { height: auto; aspect-ratio: 1.5; }
   html.motion-ready .bouquet-traveller { display: none; }

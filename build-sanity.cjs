@@ -11,8 +11,10 @@ const concepts = {
   'rivet-beam': {style: 'steel', image: 'rivet-and-beam', alt: 'Rivet & Beam steel website concept'},
   afterhours: {style: 'afterhours', image: 'afterhours', alt: 'AFTERHOURS music studio website concept'},
   'little-joy': {style: 'little-joy', image: 'little-joy', alt: 'Little Joy Play Co. soft-play hire website concept', caseStudy: true},
-  tedeats: {style: 'tedeats', image: 'tedeats', alt: 'Tedeats Events invitation-inspired event planning and hosting website concept'},
+  tedeats: {style: 'tedeats', image: 'tedeats', localImage: 'projects/tedeats/assets/dinner-alt-1.jpg', alt: 'Friends sharing dinner in the Tedeats Events concept'},
 };
+const tedeatsSeed = fs.readFileSync(path.join(__dirname, 'studio-teditstudio/seed.ndjson'), 'utf8')
+  .split(/\r?\n/).filter(Boolean).map(line => JSON.parse(line)).find(doc => doc._id === 'project-tedeats');
 const escape = (value) => String(value).replace(/[&<>"']/g, (char) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[char]));
 function required(document, fields) {
   for (const field of fields) {
@@ -25,7 +27,7 @@ function renderProject(project, index) {
   required(project, ['title', 'concept', 'category', 'description', 'scope', 'idea', 'execution', 'disclaimer']);
   const concept = concepts[project.concept];
   if (!concept) throw new Error(`Unsupported concept page: ${project.concept}`);
-  let image = `assets/${concept.image}-preview.png`;
+  let image = concept.localImage || `assets/${concept.image}-preview.png`;
   if (project.imageUrl) {
     const url = new URL(project.imageUrl);
     if (url.origin !== 'https://cdn.sanity.io' || !url.pathname.startsWith(`/images/${projectId}/${dataset}/`)) {
@@ -53,7 +55,14 @@ function applyContent(html, content) {
       if (used.has(project.concept)) throw new Error(`Duplicate CMS concept: ${project.concept}`);
       used.add(project.concept);
     }
-    const cards = content.projects.filter(project => project.visible !== false).map(renderProject).join('\n      ');
+    const cards = content.projects.filter(project => project.visible !== false).map(project => {
+      // Older published CMS copy described the removed event renders and seal.
+      // Use the checked-in concept copy until that document is republished.
+      const stale = project.concept === 'tedeats' && /AI-generated imagery|seal tracing|printed seal/i
+        .test([project.description, project.execution, project.disclaimer].join(' '));
+      return renderProject(stale ? {...project, description: tedeatsSeed.description,
+        execution: tedeatsSeed.execution, disclaimer: tedeatsSeed.disclaimer} : project);
+    }).join('\n      ');
     const pattern = /(<section id="work"[\s\S]*?<\/h2><\/div><p>[\s\S]*?<\/p><\/div>)\s*[\s\S]*?(\s*<\/section>)/;
     if (!pattern.test(html)) throw new Error('Portfolio work section markup changed; update the CMS renderer.');
     html = html.replace(pattern, (_match, heading, end) => `${heading}\n      ${cards}${end}`);

@@ -3,13 +3,13 @@ const fs = require('node:fs');
 const {applyContent} = require('./build-sanity.cjs');
 const source = fs.readFileSync('studio/index.html', 'utf8');
 const [homepage, ...projects] = fs.readFileSync('studio-teditstudio/seed.ndjson', 'utf8').trim().split('\n').map(JSON.parse);
-assert.equal(projects.length, 4);
+assert.equal(projects.length, 5);
 for (const project of projects) assert.ok(source.includes(`projects/${project.concept}/index.html`));
 const rendered = applyContent(source, {homepage, projects});
-assert.equal((rendered.match(/<article class="project(?: project-reverse)?">/g) || []).length, 4);
+assert.equal((rendered.match(/<article class="project(?: project-reverse)?">/g) || []).length, 5);
 assert.ok(rendered.includes('Olive &amp; Ember'));
 assert.ok(rendered.includes('Rivet &amp; Beam'));
-assert.ok(rendered.includes('teditstudiozm@gmail.com'));
+assert.ok(rendered.includes('href="enquire.html"'));
 assert.ok(rendered.includes('studio.js'));
 assert.ok(rendered.includes('INDEPENDENT CONCEPT'));
 assert.ok(!rendered.includes('undefined'));
@@ -23,11 +23,19 @@ const curated = structuredClone(projects);
 curated[0].featured = true;
 curated[1].visible = false;
 const curatedHtml = applyContent(source, {homepage, projects: curated});
-assert.equal((curatedHtml.match(/<article class="project(?: project-reverse)?">/g)||[]).length,3);
+assert.equal((curatedHtml.match(/<article class="project(?: project-reverse)?">/g)||[]).length,4);
 assert.ok(curatedHtml.includes('FEATURED PROJECT'));
 assert.ok(!curatedHtml.includes('Rivet &amp; Beam'));
 assert.ok(rendered.includes('projects/little-joy/index.html'));
 assert.ok(rendered.includes('Read the case study'));
+assert.ok(rendered.includes('projects/tedeats/assets/dinner-alt-1.jpg'));
+const legacy = projects.map(project => project.concept === 'tedeats' ? {...project,
+  description: 'A seal tracing the planning journey.',
+  execution: 'A printed seal follows the planning path.',
+  disclaimer: 'AI-generated imagery illustrates imagined events.'} : project);
+const migrated = applyContent(source, {homepage, projects: legacy});
+assert.ok(migrated.includes('a bouquet tracing the planning journey'));
+assert.ok(!migrated.includes('AI-generated imagery illustrates imagined events.'));
 const hiddenJoy = projects.map(project => project.concept === 'little-joy' ? {...project, visible: false} : project);
 assert.ok(!applyContent(source, {homepage, projects: hiddenJoy}).includes('projects/little-joy/index.html'));
 console.log('Sanity seed and static renderer checks passed.');

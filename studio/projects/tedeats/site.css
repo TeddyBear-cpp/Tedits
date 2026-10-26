@@ -14,6 +14,41 @@ dialog{border:0;background:var(--paper);color:var(--ink);padding:clamp(26px,5vw,
 @media(max-width:760px){:root{--page:22px}.site-header{min-height:86px}.wordmark{font-size:34px}.menu-toggle{display:block;background:var(--paper);color:var(--cherry);min-width:68px;min-height:44px;padding:8px 15px;font-size:16px}.site-header nav{display:none;position:absolute;top:calc(100% - 8px);left:0;right:0;padding:22px;background:var(--paper);color:var(--cherry);gap:10px}.site-header nav.is-open{display:grid}.site-header nav a{padding:9px 12px;min-height:48px}.site-header nav .button{background:var(--cherry);color:var(--paper);margin-top:8px}.invitation-cover{grid-template-columns:1fr;min-height:0}.invitation-copy{padding:35px 26px 39px}.invitation-copy h1{font-size:clamp(47px,9.8vw,73px);max-width:none;letter-spacing:-.045em}.invitation-copy>p{margin-top:24px;font-size:17px;max-width:33ch}.invitation-copy .button{margin-top:26px}.hero-photograph{height:310px;min-height:0}.hero-photograph img{object-position:center}.hero-note{margin-top:21px;gap:18px;font-size:13px}.hero-note a{gap:8px;font-size:13px}.hero-note svg{width:20px;height:20px}.hero{padding-bottom:23px}h2{font-size:clamp(43px,8.5vw,62px)}h3{font-size:38px}.section-heading{display:block;margin-bottom:32px}.section-heading>p{max-width:37ch;font-size:17px;margin-top:25px}.section-space{margin-top:90px}.envelope-copy p{font-size:16px;margin-top:18px;max-width:46ch}.envelope-copy p+p{display:none}.envelope-layout{padding-block:24px}.occasion-composer{grid-template-columns:1fr;gap:29px}.occasion-image img{aspect-ratio:1.15;flex:initial}.occasion-image figcaption{font-size:14px;padding-top:12px}.occasion-options{gap:8px}.occasion-options label{min-height:58px}.occasion-options span{font-size:18px}.occasion-detail h3{font-size:36px}.occasion-detail p{font-size:16px}.occasion-detail{margin-top:28px}.journey-heading{text-align:left}.journey-heading p{margin-top:25px;font-size:18px}.journey-map{height:1490px;margin-top:32px}.journey-route{left:-7%;width:110%;opacity:.85}.journey-stop{width:66%;padding:13px 15px}.journey-stop h3{font-size:40px}.journey-stop p{font-size:16px;margin-top:16px;line-height:1.5}.journey-stop[data-stop='0']{top:5%;left:2%}.journey-stop[data-stop='1']{top:29%;right:0}.journey-stop[data-stop='2']{top:54%;left:0}.journey-stop[data-stop='3']{top:79%;right:0}.journey-photo-left{width:48%;height:330px;top:0;left:50%;clip-path:ellipse(98% 50% at 100% 50%);opacity:.55}.journey-photo-right{width:51%;height:340px;top:31%;left:-22px;clip-path:ellipse(95% 50% at 0 50%);opacity:.6}.journey-photo-bottom{width:56%;height:360px;left:auto;right:-22px;bottom:15%;clip-path:ellipse(95% 50% at 100% 50%);opacity:.6}.journey-end{text-align:left;margin-top:30px}.about{grid-template-columns:1fr;gap:35px}.about-image{height:390px}.about-copy h2{margin-bottom:25px}.about-copy .statement{font-size:23px}.about-copy>p{font-size:17px}.enquiry-layout{grid-template-columns:1fr;gap:39px}.enquiry-section{padding-block:54px}.enquiry-copy>p{font-size:18px;margin-top:26px}.enquiry-copy .demo-note{font-size:14px;margin-top:24px;max-width:42ch}.form-row{gap:15px}form label{font-size:15px}form input,form select,form textarea{padding:12px}.footer-top{display:block}.footer-top p{font-size:18px}.footer-top nav{gap:24px;flex-wrap:wrap;margin-top:20px;font-size:15px}.footer-wordmark{font-size:16.5vw;padding:48px 0 32px}.footer-bottom{display:block;font-size:13px}.footer-bottom>a{display:inline-block;min-height:44px;padding-top:14px}.site-footer{padding-top:42px}.credits h1{font-size:52px}.credits h2{font-size:32px}}
 @media(max-width:380px){:root{--page:18px}.invitation-copy{padding-inline:22px}.invitation-copy h1{font-size:43px}.form-row{grid-template-columns:1fr;gap:0}.journey-stop{width:70%}.journey-stop h3{font-size:37px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.button:hover,.button:active,.text-link:hover svg{transform:none}.hero-photograph img{transform:none}.journey-route{opacity:.6}}
+
+/* Photographs and paper fields give each chapter its own atmosphere. */
+.envelope-scene{position:relative;isolation:isolate;overflow:clip;background:#211b1b;color:var(--paper)}
+html.motion-ready .envelope-scene{background:#e9ede5}
+.envelope-scene>.scene-stage{isolation:isolate;overflow:hidden;background:#211b1b}
+.envelope-layout{position:relative;z-index:2}
+.envelope-copy h2,.envelope-copy p{color:var(--paper)}
+.ambient-photo{position:absolute;inset:-6%;z-index:0;pointer-events:none;background-size:cover;background-repeat:no-repeat;transform:translate3d(0,var(--ambient-y,0px),0) scale(1.09)}
+.ambient-photo-envelope{background-image:url('assets/table-detail-stock.jpg');background-position:center 60%;opacity:.24;filter:saturate(.7)}
+.gatherings{position:relative;isolation:isolate;padding-block:clamp(66px,8vw,110px)}
+.gatherings::before{content:'';position:absolute;inset:0 calc(-1*var(--page));z-index:-1;background:#e9ede5}
+.journey{background:#f4f0e9;padding-block:clamp(62px,8vw,110px)}
+.journey-stop{background:#f4f0e9}
+.about{position:relative;isolation:isolate;padding-block:clamp(60px,7vw,100px)}
+.about::before{content:'';position:absolute;inset:0 calc(-1*var(--page));z-index:-1;background:#f0e6e5}
+.enquiry-section{position:relative;isolation:isolate;overflow:hidden;background:#531b25}
+.enquiry-layout{position:relative;z-index:2}
+.ambient-photo-enquiry{background-image:url('assets/table-detail-stock.jpg');background-position:right 45%;opacity:.16;filter:saturate(.55)}
+.hero-photograph img,.invitation-photo img,.occasion-image img,.journey-photo img,.about-image img{filter:saturate(.86)}
+
+/* Petals travel only with the visitor's scroll; there is no idle animation. */
+.petal-field{position:absolute;inset:0;z-index:3;overflow:hidden;pointer-events:none}
+.petal{position:absolute;display:block;width:15px;height:24px;border-radius:85% 0 75% 15%;background:#df9daa;opacity:.75;transform:rotate(20deg)}
+.petal:nth-child(1){top:12%;left:8%;width:12px;height:20px;background:#edc4ca}
+.petal:nth-child(2){top:25%;right:7%;width:17px;height:28px}
+.petal:nth-child(3){top:55%;left:4%;width:20px;height:31px;background:#e9bcc2}
+.petal:nth-child(4){top:72%;right:13%;width:12px;height:19px}
+.petal:nth-child(5){top:37%;right:35%;width:10px;height:16px;background:#f1d5d8}
+.petal:nth-child(6){top:82%;left:28%;width:13px;height:21px}
+.petal-field-close .petal:nth-child(1){top:9%;left:9%}
+.petal-field-close .petal:nth-child(2){top:21%;right:10%}
+.petal-field-close .petal:nth-child(3){top:69%;left:5%}
+.petal-field-close .petal:nth-child(4){top:78%;right:7%}
+@media(max-width:760px){.gatherings{padding-block:58px}.journey{padding-block:58px}.about{padding-block:54px}.ambient-photo-envelope{opacity:.18}.petal:nth-child(n+4){display:none}}
+@media(prefers-reduced-motion:reduce){.petal-field{display:none}.ambient-photo{transform:none!important}.journey-photo{transform:none!important}}
 /* One type hierarchy across the invitation, photographs and brief. */
 :root{--type-display:clamp(47px,6.3vw,96px);--type-heading:clamp(43px,5.3vw,82px);--type-subheading:clamp(35px,3.5vw,54px);--type-body:18px;--type-small:14px}
 .invitation-cover{grid-template-columns:1.1fr 1fr}.invitation-copy h1{font-size:var(--type-display);max-width:none}
