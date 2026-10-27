@@ -315,25 +315,44 @@ html:has(.buttons-nav){scroll-padding-top:100px}
 }
 @media(prefers-reduced-motion:reduce){.buttons-nav .site-header::before{transition:none}}
 
-/* Brand and theme controls sit at the viewport corners, separate from the centered nav. */
+/* One coordinated header: corners leave before the nav takes their row. */
+.rounded-studio.buttons-nav{--nav-shift:0px}
+.rounded-studio.buttons-nav .site-header{transform:translate(-50%,var(--nav-shift))}
+.rounded-studio.buttons-nav[data-nav-ready=true] .site-header{transition:transform 340ms cubic-bezier(.22,1,.36,1)}
+.rounded-studio.buttons-nav[data-nav-ready=true][data-nav-layout=compact] .site-header{transition-delay:140ms}
 .rounded-studio.buttons-nav .corner-brand,
-.rounded-studio.buttons-nav .corner-theme{position:fixed;top:18px;z-index:51}
-.rounded-studio.buttons-nav .corner-brand{left:32px;display:flex;align-items:center;gap:10px;color:var(--theme-ink);text-decoration:none;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 360ms cubic-bezier(.22,1,.36,1),visibility 0s linear 360ms}
-.rounded-studio.buttons-nav .corner-brand[data-surface=hero]{opacity:1;visibility:visible;pointer-events:auto;transition-delay:0s}
+.rounded-studio.buttons-nav .corner-theme{position:fixed;top:18px;z-index:51;opacity:1;visibility:visible;transform:translateY(0)}
+.rounded-studio.buttons-nav[data-nav-ready=true] :is(.corner-brand,.corner-theme){transition:opacity 200ms cubic-bezier(.22,1,.36,1) 160ms,transform 320ms cubic-bezier(.22,1,.36,1) 100ms,visibility 0s linear 160ms}
+.rounded-studio.buttons-nav[data-nav-layout=compact] :is(.corner-brand,.corner-theme){opacity:0;visibility:hidden;transform:translateY(-18px);pointer-events:none;transition:opacity 140ms cubic-bezier(.4,0,1,1),transform 200ms cubic-bezier(.4,0,1,1),visibility 0s linear 140ms}
+.rounded-studio.buttons-nav .corner-brand{left:32px;display:flex;align-items:center;gap:10px;color:var(--theme-ink);text-decoration:none}
 .rounded-studio.buttons-nav .corner-brand img{display:block;width:132px;height:auto}
 .rounded-studio.buttons-nav .corner-brand>span{padding-left:10px;border-left:1px solid color-mix(in srgb,var(--theme-ink) 28%,transparent);font:600 9px/1 var(--body);letter-spacing:2px}
 .rounded-studio.buttons-nav .corner-brand[data-surface=hero]{color:var(--ivory)}
-.rounded-studio.buttons-nav .corner-brand[data-surface=hero] img{content:url('assets/tedits-studio-on-slate.svg')}
+.rounded-studio.buttons-nav .corner-brand[data-surface=hero] img,:root[data-theme=dark] .rounded-studio.buttons-nav .corner-brand img{content:url('assets/tedits-studio-on-slate.svg')}
 .rounded-studio.buttons-nav .corner-brand[data-surface=hero]>span{border-color:color-mix(in srgb,var(--ivory) 35%,transparent)}
 .rounded-studio.buttons-nav .corner-theme{right:32px}
 .rounded-studio.buttons-nav .corner-theme .theme-toggle{width:44px;height:44px;border-color:color-mix(in srgb,var(--theme-ink) 24%,transparent);background:color-mix(in srgb,var(--theme-surface) 88%,transparent);color:var(--theme-ink);box-shadow:0 4px 18px color-mix(in srgb,var(--charcoal) 12%,transparent)}
 .rounded-studio.buttons-nav .corner-theme[data-surface=hero] .theme-toggle{border-color:color-mix(in srgb,var(--ivory) 45%,transparent);background:color-mix(in srgb,var(--charcoal) 34%,transparent);color:var(--ivory);box-shadow:none}
 .rounded-studio.buttons-nav .corner-theme .theme-toggle:hover{background:var(--theme-surface);color:var(--theme-ink)}
 .rounded-studio.buttons-nav .corner-theme[data-surface=hero] .theme-toggle:hover{background:var(--ivory);color:var(--charcoal)}
-.rounded-studio.buttons-nav .site-footer .theme-toggle{display:none}
 .rounded-studio.buttons-nav .corner-brand:focus-visible,.rounded-studio.buttons-nav .corner-theme .theme-toggle:focus-visible{outline:2px solid var(--theme-accent);outline-offset:4px}
+.cloud-intro{display:contents}
+.cloud-quote{margin:0;flex:1;max-width:480px;font:400 12px/1.5 var(--body)}
+.cloud-quote p{margin:0}
+.cloud-quote strong{font-weight:500}
+.cloud-quote cite{display:block;margin-top:5px;font-size:11px}
+@media(min-width:761px) and (max-width:960px){
+ .rounded-studio.buttons-nav{--nav-shift:46px}
+ .rounded-studio.buttons-nav[data-nav-layout=compact]{--nav-shift:0px}
+ .rounded-studio.buttons-nav .site-header{top:12px}
+ .rounded-studio.buttons-nav .corner-brand,.rounded-studio.buttons-nav .corner-theme{top:12px}
+ .rounded-studio.buttons-nav:not(.rounded-home) main{padding-top:138px}
+ .full-hero .cloud-kicker{top:142px}
+}
 @media(max-width:760px){
- .rounded-studio.buttons-nav .site-header{top:58px}
+ .rounded-studio.buttons-nav{--nav-shift:46px}
+ .rounded-studio.buttons-nav[data-nav-layout=compact]{--nav-shift:0px}
+ .rounded-studio.buttons-nav .site-header{top:12px}
  .rounded-studio.buttons-nav:not(.rounded-home) main{padding-top:138px}
  .rounded-studio.buttons-nav .corner-brand,.rounded-studio.buttons-nav .corner-theme{top:12px}
  .rounded-studio.buttons-nav .corner-brand{left:16px;gap:7px}
@@ -341,10 +360,18 @@ html:has(.buttons-nav){scroll-padding-top:100px}
  .rounded-studio.buttons-nav .corner-brand>span{font-size:8px;padding-left:7px;letter-spacing:1.5px}
  .rounded-studio.buttons-nav .corner-theme{right:16px}
  .rounded-studio.buttons-nav .corner-theme .theme-toggle{width:40px;height:40px}
+ .rounded-studio.full-hero .cloud-pin{min-height:640px}
+ .full-hero .cloud-intro{display:block;position:absolute;z-index:6;top:142px;left:7%;right:7%}
+ .full-hero .cloud-intro .cloud-kicker{position:static;max-width:none;margin:0;font-size:11px;line-height:1.5}
+ .full-hero .cloud-intro .cloud-copy{position:static;margin-top:20px}
+ .full-hero .cloud-footer{align-items:flex-end;gap:18px}
+ .cloud-quote{font-size:11px;line-height:1.5}
+ .cloud-quote cite{font-size:10px}
 }
 @media(max-width:420px){
  .rounded-studio.buttons-nav .corner-brand img{width:82px}
  .rounded-studio.buttons-nav .corner-brand>span{font-size:7px;padding-left:5px;letter-spacing:1px}
  .rounded-studio.buttons-nav .corner-brand{gap:5px}
 }
-@media(prefers-reduced-motion:reduce){.rounded-studio.buttons-nav .corner-brand{transition:none}}
+@media(max-height:500px) and (min-width:761px){.rounded-studio.full-hero .cloud-pin{min-height:580px}}
+@media(prefers-reduced-motion:reduce){.rounded-studio.buttons-nav[data-nav-ready=true] :is(.site-header,.corner-brand,.corner-theme){transition:none}}

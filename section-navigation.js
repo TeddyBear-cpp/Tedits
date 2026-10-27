@@ -30,7 +30,8 @@
     const topLink = !id || id === 'top';
     const skip = id === 'main';
     const fixedHeader = document.querySelector('.buttons-nav .site-header');
-    const clearance = fixedHeader ? fixedHeader.getBoundingClientRect().bottom + 24 : 32;
+    // Section destinations use the header's compact row, before its slide finishes.
+    const clearance = fixedHeader ? parseFloat(getComputedStyle(fixedHeader).top) + fixedHeader.offsetHeight + 24 : 32;
     const focal = fixedHeader && id === 'work' ? section : destination(section);
     const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
     let top;
@@ -46,6 +47,8 @@
         const heading = section.querySelector('.section-heading, .section-head, h2, h1');
         if (heading) top = layoutTop(heading) - clearance;
       }
+      // Studio's heading reveals move temporarily; anchor to the stable section padding.
+      if (fixedHeader && id === 'work') top = layoutTop(section) + parseFloat(getComputedStyle(section).paddingTop) - clearance;
     }
     if (focus && !topLink) {
       // Preserve the material chooser's own focus when a catalogue action selected it.
