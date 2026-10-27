@@ -246,3 +246,39 @@
   .cloud-footer{left:32px;bottom:15px}
 }
 @media(prefers-reduced-motion:reduce){.cloud-plane,.cloud-sky{will-change:auto}.business-rotation{transition:none!important}}
+
+/* Full hero: the approved photograph extends behind the navigation. */
+.rounded-studio.full-hero .site-header{
+  --theme-ink:var(--ivory);
+  --theme-surface:var(--charcoal);
+  --theme-accent:var(--ivory);
+  position:absolute;inset:0 0 auto;z-index:20;color:var(--ivory);
+}
+.full-hero .site-header .studio-logo img{content:url('assets/tedits-studio-on-slate.svg')}
+.rounded-studio.full-hero .site-header .studio-logo>span{color:var(--ivory);border-color:color-mix(in srgb,var(--ivory) 30%,transparent)}
+.rounded-studio.full-hero .site-header nav a:hover{color:var(--gray)}
+.rounded-studio.full-hero .site-header nav a{white-space:nowrap}
+.rounded-studio.full-hero .site-header .nav-contact{background:var(--ivory);color:var(--charcoal)}
+.rounded-studio.full-hero .cloud-scene{--cloud-pin-top:0px;width:100%;margin:0}
+.rounded-studio.full-hero .cloud-pin{height:100svh;min-height:500px;top:0}
+.full-hero .cloud-hero{border-radius:0}
+.full-hero .cloud-kicker{top:130px;left:max(5%,32px)}
+.full-hero .cloud-footer{left:max(5%,32px);right:max(5%,32px);bottom:26px}
+.full-hero .cloud-veil{background:linear-gradient(180deg,color-mix(in srgb,var(--charcoal) 50%,transparent),transparent 30%,transparent 45%,color-mix(in srgb,var(--charcoal) 48%,transparent)),linear-gradient(90deg,color-mix(in srgb,var(--charcoal) 24%,transparent),transparent 70%)}
+@media(max-width:760px){
+  .rounded-studio.full-hero .site-header{width:calc(100% - 40px)}
+  .full-hero .cloud-kicker{top:160px;left:7%;font-size:11px}
+  .full-hero .cloud-copy{top:28%;left:7%;right:7%}
+  .full-hero .cloud-hands{top:27%}
+  .full-hero .cloud-footer{left:7%;right:7%;bottom:24px}
+}
+@media(max-width:360px){
+  .rounded-studio.full-hero .site-header nav{font-size:11px;gap:8px}
+  .rounded-studio.full-hero .site-header .nav-contact{padding-inline:9px;gap:4px}
+}
+@media(max-height:650px) and (min-width:761px){
+  .rounded-studio.full-hero .cloud-pin{min-height:360px}
+  .full-hero .cloud-kicker{top:100px}
+  .full-hero .cloud-copy{bottom:20%}
+  .full-hero .cloud-footer{bottom:16px}
+}
