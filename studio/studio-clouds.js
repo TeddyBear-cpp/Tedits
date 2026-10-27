@@ -12,7 +12,7 @@
   let start = 0, distance = 1, width = 1, height = 1;
   const clamp = n => Math.max(0, Math.min(1, n));
   function paint(progress) {
-    const p = progress * 1.2;
+    const p = progress;
     layers.sky.style.transform = `translate3d(${p * width * .014}px,${-p * height * .045}px,0)`;
     layers.far.style.transform = `translate3d(${-p * width * .05}px,${-p * height * .09}px,0)`;
     layers.middle.style.transform = `translate3d(${p * width * .10}px,${-p * height * .23}px,0)`;

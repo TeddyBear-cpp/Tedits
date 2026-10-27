@@ -2,6 +2,7 @@
 (() => {
   'use strict'
   const root = document.documentElement
+  const enquiryHref = new URL('enquire.html', document.currentScript.src).href
   const triggers = [...document.querySelectorAll('[data-contact-open]')]
   const svg = (paths, className = 'contact-icon') => `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="${paths}"/></svg>`
   const arrow = svg('M7 17 17 7M7 7h10v10')
@@ -22,7 +23,7 @@
         <a class="contact-option" href="https://wa.me/260975996792" target="_blank" rel="noopener noreferrer">${svg('M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.1-4.4A8.5 8.5 0 1 1 20 11.5ZM8 8c.3 3.5 2.5 5.7 6 6l1-1.5-2-1-1 1a5 5 0 0 1-2.5-2.5l1-1-1-2L8 8Z')}<span><strong>WhatsApp</strong><small>Opens WhatsApp in a new tab</small></span>${arrow}</a>
         <a class="contact-option" href="tel:+260975996792">${svg('M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a15 15 0 0 1-7-7l2-2-2-5Z')}<span><strong>Phone</strong><small>Call +260 975 996 792</small></span>${arrow}</a>
         <a class="contact-option" href="mailto:teditstudiozm@gmail.com">${svg('M4 5h16v14H4V5Zm0 1 8 7 8-7')}<span><strong>Email</strong><small>teditstudiozm@gmail.com</small></span>${arrow}</a>
-        <a class="contact-option" href="enquire.html">${svg('M6 3h9l3 3v15H6V3Zm8 0v5h4M9 12h6M9 16h6')}<span><strong>Enquiry form</strong><small>Share your project details and request a quote</small></span>${arrow}</a>
+        <a class="contact-option" href="${enquiryHref}">${svg('M6 3h9l3 3v15H6V3Zm8 0v5h4M9 12h6M9 16h6')}<span><strong>Enquiry form</strong><small>Share your project details and request a quote</small></span>${arrow}</a>
       </div>`
     document.body.append(dialog)
 

@@ -29,7 +29,9 @@
     window.scrollTo({top:window.scrollY,behavior:'instant'});
     const topLink = !id || id === 'top';
     const skip = id === 'main';
-    const focal = destination(section);
+    const fixedHeader = document.querySelector('.buttons-nav .site-header');
+    const clearance = fixedHeader ? fixedHeader.getBoundingClientRect().bottom + 24 : 32;
+    const focal = fixedHeader && id === 'work' ? section : destination(section);
     const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
     let top;
     if (topLink) top = 0;
@@ -39,10 +41,10 @@
       // Centre usable blocks; a long form/list starts at its first useful control.
       top = height <= innerHeight - 64
         ? layoutTop(focal) + height / 2 - innerHeight / 2
-        : layoutTop(focal) - 32;
+        : layoutTop(focal) - clearance;
       if (focal === section && height > innerHeight - 64) {
         const heading = section.querySelector('.section-heading, .section-head, h2, h1');
-        if (heading) top = layoutTop(heading) - 32;
+        if (heading) top = layoutTop(heading) - clearance;
       }
     }
     if (focus && !topLink) {

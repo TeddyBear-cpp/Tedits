@@ -8,7 +8,7 @@ const files = [
   'studio/index.html', 'studio/why-teditstudio.html', 'studio/enquire.html',
   'studio/studio-services.css', 'studio/studio-services.js', 'studio/studio-waves.js', 'studio/enquiry.js',
   'studio/studio-contact.css', 'studio/studio-contact.js',
-  'studio/studio-rounded.css', 'studio/studio-clouds.js',
+  'studio/studio-rounded.css', 'studio/studio-clouds.js', 'studio/studio-navigation.js',
   'studio/studio.css', 'studio/studio.js', 'studio/studio-motion.css',
   'studio/studio-theme.css', 'studio/studio-theme.js', 'studio/studio-hero.css', 'studio/studio-hero.js',
   'studio/projects/catering/index.html', 'studio/projects/catering/style.css',
