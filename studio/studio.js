@@ -43,7 +43,7 @@ paletteRegion.addEventListener('keydown',event=>{
 const studioMotionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 const studioAnimations=new Set();
 function playStudioMotion(element,keyframes,options={}) {
-  if(studioMotionPreference.matches||!element.animate)return;
+  if(studioMotionPreference.matches||!element||!element.animate)return;
   const animation=element.animate(keyframes,{duration:650,easing:'cubic-bezier(.2,.7,.2,1)',...options});
   studioAnimations.add(animation);
   animation.finished.then(()=>studioAnimations.delete(animation),()=>studioAnimations.delete(animation));

@@ -11,11 +11,13 @@
   <link rel="icon" href="assets/studio-favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="studio.css">
   <link rel="stylesheet" href="studio-motion.css">
+  <link rel="stylesheet" href="studio-hero.css">
   <link rel="stylesheet" href="studio-theme.css">
   <link rel="stylesheet" href="studio-services.css?v=4">
   <link rel="stylesheet" href="studio-contact.css?v=1">
+  <link rel="stylesheet" href="studio-rounded.css?v=1">
 </head>
-<body id="top">
+<body id="top" class="rounded-studio rounded-why">
   <a class="skip" href="#main">Skip to content</a>
   <header class="wrap site-header">
     <a class="studio-logo" href="index.html" aria-label="Tedits Studio home"><img src="assets/tedits-studio-on-ivory.svg" alt="Tedits" width="180" height="34"><span>STUDIO</span></a>
@@ -24,12 +26,12 @@
   </header>
   <main id="main">
     <section class="wrap service-hero" aria-labelledby="service-title">
-      <div class="service-hero-glow" aria-hidden="true"></div>
-      <canvas class="service-wave-canvas" aria-hidden="true"></canvas>
-      <div class="service-hero-meta"><p class="eyebrow">01 / WHY TEDITSTUDIO</p><p class="eyebrow">ZAMBIA BASED · OPEN TO THE UK, US, AUSTRALIA &amp; BEYOND</p></div>
-      <h1 id="service-title">Someone is looking for<br><span class="business-rotation" id="business-rotation" aria-live="off" data-examples="a steel fabricator|an event venue|a cosmetics brand|a caterer|an engineering firm|a school|a community organisation|a construction company|a wellness studio|soft play hire|an event planner|a photographer|accommodation|a tour operator|a contractor|a landscaper|properties">a steel fabricator</span><br>right now.</h1>
+      <div class="hero-art" aria-hidden="true"><canvas></canvas><div class="hero-art-fallback"><i></i><i></i><i></i></div><div class="hero-art-veil"></div></div>
+      <div class="service-hero-meta"><p class="eyebrow">Why Tedits Studio</p><p class="eyebrow">ZAMBIA BASED · OPEN TO THE UK, US, AUSTRALIA &amp; BEYOND</p></div>
+      <p class="opportunity-intro">Someone is looking for</p>
+      <h1 id="service-title"><span class="business-rotation" id="business-rotation" aria-live="off" data-examples="a steel fabricator|an event venue|a cosmetics brand|a caterer|an engineering firm|a school|a community organisation|a construction company|a wellness studio|soft play hire|an event planner|a photographer|accommodation|a tour operator|a contractor|a landscaper|properties">a steel fabricator</span><br>right now.</h1>
       <div class="service-hero-bottom"><p>When they reach your website, it should make your work easy to understand and make contacting you feel effortless. I build sites that do both, with a look that belongs to your business.</p><div class="service-hero-actions"><a class="glass-action glass-action-primary" href="enquire.html">Get a quote <span aria-hidden="true">↗</span></a><a class="glass-action wa-interactive" href="https://wa.me/260975996792" target="_blank" rel="noopener noreferrer"><span class="wa-visual"><span class="wa-label">Chat on WhatsApp</span><svg class="wa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div></div>
-      <p class="service-hero-note"><span>FOR MAKERS, SERVICE BUSINESSES, SCHOOLS, ORGANISATIONS &amp; MORE</span><button class="wave-toggle" type="button" aria-pressed="false" hidden>Pause waves</button></p>
+      <p class="service-hero-note"><span>FOR MAKERS, SERVICE BUSINESSES, SCHOOLS, ORGANISATIONS &amp; MORE</span><button class="hero-motion-toggle" id="hero-motion-toggle" type="button" aria-label="Pause background motion" aria-pressed="false" hidden>Pause motion</button></p>
     </section>
 
     <section class="wrap section service-section" aria-labelledby="problem-title">
@@ -76,13 +78,13 @@
       <!-- cms:steps:end -->
     </div></div></section>
 
-    <section class="wrap section service-pricing" aria-labelledby="pricing-title"><div><p class="eyebrow">06 / THE STARTING POINT</p><h2 id="pricing-title">Small site.<br><span>Clear starting price.</span></h2><p>Basic one- or two-page business websites start at <strong data-cms-price>£100</strong>. If your site needs more pages, transactions, complex content, or integrations, I’ll give you a tailored quote.</p><p>Hosting depends on the type of website. Ongoing support is a separate monthly charge, and updates after the <span data-cms-revisions>3</span> included revision rounds are paid.</p><a class="glass-action glass-action-primary" href="enquire.html">Tell me what you need <span aria-hidden="true">↗</span></a></div><div class="pricing-facts" aria-label="Offer details"><p><span>FROM</span><strong data-cms-price>£100</strong><small>Basic 1–2 page business site</small></p><p><span>INCLUDED</span><strong data-cms-revisions>3</strong><small>Revision rounds before launch</small></p><p><span>TIMELINE</span><strong data-cms-timeline>3–5 days</strong><small>Typical aim for a standard site after I receive the essentials</small></p></div></section>
+    <section class="wrap section service-pricing" aria-labelledby="pricing-title"><div><p class="eyebrow">06 / THE STARTING POINT</p><h2 id="pricing-title">Small site.<br><span>Clear starting price.</span></h2><p>Basic one- or two-page business websites start at <strong data-cms-price>£200</strong>. If your site needs more pages, transactions, complex content, or integrations, I’ll give you a tailored quote.</p><p>Hosting depends on the type of website. Ongoing support is a separate monthly charge, and updates after the <span data-cms-revisions>3</span> included revision rounds are paid.</p><a class="glass-action glass-action-primary" href="enquire.html">Tell me what you need <span aria-hidden="true">↗</span></a></div><div class="pricing-facts" aria-label="Offer details"><p><span>FROM</span><strong data-cms-price>£200</strong><small>Basic 1–2 page business site</small></p><p><span>INCLUDED</span><strong data-cms-revisions>3</strong><small>Revision rounds before launch</small></p><p><span>TIMELINE</span><strong data-cms-timeline>3–5 days</strong><small>Typical aim for a standard site after I receive the essentials</small></p></div></section>
 
     <section class="service-close section" aria-labelledby="close-title"><div class="wrap"><p class="eyebrow">07 / READY WHEN YOU ARE</p><h2 id="close-title">Let’s give your business<br>an introduction it deserves.</h2><div class="service-hero-actions"><a class="glass-action glass-action-primary" href="enquire.html">Request a quote <span aria-hidden="true">↗</span></a><a class="glass-action wa-interactive" href="https://wa.me/260975996792" target="_blank" rel="noopener noreferrer"><span class="wa-visual"><span class="wa-label">Message on WhatsApp</span><svg class="wa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a></div></div></section>
   </main>
   <footer class="wrap site-footer"><a class="studio-logo" href="index.html" aria-label="Tedits Studio home"><img src="assets/tedits-studio-on-ivory.svg" alt="Tedits" width="144" height="28"><span>STUDIO</span></a><p>© 2026 Tedits Studio · Zambia / Worldwide</p><a href="enquire.html">Enquire <span aria-hidden="true">↗</span></a></footer>
   <script src="studio-services.js?v=2"></script>
-  <script src="studio-waves.js?v=2"></script>
+  <script src="studio-hero.js"></script>
   <script src="studio-contact.js?v=1"></script>
 </body>
 </html>

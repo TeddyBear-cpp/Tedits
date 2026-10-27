@@ -13,7 +13,7 @@ const home = {
   _id: 'homepage', _type: 'homepage',
   heading: extract(source, /<h1 id="hero-title">([^<]*)/, 'hero heading'),
   subheading: extract(source, /<h1 id="hero-title">[\s\S]*?<span>([\s\S]*?)<\/span>/, 'hero second line'),
-  intro: extract(source, /<div class="hero-bottom">[\s\S]*?<\/div><p>([\s\S]*?)<\/p><\/div>/, 'hero introduction'),
+  intro: extract(source, source.includes('id="cloud-scene"') ? /<div class="cloud-copy">[\s\S]*?<\/h1><p>([\s\S]*?)<\/p>/ : /<div class="hero-bottom">[\s\S]*?<\/div><p>([\s\S]*?)<\/p><\/div>/, 'hero introduction'),
   seoTitle: extract(source, /<title>([\s\S]*?)<\/title>/, 'page title'),
   seoDescription: extract(source, /<meta name="description" content="([^"]*)">/, 'page description'),
 };

@@ -10,8 +10,8 @@ const homepage = defineType({
   name: 'homepage', title: 'Homepage', type: 'document',
   groups: [{name: 'hero', title: 'Hero', default: true}, {name: 'seo', title: 'Search appearance'}],
   fields: [
-    {...requiredText('heading', 'Headline — first line', 90), group: 'hero', initialValue: 'Thoughtful websites.'},
-    {...requiredText('subheading', 'Headline — second line', 90), group: 'hero', initialValue: 'Designed for your business.'},
+    {...requiredText('heading', 'Headline — first line', 90), group: 'hero', initialValue: 'Design that'},
+    {...requiredText('subheading', 'Headline — second line', 90), group: 'hero', initialValue: 'connects.'},
     defineField({name: 'intro', title: 'Introduction', type: 'text', rows: 3, group: 'hero',
       description: 'A short introduction beside the Explore selected work link.',
       validation: (rule) => rule.required().max(400)}),
