@@ -1,18 +1,21 @@
-/* Keep the button row visible. Its surface appears only after the hero exits. */
+/* Keep the button row visible. The corner brand clears away as you scroll. */
 (() => {
   'use strict';
   const header = document.querySelector('.buttons-nav .site-header');
   if (!header) return;
+  const brand = document.querySelector('.buttons-nav .corner-brand');
+  const theme = document.querySelector('.buttons-nav .corner-theme');
   const scene = document.getElementById('cloud-scene');
-  if (!scene) { header.dataset.surface = 'page'; return; }
   function sync() {
-    header.dataset.surface = scene.getBoundingClientRect().bottom > 0 ? 'hero' : 'page';
+    const inHero = scene && scene.getBoundingClientRect().bottom > 0;
+    const atTop = window.scrollY < 16;
+    header.dataset.surface = inHero ? 'hero' : 'page';
+    if (brand) brand.dataset.surface = atTop ? 'hero' : 'page';
+    if (theme) theme.dataset.surface = inHero ? 'hero' : 'page';
   }
   sync();
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(sync, {threshold:0}).observe(scene);
-  } else {
-    addEventListener('scroll', sync, {passive:true});
-  }
+  addEventListener('scroll', sync, {passive:true});
+  if (scene && 'IntersectionObserver' in window) new IntersectionObserver(sync, {threshold:0}).observe(scene);
+  addEventListener('resize', sync, {passive:true});
   addEventListener('pageshow', sync);
 })();
