@@ -26,7 +26,7 @@
       shadow.y/=body.w;
       float shade=(1.0-smoothstep(.76,1.32,length(shadow)))*.25;
       underneath*=1.0-shade;
-      if(distance>1.01)return underneath;
+      if(distance>1.08)return underneath;
       float z=sqrt(max(0.0,1.0-dot(q,q)));
       vec3 normal=normalize(vec3(c*q.x+s*q.y,(-s*q.x+c*q.y)/body.w,z));
       vec3 light=normalize(vec3(-.55,-.75,1.15));
@@ -34,7 +34,7 @@
       float specular=pow(max(0.0,dot(reflect(-light,normal),vec3(0.0,0.0,1.0))),36.0);
       float rim=pow(1.0-z,3.0)*.14;
       vec3 surface=color*(.24+.88*diffuse)+vec3(.97,.98,.90)*(specular*.48+rim);
-      return mix(underneath,surface,1.0-smoothstep(.985,1.01,distance));
+      return mix(underneath,surface,1.0-smoothstep(.90,1.08,distance));
     }
     void main(){
       vec2 uv=gl_FragCoord.xy/uResolution;
@@ -92,7 +92,7 @@
     const oldWidth=width,oldHeight=height;
     width=Math.max(1,art.clientWidth);height=Math.max(1,art.clientHeight);
     // Cap the raster size: this background does not need full device resolution.
-    const ratio=Math.min(devicePixelRatio||1,1.25,1600/width);
+    const ratio=Math.min(devicePixelRatio||1,.8,1100/width);
     canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);
     gl.viewport(0,0,canvas.width,canvas.height);
     const radius=Math.min(width*.20,height*.43),speed=Math.min(width,height)*.055;

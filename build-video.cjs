@@ -9,6 +9,7 @@ if (fs.existsSync(out) && fs.readdirSync(out).length) {
 fs.mkdirSync(out, {recursive: true});
 const files = [
   'index.html', 'video-preview.css', 'video-player.css', 'video-preview.js', 'contact.js',
+  'site-loader.css', 'site-loader.js',
   'section-navigation.js',
   'Assets/tedits-bear-favicon-32.png',
   'Assets/tedits-brand/tedits-logo.svg', 'Assets/tedits-brand/tedits-logo-on-dark.svg',
@@ -16,7 +17,10 @@ const files = [
   'Assets/tedits-brand/DM-Sans-OFL.txt',
   'Assets/tedits-brand/Syne-Medium.ttf', 'Assets/tedits-brand/Syne-Semibold.ttf',
   'Assets/tedits-brand/Syne-Bold.ttf', 'Assets/tedits-brand/Syne-OFL.txt',
-  'videos/teditstudio-launch.mp4', 'videos/Violet-light-edit.mp4', 'videos/Delta-Force-Edit.mp4', 'videos/20min-edit.mp4',
+  'Assets/video-posters/teditstudio-launch.webp', 'Assets/video-posters/violet-light.webp',
+  'Assets/video-posters/delta-force.webp', 'Assets/video-posters/20min-edit.webp',
+  'Assets/video-posters/the-lead.webp', 'Assets/video-posters/spiderman-superman.webp',
+  'videos/teditstudio-launch.mp4', 'videos/Violet-light-edit.mp4', 'videos/Delta-Force-Edit.mp4', 'videos/20Min-Edit.mp4',
   'videos/The_lead-prodbyTeddBear-Trimed.mp4', 'videos/Spiderman-Superman.mp4'
 ];
 for (const file of files) {

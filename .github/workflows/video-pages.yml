@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - index.html
+      - site-loader.css
+      - site-loader.js
       - video-preview.css
       - video-player.css
       - video-preview.js

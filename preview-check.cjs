@@ -15,7 +15,7 @@ const path = require('path');
     await page.setViewportSize({width,height});
     await page.goto('http://127.0.0.1:8082/index.html',{waitUntil:'domcontentloaded'});
     const entranceMotion=await page.evaluate(()=>document.getAnimations().length>0);
-    await page.waitForFunction(()=>[...document.querySelectorAll('video')].every(v=>v.readyState>=2));
+    await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
     const firstPlayer=page.locator('.custom-player').first();
     await firstPlayer.locator('.transport-play').click();
     await page.waitForFunction(()=>!document.querySelector('video').paused);
@@ -34,6 +34,8 @@ const path = require('path');
     await firstPlayer.locator('.transport-fullscreen').click();
     await page.waitForFunction(()=>!document.fullscreenElement);
     const ui={playPause:true,keyboardSeek:true,muteWorked,fullscreen:true};
+    await page.evaluate(()=>document.querySelectorAll('.work-card video').forEach(video=>video.load()));
+    await page.waitForFunction(()=>[...document.querySelectorAll('video')].every(v=>v.readyState>=2));
     const playback=await page.evaluate(async()=>{
       const videos=[...document.querySelectorAll('video')];
       const first=videos[0];

@@ -7,10 +7,14 @@
   <title>Tedits — Video editing & motion design</title>
   <meta name="description" content="Independent video editing and motion design, based in Zambia and available for remote projects worldwide. Explore short-form edits, music videos, and motion graphics.">
   <link rel="icon" href="Assets/tedits-bear-favicon-32.png">
+  <script>try{if(!location.hash&&!sessionStorage.getItem('tedits-loader-video')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('loader-active');setTimeout(()=>document.documentElement.classList.remove('loader-active'),2400)}}catch(_){}</script>
+  <link rel="preload" href="Assets/video-posters/teditstudio-launch.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="site-loader.css">
   <link rel="stylesheet" href="video-preview.css">
   <link rel="stylesheet" href="video-player.css">
 </head>
-<body id="top">
+<body id="top" data-loader-key="tedits-loader-video">
+  <div class="site-loader" aria-hidden="true"><img src="Assets/tedits-brand/tedits-logo-on-dark.svg" alt=""><span class="site-loader-label">VIDEO &amp; MOTION</span><span class="site-loader-track"><span class="site-loader-line"></span></span></div>
   <a class="skip" href="#main">Skip to content</a>
   <header class="wrap header">
     <a href="#top" aria-label="Tedits home"><img class="logo" src="Assets/tedits-brand/tedits-logo.svg" alt="Tedits" width="188" height="36"></a>
@@ -27,7 +31,7 @@
       </div>
       <figure class="hero-film">
         <div class="film-top"><span>IN THE FRAME</span><span>01 / TEDITSTUDIO LAUNCH</span></div>
-        <div class="video-shell"><video controls playsinline preload="metadata" src="videos/teditstudio-launch.mp4#t=0.1" aria-label="Play TeditStudio Launch"></video></div>
+        <div class="video-shell"><video controls playsinline preload="none" poster="Assets/video-posters/teditstudio-launch.webp" data-loader-critical src="videos/teditstudio-launch.mp4#t=0.1" aria-label="Play TeditStudio Launch"></video></div>
         <figcaption><span>TeditStudio Launch</span><span>Featured edit</span></figcaption>
       </figure>
     </section>
@@ -35,11 +39,11 @@
     <section id="work" class="wrap section" aria-labelledby="work-title">
       <div class="section-heading"><div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="work-title">Made to move you.</h2></div><p>A selection of edits exploring pace,<br>personality, and visual storytelling.</p></div>
       <div class="work-grid">
-        <figure class="work-card"><div class="video-shell"><video controls playsinline preload="metadata" src="videos/Violet-light-edit.mp4#t=0.1" aria-label="Play Violet Light edit"></video></div><figcaption><span>Violet Light</span><small>SHORT-FORM / 01</small></figcaption></figure>
-        <figure class="work-card"><div class="video-shell"><video controls playsinline preload="metadata" src="videos/Delta-Force-Edit.mp4#t=0.1" aria-label="Play gaming edit"></video></div><figcaption><span>Gaming edit</span><small>SHORT-FORM / 02</small></figcaption></figure>
-        <figure class="work-card"><div class="video-shell"><video controls playsinline preload="metadata" src="videos/20min-edit.mp4#t=0.1" aria-label="Play dynamic typography edit"></video></div><figcaption><span>Type & movement</span><small>MOTION GRAPHICS / 03</small></figcaption></figure>
-        <figure class="work-card"><div class="video-shell"><video controls playsinline preload="metadata" src="videos/The_lead-prodbyTeddBear-Trimed.mp4#t=0.1" aria-label="Play music montage"></video></div><figcaption><span>Light & distortion</span><small>MUSIC VIDEO / 04</small></figcaption></figure>
-        <figure class="work-card"><div class="video-shell"><video controls playsinline preload="metadata" src="videos/Spiderman-Superman.mp4#t=0.1" aria-label="Play cinematic edit"></video></div><figcaption><span>A cinematic feeling</span><small>FAN EDIT / 05</small></figcaption></figure>
+        <figure class="work-card"><div class="video-shell"><video controls playsinline preload="none" poster="Assets/video-posters/violet-light.webp" src="videos/Violet-light-edit.mp4#t=0.1" aria-label="Play Violet Light edit"></video></div><figcaption><span>Violet Light</span><small>SHORT-FORM / 01</small></figcaption></figure>
+        <figure class="work-card"><div class="video-shell"><video controls playsinline preload="none" poster="Assets/video-posters/delta-force.webp" src="videos/Delta-Force-Edit.mp4#t=0.1" aria-label="Play gaming edit"></video></div><figcaption><span>Gaming edit</span><small>SHORT-FORM / 02</small></figcaption></figure>
+        <figure class="work-card"><div class="video-shell"><video controls playsinline preload="none" poster="Assets/video-posters/20min-edit.webp" src="videos/20Min-Edit.mp4#t=0.1" aria-label="Play dynamic typography edit"></video></div><figcaption><span>Type & movement</span><small>MOTION GRAPHICS / 03</small></figcaption></figure>
+        <figure class="work-card"><div class="video-shell"><video controls playsinline preload="none" poster="Assets/video-posters/the-lead.webp" src="videos/The_lead-prodbyTeddBear-Trimed.mp4#t=0.1" aria-label="Play music montage"></video></div><figcaption><span>Light & distortion</span><small>MUSIC VIDEO / 04</small></figcaption></figure>
+        <figure class="work-card"><div class="video-shell"><video controls playsinline preload="none" poster="Assets/video-posters/spiderman-superman.webp" src="videos/Spiderman-Superman.mp4#t=0.1" aria-label="Play cinematic edit"></video></div><figcaption><span>A cinematic feeling</span><small>FAN EDIT / 05</small></figcaption></figure>
       </div>
       <p class="work-note">Creative editing samples, including fan edits. Featured footage and music belong to their respective owners.</p>
     </section>
@@ -58,6 +62,7 @@
   <aside class="wrap web-design-note" aria-label="Web design by Tedits Studio"><p>I design thoughtful websites, too.</p><a href="studio/index.html">Explore Tedits Studio <span aria-hidden="true">↗</span></a></aside>
   <footer class="wrap footer"><a href="#top" aria-label="Tedits back to top"><img src="Assets/tedits-brand/tedits-logo-on-dark.svg" alt="Tedits" width="144" height="28"></a><p>Video & motion · Zambia / Worldwide</p><div><a href="https://instagram.com/teddy_chxngx" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://tiktok.com/@teddy_chxngx" target="_blank" rel="noopener noreferrer">TikTok ↗</a></div></footer>
   <script src="video-preview.js"></script>
+  <script src="site-loader.js"></script>
   <script src="contact.js"></script>
 <script src="section-navigation.js"></script>
 </body>
