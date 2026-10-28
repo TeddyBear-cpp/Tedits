@@ -20,7 +20,7 @@ const files = [
   'Assets/video-posters/teditstudio-launch.webp', 'Assets/video-posters/violet-light.webp',
   'Assets/video-posters/delta-force.webp', 'Assets/video-posters/20min-edit.webp',
   'Assets/video-posters/the-lead.webp', 'Assets/video-posters/spiderman-superman.webp',
-  'videos/teditstudio-launch.mp4', 'videos/Violet-light-edit.mp4', 'videos/Delta-Force-Edit.mp4', 'videos/20Min-Edit.mp4',
+  'videos/teditstudio-launch.mp4', 'videos/Violet-light-edit.mp4', 'videos/Delta-Force-Edit.mp4', 'videos/20min-edit.mp4',
   'videos/The_lead-prodbyTeddBear-Trimed.mp4', 'videos/Spiderman-Superman.mp4'
 ];
 for (const file of files) {
