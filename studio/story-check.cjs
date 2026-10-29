@@ -15,6 +15,12 @@ const out='studio/preview-evidence/story'; fs.mkdirSync(out,{recursive:true});
   await page.waitForTimeout(350);
   const positions=await page.evaluate(()=>{const el=document.querySelector('.scroll-story'),stage=el.querySelector('.story-stage');return{start:el.getBoundingClientRect().top+scrollY-(parseFloat(getComputedStyle(stage).top)||0),distance:el.offsetHeight-stage.offsetHeight,pinned:el.dataset.pinned};});
   const view={name,width,height,...positions,frames:[]};
+  assert.equal(positions.pinned, width > 760 && height >= 580 ? 'true' : 'false');
+  if(width<=760){
+   const flow=await page.evaluate(()=>[...document.querySelectorAll('.story-chapter')].map(el=>({top:el.offsetTop,bottom:el.offsetTop+el.offsetHeight,copy:el.querySelector('.story-copy').getBoundingClientRect().top,preview:el.querySelector('.story-browser').getBoundingClientRect().top,hidden:el.getAttribute('aria-hidden')})));
+   assert(flow.every((el,index)=>el.copy<el.preview&&!el.hidden&&(!index||el.top>=flow[index-1].bottom)),`${name} chapters must stack with copy first`);
+   assert.equal(await page.locator('.story-controls').isVisible(),false);
+  }
   for(const [label,progress]of [['first',0],['middle',.4],['last',.85]]){
    await page.evaluate(({positions,progress})=>window.TeditsScroll.scrollTo(positions.start+positions.distance*progress,{immediate:true}),{positions,progress});
    await page.waitForTimeout(200);
@@ -49,7 +55,12 @@ const out='studio/preview-evidence/story'; fs.mkdirSync(out,{recursive:true});
  assert.equal(await page.evaluate(()=>!!window.TeditsScroll.instance),false);
  await page.locator('#website-story').scrollIntoViewIfNeeded();await page.screenshot({path:`${out}/reduced-mobile.png`});
  await page.emulateMedia({reducedMotion:'no-preference'});await page.waitForTimeout(200);
+ assert.equal(await page.locator('.scroll-story').getAttribute('data-pinned'),'false');
+ await page.setViewportSize({width:1440,height:900});await page.waitForTimeout(200);
  assert.equal(await page.locator('.scroll-story').getAttribute('data-pinned'),'true');
+ await page.setViewportSize({width:390,height:844});await page.waitForTimeout(200);
+ assert.equal(await page.locator('.scroll-story').getAttribute('data-pinned'),'false');
+ assert.equal(await page.locator('.story-chapter[aria-hidden]').count(),0);
  await page.evaluate(()=>{document.documentElement.dataset.theme='dark';window.TeditsScroll.scrollTo(document.querySelector('.scroll-story').offsetTop-72,{immediate:true});});await page.waitForTimeout(200);
  await page.screenshot({path:`${out}/dark-mobile.png`});
  await page.goto('http://127.0.0.1:8084/studio/why-teditstudio.html',{waitUntil:'networkidle'});assert(page.url().endsWith('studio/index.html#why'));
@@ -71,7 +82,7 @@ const out='studio/preview-evidence/story'; fs.mkdirSync(out,{recursive:true});
   await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await touch.waitForTimeout(300);
  }
  const movement=await touch.evaluate(()=>({y:scrollY,top:document.querySelector('.story-stage').getBoundingClientRect().top,progress:document.querySelector('.scroll-story').dataset.progress,nativeTouch:window.TeditsScroll.instance.options.syncTouch===false}));
- assert(movement.y>before+600);assert(movement.nativeTouch);assert(movement.progress>.2);
+ assert(movement.y>before+600);assert(movement.nativeTouch);assert.equal(movement.progress,undefined);
  report.touch=movement;
  await touch.screenshot({path:`${out}/touch-mobile.png`});await touch.close();await browser.close();
  fs.writeFileSync(`${out}/checks.json`,JSON.stringify(report,null,2));
