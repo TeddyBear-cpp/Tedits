@@ -110,7 +110,9 @@
     "includedRevisions": 3,
     "standardTimeline": "3–5 days",
     "seoTitle": "Why Tedits Studio — Websites built around your business",
-    "seoDescription": "Websites for businesses ready to be found and understood. Work directly with an independent designer in Zambia, serving clients worldwide."
+    "seoDescription": "Websites for businesses ready to be found and understood. Work directly with an independent designer in Zambia, serving clients worldwide.",
+    "currency": "EUR",
+    "offerClientLimit": 5
   },
   {
     "_id": "enquiryPage",

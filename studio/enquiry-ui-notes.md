@@ -1,0 +1,11 @@
+# Enquiry and interaction update
+
+Implemented with the existing Studio brand and approved three-card composition. No new imagery, fonts or dependencies. The existing spring pointer effect drives the hero CTA's nested surface; its link hit area stays fixed. Touch, keyboard focus and reduced motion keep the magnetic surface still. Disclosure transitions are interruptible and short; keyboard toggles are immediate. Theme icons and control feedback use transform/opacity transitions.
+
+The form asks for project type, a short description, then contact details and a review. Project size, industry, location and technical service selections were removed. A current-site field appears only for refresh projects. Back, browser history and edit controls preserve answers. Inline validation focuses the relevant field. Enter on the first two cards continues rather than submitting. Only the final action sends to the pre-existing Formspree endpoint. Failed submissions retain values; successful submissions clear them. No personal draft is stored in local storage. Without JavaScript, the complete native form remains usable.
+
+Verified at 1440×900, 390×844 and 320×640, including invalid input, optional and conditional fields, summary escaping, browser history, failed submission/retry, success/restart, reduced motion, magnetic return, fast disclosure reversal, theme icons and no-script form. All six test submissions were intercepted locally; no test enquiry was transmitted. No page errors, failed assets or horizontal overflow. Live CMS fixture and isolated packaging build passed. Nothing was committed or published.
+
+Visual review: first round found a narrow tablet heading and small offer text; these were fixed. Final form and homepage inspector report zero failures at 1440, 768 and 390px. Form inspector allowances reflect the task: no unrelated photographs/video, interaction-triggered motion rather than scroll-triggered decoration, and deliberate padding inside the form card. Existing navigation and palette remain. Final form screenshot review: design 7.5, usability 8, creativity 7, content 8; weighted 7.6. Inherited footer CTA and tablet two-column offer layout remain candidates for later refinement, without blocking the enquiry.
+
+Preview: http://127.0.0.1:8084/studio/enquire.html

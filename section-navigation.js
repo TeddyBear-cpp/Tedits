@@ -26,7 +26,8 @@
     const section = id ? document.getElementById(id) : document.body;
     if (!section) return;
     // A new destination replaces any smooth scroll already in progress.
-    window.scrollTo({top:window.scrollY,behavior:'instant'});
+    if (window.TeditsScroll) window.TeditsScroll.cancel();
+    else window.scrollTo({top:window.scrollY,behavior:'instant'});
     const topLink = !id || id === 'top';
     const skip = id === 'main';
     const fixedHeader = document.querySelector('.buttons-nav .site-header');
@@ -49,6 +50,11 @@
       }
       // Studio's heading reveals move temporarily; anchor to the stable section padding.
       if (fixedHeader && id === 'work') top = layoutTop(section) + parseFloat(getComputedStyle(section).paddingTop) - clearance;
+      // The Studio story has an explicit reading order and its own sticky stage.
+      if (section.matches('.story-intro, .story-answer, .studio-offer')) {
+        top = layoutTop(section) + parseFloat(getComputedStyle(section).paddingTop) - clearance;
+      }
+      if (section.matches('.scroll-story')) top = layoutTop(section) - (parseFloat(getComputedStyle(section.querySelector('.story-stage')).top) || clearance);
     }
     if (focus && !topLink) {
       // Preserve the material chooser's own focus when a catalogue action selected it.
@@ -62,7 +68,9 @@
         target.focus({preventScroll:true});
       }
     }
-    window.scrollTo({top:Math.max(0,Math.min(max,top)),behavior:animate&&!reduced.matches?'smooth':'instant'});
+    const scrollTop = Math.max(0,Math.min(max,top));
+    if (window.TeditsScroll) window.TeditsScroll.scrollTo(scrollTop, {immediate:!animate||reduced.matches});
+    else window.scrollTo({top:scrollTop,behavior:animate&&!reduced.matches?'smooth':'instant'});
   }
   document.addEventListener('click',event=>{
     const link = event.target.closest('a[href^="#"]');

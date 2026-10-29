@@ -64,7 +64,7 @@
 
   function initialiseEffects() {
     if (effects.length) return
-    document.querySelectorAll('.wa-interactive').forEach(link => {
+    document.querySelectorAll('.wa-interactive, [data-magnetic]').forEach(link => {
       const listeners = new AbortController()
       const options = {signal: listeners.signal, passive: true}
       let rect = null, inside = false, raf = 0, lastFrame = 0, pendingPointer = null
@@ -115,7 +115,7 @@
         link.dataset.pointerInside = 'true'
       }, options)
       link.addEventListener('pointermove', event => {
-        if (!allowed() || event.pointerType === 'touch') return
+        if (!allowed() || event.pointerType === 'touch' || link.matches(':focus-visible')) return
         if (!rect) rect = link.getBoundingClientRect()
         const px = event.clientX - rect.left, py = event.clientY - rect.top
         const nx = Math.max(-1, Math.min(1, px / rect.width * 2 - 1))
@@ -134,8 +134,10 @@
         if (allowed()) start(); else reset()
       }, options)
       link.addEventListener('pointercancel', reset, options)
+      link.addEventListener('focus', () => { if (link.matches(':focus-visible')) reset() }, options)
       link.addEventListener('blur', () => { if (!inside) reset() }, options)
       window.addEventListener('resize', () => { rect = null }, options)
+      window.addEventListener('scroll', () => { if (inside) reset(); else rect = null }, options)
       reduced.addEventListener('change', reset, {signal: listeners.signal})
       fine.addEventListener('change', reset, {signal: listeners.signal})
       effects.push(() => { listeners.abort(); cancelAnimationFrame(raf); reset() })

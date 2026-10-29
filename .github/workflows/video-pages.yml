@@ -6,6 +6,9 @@ on:
       - index.html
       - site-loader.css
       - site-loader.js
+      - smooth-scroll.css
+      - smooth-scroll.js
+      - vendor/lenis/**
       - video-preview.css
       - video-player.css
       - video-preview.js

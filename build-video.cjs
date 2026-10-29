@@ -10,6 +10,8 @@ fs.mkdirSync(out, {recursive: true});
 const files = [
   'index.html', 'video-preview.css', 'video-player.css', 'video-preview.js', 'contact.js',
   'site-loader.css', 'site-loader.js',
+  'smooth-scroll.css', 'smooth-scroll.js',
+  'vendor/lenis/lenis-1.3.27.min.js', 'vendor/lenis/LICENSE.txt',
   'section-navigation.js',
   'Assets/tedits-bear-favicon-32.png',
   'Assets/tedits-brand/tedits-logo.svg', 'Assets/tedits-brand/tedits-logo-on-dark.svg',

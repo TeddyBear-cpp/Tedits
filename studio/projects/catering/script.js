@@ -96,6 +96,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     }
     // Keep anchor URLs useful without triggering another native anchor jump.
     try { if (window.location.hash !== hash) window.history.pushState(null, '', hash); } catch (_) {}
-    window.scrollTo({ top, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+    if (window.TeditsScroll) window.TeditsScroll.scrollTo(top, {immediate: reducedMotion.matches});
+    else window.scrollTo({ top, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
   });
 });

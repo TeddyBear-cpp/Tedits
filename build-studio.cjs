@@ -9,6 +9,8 @@ const files = [
   'studio/studio-services.css', 'studio/studio-services.js', 'studio/studio-waves.js', 'studio/enquiry.js',
   'studio/studio-contact.css', 'studio/studio-contact.js',
   'studio/studio-rounded.css', 'studio/studio-clouds.js', 'studio/studio-navigation.js',
+  'studio/studio-story.css', 'studio/studio-story.js',
+  'studio/studio-ui.css', 'studio/studio-ui.js', 'studio/studio-enquiry.css',
   'studio/studio.css', 'studio/studio.js', 'studio/studio-motion.css',
   'studio/studio-theme.css', 'studio/studio-theme.js', 'studio/studio-hero.css', 'studio/studio-hero.js',
   'studio/projects/catering/index.html', 'studio/projects/catering/style.css',
@@ -46,7 +48,8 @@ html = html.replace('<meta name="robots" content="noindex">', `<link rel="canoni
 html = html.replace(/<script>if\(location\.hash\.startsWith\('#figmacapture='\)\)[\s\S]*?<\/script>/, '');
 if (/figmacapture|noindex/.test(html)) throw new Error('Studio preview configuration remains');
 fs.writeFileSync(studioIndex,html);
-for (const page of ['why-teditstudio.html', 'enquire.html']) {
+// The legacy Why URL stays a redirect with the homepage as its canonical URL.
+for (const page of ['enquire.html']) {
   const filename = path.join(out, 'studio', page);
   let content = fs.readFileSync(filename, 'utf8');
   content = content.replace('<meta name="robots" content="noindex">', `<link rel="canonical" href="${studioUrl}${page}">`);
@@ -70,7 +73,7 @@ const videoIndex = path.join(out,'index.html');
 const video = fs.readFileSync(videoIndex,'utf8').replace('href="mailto:teditstudiozm@gmail.com?subject=Web%20design%20enquiry">Ask about web design','href="studio/index.html">Explore Tedits Studio');
 fs.writeFileSync(videoIndex,video);
 const sitemapFile = path.join(out,'sitemap.xml');
-fs.writeFileSync(sitemapFile,fs.readFileSync(sitemapFile,'utf8').replace('</urlset>',`<url><loc>${studioUrl}</loc></url><url><loc>${studioUrl}why-teditstudio.html</loc></url><url><loc>${studioUrl}enquire.html</loc></url></urlset>`));
+fs.writeFileSync(sitemapFile,fs.readFileSync(sitemapFile,'utf8').replace('</urlset>',`<url><loc>${studioUrl}</loc></url><url><loc>${studioUrl}enquire.html</loc></url></urlset>`));
 // Validate local HTML/CSS references, including case on case-insensitive Windows.
 const allFiles = [];
 function list(folder) {for(const entry of fs.readdirSync(folder,{withFileTypes:true})) {const name=path.join(folder,entry.name);if(entry.isDirectory())list(name);else allFiles.push(path.relative(out,name).replaceAll('\\','/'));}}
