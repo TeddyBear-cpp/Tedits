@@ -24,3 +24,11 @@
 @media(prefers-reduced-motion:reduce){.transport button{transition:none}}
 @container(max-width:220px){.transport button{width:28px;padding:7px}.timecode{font-size:8px;letter-spacing:-.5px}.timeline-controls{padding-inline:5px}.mid-time{visibility:hidden}}
 @container(max-width:165px){.time-divider,.total-time{display:none}}
+/* Portrait featured work gets a real 9:16 picture plus its own control area. */
+.hero:has(.featured-portrait){padding-block:48px 64px}
+.hero-film.featured-portrait{width:min(100%,300px);max-width:none;justify-self:center}
+.hero-film.featured-portrait .film-top{gap:14px;line-height:1.4}
+.hero-film.featured-portrait .film-top>span:last-child{text-align:right}
+.hero-film.featured-portrait .video-shell:not(:fullscreen) video{height:auto;aspect-ratio:9/16;box-sizing:content-box;padding-bottom:0}
+.hero-film.featured-portrait .video-shell.custom-player:not(:fullscreen) video{padding-bottom:94px}
+@media(max-width:760px){.hero-film.featured-portrait{width:min(100%,340px)}}

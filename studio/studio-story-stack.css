@@ -1,0 +1,79 @@
+/* The approved motion studies become a stack of prints, kept in view as it builds. */
+.scroll-story{overflow:clip;--story-card-size:min(46vw,580px,calc(100svh - 210px))}
+.scroll-story .story-stage{gap:24px}
+.scroll-story .story-chapter{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,80px)}
+.story-home .scroll-story .story-copy h3{font-size:clamp(38px,4.3vw,62px);line-height:1.08;max-width:13ch;letter-spacing:-.05em;margin-bottom:28px}
+.scroll-story .story-copy>p{max-width:34ch;font-size:18px;line-height:1.6}
+.story-media-slot{width:var(--story-card-size);max-width:100%;justify-self:end;aspect-ratio:1;position:relative}
+.story-media-slot[data-media-entry=ready]{opacity:0}
+/* taste-skill-ignore: data-ui video frames overlap as approved; the edge and shadow separate the physical stack. */
+.story-video-card{margin:0;position:relative;width:100%;aspect-ratio:1;background:var(--charcoal);color:var(--ivory);border:1px solid color-mix(in srgb,var(--gray) 38%,transparent);border-radius:clamp(24px,3vw,38px);overflow:hidden;transform-origin:55% 55%;box-shadow:0 12px 30px rgb(0 0 0 / .09)}
+.story-video-card video{display:block;width:100%;height:100%;aspect-ratio:1;object-fit:contain;pointer-events:none}
+.scroll-story .story-controls{display:flex;gap:16px;align-items:center;justify-content:space-between;padding-top:0}
+.scroll-story .story-tabs{gap:6px}
+/* taste-skill-ignore: outlined buttons are the existing Studio control language, distinct from the selected filled state. */
+.scroll-story .story-tabs button{background:transparent;font-size:14px;padding:10px 18px;border:1px solid color-mix(in srgb,var(--theme-ink) 25%,transparent)}
+.scroll-story .story-tabs button[aria-current=step]{background:var(--theme-ink);color:var(--theme-surface)}
+/* taste-skill-ignore: the outlined media control is a button, matching the adjacent chapter controls. */
+.story-media-toggle{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 15px;background:transparent;color:var(--theme-ink);border:1px solid color-mix(in srgb,var(--theme-ink) 25%,transparent);border-radius:30px;font:400 14px var(--body);cursor:pointer}
+.story-media-toggle[hidden]{display:none}
+.story-media-toggle .story-pause-icon{display:none}
+.story-media-toggle[data-playing=true] .story-pause-icon{display:block}
+.story-media-toggle[data-playing=true] .story-play-icon{display:none}
+.scroll-story :is(button,a):focus-visible{outline:2px solid var(--slate);outline-offset:4px}
+.scroll-story[data-pinned=true]{height:340svh}
+.scroll-story[data-pinned=true] .story-stage{top:78px;height:calc(100svh - 86px);padding-block:26px 18px;gap:24px}
+.scroll-story[data-pinned=true] .story-chapters{flex:1;min-height:0;width:100%}
+.scroll-story[data-pinned=true] .story-chapter{grid-area:1/1;opacity:1;visibility:visible;pointer-events:none;width:100%}
+.scroll-story[data-pinned=true] .story-copy{opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity 180ms var(--story-ease),transform 280ms var(--story-ease)}
+.scroll-story[data-pinned=true] .story-chapter.is-current .story-copy{opacity:1;visibility:visible;transform:none}
+.story-word{display:inline-block}
+.story-reveal[data-story-entry=ready]{opacity:0;transform:translate3d(0,12px,0)}
+.story-reveal[data-story-entry=done]{transition:opacity 420ms cubic-bezier(.25,.8,.25,1),transform 520ms cubic-bezier(.25,.8,.25,1)}
+.scroll-story:not([data-pinned=true]) .story-chapter[data-story-entry=ready] .story-word{opacity:0}
+@media(prefers-reduced-motion:reduce){.story-reveal[data-story-entry]{opacity:1;transform:none;transition:none!important}.story-chapter[data-story-entry] .story-word{opacity:1}}
+.scroll-story[data-pinned=true] .story-word{opacity:0;transform:translateY(18px)}
+.scroll-story[data-pinned=true] .is-current .story-word{opacity:1;transform:none;transition:opacity 380ms var(--story-ease),transform 520ms var(--story-ease);transition-delay:calc(var(--word-index)*65ms)}
+.scroll-story[data-pinned=true] .story-video-card{pointer-events:none}
+.scroll-story[data-pinned=true][data-in-view=true] .story-video-card{will-change:transform}
+.scroll-story:not([data-pinned=true]) .story-chapters{gap:80px}
+.scroll-story:not([data-pinned=true]){--story-card-size:min(46vw,580px)}
+.scroll-story:not([data-pinned=true]) .story-tabs{display:none}
+.scroll-story:not([data-pinned=true]) .story-chapters{grid-row:2}
+.scroll-story:not([data-pinned=true]) .story-controls{grid-row:1;position:sticky;top:78px;z-index:8;align-self:start;justify-content:flex-end;pointer-events:none}
+.scroll-story:not([data-pinned=true]) .story-media-toggle{pointer-events:auto;background:var(--theme-surface)}
+@media(max-width:1000px){
+ .story-home .scroll-story .story-copy h3{font-size:clamp(34px,4.8vw,48px)}
+ .scroll-story .story-copy>p{font-size:17px}
+ .scroll-story .story-chapter{gap:32px}
+}
+@media(max-width:900px){
+ .scroll-story{--story-card-size:min(calc(100vw - 64px),calc(100svh - 405px),430px)}
+ .scroll-story .story-chapter{display:grid;grid-template-columns:1fr;gap:24px;align-content:center}
+ .story-home .scroll-story .story-copy h3{font-size:clamp(30px,8.3vw,39px);max-width:16ch;margin-bottom:16px}
+ .scroll-story .story-copy>p{font-size:16px;line-height:1.55;max-width:36ch}
+ .story-media-slot{justify-self:center}
+ .scroll-story[data-pinned=true]{height:320svh}
+ .scroll-story[data-pinned=true] .story-stage{top:72px;height:calc(100svh - 130px);padding-block:12px;gap:16px}
+ .scroll-story[data-pinned=true] .story-chapter{grid-template-rows:168px auto;gap:16px}
+ .scroll-story[data-pinned=true] .story-copy{align-self:center}
+ .scroll-story .story-tabs button{font-size:13px;padding:9px 13px}
+ .scroll-story .story-stage{padding-bottom:24px}
+ .scroll-story:not([data-pinned=true]){--story-card-size:min(calc(100vw - 48px),430px)}
+ .scroll-story:not([data-pinned=true]) .story-chapters{gap:72px}
+ .story-video-card{border-radius:24px}
+}
+@media(max-width:420px){
+ .story-media-label{display:none}
+ .story-media-toggle{width:44px;padding:10px}
+ .scroll-story .story-tabs button{font-size:12px;padding-inline:12px}
+}
+@media(max-width:360px){
+ .scroll-story[data-pinned=true]{--story-card-size:min(calc(100vw - 64px),calc(100svh - 450px))}
+ .scroll-story[data-pinned=true] .story-chapter{grid-template-rows:212px auto}
+}
+@media(prefers-reduced-motion:reduce){
+ .scroll-story[data-pinned=true]{height:auto}
+ .scroll-story .story-word{opacity:1!important;transform:none!important}
+ .scroll-story .story-video-card{will-change:auto;transform:none!important}
+}

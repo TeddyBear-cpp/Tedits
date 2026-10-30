@@ -20,7 +20,12 @@ assert.equal((extras(rendered).match(/<a class="story-reveal"/g) || []).length, 
 assert.ok(rendered.includes('Olive &amp; Ember'));
 assert.ok(rendered.includes('Rivet &amp; Beam'));
 assert.ok(rendered.includes('href="enquire.html"'));
-assert.ok(rendered.includes('studio-story.js'));
+assert.ok(rendered.includes('studio-story-stack.js'));
+assert.ok(rendered.includes('studio-story-stack.css'));
+for (const name of ['get-found', 'answers', 'build-trust']) {
+  assert.ok(rendered.includes(`assets/website-story/${name}.mp4`), `CMS output must preserve ${name} video`);
+}
+assert.ok(!rendered.includes('src="studio-story.js"'));
 assert.ok(rendered.includes('INDEPENDENT CONCEPT'));
 assert.ok(!rendered.includes('undefined'));
 const malicious = structuredClone(projects);

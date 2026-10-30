@@ -14,17 +14,19 @@ const base = process.argv[2] || 'http://127.0.0.1:8084/_site-video/';
       await page.setViewportSize({width,height:900});
       await page.goto(base + 'index.html', {waitUntil:'domcontentloaded'});
       await page.waitForFunction(() => [...document.images].every(i => i.complete && i.naturalWidth));
-      await page.waitForFunction(() => [...document.querySelectorAll('video')].every(v => v.readyState >= 2));
       const state = await page.evaluate(() => ({
         overflow:document.documentElement.scrollWidth > innerWidth,
         images:[...document.images].every(i => i.complete && i.naturalWidth),
         anchors:[...document.querySelectorAll('a[href^="#"]')].every(a => document.querySelector(a.getAttribute('href'))),
         videos:document.querySelectorAll('video').length,
+        featured:document.querySelector('.hero-film video').getAttribute('src'),
+        launchInWork:!!document.querySelector('.work-card video[src*="teditstudio-launch.mp4"]'),
         noindex:!!document.querySelector('meta[name="robots"][content="noindex"]'),
         studioLink:document.querySelector('.web-design-note a').getAttribute('href')
       }));
       assert.equal(state.overflow,false); assert.ok(state.images); assert.ok(state.anchors);
-      assert.equal(state.videos,6); assert.equal(state.noindex,false);
+      assert.equal(state.videos,7); assert.equal(state.noindex,false);
+      assert.equal(state.featured,'videos/teditstudio-ad-finale.mp4'); assert.ok(state.launchInWork);
       assert.equal(state.studioLink,'studio/index.html');
       await page.locator('.transport-play').first().click();
       await page.waitForFunction(() => document.querySelector('video').currentTime > 0.3);

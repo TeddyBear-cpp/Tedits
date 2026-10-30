@@ -174,16 +174,26 @@ if (!motionPreference.matches && 'IntersectionObserver' in window && Element.pro
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      enter(entry.target, Number(entry.target.dataset.entranceDelay) || 0);
       observer.unobserve(entry.target);
+      if(entry.target.dataset.videoEntry==='ready')entry.target.dataset.videoEntry='done';
     });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.section-heading,.work-card,.services-grid > div,.contact > *, .web-design-note').forEach(element => observer.observe(element));
-  document.querySelectorAll('.work-card').forEach((element, index) => { element.dataset.entranceDelay = (index % 2) * 70; });
+  }, { threshold: 0, rootMargin:'0px 0px -24px 0px' });
+  // Arm below-fold content before it is visible. The old 12%-visible callback
+  // reset readable content to opacity zero, especially late on tall phone cards.
+  document.querySelectorAll('.section-heading,.work-card,.services-grid > div,.contact > *, .web-design-note').forEach(element => {
+    if(element.getBoundingClientRect().top<innerHeight)return;
+    element.dataset.videoEntry='ready';
+    observer.observe(element);
+  });
+  document.addEventListener('focusin',event=>{
+    const pending=event.target.closest('[data-video-entry=ready]');
+    if(pending){observer.unobserve(pending);delete pending.dataset.videoEntry;}
+  });
   motionPreference.addEventListener('change', event => {
     if (!event.matches) return;
     entranceAnimations.forEach(animation => animation.cancel());
     entranceAnimations.clear();
     observer.disconnect();
+    document.querySelectorAll('[data-video-entry]').forEach(element=>delete element.dataset.videoEntry);
   });
 }

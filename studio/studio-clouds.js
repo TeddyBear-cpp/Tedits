@@ -7,12 +7,14 @@
   const toggle = document.getElementById('cloud-motion-toggle');
   const layers = Object.fromEntries([...scene.querySelectorAll('[data-cloud-layer]')].map(el => [el.dataset.cloudLayer, el]));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const depth = .2;
+  scene.dataset.depth = String(depth);
   let enabled = !reduced.matches;
   let target = 0, current = 0, parked = 0, frame = 0, previous = 0;
   let start = 0, distance = 1, width = 1, height = 1;
   const clamp = n => Math.max(0, Math.min(1, n));
   function paint(progress) {
-    const p = progress;
+    const p = progress * depth;
     layers.sky.style.transform = `translate3d(${p * width * .014}px,${-p * height * .045}px,0)`;
     layers.far.style.transform = `translate3d(${-p * width * .05}px,${-p * height * .09}px,0)`;
     layers.middle.style.transform = `translate3d(${p * width * .10}px,${-p * height * .23}px,0)`;
@@ -29,7 +31,7 @@
     else { frame = 0; previous = 0; }
   }
   function scroll() {
-    if (!enabled) return;
+    if (!enabled || document.hidden) return;
     target = clamp((window.scrollY - start) / distance);
     if (!frame && current !== target) frame = requestAnimationFrame(tick);
   }
@@ -73,6 +75,13 @@
   toggle.hidden = false;
   toggle.addEventListener('click', () => setMotion(!enabled));
   reduced.addEventListener('change', e => setMotion(!e.matches));
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden){cancelAnimationFrame(frame);frame=previous=0;}
+    else scroll();
+  });
+  new IntersectionObserver(entries => {
+    scene.dataset.inView=String(entries[0].isIntersecting);
+  }, {rootMargin:'200px 0px'}).observe(scene);
   addEventListener('scroll', scroll, {passive:true});
   addEventListener('resize', () => measure(), {passive:true});
   addEventListener('load', () => measure(), {once:true});

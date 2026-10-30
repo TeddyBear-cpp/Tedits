@@ -2,9 +2,9 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const root = __dirname;
-const out = path.join(root, '_site-video');
+const {output: out} = require('./build-paths.cjs');
 if (fs.existsSync(out) && fs.readdirSync(out).length) {
-  throw new Error('_site-video must be empty before building; use a fresh checkout for deployment.');
+  throw new Error('Build output must be empty; use a fresh output directory.');
 }
 fs.mkdirSync(out, {recursive: true});
 const files = [
@@ -20,9 +20,11 @@ const files = [
   'Assets/tedits-brand/Syne-Medium.ttf', 'Assets/tedits-brand/Syne-Semibold.ttf',
   'Assets/tedits-brand/Syne-Bold.ttf', 'Assets/tedits-brand/Syne-OFL.txt',
   'Assets/video-posters/teditstudio-launch.webp', 'Assets/video-posters/violet-light.webp',
+  'Assets/video-posters/teditstudio-ad-finale.webp',
   'Assets/video-posters/delta-force.webp', 'Assets/video-posters/20min-edit.webp',
   'Assets/video-posters/the-lead.webp', 'Assets/video-posters/spiderman-superman.webp',
   'videos/teditstudio-launch.mp4', 'videos/Violet-light-edit.mp4', 'videos/Delta-Force-Edit.mp4', 'videos/20min-edit.mp4',
+  'videos/teditstudio-ad-finale.mp4',
   'videos/The_lead-prodbyTeddBear-Trimed.mp4', 'videos/Spiderman-Superman.mp4'
 ];
 for (const file of files) {

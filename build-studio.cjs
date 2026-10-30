@@ -2,27 +2,37 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const root = __dirname;
-const out = path.join(root, '_site-video');
+const {output: out} = require('./build-paths.cjs');
 if (!fs.existsSync(path.join(out, 'index.html'))) throw new Error('Run build-video.cjs first');
 const files = [
   'studio/index.html', 'studio/why-teditstudio.html', 'studio/enquire.html',
-  'studio/studio-services.css', 'studio/studio-services.js', 'studio/studio-waves.js', 'studio/enquiry.js',
+  'studio/studio-services.css', 'studio/enquiry.js',
   'studio/studio-contact.css', 'studio/studio-contact.js',
   'studio/studio-rounded.css', 'studio/studio-clouds.js', 'studio/studio-navigation.js',
-  'studio/studio-story.css', 'studio/studio-story.js',
+  'studio/studio-story.css', 'studio/studio-story-stack.css', 'studio/studio-story-stack.js',
   'studio/studio-ui.css', 'studio/studio-ui.js', 'studio/studio-enquiry.css',
-  'studio/studio.css', 'studio/studio.js', 'studio/studio-motion.css',
-  'studio/studio-theme.css', 'studio/studio-theme.js', 'studio/studio-hero.css', 'studio/studio-hero.js',
+  'studio/studio.css', 'studio/studio-motion.css',
+  'studio/studio-theme.css', 'studio/studio-theme.js', 'studio/studio-hero.css',
   'studio/projects/catering/index.html', 'studio/projects/catering/style.css',
   'studio/projects/catering/finish.css', 'studio/projects/catering/fonts.css', 'studio/projects/catering/script.js',
   'studio/projects/rivet-beam/index.html', 'studio/projects/rivet-beam/concept.css', 'studio/projects/rivet-beam/concept.js',
   'studio/projects/afterhours/index.html', 'studio/projects/afterhours/afterhours-audio.css', 'studio/projects/afterhours/afterhours-audio.js'
 ];
+// Lossless originals remain available to local design previews. Public pages
+// and the CMS renderer use the smaller WebP derivatives.
+const designOnlyAssets = new Set([
+  'studio/assets/olive-and-ember-preview.png',
+  'studio/assets/rivet-and-beam-preview.png',
+  'studio/assets/little-joy-preview.png',
+  'studio/assets/afterhours-preview.png',
+  'studio/assets/tedeats-preview.png',
+]);
 function collectAssets(folder) {
   for (const entry of fs.readdirSync(path.join(root,folder), {withFileTypes:true})) {
     const relative = `${folder}/${entry.name}`;
+    if (designOnlyAssets.has(relative)) continue;
     if (entry.isDirectory()) collectAssets(relative);
-    else if (/\.(svg|png|jpe?g|webp|ttf|otf|mp3|ico)$|(?:OFL|LICENSE)\.txt$/i.test(entry.name)) files.push(relative);
+    else if (/\.(svg|png|jpe?g|webp|ttf|otf|mp3|mp4|ico)$|(?:OFL|LICENSE)\.txt$/i.test(entry.name)) files.push(relative);
   }
 }
 for (const folder of ['studio/assets','studio/projects/catering/assets','studio/projects/rivet-beam/concept-assets','studio/projects/afterhours/assets']) collectAssets(folder);
@@ -74,17 +84,6 @@ const video = fs.readFileSync(videoIndex,'utf8').replace('href="mailto:teditstud
 fs.writeFileSync(videoIndex,video);
 const sitemapFile = path.join(out,'sitemap.xml');
 fs.writeFileSync(sitemapFile,fs.readFileSync(sitemapFile,'utf8').replace('</urlset>',`<url><loc>${studioUrl}</loc></url><url><loc>${studioUrl}enquire.html</loc></url></urlset>`));
-// Validate local HTML/CSS references, including case on case-insensitive Windows.
-const allFiles = [];
-function list(folder) {for(const entry of fs.readdirSync(folder,{withFileTypes:true})) {const name=path.join(folder,entry.name);if(entry.isDirectory())list(name);else allFiles.push(path.relative(out,name).replaceAll('\\','/'));}}
-list(out);
-for (const file of allFiles.filter(f=>/\.(html|css)$/.test(f))) {
-  const text=fs.readFileSync(path.join(out,file),'utf8');
-  const references=[...text.matchAll(/(?:src|href)="([^"]+)"|url\(['"]?([^)'"\s]+)['"]?\)/g)].map(m=>m[1]||m[2]);
-  for(const ref of references) {
-    if (/^(?:[a-z]+:|\/\/|#)/i.test(ref)) continue;
-    const resolved=path.posix.normalize(path.posix.join(path.posix.dirname(file),decodeURIComponent(ref.split(/[?#]/)[0])));
-    if(!allFiles.includes(resolved)) throw new Error(`Missing asset or filename case mismatch: ${file} -> ${ref}`);
-  }
-}
+// The same validation also runs after CMS rendering.
+require('./validate-output.cjs').validateOutput(out);
 console.log(`Added ${files.length} Studio files. All packaged HTML/CSS references resolve.`);

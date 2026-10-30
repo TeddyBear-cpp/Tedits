@@ -3,3 +3,5 @@
 /studio-teditstudio/dist/
 /studio-teditstudio/.sanity/
 /studio-teditstudio/.env*
+/audits/**/before/
+/audits/**/build*/

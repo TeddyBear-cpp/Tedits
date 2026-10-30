@@ -16,6 +16,26 @@ Production homepages remove preview noindex directives and receive canonical URL
 
 The contact form retains its existing Formspree endpoint. Automated verification simulates submissions; it does not send real enquiries or confirm mailbox delivery.
 
+## Local release verification
+
+Run `node verify-sanity.cjs` and `node verify-catalogues.cjs` before packaging.
+To preserve an existing `_site-video`, set `TEDITS_BUILD_DIR` to a fresh child
+directory of this workspace before running all three build commands. Every build
+step uses the same directory. For example, in PowerShell:
+
+```powershell
+$env:TEDITS_BUILD_DIR = 'audits/local-release/build'
+node build-video.cjs
+node build-studio.cjs
+node build-sanity.cjs
+```
+
+Studio packaging includes the story stack CSS/JS and MP4s. Local design originals
+and obsolete hero/story scripts remain outside the release. Local HTML, CSS and
+poster references are checked after packaging and again after CMS rendering.
+`node validate-output.cjs` can repeat that check independently. The default CI
+output remains `_site-video` when `TEDITS_BUILD_DIR` is unset.
+
 The video homepage, Studio homepage and three original concepts use `section-navigation.js` for in-page links. Short focal blocks are centred; tall content starts near the top of the viewport. Normal fragment URLs, keyboard focus, initial deep links and reduced-motion preferences remain supported. `navigation-check.cjs` checks the visible fragment links on mobile and desktop and measures key focal blocks.
 
 To roll back, re-run a successful previous video deployment workflow, or revert the relevant deployment/source commit and push. Do not change Pages back to publishing the repository root: it contains other projects and local review artifacts.

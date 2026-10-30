@@ -1,6 +1,7 @@
 // Apply published CMS content to the packaged static portfolio; no browser tokens or CORS needed.
 const fs = require('node:fs');
 const path = require('node:path');
+const {output: out} = require('./build-paths.cjs');
 const projectId = 'yjcpyptx';
 const dataset = 'production';
 const {applyCatalogues} = require('./catalogue-renderer.cjs');
@@ -31,7 +32,7 @@ function required(document, fields) {
 function projectImage(project) {
   const concept = concepts[project.concept];
   if (!concept) throw new Error(`Unsupported concept page: ${project.concept}`);
-  let image = concept.localImage || `assets/${concept.image}-preview.png`;
+  let image = concept.localImage || `assets/${concept.image}-preview.webp`;
   if (project.imageUrl) {
     const url = new URL(project.imageUrl);
     if (url.origin !== 'https://cdn.sanity.io' || !url.pathname.startsWith(`/images/${projectId}/${dataset}/`)) {
@@ -125,11 +126,12 @@ async function main() {
   if (!response.ok) throw new Error(`Sanity content fetch failed (${response.status}). Check dataset access, or use --offline for local builds.`);
   const {result} = await response.json();
   if (!result || !Array.isArray(result.projects)) throw new Error('Unexpected Sanity response.');
-  const filename = path.join(__dirname, '_site-video/studio/index.html');
+  const filename = path.join(out, 'studio/index.html');
   const html = fs.readFileSync(filename, 'utf8');
   fs.writeFileSync(filename, applyContent(html, result));
-  applyCatalogues(path.join(__dirname, '_site-video'), result.catalogues);
-  applyServicePages(path.join(__dirname, '_site-video'), result);
+  applyCatalogues(out, result.catalogues);
+  applyServicePages(out, result);
+  require('./validate-output.cjs').validateOutput(out);
   console.log(`Sanity: ${(result.catalogues || []).length} published catalogues.`);
   console.log(`Sanity: ${result.homepage ? 'homepage' : 'default homepage'}, ${result.projects.length} published projects${result.projects.length ? '' : ' (using checked-in project cards)'}.`);
 }
