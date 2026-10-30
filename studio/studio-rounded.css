@@ -261,6 +261,8 @@
 .rounded-studio.full-hero .site-header nav a{white-space:nowrap}
 .rounded-studio.full-hero .site-header .nav-contact{background:var(--ivory);color:var(--charcoal)}
 .rounded-studio.full-hero .cloud-scene{--cloud-pin-top:0px;width:100%;margin:0}
+.rounded-studio.full-hero .cloud-scene{height:auto}
+.rounded-studio.full-hero .cloud-pin,.rounded-studio.full-hero .cloud-scene[data-motion=off] .cloud-pin{position:relative;top:0}
 .rounded-studio.full-hero .cloud-pin{height:100svh;min-height:500px;top:0}
 .full-hero .cloud-hero{border-radius:0}
 .full-hero .cloud-kicker{top:130px;left:max(5%,32px)}

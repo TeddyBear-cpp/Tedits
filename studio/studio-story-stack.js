@@ -9,6 +9,7 @@
   const videos=cards.map(card=>card.querySelector('video'));
   const tabs=[...scene.querySelectorAll('[data-story-step]')];
   const mediaButton=scene.querySelector('.story-media-toggle');
+  const scrollCue=scene.querySelector('.story-scroll-cue');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   const shortScreen=matchMedia('(max-height: 579px), (max-width: 900px) and (max-height: 699px)');
   const mobile=matchMedia('(max-width: 900px)');
@@ -142,6 +143,7 @@
     });
     if(next!==active){
       active=next;
+      scrollCue.textContent=`${active===chapters.length-1?'Keep scrolling to continue':'Scroll to explore'} · ${active+1} of ${chapters.length} ↓`;
       tabs.forEach((tab,i)=>i===active?tab.setAttribute('aria-current','step'):tab.removeAttribute('aria-current'));
       syncMedia();
     }
@@ -153,6 +155,14 @@
   function measure(){
     pinned=!reduced.matches&&!shortScreen.matches&&CSS.supports('position','sticky');
     scene.dataset.pinned=String(pinned);
+    // Match intrinsic text heights across all chapters. Centring differently
+    // sized copy blocks was moving headings when the description changed.
+    const titleHeight=Math.max(...chapters.map(chapter=>chapter.querySelector('h3').getBoundingClientRect().height));
+    const descriptionHeight=Math.max(...chapters.map(chapter=>chapter.querySelector('.story-copy>p').getBoundingClientRect().height));
+    const copyGap=mobile.matches?20:28;
+    scene.style.setProperty('--story-title-height',`${Math.ceil(titleHeight)}px`);
+    scene.style.setProperty('--story-description-height',`${Math.ceil(descriptionHeight)}px`);
+    scene.style.setProperty('--story-copy-height',`${Math.ceil(titleHeight)+Math.ceil(descriptionHeight)+copyGap}px`);
     chapters.forEach((chapter,i)=>{
       cards[i].style.zIndex=String(i+1);
     });
