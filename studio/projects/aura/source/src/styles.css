@@ -15,3 +15,6 @@ dialog{border:none;padding:0;color:var(--ink);background:var(--chalk)}dialog::ba
 @media(max-width:450px){.site-header nav{gap:16px}.site-header nav a[href="#philosophy"]{display:none}.product-card{flex-basis:77%}.product-visual{aspect-ratio:.69}.product-caption{font-size:11px}.collection-footnote>span:first-child{max-width:170px;line-height:1.5}.study-image{height:240px}.study-pair{gap:10px}.study-piece-1{padding-top:35px}.study-caption h3{font-size:20px}.study-caption .icon-button{display:none}.study-heading h2{font-size:48px}.philosophy h2{font-size:65px}.philosophy-copy{font-size:19px}.bag-item-description h3{font-size:20px}.quantity{gap:10px}.empty-bag h3,.saved-selection h3{font-size:44px}}
 
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}.study-image img{transform:none!important}}
+
+/* Phone collection: one centered piece per swipe, including the first and last. */
+@media(max-width:760px){.collection-rail{padding-inline:8vw;scroll-snap-type:x mandatory;scroll-padding-inline:8vw}.product-card{flex-basis:100%;scroll-snap-align:center}}

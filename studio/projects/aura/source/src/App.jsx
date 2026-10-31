@@ -140,7 +140,7 @@ export function App(){
   function add(product,size){addItems([{product,size}])}
   function updateProgress(){const el=rail.current;if(!el)return;const max=el.scrollWidth-el.clientWidth;setProgress(max>0?el.scrollLeft/max:0);setCanNext(el.scrollLeft<max-3)}
   useEffect(()=>{rail.current?.scrollTo({left:0});const raf=requestAnimationFrame(updateProgress);const observer=new ResizeObserver(updateProgress);if(rail.current)observer.observe(rail.current);return()=>{cancelAnimationFrame(raf);observer.disconnect()}},[category]);
-  function moveRail(direction){const el=rail.current;if(el)el.scrollBy({left:direction*el.clientWidth*.85,behavior:reduced?'instant':'smooth'})}
+  function moveRail(direction){const el=rail.current;if(!el)return;const card=el.querySelector('.product-card');const step=window.matchMedia('(max-width:760px)').matches&&card?card.getBoundingClientRect().width+parseFloat(getComputedStyle(el).columnGap):el.clientWidth*.85;el.scrollBy({left:direction*step,behavior:reduced?'instant':'smooth'})}
   function pointerDown(e){if(e.pointerType!=='mouse'||e.button!==0||e.target.closest('.card-sizes,.wear-toggle'))return;drag.current={x:e.clientX,left:rail.current.scrollLeft,active:false,pointer:e.pointerId};skipClick.current=false}
   function pointerMove(e){const d=drag.current;if(!d)return;const delta=e.clientX-d.x;if(Math.abs(delta)>7){d.active=true;skipClick.current=true;rail.current.setPointerCapture(e.pointerId);rail.current.classList.add('is-dragging');e.preventDefault();rail.current.scrollLeft=d.left-delta}}
   function pointerUp(){const d=drag.current;if(d?.active&&rail.current.hasPointerCapture(d.pointer))rail.current.releasePointerCapture(d.pointer);drag.current=null;rail.current?.classList.remove('is-dragging')}
