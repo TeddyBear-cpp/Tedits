@@ -1,5 +1,5 @@
 export function HeroPortrait(){
-  return <img
+  return <><picture className="hero-portrait"><source media="(max-width:760px)" srcSet="./assets/hero-model-480.webp 480w, ./assets/hero-model-960.webp 960w" sizes="100vw"/><img
     className="hero-image"
     src="./assets/hero-monochrome-1536.webp"
     srcSet="./assets/hero-monochrome-960.webp 960w, ./assets/hero-monochrome-1536.webp 1536w"
@@ -9,5 +9,5 @@ export function HeroPortrait(){
     height="1024"
     fetchPriority="high"
     decoding="async"
-  />;
+  /></picture><img className="hero-mobile-wordmark" src="./assets/aura-wordmark.webp" alt="" aria-hidden="true" width="1786" height="506"/> </>;
 }
