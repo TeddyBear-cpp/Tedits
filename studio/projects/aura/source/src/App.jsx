@@ -1,5 +1,5 @@
 import {useState,useEffect,useLayoutEffect,useRef,useMemo} from 'react';
-import {ArrowRight,ArrowLeft,ArrowUpRight,X,Plus,Minus,Eye,Check} from '@phosphor-icons/react';
+import {ArrowRight,ArrowLeft,ArrowUpRight,X,Plus,Minus,User,TShirt,Check} from '@phosphor-icons/react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
@@ -41,7 +41,7 @@ function ProductCard({product,onOpen,rail}){
         <ProductPhoto product={product} className="object-photo" loading="lazy"/>
         {near&&<ProductPhoto product={product} kind="worn" className="worn-photo" loading="lazy"/>}
       </button>
-      <button className="wear-toggle" aria-label={`${showWorn?'Show product':'Show worn view'} of ${product.name}`} aria-pressed={showWorn} onClick={()=>{setNear(true);setShowWorn(v=>!v)}}><Eye size={17} weight="light"/></button>
+      <button className="wear-toggle" aria-label={`${showWorn?'Show product':'Show worn view'} of ${product.name}`} aria-pressed={showWorn} onClick={()=>{setNear(true);setShowWorn(v=>!v)}}>{showWorn?<TShirt size={19} weight="light" aria-hidden="true"/>:<User size={19} weight="light" aria-hidden="true"/>}</button>
       <div className="card-sizes" aria-label={`Choose a size for ${product.name}`}>{product.sizes.map(size=><button key={size} onClick={()=>onOpen(product,size)}>{size}</button>)}</div>
     </div>
     <div className="product-caption"><button onClick={()=>onOpen(product)}>{product.name}</button><span>{money(product.price)}</span></div>
