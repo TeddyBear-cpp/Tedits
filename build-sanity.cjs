@@ -8,6 +8,7 @@ const {applyCatalogues} = require('./catalogue-renderer.cjs');
 const {applyServicePages} = require('./service-page-renderer.cjs');
 const query = '{"homepage": *[_type == "homepage" && _id == "homepage"][0], "whyPage": *[_type == "whyPage" && _id == "whyPage"][0], "enquiryPage": *[_type == "enquiryPage" && _id == "enquiryPage"][0], "projects": *[_type == "project"] | order(order asc, _id asc){..., "imageUrl": image.asset->url}, "catalogues": *[_id in ["menuCatalogue", "materialCatalogue", "trackCatalogue"]]{..., "mealDays": mealDays[]{..., "imageUrl": image.asset->url}, items[]{..., "imageUrl": image.asset->url, "audioUrl": audio.asset->url, dishes[]{...}}}}';
 const concepts = {
+  aura: {style: 'aura', image: 'aura', alt: 'AURA+ luxury streetwear website, with a monochrome campaign hero and custom wordmark', href: 'https://aura-plus-collectibles.davidcmason8.chatgpt.site', action: 'Visit the website'},
   catering: {style: 'catering', image: 'olive-and-ember', alt: 'Olive & Ember catering website concept'},
   'rivet-beam': {style: 'steel', image: 'rivet-and-beam', alt: 'Rivet & Beam steel website concept'},
   afterhours: {style: 'afterhours', image: 'afterhours', alt: 'AFTERHOURS music studio website concept', compactDescription: 'Music, mood & interaction'},
@@ -47,9 +48,10 @@ function renderProject(project, index, {story = false} = {}) {
   required(project, ['title', 'concept', 'category', 'description', 'scope', 'idea', 'execution', 'disclaimer']);
   const concept = concepts[project.concept];
   const image = projectImage(project);
-  const href = `projects/${project.concept}/index.html`;
-  const action = concept.caseStudy ? 'Read the case study' : 'Explore the concept';
-  return `<article class="${story ? 'story-reveal ' : ''}project${index % 2 ? ' project-reverse' : ''}"><a class="project-visual ${concept.style}-visual" href="${href}" aria-label="${escape(`Open ${project.title} concept`)}"><div class="browser-bar" aria-hidden="true"><span class="browser-dots">● ● ●</span><span>${escape(project.title.toUpperCase())} / CONCEPT PREVIEW</span><span>↗</span></div><img src="${escape(image)}" alt="${escape(project.image?.alt || concept.alt)}" width="1280" height="900" loading="lazy"></a><div class="project-copy"><p class="project-number">${String(index + 1).padStart(2, '0')} / ${escape(project.category.toUpperCase())}</p><h3>${escape(project.title)}</h3><span class="concept-tag">${!story && project.featured === true ? 'FEATURED PROJECT' : 'INDEPENDENT CONCEPT'}</span><p>${escape(project.description)}</p><p class="project-scope">${escape(project.scope)}</p><a class="text-link" href="${href}">${action} <span aria-hidden="true">↗</span></a><details class="case-study"><summary>Behind the design <span aria-hidden="true">+</span></summary><div><h4>The idea</h4><p>${escape(project.idea)}</p><h4>How it took shape</h4><p>${escape(project.execution)}</p><p class="case-note">${escape(project.disclaimer)}</p></div></details></div></article>`;
+  const href = concept.href || `projects/${project.concept}/index.html`;
+  const external = concept.href ? ' target="_blank" rel="noopener noreferrer"' : '';
+  const action = concept.action || (concept.caseStudy ? 'Read the case study' : 'Explore the concept');
+  return `<article class="${story ? 'story-reveal ' : ''}project${index % 2 ? ' project-reverse' : ''}"><a class="project-visual ${concept.style}-visual" href="${href}"${external} aria-label="${escape(`Open ${project.title} concept`)}"><div class="browser-bar" aria-hidden="true"><span class="browser-dots">● ● ●</span><span>${escape(project.title.toUpperCase())} / CONCEPT PREVIEW</span><span>↗</span></div><img src="${escape(image)}" alt="${escape(project.image?.alt || concept.alt)}" width="1280" height="900" loading="lazy"></a><div class="project-copy"><p class="project-number">${String(index + 1).padStart(2, '0')} / ${escape(project.category.toUpperCase())}</p><h3>${escape(project.title)}</h3><span class="concept-tag">${(project.concept === 'aura' || !story) && project.featured === true ? 'FEATURED PROJECT' : 'INDEPENDENT CONCEPT'}</span><p>${escape(project.description)}</p><p class="project-scope">${escape(project.scope)}</p><a class="text-link" href="${href}"${external}>${action} <span aria-hidden="true">↗</span></a><details class="case-study"><summary>Behind the design <span aria-hidden="true">+</span></summary><div><h4>The idea</h4><p>${escape(project.idea)}</p><h4>How it took shape</h4><p>${escape(project.execution)}</p><p class="case-note">${escape(project.disclaimer)}</p></div></details></div></article>`;
 }
 function migrateProject(project, story) {
   const stale = project.concept === 'tedeats' && /AI-generated imagery|seal tracing|printed seal/i
@@ -69,13 +71,15 @@ function renderCompactProject(project) {
   return `<a class="story-reveal" href="projects/${project.concept}/index.html" aria-label="${escape(project.title + ' — independent concept')}"><img src="${escape(image)}" alt="${escape(project.image?.alt || concept.alt)}" width="1280" height="900" loading="lazy"><span><strong>${escape(project.title)}</strong><small>${escape(concept.compactDescription || project.category)}</small></span><span aria-hidden="true">↗</span></a>`;
 }
 function applySelectedProjects(html, projects) {
-  const visible = new Map(projects.filter(project => project.visible !== false).map(project => [project.concept, migrateProject(project, true)]));
-  const selected = ['catering', 'rivet-beam', 'tedeats'].map(concept => visible.get(concept)).filter(Boolean);
+  // Keep the newly featured site when the published CMS still has older projects.
+  const entries = projects.some(project => project.concept === 'aura') ? projects : [projectSeeds.aura, ...projects];
+  const visible = new Map(entries.filter(project => project.visible !== false).map(project => [project.concept, migrateProject(project, true)]));
+  const selected = ['aura', 'catering', 'rivet-beam', 'tedeats'].map(concept => visible.get(concept)).filter(Boolean);
   const compact = ['afterhours', 'little-joy'].map(concept => visible.get(concept)).filter(Boolean);
   const pattern = /(<section id="work"[^>]*>\s*<div class="section-heading[^>]*>[\s\S]*?<\/div>)\s*[\s\S]*?(\s*<\/section>)/;
   if (!pattern.test(html)) throw new Error('Selected work section markup changed; update the CMS renderer.');
   html = html.replace(pattern, (_match, heading, end) => {
-    const intro = selected.length === 3 ? 'Three independent concepts.' : selected.length === 1 ? 'One independent concept.' : selected.length === 2 ? 'Two independent concepts.' : 'New concepts are taking shape.';
+    const intro = selected.length === 4 ? 'Four independent concepts.' : selected.length === 3 ? 'Three independent concepts.' : selected.length === 1 ? 'One independent concept.' : selected.length === 2 ? 'Two independent concepts.' : 'New concepts are taking shape.';
     heading = heading.replace(/(<p>)[\s\S]*?(<br>)/, (_text, start, br) => start + intro + br);
     return `${heading}\n${selected.map((project, index) => renderProject(project, index, {story: true})).join('\n')}${end}`;
   });

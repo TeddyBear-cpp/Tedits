@@ -30,6 +30,7 @@ const project = defineType({
     defineField({name: 'concept', title: 'Concept page', type: 'string', group: 'card',
       description: 'Choose an existing built concept. Each concept should have one published project entry.',
       options: {list: [
+        {title: 'AURA+', value: 'aura'},
         {title: 'Olive & Ember', value: 'catering'},
         {title: 'Rivet & Beam', value: 'rivet-beam'},
         {title: 'AFTERHOURS', value: 'afterhours'},
