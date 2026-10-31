@@ -1,0 +1,33 @@
+{
+  "commit": "20fa05e0e451dd1c4d1e14e49bcd3b1687708b88",
+  "deployment": "success",
+  "compact": {
+    "clearance": 23.864585876464844,
+    "corners": [
+      {
+        "inert": true,
+        "opacity": "0",
+        "visibility": "hidden"
+      },
+      {
+        "inert": true,
+        "opacity": "0",
+        "visibility": "hidden"
+      }
+    ],
+    "layout": "compact",
+    "navTop": 12,
+    "quote": "“Digital design is like painting, except the paint never dries.”— Neville Brody",
+    "surface": "page"
+  },
+  "returnToHero": {
+    "corners": [
+      "1",
+      "1"
+    ],
+    "gap": 20,
+    "layout": "expanded",
+    "navTop": 58,
+    "scrollY": 0
+  }
+}

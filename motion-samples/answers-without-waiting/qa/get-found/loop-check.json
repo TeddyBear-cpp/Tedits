@@ -1,0 +1,7 @@
+{
+  "frames": 360,
+  "identicalEndpointPose": true,
+  "visibleResultsStayInFrame": true,
+  "featuredResultDoesNotOverlap": true,
+  "minimumMargin": 124.54236038254709
+}

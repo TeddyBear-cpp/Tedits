@@ -1,0 +1,141 @@
+{
+  "moving": true,
+  "collisions": 2,
+  "paused": true,
+  "pauseFreezes": true,
+  "resumes": true,
+  "offscreen": true,
+  "reduced": true,
+  "reducedFreezes": true,
+  "staticFallback": true,
+  "views": [
+    {
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 16,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 16,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "light",
+      "width": 600,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 18,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 23.04,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 30.72,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 38.4,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 40,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 16,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 16,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "dark",
+      "width": 600,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 18,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 23.04,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 30.72,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 38.4,
+      "contained": true,
+      "anchors": true
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "renderer": "webgl",
+      "inset": 40,
+      "contained": true,
+      "anchors": true
+    }
+  ],
+  "errors": [],
+  "failedAssets": []
+}

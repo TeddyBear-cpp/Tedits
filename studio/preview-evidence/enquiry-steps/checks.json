@@ -1,0 +1,50 @@
+{
+  "views": [
+    {
+      "label": "desktop",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "label": "mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "label": "small",
+      "width": 320,
+      "height": 640,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "submissions": [
+    {
+      "view": "desktop",
+      "intercepted": true
+    },
+    {
+      "view": "desktop",
+      "intercepted": true
+    },
+    {
+      "view": "mobile",
+      "intercepted": true
+    },
+    {
+      "view": "mobile",
+      "intercepted": true
+    },
+    {
+      "view": "small",
+      "intercepted": true
+    },
+    {
+      "view": "small",
+      "intercepted": true
+    }
+  ]
+}

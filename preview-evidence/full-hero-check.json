@@ -1,0 +1,12 @@
+{
+  "desktop": {
+    "heroLeft": 0,
+    "heroTop": 0,
+    "overflow": false
+  },
+  "mobile": {
+    "heroLeft": 0,
+    "heroTop": 0,
+    "overflow": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "base": "e88658458a8144200c087a86a922b0f2eac365f5",
+  "files": [
+    "build-sanity.cjs",
+    "build-studio.cjs",
+    "studio/index.html",
+    "studio/portfolio-preview.html",
+    "studio/why-teditstudio.html",
+    "studio/enquire.html",
+    "studio/studio.js",
+    "studio/studio-rounded.css",
+    "studio/studio-clouds.js",
+    "studio/assets/clouds/sky.webp",
+    "studio/assets/clouds/hands.webp",
+    "studio/assets/clouds/cloud-bank.webp",
+    "studio-teditstudio/generate-seed.cjs",
+    "studio-teditstudio/schemaTypes/index.ts",
+    "studio-teditstudio/seed.ndjson",
+    "studio-teditstudio/service-pages.json",
+    "studio-teditstudio/service-pages.ndjson"
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "views": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "start": 2974.984375,
+      "distance": 2260,
+      "pinned": "true",
+      "frames": [
+        {
+          "label": "first",
+          "progress": "0.000",
+          "stageTop": 80,
+          "active": [
+            "Know what you do."
+          ],
+          "bounds": [
+            {
+              "top": 165.453125,
+              "bottom": 696.640625
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        },
+        {
+          "label": "middle",
+          "progress": "0.400",
+          "stageTop": 80,
+          "active": [
+            "A reason to stay."
+          ],
+          "bounds": [
+            {
+              "top": 165.453125,
+              "bottom": 696.640625
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        },
+        {
+          "label": "last",
+          "progress": "0.850",
+          "stageTop": 80,
+          "active": [
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 165.453125,
+              "bottom": 696.640625
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        }
+      ]
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "start": 3232.859375,
+      "distance": 2558,
+      "pinned": "true",
+      "frames": [
+        {
+          "label": "first",
+          "progress": "0.000",
+          "stageTop": 80,
+          "active": [
+            "Know what you do."
+          ],
+          "bounds": [
+            {
+              "top": 315.046875,
+              "bottom": 671.046875
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        },
+        {
+          "label": "middle",
+          "progress": "0.400",
+          "stageTop": 80,
+          "active": [
+            "A reason to stay."
+          ],
+          "bounds": [
+            {
+              "top": 315.0486145019531,
+              "bottom": 671.048583984375
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        },
+        {
+          "label": "last",
+          "progress": "0.850",
+          "stageTop": 80,
+          "active": [
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 315.046875,
+              "bottom": 671.046875
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "start": 2645.3125,
+      "distance": 0,
+      "pinned": "false",
+      "frames": [
+        {
+          "label": "first",
+          "stageTop": 0.3125,
+          "active": [
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 1091.0625,
+              "bottom": 1560.4375
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        },
+        {
+          "label": "middle",
+          "stageTop": 0.3125,
+          "active": [
+            "Know what you do.",
+            "A reason to stay.",
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 24.3125,
+              "bottom": 493.6875
+            },
+            {
+              "top": 557.6875,
+              "bottom": 1027.0625
+            },
+            {
+              "top": 1091.0625,
+              "bottom": 1560.4375
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        },
+        {
+          "label": "last",
+          "stageTop": 0.3125,
+          "active": [
+            "Know what you do.",
+            "A reason to stay.",
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 24.3125,
+              "bottom": 493.6875
+            },
+            {
+              "top": 557.6875,
+              "bottom": 1027.0625
+            },
+            {
+              "top": 1091.0625,
+              "bottom": 1560.4375
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        }
+      ]
+    },
+    {
+      "name": "small",
+      "width": 320,
+      "height": 640,
+      "start": 2131.71875,
+      "distance": 0,
+      "pinned": "false",
+      "frames": [
+        {
+          "label": "first",
+          "stageTop": -0.28125,
+          "active": [
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 1010.3125,
+              "bottom": 1439.609375
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        },
+        {
+          "label": "middle",
+          "stageTop": -0.28125,
+          "active": [
+            "Know what you do.",
+            "A reason to stay.",
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 23.71875,
+              "bottom": 453.015625
+            },
+            {
+              "top": 517.015625,
+              "bottom": 946.3125
+            },
+            {
+              "top": 1010.3125,
+              "bottom": 1439.609375
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        },
+        {
+          "label": "last",
+          "stageTop": -0.28125,
+          "active": [
+            "Know what you do.",
+            "A reason to stay.",
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 23.71875,
+              "bottom": 453.015625
+            },
+            {
+              "top": 517.015625,
+              "bottom": 946.3125
+            },
+            {
+              "top": 1010.3125,
+              "bottom": 1439.609375
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        }
+      ]
+    },
+    {
+      "name": "short",
+      "width": 390,
+      "height": 570,
+      "start": 1919.21875,
+      "distance": 0,
+      "pinned": "false",
+      "frames": [
+        {
+          "label": "first",
+          "stageTop": 0.21875,
+          "active": [
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 1029.90625,
+              "bottom": 1480
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        },
+        {
+          "label": "middle",
+          "stageTop": 0.21875,
+          "active": [
+            "Know what you do.",
+            "A reason to stay.",
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 24.21875,
+              "bottom": 451.8125
+            },
+            {
+              "top": 515.8125,
+              "bottom": 965.90625
+            },
+            {
+              "top": 1029.90625,
+              "bottom": 1480
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        },
+        {
+          "label": "last",
+          "stageTop": 0.21875,
+          "active": [
+            "Know what you do.",
+            "A reason to stay.",
+            "An easier next step."
+          ],
+          "bounds": [
+            {
+              "top": 24.21875,
+              "bottom": 451.8125
+            },
+            {
+              "top": 515.8125,
+              "bottom": 965.90625
+            },
+            {
+              "top": 1029.90625,
+              "bottom": 1480
+            }
+          ],
+          "overflow": false,
+          "lenis": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "touch": {
+    "y": 3577,
+    "top": -963.03125,
+    "nativeTouch": true
+  }
+}

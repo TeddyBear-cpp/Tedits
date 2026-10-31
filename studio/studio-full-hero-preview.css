@@ -1,0 +1,30 @@
+/* Local comparison: the approved hero extends behind the navigation. */
+.rounded-studio.full-hero-preview .site-header{
+  --theme-ink:var(--ivory);
+  --theme-surface:var(--charcoal);
+  --theme-accent:var(--ivory);
+  position:absolute;inset:0 0 auto;z-index:20;color:var(--ivory);
+}
+.full-hero-preview .site-header .studio-logo img{content:url('assets/tedits-studio-on-slate.svg')}
+.rounded-studio.full-hero-preview .site-header .studio-logo>span{color:var(--ivory);border-color:color-mix(in srgb,var(--ivory) 30%,transparent)}
+.rounded-studio.full-hero-preview .site-header nav a:hover{color:var(--gray)}
+.rounded-studio.full-hero-preview .site-header .nav-contact{background:var(--ivory);color:var(--charcoal)}
+.rounded-studio.full-hero-preview .cloud-scene{--cloud-pin-top:0px;width:100%;margin:0}
+.rounded-studio.full-hero-preview .cloud-pin{height:100svh;min-height:500px;top:0}
+.full-hero-preview .cloud-hero{border-radius:0}
+.full-hero-preview .cloud-kicker{top:130px;left:max(5%,32px)}
+.full-hero-preview .cloud-footer{left:max(5%,32px);right:max(5%,32px);bottom:26px}
+.full-hero-preview .cloud-veil{background:linear-gradient(180deg,color-mix(in srgb,var(--charcoal) 50%,transparent),transparent 30%,transparent 45%,color-mix(in srgb,var(--charcoal) 48%,transparent)),linear-gradient(90deg,color-mix(in srgb,var(--charcoal) 24%,transparent),transparent 70%)}
+@media(max-width:760px){
+  .rounded-studio.full-hero-preview .site-header{width:calc(100% - 40px)}
+  .full-hero-preview .cloud-kicker{top:160px;left:7%;font-size:11px}
+  .full-hero-preview .cloud-copy{top:28%;left:7%;right:7%}
+  .full-hero-preview .cloud-hands{top:27%}
+  .full-hero-preview .cloud-footer{left:7%;right:7%;bottom:24px}
+}
+@media(max-height:650px) and (min-width:761px){
+  .rounded-studio.full-hero-preview .cloud-pin{min-height:360px}
+  .full-hero-preview .cloud-kicker{top:100px}
+  .full-hero-preview .cloud-copy{bottom:20%}
+  .full-hero-preview .cloud-footer{bottom:16px}
+}

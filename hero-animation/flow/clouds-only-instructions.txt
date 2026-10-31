@@ -1,0 +1,5 @@
+Use clouds-only-start.png as the FIRST frame in Flow. Leave the last-frame input empty.
+Choose an eight-second, 16:9 video and one output. Check the displayed credit cost before generation.
+Paste prompt.txt.
+Export the resulting MP4 for local compositing with the original hands and finishing the loop join.
+The sky is generated separately so the video model cannot change the fingers, wrist poses, or fingertip gap. Tiny hand movement can be added during compositing while preserving the original finger shapes.

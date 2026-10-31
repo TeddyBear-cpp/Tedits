@@ -1,0 +1,40 @@
+{
+  "commit": "672234232a0ad6989b479508c81d6a1ab60c3219",
+  "deployment": "success",
+  "home": {
+    "blend": "linear-gradient(rgba(0, 0, 0, 0), rgb(36, 40, 44))",
+    "footerSwitch": true,
+    "headerLogo": false,
+    "headerSwitch": false,
+    "navPosition": "fixed",
+    "surface": "hero"
+  },
+  "depth": {
+    "expectedX": -70.81965,
+    "frontTransform": "translate3d(-70.8146px, -86.1371px, 0px)",
+    "hands": "none",
+    "navState": "hero",
+    "progress": 0.2761,
+    "width": 1425
+  },
+  "afterHeroDark": {
+    "background": "rgb(36, 40, 44)",
+    "headingTop": 96,
+    "navBottom": 72,
+    "opacity": "1",
+    "state": "page"
+  },
+  "footerThemeSwitch": {
+    "background": "rgb(255, 255, 227)",
+    "theme": "light"
+  },
+  "caseStudy": {
+    "coverLoaded": true,
+    "coverRadius": "32px",
+    "heading": "Little JoyPlay Co.",
+    "navPosition": "fixed",
+    "overflow": false,
+    "rounded": true
+  },
+  "errors": []
+}

@@ -1,0 +1,10 @@
+{
+  "buildReferences": "132 files resolve",
+  "cmsHomepage": true,
+  "cmsLegacyMigration": true,
+  "cmsCustomCopy": true,
+  "cmsFiveProjects": true,
+  "cmsWhyPage": true,
+  "cmsEnquiryPage": true,
+  "newAssetsPackaged": true
+}

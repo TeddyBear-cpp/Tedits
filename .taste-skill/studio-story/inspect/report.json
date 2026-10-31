@@ -1,0 +1,3234 @@
+{
+ "url": "http://127.0.0.1:8084/studio/index.html",
+ "at": "2026-10-28T21:16:48.527Z",
+ "allow": [
+  "gradient"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.99,
+    0.99,
+    0.81,
+    0.44,
+    0.38,
+    0.38,
+    0.45,
+    0.7,
+    0.57,
+    0.64,
+    0.76,
+    0.34
+   ],
+   "motion": {
+    "elements": 16,
+    "css": 1,
+    "transitions": 5,
+    "scripted": 10,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 11408,
+     "screens": 12.7,
+     "words": 671,
+     "img": 16,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 10,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 8,
+     "videoCount": 0,
+     "uiPictures": 3,
+     "pictureSamples": [
+      "sky.webp",
+      "cloud-bank.webp",
+      "cloud-bank.webp",
+      "hands.webp",
+      "cloud-bank.webp",
+      "olive-and-ember-preview.png",
+      "rivet-and-beam-preview.png",
+      "dinner-alt-1.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Design that connects.",
+     "words": 3,
+     "chars": 21,
+     "lines": 2,
+     "size": 115.2,
+     "vw": 8,
+     "font": "Syne",
+     "weight": 500,
+     "tracking": -0.065,
+     "leading": 0.94,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.38,
+     "top": 420,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Design that connects.",
+     "words": 3,
+     "lines": 2,
+     "size": 115.2,
+     "font": "Syne"
+    },
+    "headings": [
+     {
+      "text": "Design that connects.",
+      "words": 3,
+      "chars": 21,
+      "lines": 2,
+      "size": 115.2,
+      "vw": 8,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.065,
+      "leading": 0.94,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 420,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Someone is looking for",
+      "words": 4,
+      "chars": 22,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.4,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 2640,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "a steel fabricator",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 96,
+      "vw": 6.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.055,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 2708,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "right now.",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 2825,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Know what you do.",
+      "words": 4,
+      "chars": 17,
+      "lines": 2,
+      "size": 51.8,
+      "vw": 3.6,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.23,
+      "top": 3292,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Good food. Great company.",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 43.2,
+      "vw": 3,
+      "font": "Georgia",
+      "weight": 400,
+      "tracking": -0.035,
+      "leading": 1.08,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.24,
+      "top": 3348,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "A better introduction.",
+      "words": 3,
+      "chars": 22,
+      "lines": 1,
+      "size": 61.9,
+      "vw": 4.3,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 6195,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "My full attention.",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 59,
+      "vw": 4.1,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 6611,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "See the thinking.",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 59,
+      "vw": 4.1,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 7172,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Olive & Ember",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.38,
+      "top": 7376,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Rivet & Beam",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 7984,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Tedeats Events",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.38,
+      "top": 8594,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "From idea to online.",
+      "words": 4,
+      "chars": 20,
+      "lines": 1,
+      "size": 59,
+      "vw": 4.1,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 9546,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "A clear starting point.",
+      "words": 4,
+      "chars": 23,
+      "lines": 1,
+      "size": 59,
+      "vw": 4.1,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 10137,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "£200",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 187.2,
+      "vw": 13,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.075,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.44,
+      "top": 10145,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "What are you building?",
+      "words": 4,
+      "chars": 22,
+      "lines": 1,
+      "size": 72,
+      "vw": 5,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.05,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.87,
+      "top": 10939,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Tell me about your project ↗",
+      "words": 6,
+      "chars": 28,
+      "lines": 1,
+      "size": 31.7,
+      "vw": 2.2,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": -0.022,
+      "leading": 1.4,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.28,
+      "top": 11062,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 17,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 3,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "Syne",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "Georgia",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      9,
+      10,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      26,
+      32,
+      34,
+      52,
+      59,
+      62,
+      72,
+      96,
+      115,
+      187
+     ],
+     "sizeCount": 24,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 16,
+      "leading": 1.7,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 12.6
+     },
+     "measureChars": 83,
+     "max": {
+      "size": 187.2,
+      "vw": 13,
+      "font": "Syne",
+      "text": "£200"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#24282c",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.1,
+      "l": 0.16
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#6d8196",
+       "top": 0,
+       "hsl": {
+        "h": 211,
+        "s": 0.16,
+        "l": 0.51
+       }
+      },
+      {
+       "color": "#2d3339",
+       "top": 3140,
+       "hsl": {
+        "h": 210,
+        "s": 0.12,
+        "l": 0.2
+       }
+      },
+      {
+       "color": "#ffffe3",
+       "top": 9446,
+       "hsl": {
+        "h": 60,
+        "s": 1,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#343d46",
+       "top": 10839,
+       "hsl": {
+        "h": 210,
+        "s": 0.15,
+        "l": 0.24
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#ffffe3",
+       "share": 0.87
+      },
+      {
+       "color": "#24282c",
+       "share": 0.1
+      },
+      {
+       "color": "#2d3b30",
+       "share": 0.02
+      },
+      {
+       "color": "#4a4a4a",
+       "share": 0.01
+      },
+      {
+       "color": "#f5f2e9",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#ffffe3",
+      "hsl": {
+       "h": 60,
+       "s": 1,
+       "l": 0.95
+      },
+      "fg": "#4a4a4a"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Let’s talk",
+      "See what a website can do ↗",
+      "Scroll motion on"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 1,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.cloud-veil → linear-gradient(color(srgb 0.290196 0.290196 0.290196 / 0.5), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 45%, colo"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 8,
+     "boxRadius": 20,
+     "squareMedia": 5,
+     "roundedMedia": 4,
+     "mediaRadius": 13,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 0.99
+     },
+     {
+      "type": "img",
+      "ratio": 0.95
+     },
+     {
+      "type": "img",
+      "ratio": 0.78
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": true,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "syne",
+     "dm sans"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 11408,
+    "margins": {
+     "left": 32,
+     "right": 47
+    },
+    "sections": [
+     {
+      "sel": "section#cloud-scene.wrap.cloud-scene",
+      "tag": "section",
+      "top": 0,
+      "height": 2520,
+      "words": 37,
+      "media": 3,
+      "middle": 611,
+      "heading": {
+       "text": "Design that",
+       "size": 115,
+       "tag": "h1"
+      },
+      "left": 71,
+      "right": 86,
+      "textLeft": 71,
+      "textRight": 102,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#why.wrap.story-intro",
+      "tag": "section",
+      "top": 2520,
+      "height": 535,
+      "words": 27,
+      "media": 0,
+      "middle": 416,
+      "heading": {
+       "text": "a steel fabricator",
+       "size": 96,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 71,
+      "textLeft": 32,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#website-story.scroll-story.is-live",
+      "tag": "section",
+      "top": 3055,
+      "height": 3060,
+      "words": 64,
+      "media": 1,
+      "middle": 259,
+      "heading": {
+       "text": "Know what you do.",
+       "size": 52,
+       "tag": "h3"
+      },
+      "left": 32,
+      "right": 47,
+      "textLeft": 32,
+      "textRight": 47,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#your-website.wrap.story-answer",
+      "tag": "section",
+      "top": 6115,
+      "height": 396,
+      "words": 37,
+      "media": 0,
+      "middle": 218,
+      "heading": {
+       "text": "A better introduction.",
+       "size": 62,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 185,
+      "textLeft": 32,
+      "textRight": 185,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#approach.studio-personal",
+      "tag": "section",
+      "top": 6511,
+      "height": 561,
+      "words": 114,
+      "media": 0,
+      "middle": 296,
+      "heading": {
+       "text": "My full attention.",
+       "size": 59,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 210,
+      "textLeft": 32,
+      "textRight": 210,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "article.story-reveal.project",
+      "tag": "article",
+      "top": 7285,
+      "height": 544,
+      "words": 40,
+      "media": 1,
+      "middle": 84,
+      "heading": {
+       "text": "Olive & Ember",
+       "size": 34,
+       "tag": "h3"
+      },
+      "left": 52,
+      "right": 106,
+      "textLeft": 853,
+      "textRight": 106,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.story-reveal.project",
+      "tag": "article",
+      "top": 7893,
+      "height": 544,
+      "words": 42,
+      "media": 1,
+      "middle": 106,
+      "heading": {
+       "text": "Rivet & Beam",
+       "size": 34,
+       "tag": "h3"
+      },
+      "left": 32,
+      "right": 67,
+      "textLeft": 32,
+      "textRight": 889,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.story-reveal.project",
+      "tag": "article",
+      "top": 8501,
+      "height": 544,
+      "words": 43,
+      "media": 1,
+      "middle": 84,
+      "heading": {
+       "text": "Tedeats Events",
+       "size": 34,
+       "tag": "h3"
+      },
+      "left": 52,
+      "right": 88,
+      "textLeft": 853,
+      "textRight": 88,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.wrap.more-work",
+      "tag": "section",
+      "top": 9159,
+      "height": 288,
+      "words": 21,
+      "media": 0,
+      "middle": 372,
+      "heading": {
+       "text": "A little more to explore.",
+       "size": 26,
+       "tag": "h3"
+      },
+      "left": 32,
+      "right": 351,
+      "textLeft": 32,
+      "textRight": 351,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#process.studio-process",
+      "tag": "section",
+      "top": 9446,
+      "height": 591,
+      "words": 93,
+      "media": 0,
+      "middle": 225,
+      "heading": {
+       "text": "From idea to online.",
+       "size": 59,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 222,
+      "textLeft": 32,
+      "textRight": 222,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#pricing.wrap.studio-offer",
+      "tag": "section",
+      "top": 10037,
+      "height": 802,
+      "words": 88,
+      "media": 0,
+      "middle": 193,
+      "heading": {
+       "text": "£200",
+       "size": 187,
+       "tag": "p"
+      },
+      "left": 32,
+      "right": 225,
+      "textLeft": 32,
+      "textRight": 225,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.contact.section",
+      "tag": "section",
+      "top": 10839,
+      "height": 442,
+      "words": 24,
+      "media": 0,
+      "middle": 363,
+      "heading": {
+       "text": "What are you building?",
+       "size": 72,
+       "tag": "h2"
+      },
+      "left": 88,
+      "right": 103,
+      "textLeft": 88,
+      "textRight": 103,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Design that connects.",
+      "size": 115,
+      "top": 420,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 16
+     },
+     {
+      "x": 853,
+      "n": 8
+     },
+     {
+      "x": 753,
+      "n": 7
+     },
+     {
+      "x": 71,
+      "n": 2
+     },
+     {
+      "x": 88,
+      "n": 1
+     },
+     {
+      "x": 811,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 35,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.97,
+    0.97,
+    0.8,
+    0.32,
+    0.28,
+    0.28,
+    0.33,
+    0.75,
+    0.6,
+    0.72,
+    0.48,
+    0.51
+   ],
+   "motion": {
+    "elements": 16,
+    "css": 1,
+    "transitions": 5,
+    "scripted": 10,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 11907,
+     "screens": 11.6,
+     "words": 669,
+     "img": 16,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 10,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 8,
+     "videoCount": 0,
+     "uiPictures": 3,
+     "pictureSamples": [
+      "sky.webp",
+      "cloud-bank.webp",
+      "cloud-bank.webp",
+      "hands.webp",
+      "cloud-bank.webp",
+      "olive-and-ember-preview.png",
+      "rivet-and-beam-preview.png",
+      "dinner-alt-1.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Design that connects.",
+     "words": 3,
+     "chars": 21,
+     "lines": 2,
+     "size": 64,
+     "vw": 8.3,
+     "font": "Syne",
+     "weight": 500,
+     "tracking": -0.065,
+     "leading": 0.94,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.44,
+     "top": 591,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Design that connects.",
+     "words": 3,
+     "lines": 2,
+     "size": 64,
+     "font": "Syne"
+    },
+    "headings": [
+     {
+      "text": "Design that connects.",
+      "words": 3,
+      "chars": 21,
+      "lines": 2,
+      "size": 64,
+      "vw": 8.3,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.065,
+      "leading": 0.94,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 591,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "a steel fabricator",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 51.5,
+      "vw": 6.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.055,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 3037,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Know what you do.",
+      "words": 4,
+      "chars": 17,
+      "lines": 2,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.25,
+      "top": 3641,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "A better introduction.",
+      "words": 3,
+      "chars": 22,
+      "lines": 1,
+      "size": 38,
+      "vw": 4.9,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 6874,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "My full attention.",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.42,
+      "top": 7358,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "See the thinking.",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 8018,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Olive & Ember",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.35,
+      "top": 8104,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Rivet & Beam",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.35,
+      "top": 8587,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Tedeats Events",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.35,
+      "top": 9070,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "A little more to explore.",
+      "words": 5,
+      "chars": 25,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 9599,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "From idea to online.",
+      "words": 4,
+      "chars": 20,
+      "lines": 1,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.42,
+      "top": 10012,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "A clear starting point.",
+      "words": 4,
+      "chars": 23,
+      "lines": 1,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.42,
+      "top": 10712,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "£200",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 100,
+      "vw": 13,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.075,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.42,
+      "top": 10720,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "What are you building?",
+      "words": 4,
+      "chars": 22,
+      "lines": 1,
+      "size": 40,
+      "vw": 5.2,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.05,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 11481,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": -0.027,
+      "leading": 1.4,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.02,
+      "top": 11581,
+      "tag": "span",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 15,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "Syne",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "Georgia",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      26,
+      30,
+      34,
+      38,
+      40,
+      52,
+      64,
+      100
+     ],
+     "sizeCount": 20,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 16,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14.6
+     },
+     "measureChars": 42,
+     "max": {
+      "size": 100,
+      "vw": 13,
+      "font": "Syne",
+      "text": "£200"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#24282c",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.1,
+      "l": 0.16
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#6d8196",
+       "top": 0,
+       "hsl": {
+        "h": 211,
+        "s": 0.16,
+        "l": 0.51
+       }
+      },
+      {
+       "color": "#2d3339",
+       "top": 7258,
+       "hsl": {
+        "h": 210,
+        "s": 0.12,
+        "l": 0.2
+       }
+      },
+      {
+       "color": "#ffffe3",
+       "top": 9912,
+       "hsl": {
+        "h": 60,
+        "s": 1,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#343d46",
+       "top": 11381,
+       "hsl": {
+        "h": 210,
+        "s": 0.15,
+        "l": 0.24
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#ffffe3",
+       "share": 0.87
+      },
+      {
+       "color": "#24282c",
+       "share": 0.1
+      },
+      {
+       "color": "#2d3b30",
+       "share": 0.02
+      },
+      {
+       "color": "#4a4a4a",
+       "share": 0.01
+      },
+      {
+       "color": "#f5f2e9",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#ffffe3",
+      "hsl": {
+       "h": 60,
+       "s": 1,
+       "l": 0.95
+      },
+      "fg": "#4a4a4a"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Let’s talk",
+      "See what a website can do ↗",
+      "Scroll motion on"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 1,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.cloud-veil → linear-gradient(color(srgb 0.290196 0.290196 0.290196 / 0.5), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 45%, colo"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 8,
+     "boxRadius": 20,
+     "squareMedia": 5,
+     "roundedMedia": 3,
+     "mediaRadius": 13,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 0.68
+     },
+     {
+      "type": "img",
+      "ratio": 0.68
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": true,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "syne",
+     "dm sans"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 11907,
+    "margins": {
+     "left": 32,
+     "right": 47
+    },
+    "sections": [
+     {
+      "sel": "section#cloud-scene.wrap.cloud-scene",
+      "tag": "section",
+      "top": 0,
+      "height": 2867,
+      "words": 37,
+      "media": 3,
+      "middle": 192,
+      "heading": {
+       "text": "Design that",
+       "size": 64,
+       "tag": "h1"
+      },
+      "left": 38,
+      "right": 53,
+      "textLeft": 38,
+      "textRight": 69,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#why.wrap.story-intro",
+      "tag": "section",
+      "top": 2867,
+      "height": 446,
+      "words": 27,
+      "media": 0,
+      "middle": 56,
+      "heading": {
+       "text": "a steel fabricator",
+       "size": 51,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 71,
+      "textLeft": 32,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#website-story.scroll-story.is-live",
+      "tag": "section",
+      "top": 3313,
+      "height": 3482,
+      "words": 64,
+      "media": 1,
+      "middle": 4,
+      "heading": {
+       "text": "Know what you do.",
+       "size": 30,
+       "tag": "h3"
+      },
+      "left": 32,
+      "right": 47,
+      "textLeft": 32,
+      "textRight": 47,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#your-website.wrap.story-answer",
+      "tag": "section",
+      "top": 6794,
+      "height": 464,
+      "words": 37,
+      "media": 0,
+      "middle": 50,
+      "heading": {
+       "text": "A better introduction.",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 48,
+      "textLeft": 32,
+      "textRight": 48,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#approach.studio-personal",
+      "tag": "section",
+      "top": 7258,
+      "height": 643,
+      "words": 114,
+      "media": 0,
+      "middle": 42,
+      "heading": {
+       "text": "My full attention.",
+       "size": 34,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 49,
+      "textLeft": 32,
+      "textRight": 49,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "article.story-reveal.project",
+      "tag": "article",
+      "top": 8104,
+      "height": 419,
+      "words": 38,
+      "media": 1,
+      "middle": 56,
+      "heading": {
+       "text": "Olive & Ember",
+       "size": 34,
+       "tag": "h3"
+      },
+      "left": 52,
+      "right": 57,
+      "textLeft": 449,
+      "textRight": 57,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.story-reveal.project",
+      "tag": "article",
+      "top": 8587,
+      "height": 419,
+      "words": 40,
+      "media": 1,
+      "middle": 63,
+      "heading": {
+       "text": "Rivet & Beam",
+       "size": 34,
+       "tag": "h3"
+      },
+      "left": 32,
+      "right": 67,
+      "textLeft": 32,
+      "textRight": 471,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.story-reveal.project",
+      "tag": "article",
+      "top": 9070,
+      "height": 416,
+      "words": 41,
+      "media": 1,
+      "middle": 56,
+      "heading": {
+       "text": "Tedeats Events",
+       "size": 34,
+       "tag": "h3"
+      },
+      "left": 52,
+      "right": 62,
+      "textLeft": 449,
+      "textRight": 62,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.wrap.more-work",
+      "tag": "section",
+      "top": 9599,
+      "height": 313,
+      "words": 21,
+      "media": 0,
+      "middle": 121,
+      "heading": {
+       "text": "A little more to explore.",
+       "size": 26,
+       "tag": "h3"
+      },
+      "left": 32,
+      "right": 102,
+      "textLeft": 32,
+      "textRight": 102,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#process.studio-process",
+      "tag": "section",
+      "top": 9912,
+      "height": 699,
+      "words": 93,
+      "media": 0,
+      "middle": 79,
+      "heading": {
+       "text": "From idea to online.",
+       "size": 34,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 47,
+      "textLeft": 32,
+      "textRight": 47,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#pricing.wrap.studio-offer",
+      "tag": "section",
+      "top": 10612,
+      "height": 769,
+      "words": 88,
+      "media": 0,
+      "middle": 42,
+      "heading": {
+       "text": "£200",
+       "size": 100,
+       "tag": "p"
+      },
+      "left": 32,
+      "right": 56,
+      "textLeft": 32,
+      "textRight": 56,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.contact.section",
+      "tag": "section",
+      "top": 11381,
+      "height": 399,
+      "words": 24,
+      "media": 0,
+      "middle": 7,
+      "heading": {
+       "text": "What are you building?",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 88,
+      "right": 103,
+      "textLeft": 88,
+      "textRight": 103,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Design that connects.",
+      "size": 64,
+      "top": 591,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 18
+     },
+     {
+      "x": 449,
+      "n": 8
+     },
+     {
+      "x": 397,
+      "n": 7
+     },
+     {
+      "x": 88,
+      "n": 1
+     },
+     {
+      "x": 426,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 35,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.99,
+    0.99,
+    0.77,
+    0.48,
+    0.59,
+    0.59,
+    0.56,
+    0.93,
+    0.51,
+    0.63,
+    0.69,
+    0.88
+   ],
+   "motion": {
+    "elements": 16,
+    "css": 1,
+    "transitions": 5,
+    "scripted": 10,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 11584,
+     "screens": 13.7,
+     "words": 670,
+     "img": 16,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 10,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 8,
+     "videoCount": 0,
+     "uiPictures": 3,
+     "pictureSamples": [
+      "sky.webp",
+      "cloud-bank.webp",
+      "cloud-bank.webp",
+      "hands.webp",
+      "cloud-bank.webp",
+      "olive-and-ember-preview.png",
+      "rivet-and-beam-preview.png",
+      "dinner-alt-1.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Design that connects.",
+     "words": 3,
+     "chars": 21,
+     "lines": 2,
+     "size": 46.8,
+     "vw": 12,
+     "font": "Syne",
+     "weight": 500,
+     "tracking": -0.065,
+     "leading": 0.94,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.86,
+     "top": 182,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Design that connects.",
+     "words": 3,
+     "lines": 2,
+     "size": 46.8,
+     "font": "Syne"
+    },
+    "headings": [
+     {
+      "text": "Design that connects.",
+      "words": 3,
+      "chars": 21,
+      "lines": 2,
+      "size": 46.8,
+      "vw": 12,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.065,
+      "leading": 0.94,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.86,
+      "top": 182,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "DM Sans",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.04,
+      "top": 379,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Someone is looking for",
+      "words": 4,
+      "chars": 22,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.4,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2309,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "a steel fabricator",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.055,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2355,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "right now.",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "DM Sans",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2399,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Know what you do.",
+      "words": 4,
+      "chars": 17,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3062,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "A better introduction.",
+      "words": 3,
+      "chars": 22,
+      "lines": 1,
+      "size": 38,
+      "vw": 9.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5463,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "My full attention.",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 38,
+      "vw": 9.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5867,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "A direction of your own.",
+      "words": 5,
+      "chars": 24,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 6198,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "The same person throughout.",
+      "words": 4,
+      "chars": 27,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 6350,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Room to get it right.",
+      "words": 5,
+      "chars": 21,
+      "lines": 1,
+      "size": 25,
+      "vw": 6.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 6502,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "See the thinking.",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 38,
+      "vw": 9.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 6753,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Olive & Ember",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 7182,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Rivet & Beam",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 7865,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Tedeats Events",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.04,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.89,
+      "top": 8576,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "A little more to explore.",
+      "words": 5,
+      "chars": 25,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 9049,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "From idea to online.",
+      "words": 4,
+      "chars": 20,
+      "lines": 1,
+      "size": 38,
+      "vw": 9.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 9476,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Tell me about it.",
+      "words": 4,
+      "chars": 17,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 9550,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "See it take shape.",
+      "words": 4,
+      "chars": 18,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 9726,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Refine. Then launch.",
+      "words": 3,
+      "chars": 20,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 9902,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "A clear starting point.",
+      "words": 4,
+      "chars": 23,
+      "lines": 1,
+      "size": 38,
+      "vw": 9.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 10150,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "£200",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 117,
+      "vw": 30,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.075,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 10350,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "What are you building?",
+      "words": 4,
+      "chars": 22,
+      "lines": 2,
+      "size": 39,
+      "vw": 10,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.05,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 11056,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 23,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 3,
+     "centered": 0,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "Syne",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "Georgia",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      7,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      20,
+      21,
+      22,
+      24,
+      25,
+      26,
+      30,
+      32,
+      38,
+      39,
+      47,
+      117
+     ],
+     "sizeCount": 19,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 16,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14.6
+     },
+     "measureChars": 54,
+     "max": {
+      "size": 117,
+      "vw": 30,
+      "font": "Syne",
+      "text": "£200"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#24282c",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.1,
+      "l": 0.16
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#6d8196",
+       "top": 0,
+       "hsl": {
+        "h": 211,
+        "s": 0.16,
+        "l": 0.51
+       }
+      },
+      {
+       "color": "#2d3339",
+       "top": 2733,
+       "hsl": {
+        "h": 210,
+        "s": 0.12,
+        "l": 0.2
+       }
+      },
+      {
+       "color": "#ffffe3",
+       "top": 9412,
+       "hsl": {
+        "h": 60,
+        "s": 1,
+        "l": 0.95
+       }
+      },
+      {
+       "color": "#343d46",
+       "top": 10992,
+       "hsl": {
+        "h": 210,
+        "s": 0.15,
+        "l": 0.24
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#ffffe3",
+       "share": 0.87
+      },
+      {
+       "color": "#24282c",
+       "share": 0.1
+      },
+      {
+       "color": "#2d3b30",
+       "share": 0.02
+      },
+      {
+       "color": "#4a4a4a",
+       "share": 0.01
+      },
+      {
+       "color": "#f5f2e9",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#ffffe3",
+      "hsl": {
+       "h": 60,
+       "s": 1,
+       "l": 0.95
+      },
+      "fg": "#4a4a4a"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Let’s talk",
+      "See what a website can do ↗",
+      "Scroll motion on"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 1,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.cloud-veil → linear-gradient(color(srgb 0.290196 0.290196 0.290196 / 0.5), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 45%, colo"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 8,
+     "boxRadius": 22,
+     "squareMedia": 5,
+     "roundedMedia": 3,
+     "mediaRadius": 13,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "img",
+      "ratio": 0.73
+     },
+     {
+      "type": "img",
+      "ratio": 0.65
+     },
+     {
+      "type": "img",
+      "ratio": 0.56
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 52,
+     "floatingPill": true,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "syne",
+     "dm sans"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 11584,
+    "margins": {
+     "left": 16,
+     "right": 19
+    },
+    "sections": [
+     {
+      "sel": "section#cloud-scene.wrap.cloud-scene",
+      "tag": "section",
+      "top": 0,
+      "height": 2237,
+      "words": 37,
+      "media": 3,
+      "middle": 0,
+      "heading": {
+       "text": "Design that",
+       "size": 47,
+       "tag": "h1"
+      },
+      "left": 27,
+      "right": 27,
+      "textLeft": 27,
+      "textRight": 40,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section#why.wrap.story-intro",
+      "tag": "section",
+      "top": 2237,
+      "height": 377,
+      "words": 27,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "a steel fabricator",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 40,
+      "textLeft": 16,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#website-story.scroll-story.is-live",
+      "tag": "section",
+      "top": 2614,
+      "height": 2785,
+      "words": 60,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Know what you do.",
+       "size": 32,
+       "tag": "h3"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 16,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section#your-website.wrap.story-answer",
+      "tag": "section",
+      "top": 5399,
+      "height": 404,
+      "words": 37,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "A better introduction.",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 30,
+      "textLeft": 16,
+      "textRight": 30,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#approach.studio-personal",
+      "tag": "section",
+      "top": 5803,
+      "height": 886,
+      "words": 114,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "My full attention.",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 21,
+      "textLeft": 16,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.story-reveal.project",
+      "tag": "article",
+      "top": 6898,
+      "height": 635,
+      "words": 38,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Olive & Ember",
+       "size": 30,
+       "tag": "h3"
+      },
+      "left": 21,
+      "right": 24,
+      "textLeft": 21,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.story-reveal.project",
+      "tag": "article",
+      "top": 7581,
+      "height": 663,
+      "words": 40,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Rivet & Beam",
+       "size": 30,
+       "tag": "h3"
+      },
+      "left": 21,
+      "right": 30,
+      "textLeft": 21,
+      "textRight": 52,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.story-reveal.project",
+      "tag": "article",
+      "top": 8292,
+      "height": 659,
+      "words": 41,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Tedeats Events",
+       "size": 30,
+       "tag": "h3"
+      },
+      "left": 21,
+      "right": 25,
+      "textLeft": 21,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.wrap.more-work",
+      "tag": "section",
+      "top": 9049,
+      "height": 363,
+      "words": 21,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "A little more to explore.",
+       "size": 26,
+       "tag": "h3"
+      },
+      "left": 16,
+      "right": 78,
+      "textLeft": 16,
+      "textRight": 78,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#process.studio-process",
+      "tag": "section",
+      "top": 9412,
+      "height": 674,
+      "words": 93,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "From idea to online.",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 20,
+      "textLeft": 16,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#pricing.wrap.studio-offer",
+      "tag": "section",
+      "top": 10086,
+      "height": 906,
+      "words": 88,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "£200",
+       "size": 117,
+       "tag": "p"
+      },
+      "left": 16,
+      "right": 26,
+      "textLeft": 16,
+      "textRight": 26,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.contact.section",
+      "tag": "section",
+      "top": 10992,
+      "height": 426,
+      "words": 24,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "What are you building?",
+       "size": 39,
+       "tag": "h2"
+      },
+      "left": 40,
+      "right": 106,
+      "textLeft": 40,
+      "textRight": 106,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.wrap.site-footer",
+      "tag": "footer",
+      "top": 11442,
+      "height": 143,
+      "words": 11,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 40,
+      "textLeft": 16,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Design that connects.",
+      "size": 47,
+      "top": 182,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 32
+     },
+     {
+      "x": 27,
+      "n": 2
+     },
+     {
+      "x": 40,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 35,
+    "bodySize": 16,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "pill-nav",
+   "width": 1440,
+   "message": "Floating rounded pill navigation.",
+   "fix": "Use a plain bar: wordmark left, a few links, one action.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (section #ffffe3, button #ffffe3, text #ffffe3).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "24 different font sizes (9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 32, 34, 52, 59, 62, 72, 96, 115, 187).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "pinned-over-picture",
+   "width": 1440,
+   "message": "Pinned large text slides across pictures while the page scrolls: \"Design that connects.\" (screen 3, 100% over a picture); \"connects.\" (screen 3, 100% over a picture)",
+   "fix": "Jurors read a pinned title crossing drawings or photographs as a collision. Keep the pictures in the column the title does not occupy, or unpin it.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "long-pin",
+   "width": 1440,
+   "message": "The same large text stays on screen for 3 screens in a row: \"Design that connects.\"",
+   "fix": "A pinned element earns two screens, and something must change at each. Shorten the run or give every screen its own content."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Tedits portfolio\\.taste-skill\\studio-story\\inspect\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Tedits portfolio\\.taste-skill\\studio-story\\inspect\\desktop-page-01.jpg",
+    "C:\\Tedits portfolio\\.taste-skill\\studio-story\\inspect\\desktop-page-02.jpg",
+    "C:\\Tedits portfolio\\.taste-skill\\studio-story\\inspect\\desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Tedits portfolio\\.taste-skill\\studio-story\\inspect\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Tedits portfolio\\.taste-skill\\studio-story\\inspect\\tablet-page-01.jpg",
+    "C:\\Tedits portfolio\\.taste-skill\\studio-story\\inspect\\tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Tedits portfolio\\.taste-skill\\studio-story\\inspect\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Tedits portfolio\\.taste-skill\\studio-story\\inspect\\mobile-page-01.jpg",
+    "C:\\Tedits portfolio\\.taste-skill\\studio-story\\inspect\\mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

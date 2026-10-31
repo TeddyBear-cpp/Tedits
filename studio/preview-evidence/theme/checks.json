@@ -1,0 +1,114 @@
+{
+  "views": [
+    {
+      "width": 320,
+      "overflow": false,
+      "theme": "dark",
+      "background": "rgb(36, 40, 44)",
+      "button": {
+        "width": 44,
+        "height": 44,
+        "withinHeader": true,
+        "pressed": "true",
+        "focused": true,
+        "outline": "2px"
+      },
+      "navFits": true,
+      "logos": [
+        "assets/tedits-studio-on-slate.svg",
+        "assets/tedits-studio-on-slate.svg"
+      ],
+      "paletteValues": [
+        "#4A4A4A",
+        "#CBCBCB",
+        "#FFFFE3",
+        "#6D8196"
+      ]
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "theme": "dark",
+      "background": "rgb(36, 40, 44)",
+      "button": {
+        "width": 44,
+        "height": 44,
+        "withinHeader": true,
+        "pressed": "true",
+        "focused": true,
+        "outline": "2px"
+      },
+      "navFits": true,
+      "logos": [
+        "assets/tedits-studio-on-slate.svg",
+        "assets/tedits-studio-on-slate.svg"
+      ],
+      "paletteValues": [
+        "#4A4A4A",
+        "#CBCBCB",
+        "#FFFFE3",
+        "#6D8196"
+      ]
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "theme": "dark",
+      "background": "rgb(36, 40, 44)",
+      "button": {
+        "width": 44,
+        "height": 44,
+        "withinHeader": true,
+        "pressed": "true",
+        "focused": true,
+        "outline": "2px"
+      },
+      "navFits": true,
+      "logos": [
+        "assets/tedits-studio-on-slate.svg",
+        "assets/tedits-studio-on-slate.svg"
+      ],
+      "paletteValues": [
+        "#4A4A4A",
+        "#CBCBCB",
+        "#FFFFE3",
+        "#6D8196"
+      ]
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "theme": "dark",
+      "background": "rgb(36, 40, 44)",
+      "button": {
+        "width": 44,
+        "height": 44,
+        "withinHeader": true,
+        "pressed": "true",
+        "focused": true,
+        "outline": "2px"
+      },
+      "navFits": true,
+      "logos": [
+        "assets/tedits-studio-on-slate.svg",
+        "assets/tedits-studio-on-slate.svg"
+      ],
+      "paletteValues": [
+        "#4A4A4A",
+        "#CBCBCB",
+        "#FFFFE3",
+        "#6D8196"
+      ]
+    }
+  ],
+  "preferences": {
+    "initialSystemDark": true,
+    "keyboardAndPersistedLight": true,
+    "explicitChoiceOverridesSystem": true,
+    "crossTabSync": true,
+    "followsSystemUntilExplicitChoice": true,
+    "previewHasSameControl": true,
+    "blockedStorageStillToggles": true
+  },
+  "errors": []
+}

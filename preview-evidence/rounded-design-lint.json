@@ -1,0 +1,101 @@
+{
+ "files": 2,
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "file": "studio/studio-rounded.css",
+   "line": 14,
+   "match": ".eyebrow{",
+   "message": "Eyebrow / kicker label above a heading."
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "file": "studio/studio-rounded.css",
+   "line": 15,
+   "match": ".eyebrow,",
+   "message": "Eyebrow / kicker label above a heading."
+  },
+  {
+   "level": "WARN",
+   "id": "glass",
+   "file": "studio/studio-rounded.css",
+   "line": 17,
+   "match": "backdrop-filter:",
+   "message": "Backdrop blur. One sticky bar at most; glass cards are a tell."
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "file": "studio/studio-rounded.css",
+   "line": 33,
+   "match": "linear-gradient(",
+   "message": "Gradient fill. Use a flat colour or a real image (a neutral scrim over a photo is the one exception)."
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "file": "studio/studio-rounded.css",
+   "line": 34,
+   "match": "linear-gradient(",
+   "message": "Gradient fill. Use a flat colour or a real image (a neutral scrim over a photo is the one exception)."
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "file": "studio/studio-rounded.css",
+   "line": 36,
+   "match": "linear-gradient(",
+   "message": "Gradient fill. Use a flat colour or a real image (a neutral scrim over a photo is the one exception)."
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "file": "studio/studio-rounded.css",
+   "line": 38,
+   "match": "linear-gradient(",
+   "message": "Gradient fill. Use a flat colour or a real image (a neutral scrim over a photo is the one exception)."
+  },
+  {
+   "level": "FAIL",
+   "id": "gradient",
+   "file": "studio/studio-rounded.css",
+   "line": 39,
+   "match": "linear-gradient(",
+   "message": "Gradient fill. Use a flat colour or a real image (a neutral scrim over a photo is the one exception)."
+  },
+  {
+   "level": "WARN",
+   "id": "outlined-box",
+   "file": "studio/studio-rounded.css",
+   "line": 47,
+   "match": "border:1px solid",
+   "message": "A 1px outlined box. Prefer a filled surface or no box."
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "file": "studio/studio-rounded.css",
+   "line": 99,
+   "match": ".eyebrow{",
+   "message": "Eyebrow / kicker label above a heading."
+  },
+  {
+   "level": "WARN",
+   "id": "outlined-box",
+   "file": "studio/studio-rounded.css",
+   "line": 108,
+   "match": "border:1px solid",
+   "message": "A 1px outlined box. Prefer a filled surface or no box."
+  },
+  {
+   "level": "WARN",
+   "id": "glass",
+   "file": "studio/studio-rounded.css",
+   "line": 132,
+   "match": "backdrop-filter:",
+   "message": "Backdrop blur. One sticky bar at most; glass cards are a tell."
+  }
+ ]
+}

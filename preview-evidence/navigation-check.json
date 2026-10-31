@@ -1,0 +1,879 @@
+{
+  "base": "http://127.0.0.1:8084/",
+  "anchorChecks": 77,
+  "checks": [
+    {
+      "route": "index.html",
+      "width": 390,
+      "hash": "#main",
+      "label": "Skip to content",
+      "y": 88,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "hero-title"
+    },
+    {
+      "route": "index.html",
+      "width": 390,
+      "hash": "#top",
+      "label": "",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "index.html",
+      "width": 390,
+      "hash": "#work",
+      "label": "Work",
+      "y": 1032,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "FIGURE"
+    },
+    {
+      "route": "index.html",
+      "width": 390,
+      "hash": "#services",
+      "label": "Services",
+      "y": 2131,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H2"
+    },
+    {
+      "route": "index.html",
+      "width": 390,
+      "hash": "#contact",
+      "label": "Let’s talk ↗",
+      "y": 3203,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "contact-form"
+    },
+    {
+      "route": "index.html",
+      "width": 390,
+      "hash": "#work",
+      "label": "Explore the work ↘",
+      "y": 1032,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "FIGURE"
+    },
+    {
+      "route": "index.html",
+      "width": 390,
+      "hash": "#top",
+      "label": "",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 390,
+      "hash": "#main",
+      "label": "Skip to content",
+      "y": 131,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "hero-title"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 390,
+      "hash": "#top",
+      "label": "STUDIO",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 390,
+      "hash": "#work",
+      "label": "Work",
+      "y": 565,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 390,
+      "hash": "#approach",
+      "label": "Approach",
+      "y": 3349,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 390,
+      "hash": "#about",
+      "label": "About me",
+      "y": 4990,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "about-title"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 390,
+      "hash": "#work",
+      "label": "Explore selected work ↘",
+      "y": 565,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 390,
+      "hash": "#top",
+      "label": "STUDIO",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 390,
+      "hash": "#main",
+      "label": "Skip to content",
+      "y": 100,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H1"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 390,
+      "hash": "",
+      "label": "olive & emberC A T E R I N G",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 390,
+      "hash": "#services",
+      "label": "Our services",
+      "y": 1164,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H2"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 390,
+      "hash": "#meal-prep",
+      "label": "Meal prep",
+      "y": 2501,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 390,
+      "hash": "#menus",
+      "label": "At the table",
+      "y": 3793,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 390,
+      "hash": "#approach",
+      "label": "Our approach",
+      "y": 5002,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H2"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 390,
+      "hash": "#menus",
+      "label": "A taste of the menu ↓",
+      "y": 3793,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 390,
+      "hash": "",
+      "label": "olive & emberC A T E R I N G",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#main",
+      "label": "Skip to content",
+      "y": 173,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "hero-title"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#about-concept",
+      "label": "About this concept ↗",
+      "y": 4996,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H2"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#top",
+      "label": "",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#products",
+      "label": "Materials",
+      "y": 1175,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H3"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#how-it-works",
+      "label": "The process",
+      "y": 3168,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "process-title"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#quote",
+      "label": "Enquiry preview ↗",
+      "y": 4339,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#products",
+      "label": "Explore the materials ↘",
+      "y": 1175,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H3"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#quote",
+      "label": "Plan a material enquiry →",
+      "y": 4339,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "sample-material"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#quote",
+      "label": "Plan a material enquiry →",
+      "y": 4339,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "sample-material"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#quote",
+      "label": "Describe your project →",
+      "y": 4348,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "project-description"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#quote",
+      "label": "Describe a custom project ↗",
+      "y": 4348,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "project-description"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "hash": "#top",
+      "label": "",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 390,
+      "hash": "#top",
+      "label": "AFTERHOURS",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 390,
+      "hash": "#beats",
+      "label": "The beats",
+      "y": 1164,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 390,
+      "hash": "#licenses",
+      "label": "Licensing",
+      "y": 2085,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H3"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 390,
+      "hash": "#beats",
+      "label": "Explore the beats ↘",
+      "y": 1164,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "hash": "#main",
+      "label": "Skip to content",
+      "y": 112,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "hero-title"
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "hash": "#top",
+      "label": "",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "hash": "#work",
+      "label": "Work",
+      "y": 919,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "FIGURE"
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "hash": "#services",
+      "label": "Services",
+      "y": 1704,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H2"
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "hash": "#contact",
+      "label": "Let’s talk ↗",
+      "y": 2358,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "contact-form"
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "hash": "#work",
+      "label": "Explore the work ↘",
+      "y": 919,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "FIGURE"
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "hash": "#top",
+      "label": "",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 1440,
+      "hash": "#main",
+      "label": "Skip to content",
+      "y": 112,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "hero-title"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 1440,
+      "hash": "#top",
+      "label": "STUDIO",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 1440,
+      "hash": "#work",
+      "label": "Work",
+      "y": 801,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 1440,
+      "hash": "#approach",
+      "label": "Approach",
+      "y": 3018,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 1440,
+      "hash": "#about",
+      "label": "About me",
+      "y": 4378,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "about-title"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 1440,
+      "hash": "#work",
+      "label": "Explore selected work ↘",
+      "y": 801,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 1440,
+      "hash": "#top",
+      "label": "STUDIO",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 1440,
+      "hash": "#main",
+      "label": "Skip to content",
+      "y": 125,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H1"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 1440,
+      "hash": "",
+      "label": "olive & emberC A T E R I N G",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 1440,
+      "hash": "#services",
+      "label": "Our services",
+      "y": 990,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H2"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 1440,
+      "hash": "#meal-prep",
+      "label": "Meal prep",
+      "y": 1917,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 1440,
+      "hash": "#menus",
+      "label": "At the table",
+      "y": 2965,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 1440,
+      "hash": "#approach",
+      "label": "Our approach",
+      "y": 3732,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H2"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 1440,
+      "hash": "#menus",
+      "label": "A taste of the menu ↓",
+      "y": 2965,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 1440,
+      "hash": "",
+      "label": "olive & emberC A T E R I N G",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#main",
+      "label": "Skip to content",
+      "y": 149,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "hero-title"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#about-concept",
+      "label": "About this concept ↗",
+      "y": 2908,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H2"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#top",
+      "label": "",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#products",
+      "label": "Materials",
+      "y": 876,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H3"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#how-it-works",
+      "label": "The process",
+      "y": 1624,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "process-title"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#quote",
+      "label": "Enquiry preview ↗",
+      "y": 2326,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#products",
+      "label": "Explore the materials ↘",
+      "y": 876,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H3"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#quote",
+      "label": "Plan a material enquiry →",
+      "y": 2326,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "sample-material"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#quote",
+      "label": "Plan a material enquiry →",
+      "y": 2326,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "sample-material"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#quote",
+      "label": "Describe your project →",
+      "y": 2356,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "project-description"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#quote",
+      "label": "Describe a custom project ↗",
+      "y": 2356,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "project-description"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "hash": "#top",
+      "label": "",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 1440,
+      "hash": "#top",
+      "label": "AFTERHOURS",
+      "y": 0,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "A"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 1440,
+      "hash": "#beats",
+      "label": "The beats",
+      "y": 914,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 1440,
+      "hash": "#licenses",
+      "label": "Licensing",
+      "y": 1558,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H3"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 1440,
+      "hash": "#contact",
+      "label": "Let's work ↗",
+      "y": 1683,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "H2"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 1440,
+      "hash": "#beats",
+      "label": "Explore the beats ↘",
+      "y": 914,
+      "sectionVisible": true,
+      "overflow": false,
+      "focus": "DIV"
+    }
+  ],
+  "focalResults": [
+    {
+      "route": "index.html",
+      "width": 390,
+      "top": 217.6875,
+      "bottom": 681.46875,
+      "height": 463.78125,
+      "center": 449.578125,
+      "viewport": 900,
+      "atEnd": false
+    },
+    {
+      "route": "studio/index.html",
+      "width": 390,
+      "top": 207.53125,
+      "bottom": 691.609375,
+      "height": 484.078125,
+      "center": 449.5703125,
+      "viewport": 900,
+      "atEnd": false
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 390,
+      "top": 218.515625,
+      "bottom": 680.015625,
+      "height": 461.5,
+      "center": 449.265625,
+      "viewport": 900,
+      "atEnd": false
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 390,
+      "top": 284.9375,
+      "bottom": 614.9375,
+      "height": 330,
+      "center": 449.9375,
+      "viewport": 900,
+      "atEnd": false
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "top": 41.328125,
+      "bottom": 858.265625,
+      "height": 816.9375,
+      "center": 449.796875,
+      "viewport": 900,
+      "atEnd": false
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "top": 265.109375,
+      "bottom": 635.296875,
+      "height": 370.1875,
+      "center": 450.203125,
+      "viewport": 900,
+      "atEnd": false
+    },
+    {
+      "route": "studio/index.html",
+      "width": 1440,
+      "top": 189.5,
+      "bottom": 709.6875,
+      "height": 520.1875,
+      "center": 449.59375,
+      "viewport": 900,
+      "atEnd": false
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 1440,
+      "top": 240.3125,
+      "bottom": 659.8125,
+      "height": 419.5,
+      "center": 450.0625,
+      "viewport": 900,
+      "atEnd": false
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 1440,
+      "top": 179.90625,
+      "bottom": 719.90625,
+      "height": 540,
+      "center": 449.90625,
+      "viewport": 900,
+      "atEnd": false
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "top": 62.109375,
+      "bottom": 838.265625,
+      "height": 776.15625,
+      "center": 450.1875,
+      "viewport": 900,
+      "atEnd": false
+    }
+  ],
+  "errors": []
+}

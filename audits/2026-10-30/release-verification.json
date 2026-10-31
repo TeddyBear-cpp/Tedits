@@ -1,0 +1,777 @@
+{
+  "packagedFiles": 189,
+  "bytes": 103331381,
+  "contentSource": "Published Sanity, read-only build",
+  "checks": [
+    "verify-sanity passed",
+    "verify-catalogues passed",
+    "build-video passed",
+    "build-studio passed",
+    "build-sanity online passed",
+    "validate-output passed",
+    "FFmpeg decodes all story MP4s: 60fps, 720x720, 360/240/360 frames"
+  ],
+  "browserViewports": [
+    "1440x900",
+    "390x845",
+    "320x640"
+  ],
+  "files": [
+    {
+      "file": ".nojekyll",
+      "bytes": 0
+    },
+    {
+      "file": "Assets/tedits-bear-favicon-32.png",
+      "bytes": 2078
+    },
+    {
+      "file": "Assets/tedits-brand/DM-Sans-OFL.txt",
+      "bytes": 4482
+    },
+    {
+      "file": "Assets/tedits-brand/DM-Sans-Regular.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "Assets/tedits-brand/DM-Sans-Semibold.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "Assets/tedits-brand/Syne-Bold.ttf",
+      "bytes": 52732
+    },
+    {
+      "file": "Assets/tedits-brand/Syne-Medium.ttf",
+      "bytes": 52640
+    },
+    {
+      "file": "Assets/tedits-brand/Syne-OFL.txt",
+      "bytes": 4402
+    },
+    {
+      "file": "Assets/tedits-brand/Syne-Semibold.ttf",
+      "bytes": 52760
+    },
+    {
+      "file": "Assets/tedits-brand/tedits-logo-on-dark.svg",
+      "bytes": 2340
+    },
+    {
+      "file": "Assets/tedits-brand/tedits-logo.svg",
+      "bytes": 2265
+    },
+    {
+      "file": "Assets/video-posters/20min-edit.webp",
+      "bytes": 80216
+    },
+    {
+      "file": "Assets/video-posters/delta-force.webp",
+      "bytes": 24562
+    },
+    {
+      "file": "Assets/video-posters/spiderman-superman.webp",
+      "bytes": 5214
+    },
+    {
+      "file": "Assets/video-posters/teditstudio-launch.webp",
+      "bytes": 6098
+    },
+    {
+      "file": "Assets/video-posters/the-lead.webp",
+      "bytes": 2482
+    },
+    {
+      "file": "Assets/video-posters/violet-light.webp",
+      "bytes": 6960
+    },
+    {
+      "file": "contact.js",
+      "bytes": 1349
+    },
+    {
+      "file": "index.html",
+      "bytes": 8336
+    },
+    {
+      "file": "robots.txt",
+      "bytes": 83
+    },
+    {
+      "file": "section-navigation.js",
+      "bytes": 4598
+    },
+    {
+      "file": "site-loader.css",
+      "bytes": 1373
+    },
+    {
+      "file": "site-loader.js",
+      "bytes": 1107
+    },
+    {
+      "file": "sitemap.xml",
+      "bytes": 318
+    },
+    {
+      "file": "smooth-scroll.css",
+      "bytes": 690
+    },
+    {
+      "file": "smooth-scroll.js",
+      "bytes": 5989
+    },
+    {
+      "file": "studio/assets/afterhours-preview.webp",
+      "bytes": 85490
+    },
+    {
+      "file": "studio/assets/clouds/cloud-bank.webp",
+      "bytes": 205016
+    },
+    {
+      "file": "studio/assets/clouds/hands.webp",
+      "bytes": 102518
+    },
+    {
+      "file": "studio/assets/clouds/sky.webp",
+      "bytes": 41320
+    },
+    {
+      "file": "studio/assets/DM-Sans-OFL.txt",
+      "bytes": 4482
+    },
+    {
+      "file": "studio/assets/DM-Sans-Regular.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "studio/assets/DM-Sans-Semibold.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "studio/assets/little-joy-preview.webp",
+      "bytes": 69536
+    },
+    {
+      "file": "studio/assets/olive-and-ember-preview.webp",
+      "bytes": 80632
+    },
+    {
+      "file": "studio/assets/rivet-and-beam-preview.webp",
+      "bytes": 84984
+    },
+    {
+      "file": "studio/assets/studio-favicon.svg",
+      "bytes": 464
+    },
+    {
+      "file": "studio/assets/Syne-Bold.ttf",
+      "bytes": 52732
+    },
+    {
+      "file": "studio/assets/Syne-Medium.ttf",
+      "bytes": 52640
+    },
+    {
+      "file": "studio/assets/Syne-OFL.txt",
+      "bytes": 4402
+    },
+    {
+      "file": "studio/assets/Syne-Semibold.ttf",
+      "bytes": 52760
+    },
+    {
+      "file": "studio/assets/tedits-studio-on-ivory.svg",
+      "bytes": 2265
+    },
+    {
+      "file": "studio/assets/tedits-studio-on-slate.svg",
+      "bytes": 2265
+    },
+    {
+      "file": "studio/assets/website-story/answers.mp4",
+      "bytes": 202123
+    },
+    {
+      "file": "studio/assets/website-story/answers.png",
+      "bytes": 48463
+    },
+    {
+      "file": "studio/assets/website-story/build-trust.mp4",
+      "bytes": 238908
+    },
+    {
+      "file": "studio/assets/website-story/build-trust.png",
+      "bytes": 93700
+    },
+    {
+      "file": "studio/assets/website-story/get-found.mp4",
+      "bytes": 169371
+    },
+    {
+      "file": "studio/assets/website-story/get-found.png",
+      "bytes": 57003
+    },
+    {
+      "file": "studio/enquire.html",
+      "bytes": 11720
+    },
+    {
+      "file": "studio/enquiry.js",
+      "bytes": 7662
+    },
+    {
+      "file": "studio/index.html",
+      "bytes": 21553
+    },
+    {
+      "file": "studio/projects/afterhours/afterhours-audio.css",
+      "bytes": 2665
+    },
+    {
+      "file": "studio/projects/afterhours/afterhours-audio.js",
+      "bytes": 4128
+    },
+    {
+      "file": "studio/projects/afterhours/assets/audio/do-this-often-teddybear.mp3",
+      "bytes": 3274292
+    },
+    {
+      "file": "studio/projects/afterhours/assets/audio/the-lead-teddybear.mp3",
+      "bytes": 957544
+    },
+    {
+      "file": "studio/projects/afterhours/assets/body.otf",
+      "bytes": 82264
+    },
+    {
+      "file": "studio/projects/afterhours/assets/display.otf",
+      "bytes": 81340
+    },
+    {
+      "file": "studio/projects/afterhours/assets/spotify-icon-white.svg",
+      "bytes": 1252
+    },
+    {
+      "file": "studio/projects/afterhours/index.html",
+      "bytes": 18200
+    },
+    {
+      "file": "studio/projects/catering/assets/brunch.jpg",
+      "bytes": 199581
+    },
+    {
+      "file": "studio/projects/catering/assets/Cormorant-Garamond-OFL.txt",
+      "bytes": 4387
+    },
+    {
+      "file": "studio/projects/catering/assets/DM-Sans-OFL.txt",
+      "bytes": 4482
+    },
+    {
+      "file": "studio/projects/catering/assets/font-0.ttf",
+      "bytes": 293036
+    },
+    {
+      "file": "studio/projects/catering/assets/font-1.ttf",
+      "bytes": 293244
+    },
+    {
+      "file": "studio/projects/catering/assets/font-2.ttf",
+      "bytes": 290236
+    },
+    {
+      "file": "studio/projects/catering/assets/font-3.ttf",
+      "bytes": 290496
+    },
+    {
+      "file": "studio/projects/catering/assets/font-4.ttf",
+      "bytes": 290392
+    },
+    {
+      "file": "studio/projects/catering/assets/font-5.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "studio/projects/catering/assets/font-6.ttf",
+      "bytes": 48308
+    },
+    {
+      "file": "studio/projects/catering/assets/font-7.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "studio/projects/catering/assets/gathering.jpg",
+      "bytes": 220284
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-friday.jpg",
+      "bytes": 248508
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-monday.jpg",
+      "bytes": 262577
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-saturday.jpg",
+      "bytes": 302701
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-thursday.jpg",
+      "bytes": 292235
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-tuesday.jpg",
+      "bytes": 202479
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-wednesday.jpg",
+      "bytes": 278052
+    },
+    {
+      "file": "studio/projects/catering/assets/menu-brunch.jpg",
+      "bytes": 360669
+    },
+    {
+      "file": "studio/projects/catering/assets/menu-everyday.jpg",
+      "bytes": 488945
+    },
+    {
+      "file": "studio/projects/catering/assets/menu-feast.jpg",
+      "bytes": 457813
+    },
+    {
+      "file": "studio/projects/catering/assets/salad.jpg",
+      "bytes": 150291
+    },
+    {
+      "file": "studio/projects/catering/assets/seasonal-meals.jpg",
+      "bytes": 444970
+    },
+    {
+      "file": "studio/projects/catering/finish.css",
+      "bytes": 11414
+    },
+    {
+      "file": "studio/projects/catering/fonts.css",
+      "bytes": 1351
+    },
+    {
+      "file": "studio/projects/catering/index.html",
+      "bytes": 18412
+    },
+    {
+      "file": "studio/projects/catering/script.js",
+      "bytes": 17254
+    },
+    {
+      "file": "studio/projects/catering/style.css",
+      "bytes": 8478
+    },
+    {
+      "file": "studio/projects/little-joy/assets/booking-desktop.png",
+      "bytes": 114420
+    },
+    {
+      "file": "studio/projects/little-joy/assets/gallery-desktop.png",
+      "bytes": 836983
+    },
+    {
+      "file": "studio/projects/little-joy/assets/home-mobile.png",
+      "bytes": 137306
+    },
+    {
+      "file": "studio/projects/little-joy/assets/packages-desktop.png",
+      "bytes": 473224
+    },
+    {
+      "file": "studio/projects/little-joy/case-study.css",
+      "bytes": 4964
+    },
+    {
+      "file": "studio/projects/little-joy/case-study.js",
+      "bytes": 698
+    },
+    {
+      "file": "studio/projects/little-joy/demo/app.js",
+      "bytes": 12938
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/balloons.jpg",
+      "bytes": 105867
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/birthday.jpg",
+      "bytes": 281831
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/DM-Sans-OFL.txt",
+      "bytes": 4389
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/favicon.svg",
+      "bytes": 302
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/font-0.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/font-1.ttf",
+      "bytes": 48308
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/font-2.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/font-3.ttf",
+      "bytes": 48200
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/font-4.ttf",
+      "bytes": 71596
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/font-5.ttf",
+      "bytes": 71632
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/fonts.css",
+      "bytes": 891
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/Fraunces-OFL.txt",
+      "bytes": 4391
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/hero.jpg",
+      "bytes": 140949
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/little-moments.jpg",
+      "bytes": 93998
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/party-setup.jpg",
+      "bytes": 155426
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/playtime.jpg",
+      "bytes": 109949
+    },
+    {
+      "file": "studio/projects/little-joy/demo/booking.html",
+      "bytes": 6323
+    },
+    {
+      "file": "studio/projects/little-joy/demo/credits.html",
+      "bytes": 2844
+    },
+    {
+      "file": "studio/projects/little-joy/demo/faqs.html",
+      "bytes": 6656
+    },
+    {
+      "file": "studio/projects/little-joy/demo/gallery.html",
+      "bytes": 6294
+    },
+    {
+      "file": "studio/projects/little-joy/demo/index.html",
+      "bytes": 10660
+    },
+    {
+      "file": "studio/projects/little-joy/demo/packages.html",
+      "bytes": 7658
+    },
+    {
+      "file": "studio/projects/little-joy/demo/styles.css",
+      "bytes": 35172
+    },
+    {
+      "file": "studio/projects/little-joy/index.html",
+      "bytes": 8268
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/DM-Sans-OFL.txt",
+      "bytes": 4482
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/DM-Sans-Regular.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/DM-Sans-Semibold.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/metal-tubes.jpg",
+      "bytes": 177816
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/rivet-beam-dark.svg",
+      "bytes": 592
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/rivet-beam-light.svg",
+      "bytes": 592
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/steel-beams.jpg",
+      "bytes": 173057
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/welder-hero.jpg",
+      "bytes": 217823
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/welding.jpg",
+      "bytes": 196586
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept.css",
+      "bytes": 15966
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept.js",
+      "bytes": 8071
+    },
+    {
+      "file": "studio/projects/rivet-beam/index.html",
+      "bytes": 13559
+    },
+    {
+      "file": "studio/projects/tedeats/app.js",
+      "bytes": 6079
+    },
+    {
+      "file": "studio/projects/tedeats/assets/body-semibold.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "studio/projects/tedeats/assets/body.ttf",
+      "bytes": 48280
+    },
+    {
+      "file": "studio/projects/tedeats/assets/bouquet.png",
+      "bytes": 409905
+    },
+    {
+      "file": "studio/projects/tedeats/assets/brand-launch.webp",
+      "bytes": 192116
+    },
+    {
+      "file": "studio/projects/tedeats/assets/Cormorant-Garamond-OFL.txt",
+      "bytes": 4387
+    },
+    {
+      "file": "studio/projects/tedeats/assets/dinner-alt-1.jpg",
+      "bytes": 155142
+    },
+    {
+      "file": "studio/projects/tedeats/assets/dinner-alt-3.jpg",
+      "bytes": 187881
+    },
+    {
+      "file": "studio/projects/tedeats/assets/dinner-party-stock.jpg",
+      "bytes": 335326
+    },
+    {
+      "file": "studio/projects/tedeats/assets/display.ttf",
+      "bytes": 290392
+    },
+    {
+      "file": "studio/projects/tedeats/assets/DM-Sans-OFL.txt",
+      "bytes": 4389
+    },
+    {
+      "file": "studio/projects/tedeats/assets/envelope-paper.jpg",
+      "bytes": 510329
+    },
+    {
+      "file": "studio/projects/tedeats/assets/envelope-paper.webp",
+      "bytes": 196124
+    },
+    {
+      "file": "studio/projects/tedeats/assets/envelope-wax-seal-small.png",
+      "bytes": 137566
+    },
+    {
+      "file": "studio/projects/tedeats/assets/envelope-wax-seal-small.webp",
+      "bytes": 26706
+    },
+    {
+      "file": "studio/projects/tedeats/assets/favicon.svg",
+      "bytes": 161
+    },
+    {
+      "file": "studio/projects/tedeats/assets/garden-celebration-stock.jpg",
+      "bytes": 747487
+    },
+    {
+      "file": "studio/projects/tedeats/assets/garden-celebration.webp",
+      "bytes": 268268
+    },
+    {
+      "file": "studio/projects/tedeats/assets/hero-dinner.webp",
+      "bytes": 191264
+    },
+    {
+      "file": "studio/projects/tedeats/assets/launch-gathering-stock.jpg",
+      "bytes": 287751
+    },
+    {
+      "file": "studio/projects/tedeats/assets/planning-hands-stock.jpg",
+      "bytes": 245361
+    },
+    {
+      "file": "studio/projects/tedeats/assets/planning-hands.webp",
+      "bytes": 208114
+    },
+    {
+      "file": "studio/projects/tedeats/assets/reception-stock.jpg",
+      "bytes": 291139
+    },
+    {
+      "file": "studio/projects/tedeats/assets/table-detail-stock.jpg",
+      "bytes": 621814
+    },
+    {
+      "file": "studio/projects/tedeats/credits.html",
+      "bytes": 3671
+    },
+    {
+      "file": "studio/projects/tedeats/index.html",
+      "bytes": 14181
+    },
+    {
+      "file": "studio/projects/tedeats/motion.css",
+      "bytes": 8192
+    },
+    {
+      "file": "studio/projects/tedeats/motion.js",
+      "bytes": 13420
+    },
+    {
+      "file": "studio/projects/tedeats/site.css",
+      "bytes": 21243
+    },
+    {
+      "file": "studio/studio-clouds.js",
+      "bytes": 4070
+    },
+    {
+      "file": "studio/studio-contact.css",
+      "bytes": 6148
+    },
+    {
+      "file": "studio/studio-contact.js",
+      "bytes": 8038
+    },
+    {
+      "file": "studio/studio-enquiry.css",
+      "bytes": 7877
+    },
+    {
+      "file": "studio/studio-hero.css",
+      "bytes": 3264
+    },
+    {
+      "file": "studio/studio-motion.css",
+      "bytes": 1861
+    },
+    {
+      "file": "studio/studio-navigation.js",
+      "bytes": 1896
+    },
+    {
+      "file": "studio/studio-rounded.css",
+      "bytes": 29592
+    },
+    {
+      "file": "studio/studio-services.css",
+      "bytes": 13840
+    },
+    {
+      "file": "studio/studio-story-stack.css",
+      "bytes": 5999
+    },
+    {
+      "file": "studio/studio-story-stack.js",
+      "bytes": 11727
+    },
+    {
+      "file": "studio/studio-story.css",
+      "bytes": 11105
+    },
+    {
+      "file": "studio/studio-theme.css",
+      "bytes": 3725
+    },
+    {
+      "file": "studio/studio-theme.js",
+      "bytes": 2681
+    },
+    {
+      "file": "studio/studio-ui.css",
+      "bytes": 2690
+    },
+    {
+      "file": "studio/studio-ui.js",
+      "bytes": 1809
+    },
+    {
+      "file": "studio/studio.css",
+      "bytes": 13968
+    },
+    {
+      "file": "studio/why-teditstudio.html",
+      "bytes": 456
+    },
+    {
+      "file": "vendor/lenis/lenis-1.3.27.min.js",
+      "bytes": 18815
+    },
+    {
+      "file": "vendor/lenis/LICENSE.txt",
+      "bytes": 1088
+    },
+    {
+      "file": "video-player.css",
+      "bytes": 3433
+    },
+    {
+      "file": "video-preview.css",
+      "bytes": 10608
+    },
+    {
+      "file": "video-preview.js",
+      "bytes": 9838
+    },
+    {
+      "file": "videos/20min-edit.mp4",
+      "bytes": 6722870
+    },
+    {
+      "file": "videos/Delta-Force-Edit.mp4",
+      "bytes": 7574073
+    },
+    {
+      "file": "videos/Spiderman-Superman.mp4",
+      "bytes": 11485933
+    },
+    {
+      "file": "videos/teditstudio-launch.mp4",
+      "bytes": 30110403
+    },
+    {
+      "file": "videos/The_lead-prodbyTeddBear-Trimed.mp4",
+      "bytes": 11861376
+    },
+    {
+      "file": "videos/Violet-light-edit.mp4",
+      "bytes": 13916386
+    }
+  ]
+}

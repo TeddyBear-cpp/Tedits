@@ -1,0 +1,58 @@
+{
+  "caseDesktop": {
+    "headerLogo": false,
+    "heading": "Little JoyPlay Co.",
+    "navPosition": "fixed",
+    "overflow": false,
+    "switch": false,
+    "width": 1309
+  },
+  "caseContactLink": "http://127.0.0.1:8086/studio/enquire.html",
+  "caseMobile": {
+    "links": [
+      "../../index.html#work",
+      "../../why-teditstudio.html",
+      "../../enquire.html"
+    ],
+    "navWidth": 290.0567932128906,
+    "overflow": false,
+    "width": 320
+  },
+  "demoHeading": "Big smiles forlittle moments.",
+  "heroTop": {
+    "logo": false,
+    "opacity": "0",
+    "position": "fixed",
+    "state": "hero",
+    "switch": false
+  },
+  "withinHero": {
+    "progress": "0.2245",
+    "state": "hero"
+  },
+  "afterHeroLight": {
+    "background": "rgb(255, 255, 227)",
+    "heroBottom": -112.727294921875,
+    "ink": "rgb(74, 74, 74)",
+    "opacity": "1",
+    "state": "page"
+  },
+  "afterHeroDark": {
+    "background": "rgb(36, 40, 44)",
+    "blend": "linear-gradient(rgba(0, 0, 0, 0), rgb(36, 40, 44))",
+    "ink": "rgb(255, 255, 227)",
+    "state": "page",
+    "theme": "dark"
+  },
+  "anchorClearance": {
+    "headingTop": 95.757568359375,
+    "navBottom": 71.9791612625122
+  },
+  "compactHero": {
+    "hero": 818,
+    "mode": "off",
+    "nav": "hero",
+    "scene": 818,
+    "theme": "light"
+  }
+}

@@ -1,0 +1,1445 @@
+{
+ "url": "http://127.0.0.1:8084/studio/enquire.html",
+ "at": "2026-10-28T21:52:30.887Z",
+ "allow": [
+  "few-pictures",
+  "no-real-pictures",
+  "still-page",
+  "off-centre"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.33,
+    0.6,
+    0.55
+   ],
+   "motion": {
+    "elements": 2,
+    "css": 0,
+    "transitions": 2,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1814,
+     "screens": 2,
+     "words": 217,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 13,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 1,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 1,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Tell me what you’re building.",
+     "words": 5,
+     "chars": 29,
+     "lines": 2,
+     "size": 61.9,
+     "vw": 4.3,
+     "font": "Syne",
+     "weight": 500,
+     "tracking": -0.065,
+     "leading": 1.04,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.78,
+     "top": 136,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Tell me what you’re building.",
+     "words": 5,
+     "lines": 2,
+     "size": 61.9,
+     "font": "Syne"
+    },
+    "headings": [
+     {
+      "text": "Tell me what you’re building.",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 61.9,
+      "vw": 4.3,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.065,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.78,
+      "top": 136,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "A clear start.",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.23,
+      "top": 399,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "What are we making?",
+      "words": 4,
+      "chars": 19,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.54,
+      "top": 521,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Want to see how I work first?",
+      "words": 7,
+      "chars": 29,
+      "lines": 2,
+      "size": 59,
+      "vw": 4.1,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.69,
+      "top": 1367,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.92,
+       "mono": false
+      },
+      {
+       "family": "Syne",
+       "share": 0.08,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      9,
+      10,
+      13,
+      14,
+      16,
+      17,
+      19,
+      32,
+      59,
+      62
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 16,
+      "leading": 1.7,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14.6
+     },
+     "measureChars": 71,
+     "max": {
+      "size": 61.9,
+      "vw": 4.3,
+      "font": "Syne",
+      "text": "Tell me what"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.02,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#24282c",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.1,
+      "l": 0.16
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#2c3238",
+       "top": 399,
+       "hsl": {
+        "h": 210,
+        "s": 0.12,
+        "l": 0.2
+       }
+      },
+      {
+       "color": "#6d8196",
+       "top": 1267,
+       "hsl": {
+        "h": 211,
+        "s": 0.16,
+        "l": 0.51
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#ffffe3",
+       "share": 0.96
+      },
+      {
+       "color": "#4a4a4a",
+       "share": 0.02
+      },
+      {
+       "color": "#24282c",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#ffffe3",
+      "hsl": {
+       "h": 60,
+       "s": 1,
+       "l": 0.95
+      },
+      "fg": "#4a4a4a"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 51,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Let’s talk"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 2,
+     "boxRadius": 28,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": true,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "syne",
+     "dm sans"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1814,
+    "margins": {
+     "left": 32,
+     "right": 83
+    },
+    "sections": [
+     {
+      "sel": "section.wrap.enquiry-intro",
+      "tag": "section",
+      "top": 108,
+      "height": 267,
+      "words": 35,
+      "media": 0,
+      "middle": 548,
+      "heading": {
+       "text": "Tell me what",
+       "size": 62,
+       "tag": "h1"
+      },
+      "left": 32,
+      "right": 112,
+      "textLeft": 32,
+      "textRight": 112,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.wrap.enquiry-layout",
+      "tag": "section",
+      "top": 375,
+      "height": 892,
+      "words": 149,
+      "media": 0,
+      "middle": 9984,
+      "heading": {
+       "text": "What are we making?",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 0,
+      "right": 83,
+      "textLeft": -10000,
+      "textRight": 146,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.service-close.section",
+      "tag": "section",
+      "top": 1267,
+      "height": 420,
+      "words": 10,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Want to see how",
+       "size": 59,
+       "tag": "h2"
+      },
+      "left": 88,
+      "right": 922,
+      "textLeft": 88,
+      "textRight": 922,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Tell me what you’re building.",
+      "size": 62,
+      "top": 136,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 4
+     },
+     {
+      "x": 88,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 6,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.18,
+    "voidBox": {
+     "x": 1020,
+     "y": 360,
+     "w": 420,
+     "h": 540
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.52,
+    0.57
+   ],
+   "motion": {
+    "elements": 3,
+    "css": 0,
+    "transitions": 3,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1768,
+     "screens": 1.7,
+     "words": 216,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 13,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 1,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 1,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Tell me what you’re building.",
+     "words": 5,
+     "chars": 29,
+     "lines": 2,
+     "size": 38,
+     "vw": 4.9,
+     "font": "Syne",
+     "weight": 500,
+     "tracking": -0.065,
+     "leading": 1.04,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 166,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Tell me what you’re building.",
+     "words": 5,
+     "lines": 2,
+     "size": 38,
+     "font": "Syne"
+    },
+    "headings": [
+     {
+      "text": "Tell me what you’re building.",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 38,
+      "vw": 4.9,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.065,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 166,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "A clear start.",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.28,
+      "top": 412,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "What are we making?",
+      "words": 4,
+      "chars": 19,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 525,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Want to see how I work first?",
+      "words": 7,
+      "chars": 29,
+      "lines": 2,
+      "size": 34,
+      "vw": 4.4,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1377,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.92,
+       "mono": false
+      },
+      {
+       "family": "Syne",
+       "share": 0.08,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      9,
+      13,
+      14,
+      16,
+      17,
+      19,
+      32,
+      34,
+      38
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 16,
+      "leading": 1.7,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14.6
+     },
+     "measureChars": 59,
+     "max": {
+      "size": 38,
+      "vw": 4.9,
+      "font": "Syne",
+      "text": "Tell me what"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.02,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#24282c",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.1,
+      "l": 0.16
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#2c3238",
+       "top": 412,
+       "hsl": {
+        "h": 210,
+        "s": 0.12,
+        "l": 0.2
+       }
+      },
+      {
+       "color": "#6d8196",
+       "top": 1277,
+       "hsl": {
+        "h": 211,
+        "s": 0.16,
+        "l": 0.51
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#ffffe3",
+       "share": 0.96
+      },
+      {
+       "color": "#4a4a4a",
+       "share": 0.02
+      },
+      {
+       "color": "#24282c",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#ffffe3",
+      "hsl": {
+       "h": 60,
+       "s": 1,
+       "l": 0.95
+      },
+      "fg": "#4a4a4a"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 51,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Let’s talk",
+      "Continue →"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 3,
+     "boxRadius": 50,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 56,
+     "floatingPill": true,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "syne",
+     "dm sans"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1768,
+    "margins": {
+     "left": 32,
+     "right": 75
+    },
+    "sections": [
+     {
+      "sel": "section.wrap.enquiry-intro",
+      "tag": "section",
+      "top": 138,
+      "height": 250,
+      "words": 35,
+      "media": 0,
+      "middle": 67,
+      "heading": {
+       "text": "Tell me what",
+       "size": 38,
+       "tag": "h1"
+      },
+      "left": 32,
+      "right": 112,
+      "textLeft": 32,
+      "textRight": 112,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.wrap.enquiry-layout",
+      "tag": "section",
+      "top": 388,
+      "height": 889,
+      "words": 149,
+      "media": 0,
+      "middle": 9984,
+      "heading": {
+       "text": "A clear start.",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 0,
+      "right": 75,
+      "textLeft": -10000,
+      "textRight": 78,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.service-close.section",
+      "tag": "section",
+      "top": 1277,
+      "height": 365,
+      "words": 10,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Want to see how",
+       "size": 34,
+       "tag": "h2"
+      },
+      "left": 88,
+      "right": 432,
+      "textLeft": 88,
+      "textRight": 432,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Tell me what you’re building.",
+      "size": 38,
+      "top": 166,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 4
+     },
+     {
+      "x": 88,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 6,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.56,
+    0.54,
+    0.54
+   ],
+   "motion": {
+    "elements": 3,
+    "css": 0,
+    "transitions": 3,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 2309,
+     "screens": 2.7,
+     "words": 216,
+     "img": 2,
+     "video": 0,
+     "canvas": 0,
+     "svg": 13,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 1,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 1,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Tell me what you’re building.",
+     "words": 5,
+     "chars": 29,
+     "lines": 2,
+     "size": 38,
+     "vw": 9.7,
+     "font": "Syne",
+     "weight": 500,
+     "tracking": -0.055,
+     "leading": 1.04,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 156,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Tell me what you’re building.",
+     "words": 5,
+     "lines": 2,
+     "size": 38,
+     "font": "Syne"
+    },
+    "headings": [
+     {
+      "text": "Tell me what you’re building.",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 38,
+      "vw": 9.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.055,
+      "leading": 1.04,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 156,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "What are we making?",
+      "words": 4,
+      "chars": 19,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.12,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.82,
+      "top": 569,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "A clear start.",
+      "words": 3,
+      "chars": 14,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.83,
+      "top": 1230,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Want to see how I work first?",
+      "words": 7,
+      "chars": 29,
+      "lines": 2,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Syne",
+      "weight": 500,
+      "tracking": -0.045,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 1909,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "DM Sans",
+       "share": 0.92,
+       "mono": false
+      },
+      {
+       "family": "Syne",
+       "share": 0.08,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      7,
+      12,
+      13,
+      14,
+      16,
+      19,
+      32,
+      36,
+      38
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "DM Sans",
+      "size": 16,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14.6
+     },
+     "measureChars": 45,
+     "max": {
+      "size": 38,
+      "vw": 9.7,
+      "font": "Syne",
+      "text": "Tell me what"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.02,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#24282c",
+     "bodyBgHsl": {
+      "h": 210,
+      "s": 0.1,
+      "l": 0.16
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#2c3238",
+       "top": 463,
+       "hsl": {
+        "h": 210,
+        "s": 0.12,
+        "l": 0.2
+       }
+      },
+      {
+       "color": "#6d8196",
+       "top": 1845,
+       "hsl": {
+        "h": 211,
+        "s": 0.16,
+        "l": 0.51
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#ffffe3",
+       "share": 0.96
+      },
+      {
+       "color": "#4a4a4a",
+       "share": 0.02
+      },
+      {
+       "color": "#24282c",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#ffffe3",
+      "hsl": {
+       "h": 60,
+       "s": 1,
+       "l": 0.95
+      },
+      "fg": "#4a4a4a"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 51,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Skip to content",
+      "Let’s talk"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 2,
+     "boxRadius": 24,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 52,
+     "floatingPill": true,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "syne",
+     "dm sans"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 2309,
+    "margins": {
+     "left": 16,
+     "right": 29
+    },
+    "sections": [
+     {
+      "sel": "section.wrap.enquiry-intro",
+      "tag": "section",
+      "top": 138,
+      "height": 317,
+      "words": 35,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Tell me what",
+       "size": 38,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 47,
+      "textLeft": 16,
+      "textRight": 47,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.enquiry-aside",
+      "tag": "div",
+      "top": 1230,
+      "height": 551,
+      "words": 80,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "A clear start.",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 17,
+      "textLeft": 16,
+      "textRight": 17,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "div.enquiry-form-wrap.is-staged",
+      "tag": "div",
+      "top": 463,
+      "height": 719,
+      "words": 69,
+      "media": 0,
+      "middle": 9988,
+      "heading": {
+       "text": "What are we making?",
+       "size": 30,
+       "tag": "h2"
+      },
+      "left": 0,
+      "right": 36,
+      "textLeft": -10000,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.service-close.section",
+      "tag": "section",
+      "top": 1845,
+      "height": 297,
+      "words": 10,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Want to see how",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 40,
+      "right": 88,
+      "textLeft": 40,
+      "textRight": 88,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.wrap.site-footer",
+      "tag": "footer",
+      "top": 2167,
+      "height": 143,
+      "words": 10,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 40,
+      "textLeft": 16,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Tell me what you’re building.",
+      "size": 38,
+      "top": 156,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 4
+     },
+     {
+      "x": 40,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 6,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "pill-nav",
+   "width": 1440,
+   "message": "Floating rounded pill navigation.",
+   "fix": "Use a plain bar: wordmark left, a few links, one action.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (button #ffffe3, text #ffffe3).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "10 different font sizes (9, 10, 13, 14, 16, 17, 19, 32, 59, 62).",
+   "fix": "A page needs about five: display, heading, lead, body, small."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "outlined-box",
+   "width": 768,
+   "message": "1 box(es) drawn with a 1px outline.",
+   "fix": "Prefer a filled surface or no box."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Tedits portfolio\\.taste-skill\\studio-enquiry\\inspect\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Tedits portfolio\\.taste-skill\\studio-enquiry\\inspect\\desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Tedits portfolio\\.taste-skill\\studio-enquiry\\inspect\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Tedits portfolio\\.taste-skill\\studio-enquiry\\inspect\\tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Tedits portfolio\\.taste-skill\\studio-enquiry\\inspect\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Tedits portfolio\\.taste-skill\\studio-enquiry\\inspect\\mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

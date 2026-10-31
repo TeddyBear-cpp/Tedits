@@ -1,0 +1,19 @@
+{
+  "desktop": {
+    "header": "absolute",
+    "left": 0,
+    "overflow": false,
+    "top": 0
+  },
+  "mobile": {
+    "left": 0,
+    "overflow": false,
+    "top": 0,
+    "width": 320
+  },
+  "motionOff": {
+    "mode": "off",
+    "pin": 767,
+    "scene": 767
+  }
+}

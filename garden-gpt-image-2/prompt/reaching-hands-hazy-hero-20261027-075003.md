@@ -1,0 +1,9 @@
+# Reaching hands — hazy studios hero image
+
+Create a new wide 16:9 image-only hero visual for an independent web design studio. Use the supplied Creation of Adam crop as reference for the expressive near-touching gesture only, and the earlier hazy web hero as reference for spacious atmosphere and diffuse lighting. Reinterpret the hands as an original contemporary fine-art photograph, rather than recreating the fresco or rendering a website mockup.
+
+Two adult human hands and a little of each forearm reach toward each other; their index fingertips almost meet but remain separated by a small, luminous gap. Place the gesture mostly in the center-right/lower-right of the wide frame, with a calm, open left 40–45% that can support a short headline added later in HTML. Let the forearms recede naturally into the soft haze at the edges. No faces, bodies, clothing, props, or visible technology. Human, tactile, intimate, and collaborative; anatomically convincing hands with natural finger proportions.
+
+Colour and light: Tedits Studio's soft ivory, cool gray, slate blue, and charcoal palette, with warm natural skin tones. Gentle backlight blooms through the small gap between fingertips; subtle volumetric mist and fine film texture. Layered blue-gray haze and a faint painterly softness may nod to the source image without copying its wall, cracks, drapery, or exact composition. Keep the hands more defined than the background, while preserving a quiet, dreamy editorial feeling. Avoid bright orange, neon, theatrical lightning, particle effects, and busy clouds.
+
+No words, letters, logos, buttons, navigation, borders, rounded-corner mockup, game elements, halos, extra fingers, fused fingers, duplicate hands, or artificial robotic elements. The image must remain a clean standalone asset, with no baked-in UI.

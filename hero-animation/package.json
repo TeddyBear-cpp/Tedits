@@ -1,0 +1,9 @@
+{
+  "name": "tedits-reaching-hands-loop",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Local FFmpeg encoder for the reaching-hands hero animation",
+  "devDependencies": {
+    "@ffmpeg-installer/win32-x64": "4.1.0"
+  }
+}

@@ -1,0 +1,747 @@
+{
+  "scope": "All source trees excluding dependencies, generated build/output trees and .env files. References are static candidates, not proof of dead code.",
+  "groups": {
+    "(root)": {
+      "files": 31,
+      "bytes": 210451
+    },
+    ".github": {
+      "files": 1,
+      "bytes": 1482
+    },
+    ".taste-skill": {
+      "files": 34,
+      "bytes": 4081320
+    },
+    "Assets": {
+      "files": 22,
+      "bytes": 508347
+    },
+    "audits": {
+      "files": 1,
+      "bytes": 3407
+    },
+    "backups": {
+      "files": 308,
+      "bytes": 112355484
+    },
+    "garden-gpt-image-2": {
+      "files": 4,
+      "bytes": 3787411
+    },
+    "hero-animation": {
+      "files": 33,
+      "bytes": 14464688
+    },
+    "hero-parallax": {
+      "files": 14,
+      "bytes": 1507366
+    },
+    "motion-samples": {
+      "files": 72,
+      "bytes": 1943220
+    },
+    "output": {
+      "files": 2,
+      "bytes": 812786
+    },
+    "preview-evidence": {
+      "files": 67,
+      "bytes": 5352016
+    },
+    "studio": {
+      "files": 310,
+      "bytes": 43873999
+    },
+    "studio-teditstudio": {
+      "files": 20,
+      "bytes": 358996
+    },
+    "vendor": {
+      "files": 2,
+      "bytes": 19903
+    },
+    "videos": {
+      "files": 6,
+      "bytes": 81671041
+    }
+  },
+  "largestPublicAssets": [
+    {
+      "file": "videos/teditstudio-launch.mp4",
+      "bytes": 30110403,
+      "references": [
+        "index.html",
+        "video-preview.html"
+      ]
+    },
+    {
+      "file": "videos/Violet-light-edit.mp4",
+      "bytes": 13916386,
+      "references": [
+        "index.html",
+        "video-preview.html"
+      ]
+    },
+    {
+      "file": "videos/The_lead-prodbyTeddBear-Trimed.mp4",
+      "bytes": 11861376,
+      "references": [
+        "index.html",
+        "video-preview.html"
+      ]
+    },
+    {
+      "file": "videos/Spiderman-Superman.mp4",
+      "bytes": 11485933,
+      "references": [
+        "index.html",
+        "video-preview.html"
+      ]
+    },
+    {
+      "file": "videos/Delta-Force-Edit.mp4",
+      "bytes": 7574073,
+      "references": [
+        "index.html",
+        "video-preview.html"
+      ]
+    },
+    {
+      "file": "videos/20Min-Edit.mp4",
+      "bytes": 6722870,
+      "references": []
+    },
+    {
+      "file": "studio/projects/afterhours/assets/audio/do-this-often-teddybear.mp3",
+      "bytes": 3274292,
+      "references": [
+        "studio/projects/afterhours/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/afterhours/assets/audio/the-lead-teddybear.mp3",
+      "bytes": 957544,
+      "references": [
+        "studio/projects/afterhours/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/little-joy/assets/gallery-desktop.png",
+      "bytes": 836983,
+      "references": [
+        "studio/projects/little-joy/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/tedeats/assets/garden-celebration-stock.jpg",
+      "bytes": 747487,
+      "references": [
+        "studio/projects/tedeats/index.html",
+        "studio/projects/tedeats/index.html"
+      ]
+    },
+    {
+      "file": "studio/assets/tedeats-preview.png",
+      "bytes": 720779,
+      "references": [
+        "studio/portfolio-preview.html"
+      ]
+    },
+    {
+      "file": "studio/projects/tedeats/assets/table-detail-stock.jpg",
+      "bytes": 621814,
+      "references": [
+        "studio/projects/tedeats/index.html",
+        "studio/projects/tedeats/site.css",
+        "studio/projects/tedeats/site.css"
+      ]
+    },
+    {
+      "file": "studio/assets/website-story/build-trust.mp4",
+      "bytes": 548380,
+      "references": [
+        "studio/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/tedeats/assets/envelope-paper.jpg",
+      "bytes": 510329,
+      "references": []
+    },
+    {
+      "file": "studio/projects/catering/assets/menu-everyday.jpg",
+      "bytes": 488945,
+      "references": []
+    },
+    {
+      "file": "studio/assets/website-story/answers.mp4",
+      "bytes": 479609,
+      "references": [
+        "studio/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/little-joy/assets/packages-desktop.png",
+      "bytes": 473224,
+      "references": [
+        "studio/projects/little-joy/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/menu-feast.jpg",
+      "bytes": 457813,
+      "references": [
+        "studio/projects/catering/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/seasonal-meals.jpg",
+      "bytes": 444970,
+      "references": []
+    },
+    {
+      "file": "studio/assets/olive-and-ember-preview.png",
+      "bytes": 432658,
+      "references": [
+        "studio/hero-fullbleed-preview.html",
+        "studio/index.html",
+        "studio/portfolio-preview.html"
+      ]
+    },
+    {
+      "file": "studio/assets/rivet-and-beam-preview.png",
+      "bytes": 416226,
+      "references": [
+        "studio/hero-fullbleed-preview.html",
+        "studio/index.html",
+        "studio/portfolio-preview.html"
+      ]
+    },
+    {
+      "file": "studio/projects/tedeats/assets/bouquet.png",
+      "bytes": 409905,
+      "references": [
+        "studio/projects/tedeats/index.html"
+      ]
+    },
+    {
+      "file": "studio/assets/website-story/get-found.mp4",
+      "bytes": 366290,
+      "references": [
+        "studio/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/menu-brunch.jpg",
+      "bytes": 360669,
+      "references": []
+    },
+    {
+      "file": "studio/projects/tedeats/assets/dinner-party-stock.jpg",
+      "bytes": 335326,
+      "references": [
+        "studio/projects/tedeats/index.html"
+      ]
+    },
+    {
+      "file": "studio/assets/little-joy-preview.png",
+      "bytes": 304834,
+      "references": [
+        "studio/hero-fullbleed-preview.html",
+        "studio/index.html",
+        "studio/portfolio-preview.html",
+        "studio/projects/little-joy/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-saturday.jpg",
+      "bytes": 302701,
+      "references": [
+        "studio/projects/catering/index.html"
+      ]
+    },
+    {
+      "file": "studio/assets/afterhours-preview.png",
+      "bytes": 297620,
+      "references": [
+        "studio/hero-fullbleed-preview.html",
+        "studio/index.html",
+        "studio/portfolio-preview.html"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/font-1.ttf",
+      "bytes": 293244,
+      "references": [
+        "studio/projects/catering/fonts.css"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/font-0.ttf",
+      "bytes": 293036,
+      "references": [
+        "studio/projects/catering/fonts.css"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-thursday.jpg",
+      "bytes": 292235,
+      "references": [
+        "studio/projects/catering/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/tedeats/assets/reception-stock.jpg",
+      "bytes": 291139,
+      "references": []
+    },
+    {
+      "file": "studio/projects/catering/assets/font-3.ttf",
+      "bytes": 290496,
+      "references": [
+        "studio/projects/catering/fonts.css"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/font-4.ttf",
+      "bytes": 290392,
+      "references": [
+        "studio/projects/catering/fonts.css"
+      ]
+    },
+    {
+      "file": "studio/projects/tedeats/assets/display.ttf",
+      "bytes": 290392,
+      "references": [
+        "studio/projects/tedeats/index.html",
+        "studio/projects/tedeats/site.css"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/font-2.ttf",
+      "bytes": 290236,
+      "references": [
+        "studio/projects/catering/fonts.css"
+      ]
+    },
+    {
+      "file": "studio/projects/tedeats/assets/launch-gathering-stock.jpg",
+      "bytes": 287751,
+      "references": [
+        "studio/projects/tedeats/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/little-joy/demo/assets/birthday.jpg",
+      "bytes": 281831,
+      "references": [
+        "studio/projects/little-joy/demo/gallery.html",
+        "studio/projects/little-joy/demo/gallery.html",
+        "studio/projects/little-joy/demo/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-wednesday.jpg",
+      "bytes": 278052,
+      "references": [
+        "studio/projects/catering/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/tedeats/assets/garden-celebration.webp",
+      "bytes": 268268,
+      "references": []
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-monday.jpg",
+      "bytes": 262577,
+      "references": [
+        "studio/projects/catering/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/meal-friday.jpg",
+      "bytes": 248508,
+      "references": [
+        "studio/projects/catering/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/tedeats/assets/planning-hands-stock.jpg",
+      "bytes": 245361,
+      "references": [
+        "studio/projects/tedeats/index.html",
+        "studio/projects/tedeats/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/catering/assets/gathering.jpg",
+      "bytes": 220284,
+      "references": [
+        "studio/projects/catering/index.html"
+      ]
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/welder-hero.jpg",
+      "bytes": 217823,
+      "references": [
+        "studio/projects/rivet-beam/index.html",
+        "studio/projects/rivet-beam/index.html"
+      ]
+    }
+  ],
+  "duplicateAssets": [
+    {
+      "files": [
+        "studio/projects/catering/assets/font-4.ttf",
+        "studio/projects/tedeats/assets/display.ttf"
+      ],
+      "bytesEach": 290392,
+      "redundantBytes": 290392
+    },
+    {
+      "files": [
+        "Assets/tedits-brand/DM-Sans-Regular.ttf",
+        "studio/assets/DM-Sans-Regular.ttf",
+        "studio/projects/catering/assets/font-5.ttf",
+        "studio/projects/little-joy/demo/assets/font-0.ttf",
+        "studio/projects/rivet-beam/concept-assets/DM-Sans-Regular.ttf",
+        "studio/projects/tedeats/assets/body.ttf"
+      ],
+      "bytesEach": 48280,
+      "redundantBytes": 241400
+    },
+    {
+      "files": [
+        "Assets/tedits-brand/DM-Sans-Semibold.ttf",
+        "studio/assets/DM-Sans-Semibold.ttf",
+        "studio/projects/catering/assets/font-7.ttf",
+        "studio/projects/little-joy/demo/assets/font-2.ttf",
+        "studio/projects/rivet-beam/concept-assets/DM-Sans-Semibold.ttf",
+        "studio/projects/tedeats/assets/body-semibold.ttf"
+      ],
+      "bytesEach": 48280,
+      "redundantBytes": 241400
+    },
+    {
+      "files": [
+        "Assets/tedits-brand/Syne-Semibold.ttf",
+        "studio/assets/Syne-Semibold.ttf"
+      ],
+      "bytesEach": 52760,
+      "redundantBytes": 52760
+    },
+    {
+      "files": [
+        "Assets/tedits-brand/Syne-Bold.ttf",
+        "studio/assets/Syne-Bold.ttf"
+      ],
+      "bytesEach": 52732,
+      "redundantBytes": 52732
+    },
+    {
+      "files": [
+        "Assets/tedits-brand/Syne-Medium.ttf",
+        "studio/assets/Syne-Medium.ttf"
+      ],
+      "bytesEach": 52640,
+      "redundantBytes": 52640
+    },
+    {
+      "files": [
+        "studio/projects/catering/assets/font-6.ttf",
+        "studio/projects/little-joy/demo/assets/font-1.ttf"
+      ],
+      "bytesEach": 48308,
+      "redundantBytes": 48308
+    }
+  ],
+  "studioScripts": [
+    {
+      "file": "studio/enquiry.js",
+      "bytes": 7662,
+      "references": [
+        "studio/enquire.html"
+      ]
+    },
+    {
+      "file": "studio/figma-compose.js",
+      "bytes": 14153,
+      "references": []
+    },
+    {
+      "file": "studio/figma-foundations.js",
+      "bytes": 7406,
+      "references": []
+    },
+    {
+      "file": "studio/studio-clouds.js",
+      "bytes": 3752,
+      "references": [
+        "studio/hero-fullbleed-preview.html",
+        "studio/index.html",
+        "studio/portfolio-preview.html"
+      ]
+    },
+    {
+      "file": "studio/studio-contact.js",
+      "bytes": 8038,
+      "references": [
+        "studio/enquire.html",
+        "studio/hero-fullbleed-preview.html",
+        "studio/index.html",
+        "studio/portfolio-preview.html",
+        "studio/projects/little-joy/index.html"
+      ]
+    },
+    {
+      "file": "studio/studio-hero.js",
+      "bytes": 8734,
+      "references": []
+    },
+    {
+      "file": "studio/studio-navigation.js",
+      "bytes": 1896,
+      "references": [
+        "studio/enquire.html",
+        "studio/index.html",
+        "studio/portfolio-preview.html",
+        "studio/projects/little-joy/index.html"
+      ]
+    },
+    {
+      "file": "studio/studio-services.js",
+      "bytes": 1536,
+      "references": [
+        "studio/enquire.html"
+      ]
+    },
+    {
+      "file": "studio/studio-story-stack.js",
+      "bytes": 10833,
+      "references": [
+        "studio/index.html"
+      ]
+    },
+    {
+      "file": "studio/studio-story.js",
+      "bytes": 7287,
+      "references": []
+    },
+    {
+      "file": "studio/studio-theme.js",
+      "bytes": 2681,
+      "references": [
+        "studio/enquire.html",
+        "studio/hero-fullbleed-preview.html",
+        "studio/index.html",
+        "studio/portfolio-preview.html",
+        "studio/projects/little-joy/index.html"
+      ]
+    },
+    {
+      "file": "studio/studio-ui.js",
+      "bytes": 1809,
+      "references": [
+        "studio/enquire.html",
+        "studio/index.html"
+      ]
+    },
+    {
+      "file": "studio/studio-waves.js",
+      "bytes": 9435,
+      "references": []
+    },
+    {
+      "file": "studio/studio.js",
+      "bytes": 6752,
+      "references": [
+        "studio/hero-fullbleed-preview.html",
+        "studio/portfolio-preview.html"
+      ]
+    }
+  ],
+  "publicAssetsWithoutStaticReference": [
+    {
+      "file": "Assets/image.jpg",
+      "bytes": 13155
+    },
+    {
+      "file": "Assets/tedits-bear-apple-touch-180.png",
+      "bytes": 16415
+    },
+    {
+      "file": "Assets/tedits-bear-favicon-512.png",
+      "bytes": 68428
+    },
+    {
+      "file": "Assets/tedits-preview-large.png",
+      "bytes": 9957
+    },
+    {
+      "file": "studio/projects/catering/assets/brunch.jpg",
+      "bytes": 199581
+    },
+    {
+      "file": "studio/projects/catering/assets/menu-brunch.jpg",
+      "bytes": 360669
+    },
+    {
+      "file": "studio/projects/catering/assets/menu-everyday.jpg",
+      "bytes": 488945
+    },
+    {
+      "file": "studio/projects/catering/assets/seasonal-meals.jpg",
+      "bytes": 444970
+    },
+    {
+      "file": "studio/projects/rivet-beam/concept-assets/welding.jpg",
+      "bytes": 196586
+    },
+    {
+      "file": "studio/projects/tedeats/assets/brand-launch.webp",
+      "bytes": 192116
+    },
+    {
+      "file": "studio/projects/tedeats/assets/envelope-paper.jpg",
+      "bytes": 510329
+    },
+    {
+      "file": "studio/projects/tedeats/assets/envelope-wax-seal-small.png",
+      "bytes": 137566
+    },
+    {
+      "file": "studio/projects/tedeats/assets/garden-celebration.webp",
+      "bytes": 268268
+    },
+    {
+      "file": "studio/projects/tedeats/assets/hero-dinner.webp",
+      "bytes": 191264
+    },
+    {
+      "file": "studio/projects/tedeats/assets/planning-hands.webp",
+      "bytes": 208114
+    },
+    {
+      "file": "studio/projects/tedeats/assets/reception-stock.jpg",
+      "bytes": 291139
+    },
+    {
+      "file": "videos/20Min-Edit.mp4",
+      "bytes": 6722870
+    }
+  ],
+  "packages": {
+    "backups/publish-200-20261027/checkout/studio-teditstudio/package.json": {
+      "name": "teditstudio-cms",
+      "private": true,
+      "version": "1.0.0",
+      "type": "module",
+      "scripts": {
+        "dev": "sanity dev --host localhost",
+        "build": "sanity build",
+        "deploy": "sanity deploy",
+        "login": "sanity login",
+        "generate-seed": "node generate-seed.cjs",
+        "seed": "sanity datasets import -d production seed.ndjson --missing",
+        "generate-services-seed": "node generate-services-seed.cjs",
+        "seed-services": "node generate-services-seed.cjs && sanity datasets import -d production service-pages.ndjson --missing"
+      },
+      "dependencies": {
+        "sanity": "6.19.0",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "styled-components": "^6.1.19"
+      },
+      "devDependencies": {
+        "typescript": "^5.9.0",
+        "@types/react": "^19.2.0"
+      }
+    },
+    "backups/site-reconcile-20261027/before/studio-teditstudio/package.json": {
+      "name": "teditstudio-cms",
+      "private": true,
+      "version": "1.0.0",
+      "type": "module",
+      "scripts": {
+        "dev": "sanity dev --host localhost",
+        "build": "sanity build",
+        "deploy": "sanity deploy",
+        "login": "sanity login",
+        "generate-seed": "node generate-seed.cjs",
+        "seed": "sanity datasets import -d production seed.ndjson --missing"
+      },
+      "dependencies": {
+        "sanity": "6.19.0",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "styled-components": "^6.1.19"
+      },
+      "devDependencies": {
+        "typescript": "^5.9.0",
+        "@types/react": "^19.2.0"
+      }
+    },
+    "hero-animation/package.json": {
+      "name": "tedits-reaching-hands-loop",
+      "private": true,
+      "version": "1.0.0",
+      "description": "Local FFmpeg encoder for the reaching-hands hero animation",
+      "devDependencies": {
+        "@ffmpeg-installer/win32-x64": "4.1.0"
+      }
+    },
+    "motion-samples/answers-without-waiting/package.json": {
+      "name": "tedits-answers-motion-sample",
+      "private": true,
+      "version": "1.0.0",
+      "type": "module",
+      "scripts": {
+        "preview": "node preview-server.mjs",
+        "render": "node render.mjs",
+        "typecheck": "tsc --noEmit",
+        "check-loop": "node --experimental-strip-types check-loop.mjs"
+      },
+      "dependencies": {
+        "@remotion/bundler": "4.0.539",
+        "@remotion/fonts": "4.0.539",
+        "@remotion/renderer": "4.0.539",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "remotion": "4.0.539"
+      },
+      "devDependencies": {
+        "@types/react": "18.3.12",
+        "@types/react-dom": "18.3.1",
+        "typescript": "5.7.3"
+      }
+    },
+    "studio-teditstudio/package.json": {
+      "name": "teditstudio-cms",
+      "private": true,
+      "version": "1.0.0",
+      "type": "module",
+      "scripts": {
+        "dev": "sanity dev --host localhost",
+        "build": "sanity build",
+        "deploy": "sanity deploy",
+        "login": "sanity login",
+        "generate-seed": "node generate-seed.cjs",
+        "seed": "sanity datasets import -d production seed.ndjson --missing",
+        "generate-services-seed": "node generate-services-seed.cjs",
+        "seed-services": "node generate-services-seed.cjs && sanity datasets import -d production service-pages.ndjson --missing"
+      },
+      "dependencies": {
+        "sanity": "6.19.0",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "styled-components": "^6.1.19"
+      },
+      "devDependencies": {
+        "typescript": "^5.9.0",
+        "@types/react": "^19.2.0"
+      }
+    }
+  }
+}

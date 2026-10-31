@@ -1,0 +1,44 @@
+[
+  {
+    "file": "get-found.mp4",
+    "beforeBytes": 366290,
+    "afterBytes": 169371,
+    "beforeDimensions": [
+      1080,
+      1080
+    ],
+    "afterDimensions": [
+      720,
+      720
+    ],
+    "fps": 60
+  },
+  {
+    "file": "answers.mp4",
+    "beforeBytes": 479609,
+    "afterBytes": 202123,
+    "beforeDimensions": [
+      1080,
+      1080
+    ],
+    "afterDimensions": [
+      720,
+      720
+    ],
+    "fps": 60
+  },
+  {
+    "file": "build-trust.mp4",
+    "beforeBytes": 548380,
+    "afterBytes": 238908,
+    "beforeDimensions": [
+      1080,
+      1080
+    ],
+    "afterDimensions": [
+      720,
+      720
+    ],
+    "fps": 60
+  }
+]

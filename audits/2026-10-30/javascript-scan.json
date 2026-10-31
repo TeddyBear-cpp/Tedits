@@ -1,0 +1,184 @@
+[
+  {
+    "file": "contact.js",
+    "lines": 30,
+    "bytes": 1349,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 1
+  },
+  {
+    "file": "section-navigation.js",
+    "lines": 87,
+    "bytes": 4598,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "site-loader.js",
+    "lines": 29,
+    "bytes": 1107,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "smooth-scroll.js",
+    "lines": 142,
+    "bytes": 5989,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "video-preview.js",
+    "lines": 189,
+    "bytes": 9838,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\enquiry.js",
+    "lines": 91,
+    "bytes": 7662,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 1
+  },
+  {
+    "file": "studio\\figma-compose.js",
+    "lines": 80,
+    "bytes": 14153,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\figma-foundations.js",
+    "lines": 56,
+    "bytes": 7406,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio-clouds.js",
+    "lines": 91,
+    "bytes": 4070,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio-contact.js",
+    "lines": 153,
+    "bytes": 8038,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio-hero.js",
+    "lines": 159,
+    "bytes": 8734,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio-navigation.js",
+    "lines": 43,
+    "bytes": 1896,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio-services.js",
+    "lines": 42,
+    "bytes": 1536,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio-story-stack.js",
+    "lines": 238,
+    "bytes": 11727,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio-story.js",
+    "lines": 135,
+    "bytes": 7287,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio-theme.js",
+    "lines": 71,
+    "bytes": 2681,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio-ui.js",
+    "lines": 33,
+    "bytes": 1809,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio-waves.js",
+    "lines": 229,
+    "bytes": 9435,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\studio.js",
+    "lines": 96,
+    "bytes": 6752,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\projects\\afterhours\\afterhours-audio.js",
+    "lines": 59,
+    "bytes": 4128,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\projects\\catering\\script.js",
+    "lines": 237,
+    "bytes": 17254,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\projects\\little-joy\\case-study.js",
+    "lines": 11,
+    "bytes": 698,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\projects\\rivet-beam\\concept.js",
+    "lines": 164,
+    "bytes": 8071,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\projects\\tedeats\\app.js",
+    "lines": 63,
+    "bytes": 6079,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\projects\\tedeats\\motion.js",
+    "lines": 265,
+    "bytes": 13420,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  },
+  {
+    "file": "studio\\projects\\little-joy\\demo\\app.js",
+    "lines": 268,
+    "bytes": 12938,
+    "functionsNamedOnceAcrossJS": [],
+    "fetchCalls": 0
+  }
+]

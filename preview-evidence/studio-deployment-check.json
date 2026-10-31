@@ -1,0 +1,131 @@
+{
+  "base": "https://teddybear-cpp.github.io/Tedits/",
+  "views": [
+    {
+      "route": "studio/index.html",
+      "width": 320,
+      "overflow": false,
+      "anchors": true,
+      "title": "Tedits Studio — Thoughtful web design, Zambia & worldwide"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 390,
+      "overflow": false,
+      "anchors": true,
+      "title": "Tedits Studio — Thoughtful web design, Zambia & worldwide"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 768,
+      "overflow": false,
+      "anchors": true,
+      "title": "Tedits Studio — Thoughtful web design, Zambia & worldwide"
+    },
+    {
+      "route": "studio/index.html",
+      "width": 1440,
+      "overflow": false,
+      "anchors": true,
+      "title": "Tedits Studio — Thoughtful web design, Zambia & worldwide"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 320,
+      "overflow": false,
+      "anchors": true,
+      "title": "Olive & Ember — Catering website concept"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 390,
+      "overflow": false,
+      "anchors": true,
+      "title": "Olive & Ember — Catering website concept"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 768,
+      "overflow": false,
+      "anchors": true,
+      "title": "Olive & Ember — Catering website concept"
+    },
+    {
+      "route": "studio/projects/catering/index.html",
+      "width": 1440,
+      "overflow": false,
+      "anchors": true,
+      "title": "Olive & Ember — Catering website concept"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 320,
+      "overflow": false,
+      "anchors": true,
+      "title": "Rivet & Beam — Fictional steel website concept | Tedits Studio"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 390,
+      "overflow": false,
+      "anchors": true,
+      "title": "Rivet & Beam — Fictional steel website concept | Tedits Studio"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 768,
+      "overflow": false,
+      "anchors": true,
+      "title": "Rivet & Beam — Fictional steel website concept | Tedits Studio"
+    },
+    {
+      "route": "studio/projects/rivet-beam/index.html",
+      "width": 1440,
+      "overflow": false,
+      "anchors": true,
+      "title": "Rivet & Beam — Fictional steel website concept | Tedits Studio"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 320,
+      "overflow": false,
+      "anchors": true,
+      "title": "AFTERHOURS — Fictional studio concept | Tedits Studio"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 390,
+      "overflow": false,
+      "anchors": true,
+      "title": "AFTERHOURS — Fictional studio concept | Tedits Studio"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 768,
+      "overflow": false,
+      "anchors": true,
+      "title": "AFTERHOURS — Fictional studio concept | Tedits Studio"
+    },
+    {
+      "route": "studio/projects/afterhours/index.html",
+      "width": 1440,
+      "overflow": false,
+      "anchors": true,
+      "title": "AFTERHOURS — Fictional studio concept | Tedits Studio"
+    }
+  ],
+  "errors": [],
+  "themePersistence": true,
+  "paletteKeyboard": true,
+  "caseStudy": true,
+  "crossLinks": true,
+  "localDrawingPreview": true,
+  "audio": {
+    "oneAtATime": true,
+    "durations": [
+      204.64325,
+      59.8465
+    ]
+  },
+  "spotifyLink": true
+}

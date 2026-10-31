@@ -1,0 +1,47 @@
+{
+  "defaultDepth": "1.2",
+  "ambientCloudsMoved": true,
+  "sunlightMoved": true,
+  "handsTransform": "none",
+  "beforeOff": {
+    "heroTop": 15.994317054748535,
+    "layerTransforms": [
+      "matrix(1, 0, 0, 1, 5.53607, -9.33897)",
+      "matrix(1, 0, 0, 1, -19.7717, -18.6779)",
+      "matrix(1, 0, 0, 1, 39.5434, -47.7325)",
+      "matrix(1, 0, 0, 1, -71.1781, -80.9377)"
+    ],
+    "pageHeight": 1586,
+    "progress": "0.3895",
+    "sceneHeight": 1334,
+    "scrollY": 346.6666564941406
+  },
+  "afterOff": {
+    "cloudStates": [
+      "paused",
+      "paused",
+      "paused"
+    ],
+    "cloudTranslations": [
+      "-0.0422287% 0.0268915%",
+      "-1.09732% 0.399025%",
+      "-1.56087% 0.504986%"
+    ],
+    "heroHeight": 444,
+    "heroTop": 15.994317054748535,
+    "layerTransforms": [
+      "matrix(1, 0, 0, 1, 5.01727, -8.46379)",
+      "matrix(1, 0, 0, 1, -17.9188, -16.9276)",
+      "matrix(1, 0, 0, 1, 35.8377, -43.2594)",
+      "matrix(1, 0, 0, 1, -64.5078, -73.3528)"
+    ],
+    "mode": "off",
+    "pageHeight": 696,
+    "sceneHeight": 444,
+    "scrollY": 0,
+    "sunState": "paused",
+    "sunTransform": "matrix(1, 0, 0, 1, -12.1968, 2.95625)"
+  },
+  "offScrollRunway": 0,
+  "pausedAfterSettling": true
+}

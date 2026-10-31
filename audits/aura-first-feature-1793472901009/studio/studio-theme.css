@@ -1,0 +1,22 @@
+/* Fixed light palette shared by the Studio pages. */
+.little-joy-visual{background:#c8d8c0}
+:root {
+  color-scheme: light;
+  --theme-surface: #ffffe3;
+  --theme-ink: #4a4a4a;
+  --theme-accent: #6d8196;
+  --hero-surface: #f2f1dd;
+  --hero-veil: #ffffe3;
+  --hero-edge: rgba(74, 74, 74, .1);
+  --hero-ink: #4a4a4a;
+}
+.site-header nav{margin-left:auto}
+@media(max-width:760px){
+ .site-header{column-gap:16px}
+ .site-header>.studio-logo{order:1}
+ .site-header nav{order:3;flex-basis:100%;margin-left:0}
+}
+@media(max-width:360px){
+ .site-header .studio-logo{gap:12px}
+ .site-header .studio-logo>span{padding-left:12px;letter-spacing:2px}
+}

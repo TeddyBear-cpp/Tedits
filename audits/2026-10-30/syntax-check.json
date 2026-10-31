@@ -1,0 +1,9 @@
+{
+  "filesChecked": 68,
+  "failures": [],
+  "contextualSnippets": [
+    "studio/figma-compose.js",
+    "studio/figma-foundations.js"
+  ],
+  "note": "66 Node/browser scripts parse; 2 Figma async function bodies parse in their intended wrapper."
+}

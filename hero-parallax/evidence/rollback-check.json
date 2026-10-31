@@ -1,0 +1,19 @@
+{
+  "rollbackOn": {
+    "cloudAnimations": [
+      "none",
+      "none",
+      "none"
+    ],
+    "depth": "1.2",
+    "handsTransform": "none",
+    "heroHeight": 444,
+    "mode": "on",
+    "sceneHeight": 1334,
+    "sunlightRemoved": true
+  },
+  "rollbackOff": {
+    "extraScrollSpace": 0,
+    "mode": "off"
+  }
+}

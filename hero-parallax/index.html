@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeede7">
+  <title>Tedits Studio — Cloud study</title>
+  <link rel="icon" href="../studio/assets/studio-favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../hero-animation/assets/cloud-plate.png" as="image">
+  <link rel="preload" href="../hero-animation/assets/hands-cutout.png" as="image">
+  <link rel="stylesheet" href="parallax.css">
+</head>
+<body>
+  <main>
+    <section class="scroll-scene" id="scene" data-motion="off" aria-label="Scroll through the cloud study">
+      <div class="pin">
+        <div class="hero" id="hero" data-motion="off">
+          <div class="art" role="img" aria-label="Two hands reaching across a small gap in a sunlit, blue-gray sky. Cloud layers pass at different depths as you scroll.">
+            <div class="sky" data-layer="sky"><img src="../hero-animation/assets/cloud-plate.png" alt="" fetchpriority="high" decoding="async"></div>
+            <div class="cloud cloud-far" data-layer="far"><img src="assets/cloud-bank.png" alt="" decoding="async"></div>
+            <div class="cloud cloud-middle" data-layer="middle"><img src="assets/cloud-bank.png" alt="" decoding="async"></div>
+            <div class="hands" id="hands"><img src="../hero-animation/assets/hands-cutout.png" alt="" decoding="async" fetchpriority="high"></div>
+            <div class="cloud cloud-front" data-layer="front"><img src="assets/cloud-bank.png" alt="" decoding="async"></div>
+            <div class="veil"></div>
+          </div>
+
+          <header class="hero-header">
+            <a class="brand" href="#" id="brand-home" aria-label="Tedits Studio — return to the top"><img src="../studio/assets/tedits-studio-on-slate.svg" alt="Tedits" width="139" height="27"><span>STUDIO</span></a>
+            <span class="study-label">A STUDY IN ATMOSPHERE</span>
+            <button class="motion-button" id="motion-toggle" type="button" aria-pressed="true"><span class="motion-mark" aria-hidden="true"><i></i><i></i><i></i></span><span id="motion-label">Motion on</span></button>
+          </header>
+
+          <div class="hero-copy" id="hero-copy">
+            <p class="eyebrow">FROM AN IDEA TO A FEELING</p>
+            <h1>A little<br><span>closer.</span></h1>
+            <p class="intro">A new perspective,<br>one scroll at a time.</p>
+          </div>
+
+          <div class="hero-footer">
+            <button class="scroll-cue" id="scroll-cue" type="button"><span class="arrow" aria-hidden="true">↓</span><span id="scroll-label">Scroll to feel the depth</span></button>
+            <div class="progress" aria-label="Scroll progress"><span id="progress-fill"></span></div>
+            <span class="progress-number" id="progress-number" aria-hidden="true">00 / 100</span>
+          </div>
+
+          <div class="settings">
+            <button class="settings-trigger" id="settings-trigger" type="button" aria-expanded="false" aria-controls="settings-panel" aria-label="Adjust the cloud depth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2.5" fill="currentColor" stroke="none"/><circle cx="15" cy="17" r="2.5" fill="currentColor" stroke="none"/></svg></button>
+            <div class="settings-panel" id="settings-panel" hidden>
+              <div class="panel-heading"><span>Tweaks</span><button id="settings-close" type="button" aria-label="Close tweaks">×</button></div>
+              <label for="depth">Cloud depth <output id="depth-value" for="depth">1.2×</output></label>
+              <input id="depth" type="range" min="0.4" max="1.6" step="0.1" value="1.2" aria-describedby="depth-hint">
+              <p id="depth-hint">Soft drift to a deeper sweep.</p>
+              <label class="checkbox-label"><input id="copy-toggle" type="checkbox" checked> Show headline</label>
+              <button class="replay-button" id="replay" type="button">Back to the beginning <span aria-hidden="true">↖</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="end-note"><p>The hands hold still.<br>The atmosphere changes.</p><button id="back-top" type="button">Experience it again <span aria-hidden="true">↑</span></button></footer>
+  </main>
+  <script src="parallax.js"></script>
+</body>
+</html>

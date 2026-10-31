@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Answers, all together — Tedits motion sample</title>
+  <style>
+    @font-face{font-family:DM;src:url('public/fonts/DM-Sans-Regular.ttf')}@font-face{font-family:Syne;src:url('public/fonts/Syne-Medium.ttf')}
+    *{box-sizing:border-box}body{margin:0;background:#FFFFE3;color:#4A4A4A;font-family:DM,system-ui,sans-serif;line-height:1.6}
+    main{width:min(740px,calc(100% - 40px));margin:24px auto}.label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px}
+    h1{font:500 clamp(30px,5vw,48px)/1.08 Syne,system-ui,sans-serif;letter-spacing:-.04em;margin:0 0 16px}p{margin:0 0 22px}
+    video{display:block;width:min(100%,max(240px,calc(100svh - 300px)));margin-inline:auto;aspect-ratio:1;object-fit:contain;background:#4A4A4A;border-radius:26px}.actions{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px}
+    button,a{font:inherit;font-size:14px;color:inherit}button{border:1px solid #4A4A4A;background:transparent;cursor:pointer;padding:10px 18px;border-radius:99px}a{text-underline-offset:4px}button:focus-visible,a:focus-visible{outline:2px solid #6D8196;outline-offset:4px}.note{font-size:12px;margin-top:18px}
+    @media(max-width:500px){main{margin-top:28px}video{border-radius:20px}}
+  </style>
+</head>
+<body><main>
+  <p class="label">Tedits Studio · motion sample</p>
+  <h1>Answers, all together.</h1>
+  <p>Services, prices and FAQs gathered into one place.</p>
+  <video id="sample" src="out/answers-loop.mp4" poster="out/poster.png" muted loop playsinline controls preload="auto" aria-label="Four-second animation of scattered information gathering into a website"></video>
+  <div class="actions"><button id="toggle" type="button">Play loop</button><a href="out/answers-loop.mp4" download>Download MP4</a></div>
+  <p class="note">4 seconds · 60fps · silent loop</p>
+</main><script>
+  const video=document.getElementById('sample'),button=document.getElementById('toggle'),reduce=matchMedia('(prefers-reduced-motion:reduce)');
+  const sync=()=>{button.textContent=video.paused?'Play loop':'Pause loop';button.setAttribute('aria-pressed',String(!video.paused));};
+  video.addEventListener('play',sync);video.addEventListener('pause',sync);
+  button.addEventListener('click',()=>video.paused?video.play():video.pause());
+  if(!reduce.matches)video.play().catch(sync);
+  reduce.addEventListener('change',event=>{if(event.matches)video.pause();});sync();
+</script></body></html>

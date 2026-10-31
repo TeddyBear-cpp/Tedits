@@ -1,0 +1,67 @@
+{
+  "homeMobile": {
+    "imagesLoaded": true,
+    "overflow": false,
+    "width": 354
+  },
+  "motionOff": {
+    "mode": "off",
+    "pin": 619,
+    "scene": 619
+  },
+  "caseStudy": "",
+  "paletteNext": "OLIVE & EMBER",
+  "paletteKeyboard": "INK WASH",
+  "whyNarrow": {
+    "headline": "a steel fabricator",
+    "overflow": false,
+    "renderer": "webgl",
+    "width": 320
+  },
+  "ballsPause": "true",
+  "enquireNarrow": {
+    "action": "https://formspree.io/f/mbggrwra",
+    "overflow": false,
+    "requiredFields": [
+      {
+        "emptyRequired": true,
+        "id": "quote-name"
+      },
+      {
+        "emptyRequired": true,
+        "id": "quote-email"
+      },
+      {
+        "emptyRequired": true,
+        "id": "quote-details"
+      }
+    ],
+    "width": 320
+  },
+  "homeNarrow": {
+    "overflow": false,
+    "width": 320
+  },
+  "cloudScroll": {
+    "front": "translate3d(-47.2005px, -54.5816px, 0px)",
+    "hands": "none",
+    "progress": "0.1775"
+  },
+  "motionRestoresComposition": {
+    "off": 0.4114,
+    "on": 0.4116,
+    "difference": 0.00020000000000003348,
+    "withinPixelRounding": true
+  },
+  "whyDesktop": {
+    "overflow": false,
+    "rotation": "a steel fabricator",
+    "width": 1309
+  },
+  "darkTheme": {
+    "background": "rgb(36, 40, 44)",
+    "theme": "dark"
+  },
+  "rotationAfter": "a school",
+  "browserErrors": []
+}

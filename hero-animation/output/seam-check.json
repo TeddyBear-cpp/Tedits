@@ -1,0 +1,8 @@
+{
+  "frame_0_equals_frame_at_8_seconds": true,
+  "frame_1_equals_last_frame": true,
+  "seam_mae": 0.0605,
+  "first_step_mae": 0.0605,
+  "seam_equals_first_step": true,
+  "half_cycle_change_mae": 2.66774
+}

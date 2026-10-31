@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://teddybear-cpp.github.io/Tedits/sitemap.xml

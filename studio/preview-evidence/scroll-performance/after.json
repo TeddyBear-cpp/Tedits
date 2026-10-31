@@ -1,0 +1,416 @@
+[
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "errors": [],
+    "frames": 304,
+    "p95FrameMs": 17,
+    "maxFrameMs": 17.100000000000364,
+    "framesOver34ms": 0,
+    "longTasksDuringScroll": [],
+    "layoutShiftSum": 0.00004802002455471965,
+    "entrances": [
+      {
+        "element": "hero-meta",
+        "start": 874.1999999880791,
+        "top": 160,
+        "height": 15.296875,
+        "opacityBefore": "1",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "H1",
+        "start": 877.2999999821186,
+        "top": 223.296875,
+        "height": 196.53125,
+        "opacityBefore": "1",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "hero-bottom",
+        "start": 878.4000000059605,
+        "top": 467.828125,
+        "height": 81.5625,
+        "opacityBefore": "1",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "section-heading studio-reveal-pending",
+        "start": 2213.5999999940395,
+        "top": 756.390625,
+        "height": 157.859375,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-visual catering-visual studio-reveal-pending",
+        "start": 4057.0999999940395,
+        "top": 818.25,
+        "height": 576.75,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-copy studio-reveal-pending",
+        "start": 4140.799999982119,
+        "top": 853.046875,
+        "height": 347.140625,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-visual steel-visual studio-reveal-pending",
+        "start": 4823.699999988079,
+        "top": 820,
+        "height": 576.75,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-copy studio-reveal-pending",
+        "start": 4907.4000000059605,
+        "top": 843.75,
+        "height": 369.234375,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-visual afterhours-visual studio-reveal-pending",
+        "start": 5590.9000000059605,
+        "top": 821.75,
+        "height": 576.75,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-copy studio-reveal-pending",
+        "start": 5673.299999982119,
+        "top": 845.5,
+        "height": 369.234375,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "palette-study studio-reveal-pending",
+        "start": 6390.199999988079,
+        "top": 823.5,
+        "height": 520.1875,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 6457.799999982119,
+        "top": 844.0625,
+        "height": 351.046875,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "section-heading studio-reveal-pending",
+        "start": 7073.5,
+        "top": 880.6875,
+        "height": 157.859375,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 7290.5,
+        "top": 878.546875,
+        "height": 101.1875,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 7390.299999982119,
+        "top": 883.734375,
+        "height": 101.1875,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 7507,
+        "top": 872.921875,
+        "height": 101.1875,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "about-heading studio-reveal-pending",
+        "start": 7841.0999999940395,
+        "top": 846.109375,
+        "height": 410.75,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "about-copy studio-reveal-pending",
+        "start": 7841.5,
+        "top": 846.109375,
+        "height": 410.75,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 8490.199999988079,
+        "top": 868.15625,
+        "height": 187.0625,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "email-link studio-reveal-pending",
+        "start": 8706.40000000596,
+        "top": 891.21875,
+        "height": 69.359375,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 8739.59999999404,
+        "top": 887.796875,
+        "height": 40.78125,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      }
+    ],
+    "heroState": "offscreen",
+    "overflow": false,
+    "replayedEntrances": 0
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "errors": [],
+    "frames": 350,
+    "p95FrameMs": 16.800000000000182,
+    "maxFrameMs": 17.299999999999727,
+    "framesOver34ms": 0,
+    "longTasksDuringScroll": [],
+    "layoutShiftSum": 0,
+    "entrances": [
+      {
+        "element": "hero-meta",
+        "start": 309.90000000596046,
+        "top": 163,
+        "height": 29.78125,
+        "opacityBefore": "1",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "H1",
+        "start": 311.30000001192093,
+        "top": 224.78125,
+        "height": 113.390625,
+        "opacityBefore": "1",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "hero-bottom",
+        "start": 311.90000000596046,
+        "top": 370.171875,
+        "height": 141.390625,
+        "opacityBefore": "1",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "section-heading studio-reveal-pending",
+        "start": 438.7000000178814,
+        "top": 657.5625,
+        "height": 180.703125,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-visual catering-visual studio-reveal-pending",
+        "start": 2235.7000000178814,
+        "top": 758.265625,
+        "height": 288.59375,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-copy studio-reveal-pending",
+        "start": 2522.5,
+        "top": 802.859375,
+        "height": 340.0625,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-visual steel-visual studio-reveal-pending",
+        "start": 2986.300000011921,
+        "top": 791.921875,
+        "height": 288.59375,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-copy studio-reveal-pending",
+        "start": 3319.5,
+        "top": 788.515625,
+        "height": 362.15625,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-visual afterhours-visual studio-reveal-pending",
+        "start": 3786.5,
+        "top": 799.671875,
+        "height": 288.59375,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "project-copy studio-reveal-pending",
+        "start": 4121,
+        "top": 796.265625,
+        "height": 362.15625,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 4635.700000017881,
+        "top": 791.421875,
+        "height": 309.109375,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "palette-study studio-reveal-pending",
+        "start": 5019.800000011921,
+        "top": 772.53125,
+        "height": 484.078125,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "section-heading studio-reveal-pending",
+        "start": 5619.9000000059605,
+        "top": 809.609375,
+        "height": 221.015625,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 5871.200000017881,
+        "top": 822.625,
+        "height": 131.671875,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 6019.300000011921,
+        "top": 810.296875,
+        "height": 152.0625,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 6169.9000000059605,
+        "top": 818.359375,
+        "height": 152.0625,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "about-heading studio-reveal-pending",
+        "start": 6536.5,
+        "top": 746.421875,
+        "height": 224.28125,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "about-copy studio-reveal-pending",
+        "start": 6769.200000017881,
+        "top": 778.703125,
+        "height": 470.53125,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 7403.4000000059605,
+        "top": 809.125,
+        "height": 206.0625,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "email-link studio-reveal-pending",
+        "start": 7636.4000000059605,
+        "top": 823.1875,
+        "height": 53,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      },
+      {
+        "element": "studio-reveal-pending",
+        "start": 7705.5999999940395,
+        "top": 836.1875,
+        "height": 40.78125,
+        "opacityBefore": "0",
+        "visibleFramesBefore": 0,
+        "finishedBelowViewport": false
+      }
+    ],
+    "heroState": "offscreen",
+    "overflow": false,
+    "replayedEntrances": 0
+  }
+]

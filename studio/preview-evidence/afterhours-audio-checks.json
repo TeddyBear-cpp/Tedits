@@ -1,0 +1,71 @@
+{
+  "durations": [
+    {
+      "source": "http://127.0.0.1:8090/studio/projects/afterhours/assets/audio/do-this-often-teddybear.mp3",
+      "duration": 204.64325,
+      "paused": true
+    },
+    {
+      "source": "http://127.0.0.1:8090/studio/projects/afterhours/assets/audio/the-lead-teddybear.mp3",
+      "duration": 59.8465,
+      "paused": true
+    }
+  ],
+  "oneAtATime": true,
+  "seekWorks": true,
+  "keyboardSeek": true,
+  "muteWorks": true,
+  "escapePauses": true,
+  "endedResets": true,
+  "replayWorks": true,
+  "rangeSupport": true,
+  "nativeFallback": true,
+  "loadErrorVisible": true,
+  "copiesMatch": true,
+  "views": [
+    {
+      "width": 320,
+      "overflow": false,
+      "seekEnabled": true,
+      "credits": true,
+      "noPlaceholderTracks": true
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "seekEnabled": true,
+      "credits": true,
+      "noPlaceholderTracks": true
+    },
+    {
+      "width": 600,
+      "overflow": false,
+      "seekEnabled": true,
+      "credits": true,
+      "noPlaceholderTracks": true
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "seekEnabled": true,
+      "credits": true,
+      "noPlaceholderTracks": true
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "seekEnabled": true,
+      "credits": true,
+      "noPlaceholderTracks": true
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "seekEnabled": true,
+      "credits": true,
+      "noPlaceholderTracks": true
+    }
+  ],
+  "errors": [],
+  "failedAssets": []
+}

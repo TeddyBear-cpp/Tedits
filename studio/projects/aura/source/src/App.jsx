@@ -1,5 +1,5 @@
 import {useState,useEffect,useLayoutEffect,useRef,useMemo} from 'react';
-import {ArrowRight,ArrowLeft,ArrowUpRight,X,Plus,Minus,User,TShirt,Check} from '@phosphor-icons/react';
+import {ArrowRight,ArrowLeft,ArrowUpRight,X,Plus,Minus,Eye,Check} from '@phosphor-icons/react';
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
@@ -41,7 +41,7 @@ function ProductCard({product,onOpen,rail}){
         <ProductPhoto product={product} className="object-photo" loading="lazy"/>
         {near&&<ProductPhoto product={product} kind="worn" className="worn-photo" loading="lazy"/>}
       </button>
-      <button className="wear-toggle" aria-label={`${showWorn?'Show product':'Show worn view'} of ${product.name}`} aria-pressed={showWorn} onClick={()=>{setNear(true);setShowWorn(v=>!v)}}>{showWorn?<TShirt size={19} weight="light" aria-hidden="true"/>:<User size={19} weight="light" aria-hidden="true"/>}</button>
+      <button className="wear-toggle" aria-label={`${showWorn?'Show product':'Show worn view'} of ${product.name}`} aria-pressed={showWorn} onClick={()=>{setNear(true);setShowWorn(v=>!v)}}><Eye size={17} weight="light"/></button>
       <div className="card-sizes" aria-label={`Choose a size for ${product.name}`}>{product.sizes.map(size=><button key={size} onClick={()=>onOpen(product,size)}>{size}</button>)}</div>
     </div>
     <div className="product-caption"><button onClick={()=>onOpen(product)}>{product.name}</button><span>{money(product.price)}</span></div>
@@ -140,7 +140,7 @@ export function App(){
   function add(product,size){addItems([{product,size}])}
   function updateProgress(){const el=rail.current;if(!el)return;const max=el.scrollWidth-el.clientWidth;setProgress(max>0?el.scrollLeft/max:0);setCanNext(el.scrollLeft<max-3)}
   useEffect(()=>{rail.current?.scrollTo({left:0});const raf=requestAnimationFrame(updateProgress);const observer=new ResizeObserver(updateProgress);if(rail.current)observer.observe(rail.current);return()=>{cancelAnimationFrame(raf);observer.disconnect()}},[category]);
-  function moveRail(direction){const el=rail.current;if(!el)return;const card=el.querySelector('.product-card');const step=window.matchMedia('(max-width:760px)').matches&&card?card.getBoundingClientRect().width+parseFloat(getComputedStyle(el).columnGap):el.clientWidth*.85;el.scrollBy({left:direction*step,behavior:reduced?'instant':'smooth'})}
+  function moveRail(direction){const el=rail.current;if(el)el.scrollBy({left:direction*el.clientWidth*.85,behavior:reduced?'instant':'smooth'})}
   function pointerDown(e){if(e.pointerType!=='mouse'||e.button!==0||e.target.closest('.card-sizes,.wear-toggle'))return;drag.current={x:e.clientX,left:rail.current.scrollLeft,active:false,pointer:e.pointerId};skipClick.current=false}
   function pointerMove(e){const d=drag.current;if(!d)return;const delta=e.clientX-d.x;if(Math.abs(delta)>7){d.active=true;skipClick.current=true;rail.current.setPointerCapture(e.pointerId);rail.current.classList.add('is-dragging');e.preventDefault();rail.current.scrollLeft=d.left-delta}}
   function pointerUp(){const d=drag.current;if(d?.active&&rail.current.hasPointerCapture(d.pointer))rail.current.releasePointerCapture(d.pointer);drag.current=null;rail.current?.classList.remove('is-dragging')}

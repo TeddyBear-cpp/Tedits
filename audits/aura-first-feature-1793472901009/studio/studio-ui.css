@@ -1,0 +1,24 @@
+/* Small responses around the Studio's larger scroll story. */
+.rounded-studio :is(button,.round-action,.story-action,.glass-action){transition:scale 140ms cubic-bezier(.22,1,.36,1),background-color 180ms,color 180ms}
+.rounded-studio :is(button,.round-action,.story-action,.glass-action):active:not(:disabled){scale:.975}
+.rounded-studio :is(.story-action,.glass-action,.round-action,.wizard-primary) .action-arrow{display:inline-block;transition:transform 220ms cubic-bezier(.22,1,.36,1)}
+@media(hover:hover) and (pointer:fine){.rounded-studio :is(.story-action,.glass-action,.round-action,.wizard-primary):hover .action-arrow{transform:translate(3px,-3px)}}
+.rounded-studio .round-action.magnetic-action{display:inline-grid;position:relative;padding:0;min-height:50px;background:transparent;color:var(--ivory);transform:none;transition:none;isolation:isolate}
+.magnetic-action::before{content:'';position:absolute;inset:-8px;z-index:-1}
+.rounded-studio .round-action.magnetic-action>.magnetic-visual{display:flex;align-items:center;justify-content:space-between;gap:30px;min-height:50px;padding:13px 21px;border-radius:50px;background:var(--ivory);color:var(--charcoal);font:inherit;transform:translate3d(var(--wa-x,0px),var(--wa-y,0px),0);transition:scale 140ms cubic-bezier(.22,1,.36,1),background-color 180ms}
+.magnetic-action .action-arrow{font-size:22px;line-height:1}
+.rounded-studio .round-action.magnetic-action:active{scale:1}
+.magnetic-action:active>.magnetic-visual{scale:.975}
+.magnetic-action:hover>.magnetic-visual{background:var(--gray)}
+.rounded-studio .theme-toggle .theme-icon-moon,.rounded-studio .theme-toggle .theme-icon-sun{display:block;grid-area:1/1;transition:opacity 180ms cubic-bezier(.22,1,.36,1),transform 280ms cubic-bezier(.22,1,.36,1)}
+.rounded-studio .theme-toggle .theme-icon-moon{opacity:1;transform:rotate(0) scale(1)}
+.rounded-studio .theme-toggle .theme-icon-sun{opacity:0;transform:rotate(-35deg) scale(.65)}
+:root[data-theme=dark] .rounded-studio .theme-toggle .theme-icon-moon{opacity:0;transform:rotate(35deg) scale(.65)}
+:root[data-theme=dark] .rounded-studio .theme-toggle .theme-icon-sun{opacity:1;transform:rotate(0) scale(1)}
+.case-study.is-transitioning{overflow:hidden}
+.case-study.is-transitioning>div{transform-origin:top}
+@media(prefers-reduced-motion:reduce){
+ .rounded-studio :is(button,.round-action,.story-action,.glass-action),.rounded-studio .theme-toggle svg,.rounded-studio .magnetic-action>.magnetic-visual{transition:none!important;scale:1!important}
+ .rounded-studio .round-action.magnetic-action>.magnetic-visual{transform:none!important}
+ .rounded-studio .action-arrow{transition:none!important;transform:none!important}
+}

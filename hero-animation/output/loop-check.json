@@ -1,0 +1,13 @@
+{
+  "duration_seconds": 8,
+  "fps": 24,
+  "frames": 192,
+  "dimensions": [
+    1440,
+    810
+  ],
+  "frame_0_equals_frame_at_8_seconds": true,
+  "seam_mean_absolute_error_320x180": 0.0605,
+  "median_adjacent_frame_error_320x180": 0.0222,
+  "seam_to_typical_ratio": 2.7255
+}

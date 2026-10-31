@@ -1,0 +1,71 @@
+{
+  "results": [
+    {
+      "variant": "before",
+      "width": 1440,
+      "copyAtGroupTrigger": {
+        "top": 940.046875,
+        "opacity": "1",
+        "pending": false
+      },
+      "destinations": {
+        "#work": 801,
+        "#approach": 3018,
+        "#about": 4378
+      },
+      "reloadY": 806,
+      "errors": []
+    },
+    {
+      "variant": "before",
+      "width": 390,
+      "copyAtGroupTrigger": {
+        "top": 1130.859375,
+        "opacity": "1",
+        "pending": false
+      },
+      "destinations": {
+        "#work": 565,
+        "#approach": 3349,
+        "#about": 4990
+      },
+      "reloadY": 1055,
+      "errors": []
+    },
+    {
+      "variant": "after",
+      "width": 1440,
+      "copyAtGroupTrigger": {
+        "top": 940.046875,
+        "opacity": "0",
+        "pending": true
+      },
+      "destinations": {
+        "#work": 801,
+        "#approach": 3018,
+        "#about": 4378
+      },
+      "reloadY": 806,
+      "errors": [],
+      "reducedMotionAndTheme": true
+    },
+    {
+      "variant": "after",
+      "width": 390,
+      "copyAtGroupTrigger": {
+        "top": 1130.859375,
+        "opacity": "0",
+        "pending": true
+      },
+      "destinations": {
+        "#work": 565,
+        "#approach": 3349,
+        "#about": 4990
+      },
+      "reloadY": 1055,
+      "errors": [],
+      "reducedMotionAndTheme": true
+    }
+  ],
+  "noJavaScriptContentVisible": true
+}

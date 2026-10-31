@@ -1,0 +1,370 @@
+{
+  "base": "7300a922c0cc9ae5d15eb22ba57ca62000c1b8d1",
+  "incoming": "1265f18fdb5821cb01a9f2b126fd945d125399bb",
+  "files": [
+    {
+      "path": ".github/workflows/video-pages.yml",
+      "action": "updated"
+    },
+    {
+      "path": "DEPLOYMENT.md",
+      "action": "updated"
+    },
+    {
+      "path": "README.md",
+      "action": "updated"
+    },
+    {
+      "path": "build-sanity.cjs",
+      "action": "updated"
+    },
+    {
+      "path": "build-studio.cjs",
+      "action": "updated"
+    },
+    {
+      "path": "build-video.cjs",
+      "action": "updated"
+    },
+    {
+      "path": "index.html",
+      "action": "updated"
+    },
+    {
+      "path": "service-page-renderer.cjs",
+      "action": "added"
+    },
+    {
+      "path": "studio-teditstudio/README.md",
+      "action": "updated"
+    },
+    {
+      "path": "studio-teditstudio/add-tedeats.mjs",
+      "action": "added"
+    },
+    {
+      "path": "studio-teditstudio/append-business-examples.mjs",
+      "action": "added"
+    },
+    {
+      "path": "studio-teditstudio/generate-seed.cjs",
+      "action": "updated"
+    },
+    {
+      "path": "studio-teditstudio/generate-services-seed.cjs",
+      "action": "added"
+    },
+    {
+      "path": "studio-teditstudio/package.json",
+      "action": "updated"
+    },
+    {
+      "path": "studio-teditstudio/sanity.cli.ts",
+      "action": "updated"
+    },
+    {
+      "path": "studio-teditstudio/sanity.config.ts",
+      "action": "updated"
+    },
+    {
+      "path": "studio-teditstudio/schemaTypes/index.ts",
+      "action": "updated"
+    },
+    {
+      "path": "studio-teditstudio/schemaTypes/servicePages.ts",
+      "action": "added"
+    },
+    {
+      "path": "studio-teditstudio/seed.ndjson",
+      "action": "updated"
+    },
+    {
+      "path": "studio-teditstudio/service-pages.json",
+      "action": "added"
+    },
+    {
+      "path": "studio-teditstudio/service-pages.ndjson",
+      "action": "added"
+    },
+    {
+      "path": "studio/CONTACT.md",
+      "action": "added"
+    },
+    {
+      "path": "studio/assets/little-joy-preview.png",
+      "action": "added"
+    },
+    {
+      "path": "studio/assets/tedeats-preview.png",
+      "action": "added"
+    },
+    {
+      "path": "studio/enquire.html",
+      "action": "added"
+    },
+    {
+      "path": "studio/enquiry.js",
+      "action": "added"
+    },
+    {
+      "path": "studio/index.html",
+      "action": "updated"
+    },
+    {
+      "path": "studio/projects/little-joy/assets/booking-desktop.png",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/assets/gallery-desktop.png",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/assets/home-mobile.png",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/assets/packages-desktop.png",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/case-study.css",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/case-study.js",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/.nojekyll",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/app.js",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/DM-Sans-OFL.txt",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/Fraunces-OFL.txt",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/balloons.jpg",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/birthday.jpg",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/favicon.svg",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/font-0.ttf",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/font-1.ttf",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/font-2.ttf",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/font-3.ttf",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/font-4.ttf",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/font-5.ttf",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/fonts.css",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/hero.jpg",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/little-moments.jpg",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/party-setup.jpg",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/assets/playtime.jpg",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/booking.html",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/credits.html",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/faqs.html",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/gallery.html",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/index.html",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/packages.html",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/demo/styles.css",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/index.html",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/little-joy/project.json",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/app.js",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/ASSET-SOURCES.md",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/Cormorant-Garamond-OFL.txt",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/DM-Sans-OFL.txt",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/body-semibold.ttf",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/body.ttf",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/bouquet.png",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/brand-launch.webp",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/display.ttf",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/favicon.svg",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/garden-celebration.webp",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/hero-dinner.webp",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/assets/planning-hands.webp",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/credits.html",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/index.html",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/motion.css",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/motion.js",
+      "action": "added"
+    },
+    {
+      "path": "studio/projects/tedeats/site.css",
+      "action": "added"
+    },
+    {
+      "path": "studio/studio-contact.css",
+      "action": "added"
+    },
+    {
+      "path": "studio/studio-contact.js",
+      "action": "added"
+    },
+    {
+      "path": "studio/studio-hero.css",
+      "action": "updated"
+    },
+    {
+      "path": "studio/studio-services.css",
+      "action": "added"
+    },
+    {
+      "path": "studio/studio-services.js",
+      "action": "added"
+    },
+    {
+      "path": "studio/studio-theme.css",
+      "action": "updated"
+    },
+    {
+      "path": "studio/studio-waves.js",
+      "action": "added"
+    },
+    {
+      "path": "studio/studio.js",
+      "action": "updated"
+    },
+    {
+      "path": "studio/why-teditstudio.html",
+      "action": "added"
+    },
+    {
+      "path": "verify-sanity.cjs",
+      "action": "updated"
+    },
+    {
+      "path": "video-deploy-check.cjs",
+      "action": "updated"
+    },
+    {
+      "path": "video-preview.html",
+      "action": "updated"
+    },
+    {
+      "path": "videos/teditstudio-launch.mp4",
+      "action": "added"
+    }
+  ]
+}

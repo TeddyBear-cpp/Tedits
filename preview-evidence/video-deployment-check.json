@@ -1,0 +1,48 @@
+{
+  "base": "https://teddybear-cpp.github.io/Tedits/",
+  "layouts": [
+    {
+      "width": 320,
+      "overflow": false,
+      "images": true,
+      "anchors": true,
+      "videos": 5,
+      "noindex": false,
+      "studioLink": "mailto:teditstudiozm@gmail.com?subject=Web%20design%20enquiry",
+      "playPauseSeekMute": true
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "images": true,
+      "anchors": true,
+      "videos": 5,
+      "noindex": false,
+      "studioLink": "mailto:teditstudiozm@gmail.com?subject=Web%20design%20enquiry",
+      "playPauseSeekMute": true
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "images": true,
+      "anchors": true,
+      "videos": 5,
+      "noindex": false,
+      "studioLink": "mailto:teditstudiozm@gmail.com?subject=Web%20design%20enquiry",
+      "playPauseSeekMute": true
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "images": true,
+      "anchors": true,
+      "videos": 5,
+      "noindex": false,
+      "studioLink": "mailto:teditstudiozm@gmail.com?subject=Web%20design%20enquiry",
+      "playPauseSeekMute": true
+    }
+  ],
+  "errors": [],
+  "mockedFormSuccessAndFailure": true,
+  "realMessagesSent": 0
+}
