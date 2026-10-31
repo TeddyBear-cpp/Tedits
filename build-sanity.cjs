@@ -8,7 +8,7 @@ const {applyCatalogues} = require('./catalogue-renderer.cjs');
 const {applyServicePages} = require('./service-page-renderer.cjs');
 const query = '{"homepage": *[_type == "homepage" && _id == "homepage"][0], "whyPage": *[_type == "whyPage" && _id == "whyPage"][0], "enquiryPage": *[_type == "enquiryPage" && _id == "enquiryPage"][0], "projects": *[_type == "project"] | order(order asc, _id asc){..., "imageUrl": image.asset->url}, "catalogues": *[_id in ["menuCatalogue", "materialCatalogue", "trackCatalogue"]]{..., "mealDays": mealDays[]{..., "imageUrl": image.asset->url}, items[]{..., "imageUrl": image.asset->url, "audioUrl": audio.asset->url, dishes[]{...}}}}';
 const concepts = {
-  aura: {style: 'aura', image: 'aura', alt: 'AURA+ luxury streetwear website, with a monochrome campaign hero and custom wordmark', href: 'https://aura-plus-collectibles.davidcmason8.chatgpt.site', action: 'Visit the website'},
+  aura: {style: 'aura', image: 'aura', alt: 'AURA+ luxury streetwear website, with a monochrome campaign hero and custom wordmark', action: 'View the project'},
   catering: {style: 'catering', image: 'olive-and-ember', alt: 'Olive & Ember catering website concept'},
   'rivet-beam': {style: 'steel', image: 'rivet-and-beam', alt: 'Rivet & Beam steel website concept'},
   afterhours: {style: 'afterhours', image: 'afterhours', alt: 'AFTERHOURS music studio website concept', compactDescription: 'Music, mood & interaction'},

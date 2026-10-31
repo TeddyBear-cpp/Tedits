@@ -5,7 +5,7 @@ const {applyHomepageOffer, applyWhyPage, applyEnquiryPage} = require('./service-
 const source = fs.readFileSync('studio/index.html', 'utf8');
 const [homepage, ...projects] = fs.readFileSync('studio-teditstudio/seed.ndjson', 'utf8').trim().split('\n').map(JSON.parse);
 assert.equal(projects.length, 6);
-for (const project of projects) assert.ok(source.includes(project.concept === 'aura' ? 'https://aura-plus-collectibles.davidcmason8.chatgpt.site' : `projects/${project.concept}/index.html`));
+for (const project of projects) assert.ok(source.includes(project.concept === 'aura' ? 'projects/aura/index.html' : `projects/${project.concept}/index.html`));
 const rendered = applyContent(source, {homepage, projects});
 function section(html, pattern) {
   const match = pattern.exec(html);
@@ -15,7 +15,7 @@ function section(html, pattern) {
 const work = html => section(html, /<section id="work"[\s\S]*?<\/section>/);
 const extras = html => section(html, /<section class="wrap more-work"[\s\S]*?<\/section>/);
 assert.equal((work(rendered).match(/<article class="story-reveal project(?: project-reverse)?">/g) || []).length, 4);
-assert.deepEqual([...work(rendered).matchAll(/class="project-visual [^"]*" href="projects\/([^/]+)\//g)].map(match => match[1]), ['catering', 'rivet-beam', 'tedeats']);
+assert.deepEqual([...work(rendered).matchAll(/class="project-visual [^"]*" href="projects\/([^/]+)\//g)].map(match => match[1]), ['aura', 'catering', 'rivet-beam', 'tedeats']);
 assert.equal((extras(rendered).match(/<a class="story-reveal"/g) || []).length, 2);
 assert.ok(rendered.includes('Olive &amp; Ember'));
 assert.ok(rendered.includes('Rivet &amp; Beam'));
@@ -100,15 +100,22 @@ assert.throws(() => applyHomepageOffer(rendered, {...offer, businessExamples:['a
 console.log('Sanity selected projects, compact extras, escaping, visibility, homepage offer, redirect and enquiry checks passed.');
 
 // AURA remains first with both current and older published CMS project lists.
-const auraUrl = 'https://aura-plus-collectibles.davidcmason8.chatgpt.site';
+const auraUrl = 'projects/aura/index.html';
 for (const data of [projects, projects.filter(project => project.concept !== 'aura')]) {
   const output = work(applyContent(source, {projects:data}));
   assert.ok(output.indexOf(auraUrl) < output.indexOf('projects/catering/index.html'));
   assert.equal((output.match(/<h3>AURA\+<\/h3>/g)||[]).length,1);
   assert.ok(output.includes('FEATURED PROJECT'));
   assert.ok(output.includes('Four independent concepts.'));
-  assert.ok(output.includes('target="_blank" rel="noopener noreferrer"'));
+  assert.ok(!output.includes('target="_blank"'));
+  assert.ok(!output.includes('chatgpt.site'));
 }
 const hiddenAura=projects.map(project=>project.concept==='aura'?{...project,visible:false}:project);
 assert.ok(!work(applyContent(source,{projects:hiddenAura})).includes(auraUrl));
 console.log('AURA first feature, legacy CMS fallback, external links and explicit visibility checks passed.');
+
+const auraEntry=fs.readFileSync('studio/projects/aura/index.html','utf8');
+assert.ok(!/(?:src|href|imagesrcset)=["']\/(?!\/)/.test(auraEntry));
+assert.ok(fs.existsSync('studio/projects/aura/source/src/App.jsx'));
+assert.ok(fs.existsSync('studio/projects/aura/fonts/cormorant-garamond-normal.woff2'));
+console.log('Local AURA project, editable source and relative asset checks passed.');

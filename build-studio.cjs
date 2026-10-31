@@ -46,6 +46,16 @@ function collectLittleJoy(folder) {
 }
 collectLittleJoy('studio/projects/little-joy');
 collectLittleJoy('studio/projects/tedeats');
+// AURA is a complete local project. Keep its editable source in Git, not the web release.
+function collectAura(folder) {
+  for (const entry of fs.readdirSync(path.join(root,folder),{withFileTypes:true})) {
+    const relative=folder+'/'+entry.name;
+    if(relative==='studio/projects/aura/source')continue;
+    if(entry.isDirectory())collectAura(relative);
+    else if(/\.(html|css|js|svg|png|jpe?g|webp|woff2?|ttf|otf|ico)$/i.test(entry.name))files.push(relative);
+  }
+}
+collectAura('studio/projects/aura');
 for (const file of files) {
   const destination = path.join(out,file);
   fs.mkdirSync(path.dirname(destination), {recursive:true});
