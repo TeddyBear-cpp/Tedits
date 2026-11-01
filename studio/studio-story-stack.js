@@ -11,13 +11,16 @@
   const mediaButton=scene.querySelector('.story-media-toggle');
   const scrollCue=scene.querySelector('.story-scroll-cue');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  const shortScreen=matchMedia('(max-height: 579px), (max-width: 900px) and (max-height: 699px)');
   const mobile=matchMedia('(max-width: 900px)');
   const visibleVideos=new Map();
   const cardStyles=cards.map(()=>({}));
   const enteredCards=new WeakSet(),mediaEntrances=new Set();
   const clamp=n=>Math.max(0,Math.min(1,n));
   const ease=n=>{const t=clamp(n);return t*t*(3-2*t);};
+  const stackEnd=2.15,lastCardStart=1.88;
+  const betweenCardsScale=1.3,finalCardScale=1.5;
+  const scrollPositionFor=position=>Math.min(position,lastCardStart)*betweenCardsScale+Math.max(0,position-lastCardStart)*finalCardScale;
+  const scrollEnd=scrollPositionFor(stackEnd);
   let start=0,distance=1,frame=0,active=-1,pinned=false,inView=false;
   let cardWidth=0,edgeShift=0,userPaused=false,reduceOverride=false;
 
@@ -122,12 +125,16 @@
   function paint(){
     frame=0;
     if(!pinned)return;
-    const progress=clamp((scrollY-start)/distance),position=progress*2.65;
+    // Overlap arrivals and departures: no empty scroll interval between cards.
+    const progress=clamp((scrollY-start)/distance),scrollPosition=progress*scrollEnd;
+    const position=scrollPosition<=lastCardStart*betweenCardsScale
+      ?scrollPosition/betweenCardsScale
+      :lastCardStart+(scrollPosition-lastCardStart*betweenCardsScale)/finalCardScale;
     const next=Math.min(2,Math.floor(position+.12));
     cards.forEach((card,i)=>{
-      const enter=i===0?1:ease((position-i+.65)/.65);
-      const leave=i===2?0:ease((position-i-.55)/.45);
-      const older=i===0?ease((position-1.55)/.45):0;
+      const enter=i===0?1:ease((position-i+1)/1.15);
+      const leave=i===2?0:ease((position-i+(i===0?0:.15))/1.15);
+      const older=i===0?ease((position-1)/1.15):0;
       const x=(1-enter)*(cardWidth+edgeShift+48)+leave*(edgeShift+older*18);
       const y=leave*(i===0?-12:16)-older*6;
       const angle=enter*(i===1?-3: i===2?2:0)+leave*(i===0?6:7)-older*3;
@@ -153,13 +160,18 @@
   }
   function schedule(){if(pinned&&inView&&!frame)frame=requestAnimationFrame(paint);}
   function measure(){
-    pinned=!reduced.matches&&!shortScreen.matches&&CSS.supports('position','sticky');
+    // Always start from the responsive CSS baseline so resize/zoom never
+    // compounds the requested scroll-distance increases.
+    scene.style.removeProperty('--story-scroll-height');
+    // Zoom changes CSS viewport height. Adapt the layout rather than disabling
+    // the interaction at an arbitrary height threshold.
+    pinned=!reduced.matches&&CSS.supports('position','sticky');
     scene.dataset.pinned=String(pinned);
     // Match intrinsic text heights across all chapters. Centring differently
     // sized copy blocks was moving headings when the description changed.
     const titleHeight=Math.max(...chapters.map(chapter=>chapter.querySelector('h3').getBoundingClientRect().height));
     const descriptionHeight=Math.max(...chapters.map(chapter=>chapter.querySelector('.story-copy>p').getBoundingClientRect().height));
-    const copyGap=mobile.matches?20:28;
+    const copyGap=Number.parseFloat(getComputedStyle(chapters[0].querySelector('.story-copy')).rowGap)||0;
     scene.style.setProperty('--story-title-height',`${Math.ceil(titleHeight)}px`);
     scene.style.setProperty('--story-description-height',`${Math.ceil(descriptionHeight)}px`);
     scene.style.setProperty('--story-copy-height',`${Math.ceil(titleHeight)+Math.ceil(descriptionHeight)+copyGap}px`);
@@ -179,6 +191,8 @@
     }
     const top=parseFloat(getComputedStyle(stage).top)||0;
     start=scene.getBoundingClientRect().top+scrollY-top;
+    const baseDistance=Math.max(1,scene.offsetHeight-stage.offsetHeight);
+    scene.style.setProperty('--story-scroll-height',`${stage.offsetHeight+baseDistance*scrollEnd/stackEnd}px`);
     distance=Math.max(1,scene.offsetHeight-stage.offsetHeight);
     const slot=chapters[0].querySelector('.story-media-slot');
     // Layout offsets ignore the temporary mobile entrance transform.
@@ -189,7 +203,8 @@
   }
   tabs.forEach((tab,i)=>tab.addEventListener('click',event=>{
     if(!pinned)return;
-    const top=start+distance*(i/2.65);
+    const position=i===chapters.length-1?stackEnd:i;
+    const top=start+distance*(scrollPositionFor(position)/scrollEnd);
     const immediate=event.detail===0||reduced.matches;
     if(window.TeditsScroll)window.TeditsScroll.scrollTo(top,{immediate});
     else window.scrollTo({top,behavior:immediate?'instant':'smooth'});
@@ -203,7 +218,6 @@
     if(reduced.matches)mediaEntrances.forEach(animation=>animation.cancel());
     measure();
   });
-  shortScreen.addEventListener('change',measure);
   mobile.addEventListener('change',measure);
   document.fonts.ready.then(measure);
   if('ResizeObserver'in window){
