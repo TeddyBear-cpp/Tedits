@@ -62,14 +62,19 @@ if(rail){
  const moving=()=>visible&&desktop.matches&&!reduce.matches&&!focus&&!dragging&&!stopped&&!document.hidden&&performance.now()>interactionUntil;
  const frame=t=>{const dt=Math.min(t-last,40);last=t;if(moving()){position+=dt*.018;if(position>=loop*1.5)position-=loop;rail.scrollLeft=position;}raf=requestAnimationFrame(frame);};
  rail.addEventListener('scroll',normalise,{passive:true});
- rail.addEventListener('focusin',()=>focus=true);rail.addEventListener('focusout',()=>{queueMicrotask(()=>focus=rail.contains(document.activeElement));});
- const manual=()=>{interactionUntil=performance.now()+2500;};
- rail.addEventListener('wheel',manual,{passive:true});rail.addEventListener('touchstart',manual,{passive:true});
+ rail.addEventListener('focusin',e=>focus=e.target.matches(':focus-visible'));rail.addEventListener('focusout',()=>{queueMicrotask(()=>focus=rail.contains(document.activeElement)&&document.activeElement.matches(':focus-visible'));});
+ const manual=()=>{interactionUntil=performance.now()+500;};
+ // Only a deliberate horizontal gesture interrupts the automatic rail.
+ rail.addEventListener('wheel',e=>{if(e.shiftKey&&Math.abs(e.deltaY)>.5||Math.abs(e.deltaX)>.5&&Math.abs(e.deltaX)>Math.abs(e.deltaY))manual();},{passive:true});
+ let touchX=0,touchY=0,touchHorizontal=false;
+ rail.addEventListener('touchstart',e=>{const t=e.touches[0];if(t){touchX=t.clientX;touchY=t.clientY;touchHorizontal=false;}},{passive:true});
+ rail.addEventListener('touchmove',e=>{const t=e.touches[0];if(t&&Math.abs(t.clientX-touchX)>6&&Math.abs(t.clientX-touchX)>Math.abs(t.clientY-touchY)){touchHorizontal=true;manual();}},{passive:true});
+ rail.addEventListener('touchend',()=>{if(touchHorizontal)manual();touchHorizontal=false;},{passive:true});
  rail.addEventListener('keydown',e=>{if(e.key===' '&&e.target===rail){e.preventDefault();stopped=!stopped;rail.dataset.stopped=String(stopped);$('#gallery-status').textContent=stopped?'Automatic movement stopped.':'Automatic movement resumed when the gallery loses focus.';}else if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();manual();rail.scrollBy({left:(e.key==='ArrowRight'?1:-1)*rail.clientWidth*.6,behavior:reduce.matches?'instant':'smooth'});}});
- let downX=0,downScroll=0,moved=false;
- rail.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;downX=e.clientX;downScroll=rail.scrollLeft;dragging=true;moved=false;manual();});
- window.addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-downX;if(Math.abs(dx)>6){moved=true;rail.scrollLeft=downScroll-dx;}});
- window.addEventListener('pointerup',()=>{if(dragging){dragging=false;manual();}});window.addEventListener('pointercancel',()=>dragging=false);
+ let downX=0,downY=0,downScroll=0,pointerDown=false,moved=false;
+ rail.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;downX=e.clientX;downY=e.clientY;downScroll=rail.scrollLeft;pointerDown=true;dragging=false;moved=false;focus=false;});
+ window.addEventListener('pointermove',e=>{if(!pointerDown)return;const dx=e.clientX-downX,dy=e.clientY-downY;if(dragging||Math.abs(dx)>6&&Math.abs(dx)>Math.abs(dy)){dragging=true;moved=true;manual();rail.scrollLeft=downScroll-dx;}});
+ window.addEventListener('pointerup',()=>{pointerDown=false;if(dragging){dragging=false;manual();}});window.addEventListener('pointercancel',()=>{pointerDown=false;if(dragging)manual();dragging=false;});
  rail.addEventListener('click',e=>{if(moved){e.preventDefault();moved=false;}},true);rail.addEventListener('dragstart',e=>e.preventDefault());
  for(const dir of ['prev','next'])$(`[data-gallery="${dir}"]`).addEventListener('click',()=>{manual();rail.scrollBy({left:(dir==='next'?1:-1)*rail.clientWidth*.65,behavior:reduce.matches?'instant':'smooth'});});
  new IntersectionObserver(([e])=>visible=e.isIntersecting).observe(rail);new ResizeObserver(measure).observe(rail);measure();requestAnimationFrame(frame);
