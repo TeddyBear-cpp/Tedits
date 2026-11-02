@@ -8,7 +8,7 @@ export const assets={
  hall:photo('hall','1600607687939-ce8a6c25118c','considered architectural interior'),
  exterior:photo('exterior','1600585154340-be6161a56a0c','contemporary residential exterior'),
  detail:photo('detail','1616486029423-aaa4789e8c9a','warm interior materials'),
- paintMask:{src:'/assets/paint-mask.svg',mobileSrc:'/assets/paint-mask-mobile.svg',texture:null,edgeWidth:'23%',ratio:'8 / 7'},
+ paintMask:{src:'/assets/paint-mask.svg',mobileSrc:'/assets/paint-mask-mobile.svg',texture:null,transitionSrc:'/assets/paint-transition.svg',edgeWidth:'23%',ratio:'8 / 7'},
  comparison:{before:'/assets/comparison-before-1600.webp',beforeSrcset:'/assets/comparison-before-800.webp 800w, /assets/comparison-before-1600.webp 1600w',after:'/assets/comparison-after-1538.webp',afterSrcset:'/assets/comparison-after-800.webp 800w, /assets/comparison-after-1538.webp 1538w',ratio:'3 / 2',position:'center',source:'https://images.unsplash.com/photo-1484101403633-562f891dc89a',method:'Stock photograph with an AI-edited wall finish; not documentary project evidence.'}
 };
 export const projects=[
@@ -30,6 +30,19 @@ export const finishes=[
  {id:'limewash',name:'Limewash',description:'Clouded mineral colour with visible brush movement. Tonal variation gives each application its own character.',use:'Feature walls and suitable mineral substrates.',texture:'/assets/finish-limewash-photo-1024.webp',srcset:'/assets/finish-limewash-photo-800.webp 800w, /assets/finish-limewash-photo-1024.webp 1024w',alt:'Limewash wall finish behind the same timber chair and plant'},
  {id:'plaster',name:'Textured plaster',description:'Tactile ridges and layered trowel marks. A sculptural surface with a stronger play of light and shadow.',use:'Feature walls and architectural details.',texture:'/assets/finish-plaster-photo-1024.webp',srcset:'/assets/finish-plaster-photo-800.webp 800w, /assets/finish-plaster-photo-1024.webp 1024w',alt:'Plaster wall finish behind the same timber chair and plant'}
 ];
+// Compact captions belong to the image they explain; long copy stays on detail pages.
+const serviceCaptions=['Colour that brings the whole room together.','A fresh welcome, from the outside in.','Limewash, mineral colour and tactile plaster.','Existing details. Carefully brought back to life.'];
+services.forEach((service,i)=>service.short=serviceCaptions[i]);
+const finishCaptions=['Soft, low-reflection colour for restful spaces.','A gentle sheen for doors, trims and busy spaces.','Mineral colour with natural, cloud-like movement.','Sculptural texture that catches the changing light.'];
+finishes.forEach((finish,i)=>finish.short=finishCaptions[i]);
+export const reviews=[
+ {name:'Alex R.',service:'Interior painting',quote:'The same rooms, with a completely different feeling.',illustration:'reviewArch'},
+ {name:'Sam & Jo',service:'Decorative finishes',quote:'The light catches the walls beautifully. That’s the detail we love.',illustration:'reviewWindow'},
+ {name:'Morgan L.',service:'Surface restoration',quote:'All the character we wanted to keep. A finish that feels new.',illustration:'reviewBrush'}
+];
+assets.reviewArch={src:'/assets/review-arch.svg',alt:''};
+assets.reviewWindow={src:'/assets/review-window.svg',alt:''};
+assets.reviewBrush={src:'/assets/review-brush.svg',alt:''};
 export const process=[['Consultation','A conversation about your space, the surfaces and what you have in mind. We explore colour, scope and timing together.'],['Preparation','Protect the space, assess the substrate and make the repairs that a lasting finish depends on.'],['Craftsmanship','Apply the chosen coating system with care, working methodically from the first coat to the final edge.'],['Final walkthrough','Review the surfaces together, discuss finishing details and explain how to care for the selected materials.']];
 
 // Resolve media against this module so the same project works at an origin or portfolio subpath.
