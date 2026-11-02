@@ -8,6 +8,7 @@ const {applyCatalogues} = require('./catalogue-renderer.cjs');
 const {applyServicePages} = require('./service-page-renderer.cjs');
 const query = '{"homepage": *[_type == "homepage" && _id == "homepage"][0], "whyPage": *[_type == "whyPage" && _id == "whyPage"][0], "enquiryPage": *[_type == "enquiryPage" && _id == "enquiryPage"][0], "projects": *[_type == "project"] | order(order asc, _id asc){..., "imageUrl": image.asset->url}, "catalogues": *[_id in ["menuCatalogue", "materialCatalogue", "trackCatalogue"]]{..., "mealDays": mealDays[]{..., "imageUrl": image.asset->url}, items[]{..., "imageUrl": image.asset->url, "audioUrl": audio.asset->url, dishes[]{...}}}}';
 const concepts = {
+  'form-finish': {style: 'form-finish', image: 'form-finish', alt: 'FORM & FINISH painting studio concept with olive editorial type and an organic paint-edge photograph', action: 'View the project'},
   aura: {style: 'aura', image: 'aura', alt: 'AURA+ luxury streetwear website, with a monochrome campaign hero and custom wordmark', action: 'View the project'},
   catering: {style: 'catering', image: 'olive-and-ember', alt: 'Olive & Ember catering website concept'},
   'rivet-beam': {style: 'steel', image: 'rivet-and-beam', alt: 'Rivet & Beam steel website concept'},
@@ -72,14 +73,17 @@ function renderCompactProject(project) {
 }
 function applySelectedProjects(html, projects) {
   // Keep the newly featured site when the published CMS still has older projects.
-  const entries = projects.some(project => project.concept === 'aura') ? projects : [projectSeeds.aura, ...projects];
+  const entries = [...projects];
+  for (const concept of ['aura', 'form-finish']) {
+    if (!entries.some(project => project.concept === concept)) entries.push(projectSeeds[concept]);
+  }
   const visible = new Map(entries.filter(project => project.visible !== false).map(project => [project.concept, migrateProject(project, true)]));
-  const selected = ['aura', 'catering', 'rivet-beam', 'tedeats'].map(concept => visible.get(concept)).filter(Boolean);
+  const selected = ['aura', 'form-finish', 'catering', 'rivet-beam', 'tedeats'].map(concept => visible.get(concept)).filter(Boolean);
   const compact = ['afterhours', 'little-joy'].map(concept => visible.get(concept)).filter(Boolean);
   const pattern = /(<section id="work"[^>]*>\s*<div class="section-heading[^>]*>[\s\S]*?<\/div>)\s*[\s\S]*?(\s*<\/section>)/;
   if (!pattern.test(html)) throw new Error('Selected work section markup changed; update the CMS renderer.');
   html = html.replace(pattern, (_match, heading, end) => {
-    const intro = selected.length === 4 ? 'Four independent concepts.' : selected.length === 3 ? 'Three independent concepts.' : selected.length === 1 ? 'One independent concept.' : selected.length === 2 ? 'Two independent concepts.' : 'New concepts are taking shape.';
+    const intro = selected.length === 5 ? 'Five independent concepts.' : selected.length === 4 ? 'Four independent concepts.' : selected.length === 3 ? 'Three independent concepts.' : selected.length === 1 ? 'One independent concept.' : selected.length === 2 ? 'Two independent concepts.' : 'New concepts are taking shape.';
     heading = heading.replace(/(<p>)[\s\S]*?(<br>)/, (_text, start, br) => start + intro + br);
     return `${heading}\n${selected.map((project, index) => renderProject(project, index, {story: true})).join('\n')}${end}`;
   });

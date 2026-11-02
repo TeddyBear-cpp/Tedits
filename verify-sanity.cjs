@@ -4,7 +4,7 @@ const {applyContent} = require('./build-sanity.cjs');
 const {applyHomepageOffer, applyWhyPage, applyEnquiryPage} = require('./service-page-renderer.cjs');
 const source = fs.readFileSync('studio/index.html', 'utf8');
 const [homepage, ...projects] = fs.readFileSync('studio-teditstudio/seed.ndjson', 'utf8').trim().split('\n').map(JSON.parse);
-assert.equal(projects.length, 6);
+assert.equal(projects.length, 7);
 for (const project of projects) assert.ok(source.includes(project.concept === 'aura' ? 'projects/aura/index.html' : `projects/${project.concept}/index.html`));
 const rendered = applyContent(source, {homepage, projects});
 function section(html, pattern) {
@@ -14,8 +14,8 @@ function section(html, pattern) {
 }
 const work = html => section(html, /<section id="work"[\s\S]*?<\/section>/);
 const extras = html => section(html, /<section class="wrap more-work"[\s\S]*?<\/section>/);
-assert.equal((work(rendered).match(/<article class="story-reveal project(?: project-reverse)?">/g) || []).length, 4);
-assert.deepEqual([...work(rendered).matchAll(/class="project-visual [^"]*" href="projects\/([^/]+)\//g)].map(match => match[1]), ['aura', 'catering', 'rivet-beam', 'tedeats']);
+assert.equal((work(rendered).match(/<article class="story-reveal project(?: project-reverse)?">/g) || []).length, 5);
+assert.deepEqual([...work(rendered).matchAll(/class="project-visual [^"]*" href="projects\/([^/]+)\//g)].map(match => match[1]), ['aura', 'form-finish', 'catering', 'rivet-beam', 'tedeats']);
 assert.equal((extras(rendered).match(/<a class="story-reveal"/g) || []).length, 2);
 assert.ok(rendered.includes('Olive &amp; Ember'));
 assert.ok(rendered.includes('Rivet &amp; Beam'));
@@ -38,8 +38,8 @@ const curated = structuredClone(projects);
 curated[0].featured = true;
 curated.find(project => project.concept === 'rivet-beam').visible = false;
 const curatedHtml = applyContent(source, {homepage, projects: curated});
-assert.equal((work(curatedHtml).match(/<article class="story-reveal project(?: project-reverse)?">/g)||[]).length,3);
-assert.ok(work(curatedHtml).includes('Three independent concepts.'));
+assert.equal((work(curatedHtml).match(/<article class="story-reveal project(?: project-reverse)?">/g)||[]).length,4);
+assert.ok(work(curatedHtml).includes('Four independent concepts.'));
 assert.ok(!work(curatedHtml).includes('Rivet &amp; Beam'));
 assert.ok(rendered.includes('projects/little-joy/index.html'));
 assert.ok(extras(rendered).includes('Little Joy Play Co.'));
@@ -64,7 +64,7 @@ assert.ok(work(customHtml).includes('A custom published purpose for this concept
 assert.ok(extras(customHtml).includes('MIDNIGHT &amp; Co.'));
 assert.ok(extras(customHtml).includes('fixture-1280x900.png?w=1280&amp;h=900&amp;fit=crop&amp;auto=format'));
 assert.ok(work(rendered).includes('Help someone picture their occasion'));
-assert.ok(work(rendered).includes('04 / EVENT PLANNING'));
+assert.ok(work(rendered).includes('05 / EVENT PLANNING'));
 const noExtras = projects.map(project => ['afterhours','little-joy'].includes(project.concept) ? {...project, visible:false} : project);
 assert.ok(!applyContent(source, {homepage, projects:noExtras}).includes('class="wrap more-work"'));
 const badImage = structuredClone(projects);
@@ -106,7 +106,7 @@ for (const data of [projects, projects.filter(project => project.concept !== 'au
   assert.ok(output.indexOf(auraUrl) < output.indexOf('projects/catering/index.html'));
   assert.equal((output.match(/<h3>AURA\+<\/h3>/g)||[]).length,1);
   assert.ok(output.includes('FEATURED PROJECT'));
-  assert.ok(output.includes('Four independent concepts.'));
+  assert.ok(output.includes('Five independent concepts.'));
   assert.ok(!output.includes('target="_blank"'));
   assert.ok(!output.includes('chatgpt.site'));
 }
@@ -119,3 +119,10 @@ assert.ok(!/(?:src|href|imagesrcset)=["']\/(?!\/)/.test(auraEntry));
 assert.ok(fs.existsSync('studio/projects/aura/source/src/App.jsx'));
 assert.ok(fs.existsSync('studio/projects/aura/fonts/cormorant-garamond-normal.woff2'));
 console.log('Local AURA project, editable source and relative asset checks passed.');
+
+// The new concept survives older published CMS lists while explicit visibility remains respected.
+const previousProjects=projects.filter(p=>p.concept!=='form-finish');
+assert.ok(work(applyContent(source,{projects:previousProjects})).includes('projects/form-finish/index.html'));
+const hiddenFinish=projects.map(p=>p.concept==='form-finish'?{...p,visible:false}:p);
+assert.ok(!work(applyContent(source,{projects:hiddenFinish})).includes('projects/form-finish/index.html'));
+console.log('FORM & FINISH CMS fallback and explicit visibility checks passed.');

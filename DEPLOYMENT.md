@@ -39,3 +39,5 @@ output remains `_site-video` when `TEDITS_BUILD_DIR` is unset.
 The video homepage, Studio homepage and three original concepts use `section-navigation.js` for in-page links. Short focal blocks are centred; tall content starts near the top of the viewport. Normal fragment URLs, keyboard focus, initial deep links and reduced-motion preferences remain supported. `navigation-check.cjs` checks the visible fragment links on mobile and desktop and measures key focal blocks.
 
 To roll back, re-run a successful previous video deployment workflow, or revert the relevant deployment/source commit and push. Do not change Pages back to publishing the repository root: it contains other projects and local review artifacts.
+
+FORM & FINISH is hosted at `studio/projects/form-finish/index.html` as a complete static multipage concept. Its preview and case-study copy are included in the selected work section. Older published CMS lists receive the checked-in project fallback; an explicit CMS visibility setting is respected. Smooth scrolling reuses the portfolio’s pinned Lenis implementation.

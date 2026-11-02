@@ -52,10 +52,11 @@ function collectAura(folder) {
     const relative=folder+'/'+entry.name;
     if(relative==='studio/projects/aura/source')continue;
     if(entry.isDirectory())collectAura(relative);
-    else if(/\.(html|css|js|svg|png|jpe?g|webp|woff2?|ttf|otf|ico)$/i.test(entry.name))files.push(relative);
+    else if(/\.(html|css|js|svg|png|jpe?g|webp|woff2?|ttf|otf|ico)$|(?:OFL|LICENSE)\.txt$/i.test(entry.name))files.push(relative);
   }
 }
 collectAura('studio/projects/aura');
+collectAura('studio/projects/form-finish');
 for (const file of files) {
   const destination = path.join(out,file);
   fs.mkdirSync(path.dirname(destination), {recursive:true});

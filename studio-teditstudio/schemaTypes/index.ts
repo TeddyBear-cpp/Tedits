@@ -31,6 +31,7 @@ const project = defineType({
       description: 'Choose an existing built concept. Each concept should have one published project entry.',
       options: {list: [
         {title: 'AURA+', value: 'aura'},
+        {title: 'FORM & FINISH', value: 'form-finish'},
         {title: 'Olive & Ember', value: 'catering'},
         {title: 'Rivet & Beam', value: 'rivet-beam'},
         {title: 'AFTERHOURS', value: 'afterhours'},
