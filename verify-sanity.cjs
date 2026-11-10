@@ -65,6 +65,18 @@ assert.ok(extras(customHtml).includes('MIDNIGHT &amp; Co.'));
 assert.ok(extras(customHtml).includes('fixture-1280x900.png?w=1280&amp;h=900&amp;fit=crop&amp;auto=format'));
 assert.ok(work(rendered).includes('Help someone picture their occasion'));
 assert.ok(work(rendered).includes('05 / EVENT PLANNING'));
+const reordered = structuredClone(projects);
+reordered.find(project => project.concept === 'form-finish').order = 1;
+reordered.find(project => project.concept === 'form-finish').featured = true;
+reordered.find(project => project.concept === 'aura').order = 9;
+reordered.find(project => project.concept === 'aura').featured = false;
+reordered.find(project => project.concept === 'little-joy').order = 1;
+const reorderedHtml = applyContent(source, {homepage, projects: reordered});
+assert.deepEqual([...work(reorderedHtml).matchAll(/class="project-visual [^"]*" href="projects\/([^/]+)\//g)].map(match => match[1]),
+  ['form-finish', 'catering', 'rivet-beam', 'tedeats', 'aura']);
+assert.match(work(reorderedHtml), /<p class="project-number">01 \/ [^<]*<\/p><h3>FORM &amp; FINISH<\/h3><span class="concept-tag">FEATURED PROJECT<\/span>/);
+assert.match(work(reorderedHtml), /<p class="project-number">05 \/ [^<]*<\/p><h3>AURA\+<\/h3><span class="concept-tag">INDEPENDENT CONCEPT<\/span>/);
+assert.ok(extras(reorderedHtml).indexOf('projects/little-joy/index.html') < extras(reorderedHtml).indexOf('projects/afterhours/index.html'));
 const noExtras = projects.map(project => ['afterhours','little-joy'].includes(project.concept) ? {...project, visible:false} : project);
 assert.ok(!applyContent(source, {homepage, projects:noExtras}).includes('class="wrap more-work"'));
 const badImage = structuredClone(projects);
@@ -127,7 +139,7 @@ assert.throws(() => applyHomepageOffer(rendered, {...offer, startingPrice:-1}), 
 assert.throws(() => applyHomepageOffer(rendered, {...offer, businessExamples:['a bakery','a|b']}), /cannot contain/);
 console.log('Sanity selected projects, compact extras, escaping, visibility, homepage offer, redirect and enquiry checks passed.');
 
-// AURA remains first with both current and older published CMS project lists.
+// The seed defaults and older published CMS lists still start with AURA.
 const auraUrl = 'projects/aura/index.html';
 for (const data of [projects, projects.filter(project => project.concept !== 'aura')]) {
   const output = work(applyContent(source, {projects:data}));
@@ -140,7 +152,7 @@ for (const data of [projects, projects.filter(project => project.concept !== 'au
 }
 const hiddenAura=projects.map(project=>project.concept==='aura'?{...project,visible:false}:project);
 assert.ok(!work(applyContent(source,{projects:hiddenAura})).includes(auraUrl));
-console.log('AURA first feature, legacy CMS fallback, external links and explicit visibility checks passed.');
+console.log('Seed order, legacy CMS fallback, external links and explicit visibility checks passed.');
 
 const auraEntry=fs.readFileSync('studio/projects/aura/index.html','utf8');
 assert.ok(!/(?:src|href|imagesrcset)=["']\/(?!\/)/.test(auraEntry));

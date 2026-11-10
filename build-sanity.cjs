@@ -52,7 +52,7 @@ function renderProject(project, index, {story = false} = {}) {
   const href = concept.href || `projects/${project.concept}/index.html`;
   const external = concept.href ? ' target="_blank" rel="noopener noreferrer"' : '';
   const action = concept.action || (concept.caseStudy ? 'Read the case study' : 'Explore the concept');
-  return `<article class="${story ? 'story-reveal ' : ''}project${index % 2 ? ' project-reverse' : ''}"><a class="project-visual ${concept.style}-visual" href="${href}"${external} aria-label="${escape(`Open ${project.title} concept`)}"><div class="browser-bar" aria-hidden="true"><span class="browser-dots">● ● ●</span><span>${escape(project.title.toUpperCase())} / CONCEPT PREVIEW</span><span>↗</span></div><img src="${escape(image)}" alt="${escape(project.image?.alt || concept.alt)}" width="1280" height="900" loading="lazy"></a><div class="project-copy"><p class="project-number">${String(index + 1).padStart(2, '0')} / ${escape(project.category.toUpperCase())}</p><h3>${escape(project.title)}</h3><span class="concept-tag">${(project.concept === 'aura' || !story) && project.featured === true ? 'FEATURED PROJECT' : 'INDEPENDENT CONCEPT'}</span><p>${escape(project.description)}</p><p class="project-scope">${escape(project.scope)}</p><a class="text-link" href="${href}"${external}>${action} <span aria-hidden="true">↗</span></a><details class="case-study"><summary>Behind the design <span aria-hidden="true">+</span></summary><div><h4>The idea</h4><p>${escape(project.idea)}</p><h4>How it took shape</h4><p>${escape(project.execution)}</p><p class="case-note">${escape(project.disclaimer)}</p></div></details></div></article>`;
+  return `<article class="${story ? 'story-reveal ' : ''}project${index % 2 ? ' project-reverse' : ''}"><a class="project-visual ${concept.style}-visual" href="${href}"${external} aria-label="${escape(`Open ${project.title} concept`)}"><div class="browser-bar" aria-hidden="true"><span class="browser-dots">● ● ●</span><span>${escape(project.title.toUpperCase())} / CONCEPT PREVIEW</span><span>↗</span></div><img src="${escape(image)}" alt="${escape(project.image?.alt || concept.alt)}" width="1280" height="900" loading="lazy"></a><div class="project-copy"><p class="project-number">${String(index + 1).padStart(2, '0')} / ${escape(project.category.toUpperCase())}</p><h3>${escape(project.title)}</h3><span class="concept-tag">${project.featured === true ? 'FEATURED PROJECT' : 'INDEPENDENT CONCEPT'}</span><p>${escape(project.description)}</p><p class="project-scope">${escape(project.scope)}</p><a class="text-link" href="${href}"${external}>${action} <span aria-hidden="true">↗</span></a><details class="case-study"><summary>Behind the design <span aria-hidden="true">+</span></summary><div><h4>The idea</h4><p>${escape(project.idea)}</p><h4>How it took shape</h4><p>${escape(project.execution)}</p><p class="case-note">${escape(project.disclaimer)}</p></div></details></div></article>`;
 }
 function migrateProject(project, story) {
   const stale = project.concept === 'tedeats' && /AI-generated imagery|seal tracing|printed seal/i
@@ -78,8 +78,14 @@ function applySelectedProjects(html, projects) {
     if (!entries.some(project => project.concept === concept)) entries.push(projectSeeds[concept]);
   }
   const visible = new Map(entries.filter(project => project.visible !== false).map(project => [project.concept, migrateProject(project, true)]));
-  const selected = ['aura', 'form-finish', 'catering', 'rivet-beam', 'tedeats'].map(concept => visible.get(concept)).filter(Boolean);
-  const compact = ['afterhours', 'little-joy'].map(concept => visible.get(concept)).filter(Boolean);
+  const orderedGroup = concepts => concepts.map(concept => visible.get(concept)).filter(Boolean)
+    .sort((a, b) => {
+      const rank = project => Number.isInteger(project.order) && project.order > 0
+        ? project.order : concepts.indexOf(project.concept) + 1;
+      return rank(a) - rank(b) || concepts.indexOf(a.concept) - concepts.indexOf(b.concept);
+    });
+  const selected = orderedGroup(['aura', 'form-finish', 'catering', 'rivet-beam', 'tedeats']);
+  const compact = orderedGroup(['afterhours', 'little-joy']);
   const pattern = /(<section id="work"[^>]*>\s*<div class="section-heading[^>]*>[\s\S]*?<\/div>)\s*[\s\S]*?(\s*<\/section>)/;
   if (!pattern.test(html)) throw new Error('Selected work section markup changed; update the CMS renderer.');
   html = html.replace(pattern, (_match, heading, end) => {
