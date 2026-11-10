@@ -12,7 +12,7 @@ export default defineConfig({
       S.listItem().title('Homepage').child(
         S.document().schemaType('homepage').documentId('homepage')
       ),
-      S.listItem().title('Why Teditstudio').child(
+      S.listItem().title('Why a website & offer').child(
         S.document().schemaType('whyPage').documentId('whyPage')
       ),
       S.listItem().title('Enquiry page').child(

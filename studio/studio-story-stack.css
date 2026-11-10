@@ -5,7 +5,6 @@
 .story-home .scroll-story .story-copy h3{font-size:clamp(38px,4.3vw,62px);line-height:1.08;max-width:13ch;letter-spacing:-.05em;margin-bottom:28px}
 .scroll-story .story-copy>p{max-width:34ch;font-size:18px;line-height:1.6}
 .story-media-slot{width:var(--story-card-size);max-width:100%;justify-self:end;aspect-ratio:1;position:relative}
-.story-media-slot[data-media-entry=ready]{opacity:0}
 /* taste-skill-ignore: data-ui video frames overlap as approved; the edge and shadow separate the physical stack. */
 .story-video-card{margin:0;position:relative;width:100%;aspect-ratio:1;background:var(--charcoal);color:var(--ivory);border:1px solid color-mix(in srgb,var(--gray) 38%,transparent);border-radius:clamp(24px,3vw,38px);overflow:hidden;transform-origin:55% 55%;box-shadow:0 12px 30px rgb(0 0 0 / .09)}
 .story-video-card video{display:block;width:100%;height:100%;aspect-ratio:1;object-fit:contain;pointer-events:none}
@@ -58,10 +57,6 @@
  .story-home .scroll-story .story-copy h3{font-size:clamp(30px,8.3vw,39px);max-width:16ch;margin-bottom:16px}
  .scroll-story .story-copy>p{font-size:16px;line-height:1.55;max-width:36ch}
  .story-media-slot{justify-self:center}
- .scroll-story[data-pinned=true]{height:var(--story-scroll-height,320svh)}
- .scroll-story[data-pinned=true] .story-stage{top:72px;height:calc(100svh - 130px);padding-block:12px;gap:16px}
- .scroll-story[data-pinned=true] .story-chapter{grid-template-rows:var(--story-copy-height) auto;gap:16px}
- .scroll-story[data-pinned=true] .story-copy{align-self:start;gap:20px}
  .scroll-story .story-tabs button{font-size:13px;padding:9px 13px}
  .scroll-story .story-stage{padding-bottom:24px}
  .scroll-story:not([data-pinned=true]){--story-card-size:min(calc(100vw - 48px),430px)}
@@ -71,21 +66,10 @@
 @media(max-width:420px){
  .story-media-label{display:none}
  .story-media-toggle{width:44px;padding:10px}
- .scroll-story .story-tabs button{font-size:12px;padding-inline:12px}
+  .scroll-story .story-tabs button{font-size:12px;padding-inline:12px}
 }
-@media(max-width:360px){
- .scroll-story[data-pinned=true]{--story-card-size:min(calc(100vw - 64px),calc(100svh - var(--story-copy-height,240px) - 270px))}
-}
-/* Browser zoom and landscape screens need a shorter composition, not a
-   different interaction. Keep text beside the stack when height is limited. */
-@media(max-width:599px) and (min-height:500px) and (max-height:699px){
- .scroll-story[data-pinned=true]{--story-card-size:min(calc(100vw - 64px),calc(100svh - var(--story-copy-height,220px) - 220px))}
- .scroll-story[data-pinned=true] .story-stage{height:calc(100svh - 88px);gap:12px}
- .story-home .scroll-story[data-pinned=true] .story-copy h3{font-size:28px;line-height:1.08}
- .scroll-story[data-pinned=true] .story-copy>p{font-size:14px;line-height:1.4}
- .scroll-story[data-pinned=true] .story-copy{gap:14px}
-}
-@media(max-height:499px),(min-width:600px) and (max-height:699px){
+/* Keep the desktop stack compact in short or zoomed viewports. */
+@media(min-width:901px) and (max-height:699px){
  .scroll-story[data-pinned=true]{--story-card-size:min(34vw,calc(100svh - 190px),360px)}
  .scroll-story[data-pinned=true] .story-stage{top:64px;height:calc(100svh - 76px);padding-block:8px;gap:12px}
  .scroll-story[data-pinned=true] .story-chapter{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-rows:auto;gap:16px;align-items:center}

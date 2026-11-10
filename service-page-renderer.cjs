@@ -37,6 +37,50 @@ function replaceFact(html, name, value) {
   pattern.lastIndex = 0
   return html.replace(pattern, (_match, start, _tag, end) => `${start}${escape(value)}${end}`)
 }
+function replaceOptionalFact(html, name, value, {lines = false} = {}) {
+  if (value === undefined || value === null || value === '') return html
+  const clean = requiredRawText(value, name)
+  const pattern = new RegExp(`(<([a-z][a-z0-9]*)\\b[^>]*\\sdata-cms-${name}(?=[\\s=>])[^>]*>)[\\s\\S]*?(<\\/\\2>)`)
+  const content = lines ? clean.split(/\r?\n/).map(escape).join('<br>') : escape(clean)
+  return replaceChecked(html, pattern, (_match, start, _tag, end) => `${start}${content}${end}`, name)
+}
+function mediaUrl(value, kind) {
+  if (!value) return null
+  const url = new URL(value)
+  if (url.origin !== 'https://cdn.sanity.io' ||
+      !url.pathname.startsWith(`/${kind}/yjcpyptx/production/`) ||
+      (kind === 'files' && !url.pathname.toLowerCase().endsWith('.mp4'))) {
+    throw new Error(`Unexpected Sanity ${kind} URL`)
+  }
+  return escape(url.href)
+}
+function replaceBenefitChapters(html, chapters) {
+  if (chapters == null) return html
+  if (!Array.isArray(chapters) || chapters.length !== 3) throw new Error('Sanity benefits need exactly three chapters')
+  const defaultMedia = {
+    search: 'get-found', answers: 'answers', trust: 'build-trust',
+  }
+  const positionalMedia = ['get-found', 'answers', 'build-trust']
+  chapters.forEach((chapter, index) => {
+    const heading = requiredText(chapter.heading, `benefitChapters[${index}].heading`)
+    const body = requiredText(chapter.body, `benefitChapters[${index}].body`)
+    const tabLabel = requiredText(chapter.tabLabel, `benefitChapters[${index}].tabLabel`)
+    const pattern = new RegExp(`(<article class="story-chapter" data-cms-chapter="${index}">)([\\s\\S]*?)(<\\/article>)`)
+    html = replaceChecked(html, pattern, (_match, start, inner, end) => {
+      inner = inner.replace(/<h3>[\s\S]*?<\/h3>/, `<h3>${heading}</h3>`)
+        .replace(/(<div class="story-copy">[\s\S]*?<\/h3><p>)[\s\S]*?(<\/p>)/, (_text, open, close) => `${open}${body}${close}`)
+      const media = Object.hasOwn(defaultMedia, chapter._key) ? defaultMedia[chapter._key] : positionalMedia[index]
+      const video = mediaUrl(chapter.videoUrl, 'files') || `assets/website-story/${media}.mp4`
+      const poster = mediaUrl(chapter.posterUrl, 'images') || `assets/website-story/${media}.png`
+      inner = inner.replace(/(<video\b[^>]*\bsrc=")[^"]*(")/, (_text, open, close) => `${open}${video}${close}`)
+        .replace(/(<video\b[^>]*\bposter=")[^"]*(")/, (_text, open, close) => `${open}${poster}${close}`)
+      return `${start}${inner}${end}`
+    }, `benefit chapter ${index + 1}`)
+    html = replaceChecked(html, new RegExp(`(<button type="button" data-story-step="${index}"[^>]*>)[\\s\\S]*?(<\\/button>)`),
+      (_match, start, end) => `${start}${tabLabel}${end}`, `benefit tab ${index + 1}`)
+  })
+  return html
+}
 function validateOffer(document) {
   if (!Number.isFinite(document.startingPrice) || document.startingPrice < 0) throw new Error('Sanity service page: invalid startingPrice')
   if (!Number.isInteger(document.includedRevisions) || document.includedRevisions < 0) throw new Error('Sanity service page: invalid includedRevisions')
@@ -59,6 +103,10 @@ function applyHomepageOffer(html, document) {
   if (!document) return html
   validateOffer(document)
   html = replaceBusinessExamples(html, document)
+  html = replaceOptionalFact(html, 'intro-question', document.introQuestion, {lines: true})
+  html = replaceBenefitChapters(html, document.benefitChapters)
+  html = replaceOptionalFact(html, 'answer-heading', document.answerHeading)
+  html = replaceOptionalFact(html, 'answer-body', document.answerBody)
   html = replaceFact(html, 'price', offerPrice(document))
   html = replaceFact(html, 'offer-limit', document.offerClientLimit ?? 5)
   html = replaceFact(html, 'revisions', document.includedRevisions)

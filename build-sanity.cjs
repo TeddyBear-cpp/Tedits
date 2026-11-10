@@ -6,7 +6,7 @@ const projectId = 'yjcpyptx';
 const dataset = 'production';
 const {applyCatalogues} = require('./catalogue-renderer.cjs');
 const {applyServicePages} = require('./service-page-renderer.cjs');
-const query = '{"homepage": *[_type == "homepage" && _id == "homepage"][0], "whyPage": *[_type == "whyPage" && _id == "whyPage"][0], "enquiryPage": *[_type == "enquiryPage" && _id == "enquiryPage"][0], "projects": *[_type == "project"] | order(order asc, _id asc){..., "imageUrl": image.asset->url}, "catalogues": *[_id in ["menuCatalogue", "materialCatalogue", "trackCatalogue"]]{..., "mealDays": mealDays[]{..., "imageUrl": image.asset->url}, items[]{..., "imageUrl": image.asset->url, "audioUrl": audio.asset->url, dishes[]{...}}}}';
+const query = '{"homepage": *[_type == "homepage" && _id == "homepage"][0], "whyPage": *[_type == "whyPage" && _id == "whyPage"][0]{..., "benefitChapters": benefitChapters[]{..., "videoUrl": video.asset->url, "posterUrl": poster.asset->url}}, "enquiryPage": *[_type == "enquiryPage" && _id == "enquiryPage"][0], "projects": *[_type == "project"] | order(order asc, _id asc){..., "imageUrl": image.asset->url}, "catalogues": *[_id in ["menuCatalogue", "materialCatalogue", "trackCatalogue"]]{..., "mealDays": mealDays[]{..., "imageUrl": image.asset->url}, items[]{..., "imageUrl": image.asset->url, "audioUrl": audio.asset->url, dishes[]{...}}}}';
 const concepts = {
   'form-finish': {style: 'form-finish', image: 'form-finish', alt: 'FORM & FINISH painting studio concept with oxblood paint, ivory typography and a full-image architectural hero', action: 'View the project'},
   aura: {style: 'aura', image: 'aura', alt: 'AURA+ luxury streetwear website, with a monochrome campaign hero and custom wordmark', action: 'View the project'},

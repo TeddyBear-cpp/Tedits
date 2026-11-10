@@ -81,6 +81,34 @@ assert.ok(homeOffer.includes('data-cms-timeline>5–7 days</span>'));
 assert.ok(homeOffer.includes('data-cms-offer-limit>5</span>'));
 assert.ok(homeOffer.includes('Once-off payment'));
 assert.ok(homeOffer.includes('Domain and hosting charges are excluded.'));
+const editableStory = applyHomepageOffer(rendered, {...offer,
+  introQuestion: 'They find your work.\nWhat happens next?',
+  benefitChapters: [
+    {tabLabel:'Find', heading:'Find the right people.', body:'A clear search result helps.', videoUrl:'https://cdn.sanity.io/files/yjcpyptx/production/clip.mp4', posterUrl:'https://cdn.sanity.io/images/yjcpyptx/production/frame.png'},
+    {tabLabel:'Explain', heading:'Explain it well.', body:'Useful details in one place.'},
+    {tabLabel:'Trust', heading:'Build confidence.', body:'Show work and real feedback.'},
+  ],
+  answerHeading:'Your place online.', answerBody:'Give visitors somewhere clear to go.',
+});
+assert.ok(editableStory.includes('data-cms-intro-question>They find your work.<br>What happens next?</p>'));
+assert.ok(editableStory.includes('<h3>Find the right people.</h3><p>A clear search result helps.</p>'));
+assert.ok(editableStory.includes('data-story-step="0" aria-current="step">Find</button>'));
+assert.ok(editableStory.includes('src="https://cdn.sanity.io/files/yjcpyptx/production/clip.mp4"'));
+assert.ok(editableStory.includes('poster="https://cdn.sanity.io/images/yjcpyptx/production/frame.png"'));
+assert.ok(editableStory.includes('data-cms-answer-heading>Your place online.</h2>'));
+assert.ok(editableStory.includes('data-cms-answer-body>Give visitors somewhere clear to go.</p>'));
+const reorderedStory = applyHomepageOffer(rendered, {...offer, benefitChapters:[
+  {_key:'trust', tabLabel:'Trust', heading:'Trust first.', body:'Proof matters.'},
+  {_key:'search', tabLabel:'Search', heading:'Search next.', body:'Be found.'},
+  {_key:'answers', tabLabel:'Answers', heading:'Answers last.', body:'Explain it.'},
+]});
+assert.match(reorderedStory, /data-cms-chapter="0"[\s\S]*?src="assets\/website-story\/build-trust\.mp4"/);
+assert.match(reorderedStory, /data-cms-chapter="1"[\s\S]*?src="assets\/website-story\/get-found\.mp4"/);
+assert.throws(() => applyHomepageOffer(rendered, {...offer, benefitChapters:[{heading:'Only one'}]}), /exactly three/);
+assert.throws(() => applyHomepageOffer(rendered, {...offer, benefitChapters:[
+  {tabLabel:'A',heading:'A',body:'A',videoUrl:'https://example.com/clip.mp4'},
+  {tabLabel:'B',heading:'B',body:'B'}, {tabLabel:'C',heading:'C',body:'C'},
+]}), /Unexpected Sanity files URL/);
 const legacyOffer = {...offer}; delete legacyOffer.currency; delete legacyOffer.offerClientLimit;
 assert.ok(applyHomepageOffer(rendered, legacyOffer).includes('data-cms-price>€375</p>'));
 assert.ok(applyHomepageOffer(rendered, {...offer, offerClientLimit:7}).includes('data-cms-offer-limit>7</span>'));

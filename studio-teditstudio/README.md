@@ -19,7 +19,7 @@ in the project's API settings (credentials enabled). Do not allow wildcard origi
 
 ## Populate existing content
 
-`seed.ndjson` contains only the existing public homepage copy and four concept entries.
+`seed.ndjson` contains the public homepage copy and seven concept entries.
 To import it, authenticate the local CLI and run:
 
 ```sh
@@ -34,16 +34,17 @@ only content intended for public reading; keep credentials and private notes out
 ## Editing
 
 - **Homepage:** hero headline, introduction, and search metadata. A single fixed document.
-- **Why Teditstudio:** rotating business examples, hero introduction, problem and benefit lists, process steps, starting price, revision count, timeline and search metadata. A single fixed document.
+- **Why a website & offer:** rotating business examples, the three editable benefit headlines and descriptions, optional replacement MP4s and posters, closing copy, starting price, revision count, and timeline. A single fixed document. The former standalone Why Teditstudio page redirects to the homepage, so its old fields are hidden from the editor without deleting stored data.
 - **Enquiry page:** introduction and search metadata. The quote form fields and Formspree destination live in `../studio/enquire.html` so the published CMS cannot change where enquiries are sent.
 - **Portfolio projects:** order, visibility, featured label, business category, title, summary, services, optional preview image with required alternative text, case study, and disclosure.
 - **Olive & Ember menus:** reorderable menu tabs, headings, photos and nested dishes with dietary labels. Optional Monday–Saturday photo set controls the weekly meal-prep stack; if omitted, the page keeps its local photos.
 - **Rivet & Beam materials and promos:** reorderable cards, descriptions/specifications, photos, availability, optional promo labels and start/end dates, and enquiry categories. Promo date windows are evaluated when the site is built; a later content publish triggers another build.
 - **AFTERHOURS tracks:** reorderable tracks, artist, genre, labels, release status/date, featured label, credit notes, optional Spotify links and MP3 uploads. Existing local audio can be reused without uploading.
 - Catalogue documents use fixed IDs. Removing an item from the array removes it from the next published build; each catalogue needs at least one item.
-- Each project selects one of the four existing concepts. Creating a new
+- Each project selects one of the seven existing concepts. Creating a new
   type of concept requires building its page and updating the allowed options and renderer.
 - Keep one published entry per concept. Duplicate selections fail the website build.
+- Run `pnpm exec sanity exec sync-current-content.mjs --with-user-token` to add missing AURA+ and FORM & FINISH project entries and populate the current Why a website fields. It preserves existing project edits and old documents. Hiding an older project is controlled by its **Show on portfolio** switch.
 - Changes are drafts until **Publish**. The website build requests only published content.
 - With an empty dataset the checked-in homepage and cards remain available.
 - There is no live draft preview yet. Check the local packaged site after a build.

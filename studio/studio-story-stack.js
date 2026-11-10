@@ -14,7 +14,6 @@
   const mobile=matchMedia('(max-width: 900px)');
   const visibleVideos=new Map();
   const cardStyles=cards.map(()=>({}));
-  const enteredCards=new WeakSet(),mediaEntrances=new Set();
   const clamp=n=>Math.max(0,Math.min(1,n));
   const ease=n=>{const t=clamp(n);return t*t*(3-2*t);};
   const stackEnd=2.15,lastCardStart=1.88;
@@ -69,33 +68,9 @@
     reduceOverride=!userPaused;
     syncMedia();
   });
-  function prepareMediaEntries(){
-    videos.forEach(video=>{
-      const slot=video.closest('.story-media-slot');
-      if(!mobile.matches||reduced.matches||enteredCards.has(slot)||(pinned&&video!==videos[0])){delete slot.dataset.mediaEntry;return;}
-      if(slot.getBoundingClientRect().top>=innerHeight)slot.dataset.mediaEntry='ready';
-      else delete slot.dataset.mediaEntry;
-    });
-  }
-  function enterMobileCard(video){
-    const slot=video.closest('.story-media-slot');
-    if(!mobile.matches||reduced.matches||enteredCards.has(slot))return;
-    // Later pinned cards already slide in through the scroll choreography.
-    if(pinned&&video!==videos[0])return;
-    enteredCards.add(slot);
-    const prepared=slot.dataset.mediaEntry==='ready';
-    delete slot.dataset.mediaEntry;
-    if(!prepared)return;
-    const animation=slot.animate([
-      {opacity:0,transform:'translate3d(32px,18px,0) rotate(1.5deg)'},
-      {opacity:1,transform:'translate3d(0,0,0) rotate(0deg)'}
-    ],{duration:620,easing:'cubic-bezier(.22,1,.36,1)'});
-    mediaEntrances.add(animation);
-    animation.finished.finally(()=>mediaEntrances.delete(animation)).catch(()=>{});
-  }
   const videoObserver=new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
-      if(entry.isIntersecting&&entry.intersectionRatio>=.12){visibleVideos.set(entry.target,entry.intersectionRatio);enterMobileCard(entry.target);}
+      if(entry.isIntersecting&&entry.intersectionRatio>=.12)visibleVideos.set(entry.target,entry.intersectionRatio);
       else visibleVideos.delete(entry.target);
     });
     syncMedia();
@@ -165,7 +140,7 @@
     scene.style.removeProperty('--story-scroll-height');
     // Zoom changes CSS viewport height. Adapt the layout rather than disabling
     // the interaction at an arbitrary height threshold.
-    pinned=!reduced.matches&&CSS.supports('position','sticky');
+    pinned=!mobile.matches&&!reduced.matches&&CSS.supports('position','sticky');
     scene.dataset.pinned=String(pinned);
     // Match intrinsic text heights across all chapters. Centring differently
     // sized copy blocks was moving headings when the description changed.
@@ -187,7 +162,7 @@
         ['transform','opacity','visibility'].forEach(property=>cards[i].style.removeProperty(property));
         cardStyles[i]={};
       });
-      prepareMediaEntries();syncMedia();return;
+      syncMedia();return;
     }
     const top=parseFloat(getComputedStyle(stage).top)||0;
     start=scene.getBoundingClientRect().top+scrollY-top;
@@ -199,7 +174,7 @@
     cardWidth=slot.offsetWidth;
     const slotRight=stage.getBoundingClientRect().left+slot.offsetLeft+cardWidth;
     edgeShift=Math.max(18,innerWidth-slotRight-8);
-    paint();prepareMediaEntries();syncMedia();
+    paint();syncMedia();
   }
   tabs.forEach((tab,i)=>tab.addEventListener('click',event=>{
     if(!pinned)return;
@@ -215,7 +190,6 @@
   document.addEventListener('visibilitychange',syncMedia);
   reduced.addEventListener('change',()=>{
     reduceOverride=false;
-    if(reduced.matches)mediaEntrances.forEach(animation=>animation.cancel());
     measure();
   });
   mobile.addEventListener('change',measure);
