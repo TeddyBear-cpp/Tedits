@@ -52,14 +52,14 @@ dialog{border:0;background:var(--bg);color:var(--ink);max-width:none;width:100%;
 /* Contact popup and navigation dialog */
 .floating-contact,#contact-popup{
  position:fixed;
- left:max(18px,env(safe-area-inset-left));
+ right:max(18px,env(safe-area-inset-right));
 }
 .floating-contact{bottom:max(18px,env(safe-area-inset-bottom));z-index:5;gap:12px}
 #contact-popup{
- inset:auto auto calc(max(18px,env(safe-area-inset-bottom)) + 64px) max(18px,env(safe-area-inset-left));
+ inset:auto max(18px,env(safe-area-inset-right)) calc(max(18px,env(safe-area-inset-bottom)) + 64px) auto;
  margin:0;width:min(272px,calc(100vw - 36px));padding:6px;border:1px solid var(--surface);
  background:var(--paper);color:var(--ink);box-shadow:0 12px 32px #23131a22;
- transform-origin:bottom left;
+ transform-origin:bottom right;
 }
 #contact-popup a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:10px 12px}
 #contact-popup a:first-child{display:grid;justify-content:start;gap:0}
