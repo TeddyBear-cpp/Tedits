@@ -27,7 +27,6 @@ const home=()=>`<section class="hero" aria-labelledby="hero-title"><figure class
 <section class="work-section section" aria-labelledby="work-title" aria-roledescription="carousel">
 <div class="wrap section-head"><h2 id="work-title" data-words>Spaces with<br>a new perspective.</h2><a class="text-link" href="/work">All projects ${arrow}</a></div>
 <div class="gallery-controls wrap"><div hidden data-carousel-controls>
-<button class="gallery-play" type="button" data-carousel-play aria-controls="project-gallery">Play</button>
 <button type="button" data-carousel-prev aria-label="Previous project" aria-controls="project-gallery">←</button>
 <button type="button" data-carousel-next aria-label="Next project" aria-controls="project-gallery">→</button>
 </div></div>

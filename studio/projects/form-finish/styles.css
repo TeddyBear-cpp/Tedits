@@ -38,7 +38,6 @@ dialog{border:0;background:var(--bg);color:var(--ink);max-width:none;width:100%;
 
 /* Homepage project carousel */
 .gallery-controls [hidden]{display:none}
-.gallery-controls .gallery-play{padding-inline:14px;font-size:14px}
 .project-gallery{margin-inline:var(--gutter);overflow-x:auto;scroll-snap-type:x mandatory}
 .project-gallery.is-enhanced{overflow:hidden;scroll-snap-type:none;touch-action:pan-y pinch-zoom;cursor:grab}
 .project-gallery.is-enhanced:active{cursor:grabbing}
