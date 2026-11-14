@@ -24,7 +24,19 @@ const reviewSection=()=>`<section class="reviews-section section" aria-labelledb
 const processSection=()=>`<section class="section wrap process" aria-labelledby="process-title"><div class="section-head"><h2 id="process-title">Care, at every stage.</h2><p>A considered process, from the first conversation to the final walkthrough.</p></div><ol>${process.map(([title,text])=>`<li><h3>${title}</h3><p>${text}</p></li>`).join('')}</ol></section>`;
 const enquiryCTA=()=>`<section class="enquiry-cta wrap section"><h2 data-words>Make room<br>for something new.</h2><div><p>Your space. A fresh perspective.</p>${button('Let’s begin')}</div></section>`;
 const home=()=>`<section class="hero" aria-labelledby="hero-title"><figure class="hero-photo">${image('hero','hero-image',true,'100vw')}</figure><div class="hero-paint" aria-hidden="true"></div><div class="hero-copy"><h1 id="hero-title">The art of<br>transformation.</h1><p>Considered colour. Beautifully finished.</p><div class="hero-actions">${button('Explore our work','/work')}<a class="text-link" href="/contact">Start your project ${arrow}</a></div></div><p class="hero-location">Residential painting & decorative finishes · Melbourne</p><a class="hero-scroll" href="#work-title" aria-label="Explore selected transformations">Scroll to discover <span aria-hidden="true">↓</span></a></section>
-<section class="work-section section" aria-labelledby="work-title"><div class="wrap section-head"><h2 id="work-title" data-words>Spaces with<br>a new perspective.</h2><a class="text-link" href="/work">All projects ${arrow}</a></div><div class="gallery-controls wrap"><div><button data-gallery="prev" aria-label="Previous project">←</button><button data-gallery="next" aria-label="Next project">→</button></div></div><p class="sr-only" id="gallery-help">Focus to pause. Drag or scroll sideways to browse. Press Space to stop or resume. Use Left and Right arrow keys to browse.</p><span id="gallery-status" class="sr-only" role="status"></span><div class="project-rail" tabindex="0" role="region" aria-label="Selected projects" aria-describedby="gallery-help">${projects.map((p,i)=>projectCard(p,i%2===1)).join('')}</div></section>
+<section class="work-section section" aria-labelledby="work-title" aria-roledescription="carousel">
+<div class="wrap section-head"><h2 id="work-title" data-words>Spaces with<br>a new perspective.</h2><a class="text-link" href="/work">All projects ${arrow}</a></div>
+<div class="gallery-controls wrap"><div hidden data-carousel-controls>
+<button class="gallery-play" type="button" data-carousel-play aria-controls="project-gallery">Play</button>
+<button type="button" data-carousel-prev aria-label="Previous project" aria-controls="project-gallery">←</button>
+<button type="button" data-carousel-next aria-label="Next project" aria-controls="project-gallery">→</button>
+</div></div>
+<p id="gallery-help" class="sr-only">Swipe or use the left and right arrow keys to browse projects.</p>
+<p class="sr-only" role="status" data-carousel-status></p>
+<div id="project-gallery" class="project-gallery" tabindex="0" role="group" aria-label="Selected projects" aria-describedby="gallery-help">
+<div class="project-gallery-track">${projects.map((p,i)=>`<div class="project-gallery-slide" role="group" aria-roledescription="slide" aria-label="${i+1} of ${projects.length}">${projectCard(p)}</div>`).join('')}</div>
+</div>
+</section>
 ${comparison()}<section class="services-home section wrap" aria-labelledby="services-title"><div class="section-head"><h2 id="services-title" data-words>Every surface.<br>New possibilities.</h2><a class="text-link" href="/services">Our services ${arrow}</a></div><div class="service-explorer"><div class="service-options" role="group" aria-label="Choose a service">${services.map((service,i)=>`<button data-service="${i}" aria-pressed="${i===0}" aria-controls="service-image service-caption">${service.title}<span class="choice-tick" aria-hidden="true">${tick}</span></button>`).join('')}</div><figure class="service-preview">${image('hero')}<figcaption id="service-caption" aria-live="polite">${services[0].short}</figcaption></figure></div></section>
 ${finishSelector()}${reviewSection()}${enquiryCTA()}`;
 const workPage=()=>`${heading('Spaces, transformed.','An exploration of colour, light and the potential of a considered finish. Spaces with a character of their own.')}<section class="wrap portfolio" aria-label="Project portfolio"><div class="filter-bar" role="group" aria-label="Filter projects">${['All','Interior','Exterior','Decorative','Restoration'].map((c,i)=>`<button data-filter="${c}" aria-pressed="${i===0}">${c}</button>`).join('')}</div><p class="sr-only" id="filter-status" role="status">5 projects</p><div class="project-grid">${projects.map(p=>`<div data-category="${p.category}">${projectCard(p)}</div>`).join('')}</div></section>${enquiryCTA()}`;
@@ -60,7 +72,12 @@ $$('[data-service]').forEach(b=>b.addEventListener('click',()=>{const service=se
 $('.service-preview img')?.setAttribute('id','service-image');
 initMotion({reduce,assets});
 $$('[data-filter]').forEach(b=>b.addEventListener('click',()=>{const c=b.dataset.filter;$$('[data-filter]').forEach(el=>el.setAttribute('aria-pressed',el===b));let count=0;$$('[data-category]').forEach(el=>{el.hidden=c!=='All'&&el.dataset.category!==c;if(!el.hidden)count++;});$('#filter-status').textContent=`${count} ${count===1?'project':'projects'}`;}));
-mountRail($('.project-rail'),{reduce,controls:$$('[data-gallery]')});
+const gallery = $('#project-gallery');
+if (gallery) {
+ import('./project-carousel.js')
+  .then(({mountProjectCarousel}) => mountProjectCarousel(gallery, reduce))
+  .catch(error => console.error('Unable to enhance the project gallery', error));
+}
 mountRail($('.review-rail'),{reduce,allScreens:true,speed:.022,pauseButton:$('.review-pause')});
 export const enquiryAdapter={mode:'demo',async submit(){return {demo:true};}};
 initEnquiry($('#enquiry'),{services,reduce,adapter:enquiryAdapter});
