@@ -54,7 +54,7 @@ dialog{border:0;background:var(--bg);color:var(--ink);max-width:none;width:100%;
  position:fixed;
  right:max(18px,env(safe-area-inset-right));
 }
-.floating-contact{bottom:max(18px,env(safe-area-inset-bottom));z-index:5;gap:12px}
+.floating-contact{bottom:max(18px,env(safe-area-inset-bottom));z-index:5;gap:12px;box-shadow:0 0 0 1px var(--paper),0 4px 12px rgba(35,19,26,.26)}
 #contact-popup{
  inset:auto max(18px,env(safe-area-inset-right)) calc(max(18px,env(safe-area-inset-bottom)) + 64px) auto;
  margin:0;width:min(272px,calc(100vw - 36px));padding:6px;border:1px solid var(--surface);
