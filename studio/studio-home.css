@@ -1,3 +1,10 @@
+@font-face{
+  font-family:"Fraunces Hero";
+  src:url("assets/fonts/fraunces-connects.woff2") format("woff2");
+  font-weight:900;
+  font-style:italic;
+  font-display:swap;
+}
 .cloud-preview,.cloud-preview img,.cloud-detail{
   position:absolute;
   inset:0;
@@ -8,13 +15,38 @@
 .cloud-detail{opacity:0}
 .cloud-art.has-detail .cloud-detail{opacity:1}
 .story-home.full-hero .cloud-copy{
-  inset:50% 7% auto;
-  transform:translateY(-50%);
-  text-align:center;
+  text-align:left;
 }
-.story-home.full-hero .cloud-veil{
-  background:radial-gradient(ellipse at center,#17192188,transparent 80%),
-    linear-gradient(#17192188,#17192155 48%,#171921aa);
+.story-home .cloud-copy h1{
+  font-size:clamp(46px,7vw,104px);
+  text-shadow:0 2px 16px #17192170;
+}
+.story-home .cloud-copy .hero-accent{
+  font:italic 900 1.15em/.98 "Fraunces Hero",Georgia,serif;
+  letter-spacing:-.065em;
+}
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 22px;
+  margin-top:24px;
+}
+.story-home .hero-actions .round-action{margin:0}
+.hero-work-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:44px;
+  color:var(--ivory);
+  font:600 14px/1.4 var(--body);
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-shadow:0 1px 8px #171921;
+}
+@media(max-width:760px){
+  .story-home .cloud-copy h1{font-size:clamp(32px,9vw,58px)}
+  .hero-actions{margin-top:20px}
 }
 .story-home .business-rotation>span{transition:opacity 170ms var(--story-ease)}
 .business-rotation .business-current:not(.is-active){opacity:0}

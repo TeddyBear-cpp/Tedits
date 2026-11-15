@@ -22,7 +22,7 @@ assert.ok(rendered.includes('Rivet &amp; Beam'));
 assert.ok(rendered.includes('href="enquire.html"'));
 assert.ok(rendered.includes('studio-home.js'));
 assert.ok(rendered.includes('studio-home.css'));
-assert.match(rendered, /<h1 id="hero-title">Web design<br><span>that connects\.<\/span><\/h1>/);
+assert.match(rendered, /<h1 id="hero-title">Web design that<br><span class="hero-accent">connects\.<\/span><\/h1>/);
 assert.equal((rendered.match(/<video class="benefit-visual"/g) || []).length, 3);
 for (const name of ['get-found', 'answers', 'build-trust']) {
   assert.ok(rendered.includes(`assets/website-story/${name}.mp4`), `CMS output must preserve ${name} video`);
