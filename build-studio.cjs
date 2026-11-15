@@ -33,7 +33,7 @@ function collectAssets(folder) {
     const relative = `${folder}/${entry.name}`;
     if (designOnlyAssets.has(relative)) continue;
     if (entry.isDirectory()) collectAssets(relative);
-    else if (/\.(svg|png|jpe?g|webp|ttf|otf|mp3|mp4|ico)$|(?:OFL|LICENSE)\.txt$/i.test(entry.name)) files.push(relative);
+    else if (/\.(svg|png|jpe?g|webp|woff2|ttf|otf|mp3|mp4|ico)$|(?:OFL|LICENSE)\.txt$/i.test(entry.name)) files.push(relative);
   }
 }
 for (const folder of ['studio/assets','studio/projects/catering/assets','studio/projects/rivet-beam/concept-assets','studio/projects/afterhours/assets']) collectAssets(folder);
