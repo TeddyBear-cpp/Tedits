@@ -34,13 +34,16 @@
   }
   function sync(){
     scene.dataset.motion=enabled?'on':'off';
-    toggle.setAttribute('aria-pressed',String(enabled));
-    toggle.textContent=enabled?'Parallax on':'Parallax off';
-    // Only artwork changes; this control never resizes or repositions the page.
+    if(toggle){
+      toggle.setAttribute('aria-pressed',String(enabled));
+      toggle.textContent=enabled?'Parallax on':'Parallax off';
+    }
     schedule();
   }
-  toggle.hidden=false;
-  toggle.addEventListener('click',()=>{enabled=!enabled;sync();});
+  if(toggle){
+    toggle.hidden=false;
+    toggle.addEventListener('click',()=>{enabled=!enabled;sync();});
+  }
   reduced.addEventListener('change',e=>{enabled=!e.matches;sync();});
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden){cancelAnimationFrame(frame);frame=0;}else schedule();
@@ -49,7 +52,7 @@
     scene.dataset.inView=String(entries[0].isIntersecting);
     if(entries[0].isIntersecting)schedule();
   },{rootMargin:'200px 0px'}).observe(scene);
-  addEventListener('scroll',()=>{if(scene.dataset.inView!=='false')schedule();},{passive:true});
+  addEventListener('scroll',()=>{if(enabled&&scene.dataset.inView!=='false')schedule();},{passive:true});
   addEventListener('resize',measure,{passive:true});
   addEventListener('pageshow',measure);
   addEventListener('load',measure,{once:true});
