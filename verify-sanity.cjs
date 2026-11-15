@@ -20,8 +20,10 @@ assert.equal((extras(rendered).match(/<a class="story-reveal"/g) || []).length, 
 assert.ok(rendered.includes('Olive &amp; Ember'));
 assert.ok(rendered.includes('Rivet &amp; Beam'));
 assert.ok(rendered.includes('href="enquire.html"'));
-assert.ok(rendered.includes('studio-story-stack.js'));
-assert.ok(rendered.includes('studio-story-stack.css'));
+assert.ok(rendered.includes('studio-home.js'));
+assert.ok(rendered.includes('studio-home.css'));
+assert.match(rendered, /<h1 id="hero-title">Web design<br><span>that connects\.<\/span><\/h1>/);
+assert.equal((rendered.match(/<video class="benefit-visual"/g) || []).length, 3);
 for (const name of ['get-found', 'answers', 'build-trust']) {
   assert.ok(rendered.includes(`assets/website-story/${name}.mp4`), `CMS output must preserve ${name} video`);
 }
@@ -87,12 +89,9 @@ const servicePages = JSON.parse(fs.readFileSync('studio-teditstudio/service-page
 const offer = {...servicePages.find(document => document._type === 'whyPage'), startingPrice:375, includedRevisions:4, standardTimeline:'5–7 days', businessExamples:['a bakery', 'a venue & cafe']};
 const homeOffer = applyHomepageOffer(rendered, offer);
 assert.ok(homeOffer.includes('data-examples="a bakery|a venue &amp; cafe"'));
-assert.ok(homeOffer.includes('class="offer-price" data-cms-price>€375</p>'));
-assert.equal((homeOffer.match(/data-cms-revisions>4<\/span>/g)||[]).length, 2);
-assert.ok(homeOffer.includes('data-cms-timeline>5–7 days</span>'));
-assert.ok(homeOffer.includes('data-cms-offer-limit>5</span>'));
-assert.ok(homeOffer.includes('Once-off payment'));
-assert.ok(homeOffer.includes('Domain and hosting charges are excluded.'));
+assert.ok(homeOffer.includes('id="process"'));
+assert.ok(!homeOffer.includes('id="pricing"'));
+assert.ok(!homeOffer.includes('data-cms-price'));
 const editableStory = applyHomepageOffer(rendered, {...offer,
   introQuestion: 'They find your work.\nWhat happens next?',
   benefitChapters: [
@@ -104,7 +103,6 @@ const editableStory = applyHomepageOffer(rendered, {...offer,
 });
 assert.ok(editableStory.includes('data-cms-intro-question>They find your work.<br>What happens next?</p>'));
 assert.ok(editableStory.includes('<h3>Find the right people.</h3><p>A clear search result helps.</p>'));
-assert.ok(editableStory.includes('data-story-step="0" aria-current="step">Find</button>'));
 assert.ok(editableStory.includes('src="https://cdn.sanity.io/files/yjcpyptx/production/clip.mp4"'));
 assert.ok(editableStory.includes('poster="https://cdn.sanity.io/images/yjcpyptx/production/frame.png"'));
 assert.ok(editableStory.includes('data-cms-answer-heading>Your place online.</h2>'));
@@ -121,10 +119,6 @@ assert.throws(() => applyHomepageOffer(rendered, {...offer, benefitChapters:[
   {tabLabel:'A',heading:'A',body:'A',videoUrl:'https://example.com/clip.mp4'},
   {tabLabel:'B',heading:'B',body:'B'}, {tabLabel:'C',heading:'C',body:'C'},
 ]}), /Unexpected Sanity files URL/);
-const legacyOffer = {...offer}; delete legacyOffer.currency; delete legacyOffer.offerClientLimit;
-assert.ok(applyHomepageOffer(rendered, legacyOffer).includes('data-cms-price>€375</p>'));
-assert.ok(applyHomepageOffer(rendered, {...offer, offerClientLimit:7}).includes('data-cms-offer-limit>7</span>'));
-assert.ok(applyHomepageOffer(rendered, {...offer, currency:'GBP'}).includes('data-cms-price>£375</p>'));
 assert.equal(homeOffer.match(/<title>[\s\S]*?<\/title>/)[0], rendered.match(/<title>[\s\S]*?<\/title>/)[0]);
 const redirect = fs.readFileSync('studio/why-teditstudio.html', 'utf8');
 assert.equal(applyWhyPage(redirect, offer), redirect);

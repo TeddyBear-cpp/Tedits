@@ -64,11 +64,10 @@ function replaceBenefitChapters(html, chapters) {
   chapters.forEach((chapter, index) => {
     const heading = requiredText(chapter.heading, `benefitChapters[${index}].heading`)
     const body = requiredText(chapter.body, `benefitChapters[${index}].body`)
-    const tabLabel = requiredText(chapter.tabLabel, `benefitChapters[${index}].tabLabel`)
-    const pattern = new RegExp(`(<article class="story-chapter" data-cms-chapter="${index}">)([\\s\\S]*?)(<\\/article>)`)
+    const pattern = new RegExp(`(<article class="benefit-card" data-cms-chapter="${index}">)([\\s\\S]*?)(<\\/article>)`)
     html = replaceChecked(html, pattern, (_match, start, inner, end) => {
       inner = inner.replace(/<h3>[\s\S]*?<\/h3>/, `<h3>${heading}</h3>`)
-        .replace(/(<div class="story-copy">[\s\S]*?<\/h3><p>)[\s\S]*?(<\/p>)/, (_text, open, close) => `${open}${body}${close}`)
+        .replace(/(<\/h3><p>)[\s\S]*?(<\/p>)/, (_text, open, close) => `${open}${body}${close}`)
       const media = Object.hasOwn(defaultMedia, chapter._key) ? defaultMedia[chapter._key] : positionalMedia[index]
       const video = mediaUrl(chapter.videoUrl, 'files') || `assets/website-story/${media}.mp4`
       const poster = mediaUrl(chapter.posterUrl, 'images') || `assets/website-story/${media}.png`
@@ -76,8 +75,6 @@ function replaceBenefitChapters(html, chapters) {
         .replace(/(<video\b[^>]*\bposter=")[^"]*(")/, (_text, open, close) => `${open}${poster}${close}`)
       return `${start}${inner}${end}`
     }, `benefit chapter ${index + 1}`)
-    html = replaceChecked(html, new RegExp(`(<button type="button" data-story-step="${index}"[^>]*>)[\\s\\S]*?(<\\/button>)`),
-      (_match, start, end) => `${start}${tabLabel}${end}`, `benefit tab ${index + 1}`)
   })
   return html
 }
@@ -97,7 +94,7 @@ function replaceBusinessExamples(html, document) {
     .map((example, index) => requiredText(example, `businessExamples[${index}]`))
   if (examples.some(example => example.includes('|'))) throw new Error('Sanity business examples cannot contain |')
   return replaceChecked(html, /(<span class="business-rotation"[^>]*data-examples=")[^"]*(">)[\s\S]*?(<\/span>)/,
-    (_match, start, middle, end) => `${start}${examples.join('|')}${middle}${examples[0]}${end}`, 'business rotation')
+    (_match, start, middle, end) => `${start}${examples.join('|')}${middle}what you do${end}`, 'business rotation')
 }
 function applyHomepageOffer(html, document) {
   if (!document) return html
@@ -106,11 +103,7 @@ function applyHomepageOffer(html, document) {
   html = replaceOptionalFact(html, 'intro-question', document.introQuestion, {lines: true})
   html = replaceBenefitChapters(html, document.benefitChapters)
   html = replaceOptionalFact(html, 'answer-heading', document.answerHeading)
-  html = replaceOptionalFact(html, 'answer-body', document.answerBody)
-  html = replaceFact(html, 'price', offerPrice(document))
-  html = replaceFact(html, 'offer-limit', document.offerClientLimit ?? 5)
-  html = replaceFact(html, 'revisions', document.includedRevisions)
-  return replaceFact(html, 'timeline', document.standardTimeline.trim())
+  return replaceOptionalFact(html, 'answer-body', document.answerBody)
 }
 function applyWhyPage(html, document) {
   if (!document) return html

@@ -104,8 +104,9 @@ function applyContent(html, content) {
     required(home, ['heading', 'subheading', 'intro', 'seoTitle', 'seoDescription']);
     // Migrate the previous default copy without changing custom CMS headlines.
     const legacyHero = html.includes('id="cloud-scene"') && home.heading === 'Thoughtful websites.' && ['Designed for your business.', 'Distinctly your business.'].includes(home.subheading);
-    const heading = legacyHero ? 'Design that' : home.heading;
-    const subheading = legacyHero ? 'connects.' : home.subheading;
+    const previousDefault = home.heading === 'Design that' && home.subheading === 'connects.';
+    const heading = legacyHero || previousDefault ? 'Web design' : home.heading;
+    const subheading = legacyHero || previousDefault ? 'that connects.' : home.subheading;
     html = html.replace(/<h1 id="hero-title">[\s\S]*?<\/h1>/, `<h1 id="hero-title">${escape(heading)}<br><span>${escape(subheading)}</span></h1>`);
     html = html.replace(/(<div class="cloud-copy">[\s\S]*?<\/h1><p>)[\s\S]*?(<\/p>)/, (_match, start, end) => start + escape(legacyHero ? 'Thoughtful websites, shaped around you.' : home.intro) + end);
     html = html.replace(/(<div class="hero-bottom">[\s\S]*?<\/div><p>)[\s\S]*?(<\/p><\/div>)/, (_match, start, end) => start + escape(home.intro) + end);

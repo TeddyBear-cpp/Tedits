@@ -9,6 +9,7 @@ const files = [
   'studio/studio-services.css', 'studio/enquiry.js',
   'studio/studio-contact.css', 'studio/studio-contact.js',
   'studio/studio-rounded.css', 'studio/studio-clouds.js', 'studio/studio-navigation.js',
+  'studio/studio-home.css', 'studio/studio-home.js',
   'studio/studio-story.css', 'studio/studio-story-stack.css', 'studio/studio-story-stack.js',
   'studio/studio-ui.css', 'studio/studio-ui.js', 'studio/studio-enquiry.css',
   'studio/studio.css', 'studio/studio-motion.css',

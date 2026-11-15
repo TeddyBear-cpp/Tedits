@@ -45,6 +45,17 @@
   margin:0 0 12px;
 }
 .benefit-card p,.how-grid p{margin:0;line-height:1.55}
+.benefit-playback{
+  min-height:44px;
+  margin-top:12px;
+  padding:0;
+  border:0;
+  background:none;
+  color:inherit;
+  font:inherit;
+  text-decoration:underline;
+  cursor:pointer;
+}
 .how-section{padding-block:clamp(50px,8vw,100px)}
 .how-section h2{margin:0 0 26px}
 .how-grid{list-style:none;padding:0;margin:0;counter-reset:step}

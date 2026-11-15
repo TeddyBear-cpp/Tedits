@@ -82,6 +82,40 @@
   }).observe(title);
 
   const visuals = [...document.querySelectorAll('.benefit-visual')];
+  const playback = document.querySelector('.benefit-playback');
+  const visibleVideos = new Set();
+  let videoOverride;
+  function syncVideos() {
+    const playing = videoOverride ?? !reduced.matches;
+    playback.textContent = playing ? 'Pause videos' : 'Play videos';
+    visuals.forEach(video => {
+      if (playing && !document.hidden && visibleVideos.has(video)) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }
+  playback.hidden = false;
+  playback.addEventListener('click', () => {
+    videoOverride = !(videoOverride ?? !reduced.matches);
+    syncVideos();
+  });
+  const videoObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) visibleVideos.add(entry.target);
+      else visibleVideos.delete(entry.target);
+    }
+    syncVideos();
+  });
+  visuals.forEach(video => videoObserver.observe(video));
+  document.addEventListener('visibilitychange', syncVideos);
+  reduced.addEventListener('change', () => {
+    videoOverride = undefined;
+    syncVideos();
+  });
+  syncVideos();
+
   const animations = new Set();
   function reveal(image, delay) {
     if (reduced.matches) return;
