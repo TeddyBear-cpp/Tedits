@@ -1,7 +1,7 @@
 @font-face{
   font-family:"Fraunces Hero";
-  src:url("assets/fonts/fraunces-connects.woff2") format("woff2");
-  font-weight:900;
+  src:url("assets/fonts/fraunces-connects-light.woff2") format("woff2");
+  font-weight:350;
   font-style:italic;
   font-display:swap;
 }
@@ -22,8 +22,8 @@
   text-shadow:0 2px 16px #17192170;
 }
 .story-home .cloud-copy .hero-accent{
-  font:italic 900 1.15em/.98 "Fraunces Hero",Georgia,serif;
-  letter-spacing:-.065em;
+  font:italic 350 1.15em/.98 "Fraunces Hero",Georgia,serif;
+  letter-spacing:-.045em;
 }
 .hero-actions{
   display:flex;
